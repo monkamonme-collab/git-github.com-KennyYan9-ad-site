@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.astro";
+import NavigationHub from "../../components/NavigationHub.astro";
+---
+<BaseLayout title="精選工具集 | 專業 SEO 與 AI 解決方案" description="為專業人士打造的 SaaS 工具庫。">
+  <NavigationHub />
+  
+  <div class="max-w-5xl mx-auto py-8 px-6">
+    <header class="mb-12 text-center">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">工具資源中心</h1>
+      <p class="text-slate-500">探索我們為 SEO 與內容創作者準備的專業解決方案。</p>
+    </header>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <a href="/tools/dog-age-calculator" class="group block">
+        <Card className="h-full hover:border-blue-500 transition-all">
+          <h2 class="text-lg font-bold mb-2">狗狗年齡計算機</h2>
+          <p class="text-slate-600 text-sm">科學換算狗狗人類年齡，精準管理愛犬生命週期。</p>
+        </Card>
+      </a>
+      <a href="/tools/cat-age-calculator" class="group block">
+        <Card className="h-full hover:border-blue-500 transition-all">
+          <h2 class="text-lg font-bold mb-2">貓咪年齡計算機</h2>
+          <p class="text-slate-600 text-sm">根據 AVMA 演算法精算出您的愛貓處於哪個階段。</p>
+        </Card>
+      </a>
+    </div>
+  </div>
+</BaseLayout>
