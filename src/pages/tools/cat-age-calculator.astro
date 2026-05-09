@@ -2,18 +2,21 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 import Card from '../../components/Card.astro';
+
+const title = "貓咪人類年齡換算計算機 | 專業貓齡對照表";
+const description = "想知道您的愛貓等於人類幾歲嗎？採用 AVMA 科學演算法，精準換算貓咪年齡。包含貓咪生命階段照護指南與常見的老化徵兆分析。";
 ---
 
-<BaseLayout title="貓咪人類年齡換算計算機 | 專業貓齡對照表" description="想知道您的貓咪等於人類幾歲嗎？專業貓齡換算器，提供貓咪各階段生命週期對照表與老貓照護指南，幫助您給予愛貓更好的照顧。">
+<BaseLayout title={title} description={description}>
   <div class="max-w-3xl mx-auto mt-12 px-6">
     <Card className="mb-8">
-      <h1 class="text-3xl font-bold text-slate-900 mb-6">貓咪人類年齡換算計算機</h1>
+      <h1 class="text-3xl font-bold text-slate-900 mb-6">{title}</h1>
       <div class="space-y-6">
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-2">貓咪目前歲數</label>
+          <label class="block text-sm font-medium text-slate-700 mb-2">貓咪歲數</label>
           <input type="number" id="catAge" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="輸入歲數">
         </div>
-        <button id="calcBtn" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition-all">計算換算年齡</button>
+        <button id="calcBtn" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">開始換算</button>
         <div id="result" class="p-6 bg-blue-50 rounded-2xl text-center text-xl font-bold text-blue-900 hidden"></div>
       </div>
     </Card>
@@ -22,28 +25,23 @@ import Card from '../../components/Card.astro';
 
     <article class="prose prose-slate max-w-none mt-12">
       <h2 id="why-calculate">為什麼要計算貓咪的換算年齡？</h2>
-      <p>貓咪的成長速度遠快於人類。了解愛貓處於生命中的哪個階段（幼貓、成貓、還是老貓），對於預防醫學與飲食調整至關重要。一般來說，貓咪前兩年成長最快，此後老化速度趨於平緩。</p>
+      <p>貓咪的生命週期與人類截然不同。根據研究，貓咪前兩年的成長最為迅猛，約在兩歲時就已經達到人類約 24 歲的發育成熟水平。了解愛貓目前處於哪個生命階段，是給予正確飲食規劃、預防醫學檢查的關鍵。</p>
       
-      <h3 id="age-table">貓咪人類年齡對照表</h3>
-      <table class="w-full border-collapse">
-        <thead class="bg-slate-100"><tr><th class="p-3 border">貓咪歲數</th><th class="p-3 border">人類對照歲數</th></tr></thead>
-        <tbody>
-          <tr><td class="p-3 border">1 歲</td><td class="p-3 border">19 歲 (成年)</td></tr>
-          <tr><td class="p-3 border">5 歲</td><td class="p-3 border">36 歲 (壯年)</td></tr>
-          <tr><td class="p-3 border">10 歲</td><td class="p-3 border">56 歲 (高齡)</td></tr>
-        </tbody>
-      </table>
+      <h3 id="age-table">貓咪生命階段與人類對照</h3>
+      <ul>
+        <li><strong>幼貓期 (0-1歲)</strong>：社交行為與體格發育的黃金期。</li>
+        <li><strong>成貓期 (2-7歲)</strong>：身體機能最穩定的巔峰期。</li>
+        <li><strong>熟齡/高齡期 (7歲以上)</strong>：代謝減緩，需開始注意腎臟病、牙科問題與關節保養。</li>
+      </ul>
 
       <h2 id="faq">常見問題 (FAQ)</h2>
-      <div class="space-y-4">
-        <div><strong>Q: 如何判斷貓咪已進入老齡？</strong><br>A: 通常 7-10 歲以上的貓咪被視為熟齡/高齡貓，需開始注意腎臟與關節健康。</div>
-      </div>
+      <dl>
+        <dt class="font-bold">Q: 室內貓壽命通常比較長嗎？</dt>
+        <dd class="mb-4">A: 是的，室內貓避免了戶外的寄生蟲、傳染病與交通事故，平均壽命顯著長於室外貓。</dd>
+        <dt class="font-bold">Q: 貓咪幾歲算老貓？</dt>
+        <dd class="mb-4">A: 一般獸醫學上將 10 歲以上的貓咪定義為高齡貓。</dd>
+      </dl>
     </article>
-
-    <nav class="mt-12 py-8 border-t border-slate-200 flex justify-between items-center">
-      <a href="/tools/dog-age-calculator" class="text-blue-600 font-bold hover:text-blue-800">← 狗狗年齡計算</a>
-      <a href="/" class="text-slate-500 hover:text-slate-900">返回首頁</a>
-    </nav>
   </div>
 
   <script>
@@ -64,5 +62,14 @@ import Card from '../../components/Card.astro';
         result.classList.remove('hidden');
       }
     });
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "貓咪人類年齡換算計算機",
+    "description": "AVMA標準計算貓咪對應人類歲數與照護指南。"
+  }
   </script>
 </BaseLayout>
