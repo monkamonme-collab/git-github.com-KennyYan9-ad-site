@@ -9,7 +9,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
 ---
 
 <BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog' }, { label: 'AI 寫作助手指南', url: canonicalURL.pathname }]}>
-  <div class="max-w-4xl mx-auto py-12 px-6">
+  <img src="https://source.unsplash.com/featured/1200x400?ai-writing" alt="AI Writing banner" class="w-full mb-8 rounded-lg"/>  <div class="max-w-4xl mx-auto py-12 px-6">
     <article class="prose prose-slate max-w-none">
       <h1>{title}</h1>
       <p class="text-lg text-slate-500 mb-8">發佈日期：2026年5月10日</p>
