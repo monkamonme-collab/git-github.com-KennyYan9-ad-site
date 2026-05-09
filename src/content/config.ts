@@ -7,7 +7,7 @@ const tools = defineCollection({
     icon: z.string(),
     image: z.string(),
     category: z.enum(['calculator', 'converter', 'generator']),
-    pubDate: z.date(),
+    pubDate: z.string().transform((str) => new Date(str)),
   }),
 });
 
