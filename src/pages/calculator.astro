@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdSlot from '../components/AdSlot.astro';
+---
+
+<Layout title="高級計算機 - 利基工具站" description="簡單、直覺、美觀的線上計算機。">
+  <div class="max-w-xl mx-auto mt-10">
+    <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 text-center">計算機</h2>
+      
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-500 mb-1">數值 A</label>
+          <input type="number" id="valA" class="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="0">
+        </div>
+        
+        <div>
+          <label class="block text-sm font-medium text-gray-500 mb-1">數值 B</label>
+          <input type="number" id="valB" class="w-full p-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition" placeholder="0">
+        </div>
+
+        <button id="calcBtn" class="w-full bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-slate-800 transition shadow-lg shadow-slate-200">
+          開始計算
+        </button>
+
+        <div id="result" class="mt-6 p-4 bg-gray-50 rounded-xl text-center font-bold text-lg text-slate-800">
+          結果將顯示在此
+        </div>
+      </div>
+    </div>
+
+    <AdSlot slot="calculator-bottom" />
+  </div>
+
+  <script>
+    const btn = document.getElementById('calcBtn');
+    const valA = document.getElementById('valA') as HTMLInputElement;
+    const valB = document.getElementById('valB') as HTMLInputElement;
+    const result = document.getElementById('result');
+
+    btn?.addEventListener('click', async () => {
+      const a = parseFloat(valA.value);
+      const b = parseFloat(valB.value);
+
+      const response = await fetch('/api/calculate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ a, b }),
+      });
+      
+      const data = await response.json();
+      if (result) result.textContent = `計算結果: ${data.result}`;
+    });
+  </script>
+</Layout>

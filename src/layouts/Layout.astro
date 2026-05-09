@@ -1,0 +1,31 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "利基型專業工具網站", 
+  description = "高效、免費、直覺的線上工具站" 
+} = Astro.props;
+---
+<!doctype html>
+<html lang="zh-TW">
+	<SEO title={title} description={description} />
+	<body class="bg-gray-50 text-gray-900 min-h-screen">
+		<nav class="bg-white shadow-sm p-4 border-b">
+			<div class="max-w-5xl mx-auto flex justify-between items-center">
+				<a href="/" class="text-xl font-bold text-blue-600">利基工具站</a>
+			</div>
+		</nav>
+		<main class="max-w-5xl mx-auto p-6">
+			<slot />
+		</main>
+		<footer class="text-center p-6 text-gray-500 text-sm">
+			&copy; 2026 利基工具站. All rights reserved.
+		</footer>
+	</body>
+</html>

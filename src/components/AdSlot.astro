@@ -1,0 +1,10 @@
+---
+interface Props {
+  slot: string;
+}
+const { slot } = Astro.props;
+---
+<div class="my-8 text-center bg-gray-100 rounded-lg p-4 text-gray-400 text-sm">
+  <!-- AdSense Placeholder -->
+  Ads Area ({slot})
+</div>
