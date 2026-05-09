@@ -2,36 +2,35 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 import Card from '../../components/Card.astro';
-import LifeStageBar from '../../components/LifeStageBar.astro';
+
+const title = "狗狗人類年齡換算計算機 | 精準掌握愛犬生命階段";
+const description = "想知道狗狗等於人類幾歲嗎？使用 AVMA 獸醫標準演算法，一鍵精算狗狗年齡。包含不同體型老化差異對照表、各生命階段專業照護指南。";
+const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
 ---
 
-<BaseLayout title="狗狗人類年齡換算計算機 | 精準掌握愛犬生命階段" description="使用 AVMA 獸醫標準演算法，一鍵精算狗狗年齡。包含體型老化對照與階段照護指南。">
-  <div class="max-w-2xl mx-auto mt-12 px-6">
-    <Card className="mb-8">
-      <h1 class="text-3xl font-bold text-slate-900 mb-6">狗狗年齡計算機</h1>
+<BaseLayout title={title} description={description} breadcrumbs={[{ label: '工具集', url: '/tools' }, { label: '狗狗年齡計算機', url: canonicalURL.pathname }]}>
+  <div class="max-w-4xl mx-auto mt-6 px-6">
+    <Card className="mb-8 p-8">
+      <h1 class="text-3xl font-bold text-slate-900 mb-6 text-center">{title}</h1>
       <div class="space-y-6">
         <div class="grid md:grid-cols-2 gap-6">
           <div>
-            <label class="block text-sm font-medium text-slate-700 mb-2">狗狗歲數</label>
-            <input type="number" id="dogAge" class="w-full px-4 py-3 bg-slate-50 border rounded-lg" value="1">
+            <label class="block text-sm font-medium text-slate-700 mb-2">狗狗目前歲數</label>
+            <input type="number" id="dogAge" class="w-full px-4 py-3 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" value="1">
           </div>
           <div>
             <label class="block text-sm font-medium text-slate-700 mb-2">狗狗體型</label>
-            <select id="dogSize" class="w-full px-4 py-3 bg-slate-50 border rounded-lg">
-              <option value="small">小型 (<10kg)</option>
-              <option value="medium">中型 (10-25kg)</option>
-              <option value="large">大型 (25-40kg)</option>
-              <option value="giant">巨型 (>40kg)</option>
+            <select id="dogSize" class="w-full px-4 py-3 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none">
+              <option value="small">小型犬 (<10kg)</option>
+              <option value="medium">中型犬 (10-25kg)</option>
+              <option value="large">大型犬 (25-40kg)</option>
+              <option value="giant">巨型犬 (>40kg)</option>
             </select>
           </div>
         </div>
-        <button id="calcBtn" class="w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-slate-800 transition-all">開始換算</button>
-        
-        <div id="resultBox" class="hidden space-y-4">
-          <div id="result" class="text-center text-xl font-bold text-blue-900"></div>
-          <div id="stageBarContainer">
-            <LifeStageBar age={1} type="dog" />
-          </div>
+        <button id="calcBtn" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">計算對應人類歲數</button>
+        <div id="resultBox" class="hidden space-y-4 mt-6">
+          <p class="text-center text-xl font-bold text-blue-900" id="result"></p>
           <button id="shareBtn" class="w-full text-blue-600 underline text-sm pt-2">分享我的計算結果</button>
         </div>
       </div>
@@ -42,43 +41,62 @@ import LifeStageBar from '../../components/LifeStageBar.astro';
     </div>
 
     <article class="prose prose-slate max-w-none mt-12">
-      <h2>為什麼狗狗年齡不能簡單乘以 7？</h2>
-      <p>根據美國獸醫師協會 (AVMA) 研究，狗狗在生命第一年發育最快，對應人類 15 歲。體型影響老化速度，大型犬老化顯著較快。</p>
+      <p>許多飼主對狗狗的年齡換算常存有迷思，以為簡單乘以7就能得到人類的對應歲數。然而，根據美國獸醫師協會 (AVMA) 的最新研究，狗狗的生理成長與老化速度遠比人類複雜，且受體型影響巨大。本工具採用最科學的 AVMA 標準演算法，幫助您精確了解愛犬的生命階段。</p>
+
+      <h2>正確的狗狗年齡換算原理</h2>
+      <p>狗狗的成長曲線並非線性。在生命的第一年，牠們的發育速度極快，約等於人類 15 歲的青少年時期。第二年則進入青春期後期，約等於人類 24 歲。此後，不同體型的狗狗將以不同的速度老化。</p>
+      <ul>
+        <li>**小型犬 (<10kg)**：1歲=15人類歲，2歲=24人類歲，之後每年+4人類歲。</li>
+        <li>**中型犬 (10-25kg)**：1歲=15人類歲，2歲=24人類歲，之後每年+5人類歲。</li>
+        <li>**大型犬 (25-40kg)**：1歲=15人類歲，2歲=24人類歲，之後每年+6人類歲。</li>
+        <li>**巨型犬 (>40kg)**：1歲=12人類歲，2歲=22人類歲，之後每年+7人類歲。</li>
+      </ul>
+      <p>這個差異解釋了為何大型犬的壽命普遍較短，因為其生理機能的損耗速度更快。</p>
+
+      <h2>如何使用狗狗年齡換算計算機？</h2>
+      <ol>
+        <li>在「狗狗目前歲數」欄位輸入您的愛犬的實際年齡。</li>
+        <li>從「狗狗體型」下拉選單中選擇對應的體型（小型、中型、大型、巨型）。</li>
+        <li>點擊「計算對應人類歲數」按鈕，即可立即查看結果。</li>
+      </ol>
+
+      <h2>狗狗各生命階段照護指南與常見問題 (FAQ)</h2>
+      <p>了解狗狗的換算年齡，能幫助您更好地為牠們規劃各階段的飲食、運動與醫療照護。</p>
+      <dl>
+        <dt class="font-bold mt-4">Q: 大型犬和小型犬哪個壽命比較長？</dt>
+        <dd class="mb-2">A: 普遍來說，小型犬的平均壽命長於大型犬。這主要與基因、生長速度、生理負擔及潛在的健康問題有關。大型犬因體型較大，心血管和關節承受的壓力較大，老化速度通常也較快。</dd>
+
+        <dt class="font-bold mt-4">Q: 狗狗幾歲算老？</dt>
+        <dd class="mb-2">A: 一般獸醫學上，小型犬約在 10-12 歲、中型犬 8-10 歲、大型犬 6-8 歲後即可視為邁入高齡階段。高齡犬需要更頻繁的健康檢查和特殊的營養補充。</dd>
+
+        <dt class="font-bold mt-4">Q: 幼犬期 (0-1歲) 應注意哪些照護？</dt>
+        <dd class="mb-2">A: 幼犬期是成長的關鍵。此階段應完成所有必要的疫苗接種、進行社會化訓練，並提供高營養、易消化的幼犬專用食品，確保骨骼和肌肉的健康發育。</dd>
+
+        <dt class="font-bold mt-4">Q: 成犬期 (1-7歲) 的照護重點是什麼？</dt>
+        <dd class="mb-2">A: 成犬期需維持規律的運動，控制體重以預防肥胖和關節問題。定期健康檢查（每年一次）是早期發現疾病的重要手段。選擇適合其活動量和品種的優質狗糧。</dd>
+
+        <dt class="font-bold mt-4">Q: 高齡犬 (7歲以上) 有哪些特殊的照護需求？</dt>
+        <dd class="mb-2">A: 高齡犬需要更頻繁的健康檢查（建議每半年一次），特別是針對腎臟、心臟、肝臟功能及關節炎。飲食應調整為低磷、低鈉、高纖維的處方糧，並可考慮補充關節保健品。居家環境也應調整為防滑、易於行動的空間。</dd>
+      </dl>
+      
+      <p class="text-xs text-slate-500 mt-8"><em>免責聲明：本工具基於美國獸醫師協會 (AVMA) 指導原則與普遍獸醫科學數據開發，結果僅供參考，不具備任何診斷功能。若您的愛犬有任何健康疑慮，請務必諮詢專業獸醫師。</em></p>
+
+      <div class="mt-12 py-8 border-t border-slate-200 flex justify-between items-center">
+        <a href="/" class="text-slate-500 hover:text-blue-600">← 返回首頁</a>
+        <a href="/tools/cat-age-calculator" class="text-blue-600 font-bold hover:text-blue-800">下一站：貓咪年齡計算 →</a>
+      </div>
     </article>
   </div>
 
-  <script>
-    const btn = document.getElementById('calcBtn');
-    const ageInput = document.getElementById('dogAge') as HTMLInputElement;
-    const sizeInput = document.getElementById('dogSize') as HTMLInputElement;
-    const result = document.getElementById('result');
-    const resultBox = document.getElementById('resultBox');
-    const progressFill = document.getElementById('progressFill');
-
-    btn?.addEventListener('click', async () => {
-      const age = parseInt(ageInput.value);
-      const res = await fetch('/api/calculate-age', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'dog', age, size: sizeInput.value }),
-      });
-      const data = await res.json();
-      
-      if (result && resultBox) {
-        result.textContent = `您的愛犬約等於人類 ${data.result} 歲`;
-        resultBox.classList.remove('hidden');
-        progressFill!.style.width = Math.min((age / 20) * 100, 100) + '%';
-      }
-    });
-
-    document.getElementById('shareBtn')?.addEventListener('click', () => {
-      const years = document.getElementById('result')?.textContent;
-      const text = `我的毛孩今年換算成人類已經是 ${years} 歲了！你也來算算看：${window.location.href}`;
-      navigator.clipboard.writeText(text);
-      alert('分享文案已複製！');
-    });
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "狗狗人類年齡換算計算機",
+    "applicationCategory": "Utilities",
+    "description": "採用 AVMA 獸醫標準演算法，一鍵精算狗狗年齡。"
+  }
   </script>
-
   <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
@@ -86,20 +104,81 @@ import LifeStageBar from '../../components/LifeStageBar.astro';
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "1歲的狗等於人類幾歲？",
-        "acceptedAnswer": { "@type": "Answer", "text": "根據 AVMA，1歲的狗約等於人類15歲。" }
+        "name": "大型犬和小型犬哪個壽命比較長？",
+        "acceptedAnswer": { "@type": "Answer", "text": "普遍來說，小型犬的平均壽命長於大型犬，這主要與基因、生長速度、生理負擔及潛在的健康問題有關。" }
       },
       {
         "@type": "Question",
-        "name": "狗的年齡如何換算？",
-        "acceptedAnswer": { "@type": "Answer", "text": "取決於體型，大型犬老化速度較快。" }
+        "name": "狗狗幾歲算老？",
+        "acceptedAnswer": { "@type": "Answer", "text": "一般獸醫學上，小型犬約在 10-12 歲、中型犬 8-10 歲、大型犬 6-8 歲後即可視為邁入高齡階段。" }
       },
       {
         "@type": "Question",
-        "name": "狗幾歲算老？",
-        "acceptedAnswer": { "@type": "Answer", "text": "通常7歲以上進入熟齡期。" }
+        "name": "幼犬期 (0-1歲) 應注意哪些照護？",
+        "acceptedAnswer": { "@type": "Answer", "text": "幼犬期應完成所有必要的疫苗接種、進行社會化訓練，並提供高營養、易消化的幼犬專用食品，確保骨骼和肌肉的健康發育。" }
+      },
+      {
+        "@type": "Question",
+        "name": "成犬期 (1-7歲) 的照護重點是什麼？",
+        "acceptedAnswer": { "@type": "Answer", "text": "成犬期需維持規律的運動，控制體重以預防肥胖和關節問題。定期健康檢查（每年一次）是早期發現疾病的重要手段。" }
+      },
+      {
+        "@type": "Question",
+        "name": "高齡犬 (7歲以上) 有哪些特殊的照護需求？",
+        "acceptedAnswer": { "@type": "Answer", "text": "高齡犬需要更頻繁的健康檢查，飲食應調整為低磷、低鈉、高纖維的處方糧，並可考慮補充關節保健品。" }
       }
     ]
   }
+  </script>
+
+  <script>
+    const ageInput = document.getElementById('dogAge') as HTMLInputElement;
+    const sizeInput = document.getElementById('dogSize') as HTMLSelectElement;
+    const calcBtn = document.getElementById('calcBtn');
+    const resultBox = document.getElementById('resultBox');
+    const resultDisplay = document.getElementById('result');
+    const shareBtn = document.getElementById('shareBtn');
+
+    const calculateHumanAge = (age: number, size: string) => {
+      if (age <= 0) return 0;
+      if (age === 1) return size === 'giant' ? 12 : 15;
+      if (age === 2) return size === 'giant' ? 22 : 24;
+
+      let base = 24;
+      let increment = 4; // Default for small dog
+
+      if (size === 'medium') increment = 5;
+      else if (size === 'large') increment = 6;
+      else if (size === 'giant') increment = 7;
+      
+      return base + (age - 2) * increment;
+    };
+
+    const updateCalculation = () => {
+      const age = parseInt(ageInput.value);
+      const size = sizeInput.value;
+      const humanAge = calculateHumanAge(age, size);
+      
+      if (resultDisplay && resultBox) {
+        resultDisplay.textContent = `您的愛犬約等於人類 ${humanAge} 歲`;
+        resultBox.classList.remove('hidden');
+      }
+    };
+
+    calcBtn?.addEventListener('click', updateCalculation);
+    ageInput?.addEventListener('input', updateCalculation);
+    sizeInput?.addEventListener('change', updateCalculation);
+
+    shareBtn?.addEventListener('click', () => {
+      const age = ageInput.value;
+      const size = sizeInput.options[sizeInput.selectedIndex].text;
+      const humanYears = resultDisplay?.textContent;
+      const shareText = `我的 ${size} 今年 ${age} 歲，換算成人類已經是 ${humanYears} 了！來算算你家毛孩幾歲：${window.location.href}`;
+      navigator.clipboard.writeText(shareText);
+      alert('分享文案已複製！');
+    });
+
+    // Initial calculation on load
+    updateCalculation();
   </script>
 </BaseLayout>
