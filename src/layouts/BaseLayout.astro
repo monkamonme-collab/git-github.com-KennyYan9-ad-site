@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="zh-TW">
+  <SEO title={title || "利基工具站"} description={description || "專業、極簡的線上實用工具集"} />
+  <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col font-sans">
+    <nav class="bg-white border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="text-xl font-bold tracking-tighter text-slate-900">ToolKit</a>
+      </div>
+    </nav>
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <footer class="bg-white border-t border-slate-200 mt-12 py-8">
+      <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm text-slate-600">
+        <a href="/legal/about" class="hover:text-blue-600">關於我們</a>
+        <a href="/legal/privacy" class="hover:text-blue-600">隱私權政策</a>
+        <a href="/legal/terms" class="hover:text-blue-600">使用條款</a>
+        <a href="/legal/disclaimer" class="hover:text-blue-600">免責聲明</a>
+      </div>
+      <div class="max-w-5xl mx-auto px-6 mt-8 text-center text-xs text-slate-400">
+        &copy; 2026 ToolKit All rights reserved.
+      </div>
+    </footer>
+  </body>
+</html>
