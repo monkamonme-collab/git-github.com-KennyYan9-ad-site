@@ -1,34 +1,55 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Card from '../components/Card.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+import NavigationHub from '../../components/NavigationHub.astro';
 ---
-
-<BaseLayout title="ToolKit | 專業線上實用工具集" description="極簡、高效、SaaS 級體驗的線上運算工具。">
-  <section class="max-w-4xl mx-auto py-20 px-6">
-    <div class="text-center mb-16">
+<BaseLayout title="精選工具集 | 專業 SEO 與 AI 解決方案" description="為專業人士打造的 SaaS 工具庫。">
+  <NavigationHub />
+  
+  <div class="max-w-5xl mx-auto py-8 px-6">
+    <header class="mb-16 text-center">
       <h1 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">專業級利基工具</h1>
       <p class="text-lg text-slate-500 max-w-xl mx-auto">為解決您的實際問題而設計，極簡、高效、無負擔的 SaaS 級體驗。</p>
-    </div>
+    </header>
 
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- 修正連結指向新的工具路徑 -->
-      <a href="/tools/calculator" class="group block">
-        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-200">
-          <div class="mb-4 text-blue-600">
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <a href="/tools/dog-age-calculator" class="group block">
+        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-500">
+          <div class="text-blue-600 mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
           </div>
-          <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">科學寵物年齡計算機</h2>
-          <p class="text-slate-600 text-sm leading-relaxed">採用 AVMA 科學演算法，精準計算貓狗人類歲數。</p>
+          <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">狗狗年齡計算機</h2>
+          <p class="text-slate-600 text-sm">採用 AVMA 科學演算法，精準計算狗狗人類歲數。</p>
         </Card>
       </a>
-
-      <Card className="opacity-75">
-        <div class="mb-4 text-slate-400">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-        </div>
-        <h2 class="text-xl font-bold text-slate-900 mb-2">更多工具規劃中</h2>
-        <p class="text-slate-600 text-sm leading-relaxed">我們正在開發更多領域的專業工具，敬請期待後續更新。</p>
-      </Card>
+      <a href="/tools/cat-age-calculator" class="group block">
+        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-500">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">貓咪年齡計算機</h2>
+          <p class="text-slate-600 text-sm">精準換算貓咪人類歲數，提供生命階段照護指南。</p>
+        </Card>
+      </a>
     </div>
-  </section>
+
+    <!-- 部落格區塊 -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold text-center mb-8">最新部落格文章</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <a href="/blog/seo-checker-guide" class="group block">
+          <Card className="h-full border-slate-200 hover:border-blue-500 transition-all">
+            <h3 class="text-xl font-bold mb-2">SEO 工具推薦</h3>
+            <p class="text-slate-600 text-sm">提升網站排名的必備利器，包含關鍵字研究、網站分析...</p>
+          </Card>
+        </a>
+        <a href="/blog/ai-writing-assistant-guide" class="group block">
+          <Card className="h-full border-slate-200 hover:border-blue-500 transition-all">
+            <h3 class="text-xl font-bold mb-2">AI 寫作助手指南</h3>
+            <p class="text-slate-600 text-sm">如何利用 AI 提升內容創作效率與質量，輕鬆掌握 SEO 內容。</p>
+          </Card>
+        </a>
+      </div>
+    </section>
+  </div>
 </BaseLayout>
