@@ -1,4 +1,40 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// 手動定義文章清單，因為目前的結構為個別 .astro 檔案
+const posts = [
+  {
+    title: "SEO 工具推薦",
+    description: "提升網站排名的必備利器，包含關鍵字研究、網站分析...",
+    url: "/blog/seo-checker-guide",
+    icon: "🔍"
+  },
+  {
+    title: "AI 寫作助手指南",
+    description: "如何利用 AI 提升內容創作效率與質量，輕鬆掌握 SEO 內容。",
+    url: "/blog/ai-writing-assistant-guide",
+    icon: "✍️"
+  }
+];
 ---
-<BaseLayout title="部落格 - SEO與實用指南"><div class="max-w-4xl mx-auto py-12"><h1>部落格</h1></div></BaseLayout>
+
+<BaseLayout title="部落格 - SEO與實用指南">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4">專業部落格</h1>
+      <p class="text-xl text-slate-600">分享 SEO 實戰經驗與 AI 內容創作心得。</p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      {posts.map((post) => (
+        <a href={post.url} class="group bg-white rounded-3xl p-8 border border-slate-100 hover:shadow-xl transition-all duration-300">
+          <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+            {post.icon}
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600">{post.title}</h2>
+          <p class="text-slate-600 leading-relaxed">{post.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</BaseLayout>
