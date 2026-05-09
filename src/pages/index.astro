@@ -1,13 +1,33 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
 ---
 
-<Layout title="首頁 - 利基型工具網站" description="為您提供最專業的線上實用工具集。">
-  <section class="text-center py-16">
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-4">專業利基型工具</h1>
-    <p class="text-lg text-gray-600 mb-8">快速、準確、免費，為解決您的生活問題而生。</p>
-    <a href="/calculator" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition">
-      立即使用計算機
-    </a>
+<BaseLayout title="ToolKit | 專業線上實用工具集" description="極簡、高效、SaaS 級體驗的線上運算工具。">
+  <section class="max-w-4xl mx-auto py-20 px-6">
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">專業級利基工具</h1>
+      <p class="text-lg text-slate-500 max-w-xl mx-auto">極簡的操作介面，高效的運算能力。我們致力於為您提供最穩定且高品質的線上工具解決方案。</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8">
+      <a href="/calculator" class="group block">
+        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-200">
+          <div class="mb-4 text-blue-600">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">專業計算機</h2>
+          <p class="text-slate-600 text-sm leading-relaxed">提供高精確度的數值運算與即時回饋，適用於各類專業場景。</p>
+        </Card>
+      </a>
+
+      <Card className="opacity-75">
+        <div class="mb-4 text-slate-400">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+        </div>
+        <h2 class="text-xl font-bold text-slate-900 mb-2">更多工具規劃中</h2>
+        <p class="text-slate-600 text-sm leading-relaxed">我們正在開發更多領域的專業工具，敬請期待後續更新。</p>
+      </Card>
+    </div>
   </section>
-</Layout>
+</BaseLayout>
