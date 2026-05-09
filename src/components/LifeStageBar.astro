@@ -1,0 +1,12 @@
+---
+// src/components/LifeStageBar.astro
+interface Props { age: number; type: 'dog' | 'cat'; }
+const { age, type } = Astro.props;
+const progress = Math.min((age / 20) * 100, 100);
+---
+<div class="w-full bg-slate-100 rounded-full h-6 mt-8 relative overflow-hidden shadow-inner border border-slate-200">
+  <div id="progressFill" class="h-full transition-all duration-700 bg-blue-600" style={`width: ${progress}%`}></div>
+  <div class="absolute inset-0 flex justify-between px-4 text-[10px] text-slate-500 font-bold items-center uppercase tracking-wider">
+    <span>幼年</span><span>成年</span><span>熟齡</span><span>老年</span>
+  </div>
+</div>
