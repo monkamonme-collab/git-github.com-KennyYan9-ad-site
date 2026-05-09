@@ -4,14 +4,20 @@ interface Props {
   description: string;
 }
 const { title, description } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
 ---
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
   
-  <!-- Google Analytics -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RF6RG5YW25"></script>
   <script is:inline>
     window.dataLayer = window.dataLayer || [];
