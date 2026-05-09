@@ -3,73 +3,151 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 import Card from '../../components/Card.astro';
 
-const title = "貓咪人類年齡換算計算機 | 專業貓齡對照表";
-const description = "想知道您的愛貓等於人類幾歲嗎？採用 AVMA 科學演算法，精準換算貓咪年齡。包含貓咪生命階段照護指南與常見的老化徵兆分析。";
+const title = "貓咪人類年齡換算計算機 | 精準掌握愛貓生命階段";
+const description = "想知道貓咪等於人類幾歲嗎？使用 AVMA 獸醫標準演算法，一鍵精算貓咪年齡。包含生命階段照護指南與常見老化徵兆分析。";
+const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
 ---
 
-<BaseLayout title={title} description={description}>
-  <div class="max-w-3xl mx-auto mt-12 px-6">
-    <Card className="mb-8">
-      <h1 class="text-3xl font-bold text-slate-900 mb-6">{title}</h1>
+<BaseLayout title={title} description={description} breadcrumbs={[{ label: '工具集', url: '/tools' }, { label: '貓咪年齡計算機', url: canonicalURL.pathname }]}>
+  <div class="max-w-4xl mx-auto mt-6 px-6">
+    <Card className="mb-8 p-8">
+      <h1 class="text-3xl font-bold text-slate-900 mb-6 text-center">{title}</h1>
       <div class="space-y-6">
         <div>
-          <label class="block text-sm font-medium text-slate-700 mb-2">貓咪歲數</label>
-          <input type="number" id="catAge" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" placeholder="輸入歲數">
+          <label class="block text-sm font-medium text-slate-700 mb-2">貓咪目前歲數</label>
+          <input type="number" id="catAge" class="w-full px-4 py-3 bg-slate-50 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none" value="1">
         </div>
         <button id="calcBtn" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition">開始換算</button>
-        <div id="result" class="p-6 bg-blue-50 rounded-2xl text-center text-xl font-bold text-blue-900 hidden"></div>
+        <div id="resultBox" class="hidden space-y-4 mt-6">
+          <p class="text-center text-xl font-bold text-blue-900" id="result"></p>
+          <button id="shareBtn" class="w-full text-blue-600 underline text-sm pt-2">分享我的計算結果</button>
+        </div>
       </div>
     </Card>
 
-    <AdSenseAd format="rectangle" />
+    <div class="my-8 min-h-[250px] bg-slate-50 border border-dashed border-slate-300 rounded-lg flex items-center justify-center text-slate-400">
+      <ins class="adsbygoogle" style="display:block; min-width:300px; min-height:250px;" data-ad-format="auto"></ins>
+    </div>
 
     <article class="prose prose-slate max-w-none mt-12">
-      <h2 id="why-calculate">為什麼要計算貓咪的換算年齡？</h2>
-      <p>貓咪的生命週期與人類截然不同。根據研究，貓咪前兩年的成長最為迅猛，約在兩歲時就已經達到人類約 24 歲的發育成熟水平。了解愛貓目前處於哪個生命階段，是給予正確飲食規劃、預防醫學檢查的關鍵。</p>
-      
-      <h3 id="age-table">貓咪生命階段與人類對照</h3>
-      <ul>
-        <li><strong>幼貓期 (0-1歲)</strong>：社交行為與體格發育的黃金期。</li>
-        <li><strong>成貓期 (2-7歲)</strong>：身體機能最穩定的巔峰期。</li>
-        <li><strong>熟齡/高齡期 (7歲以上)</strong>：代謝減緩，需開始注意腎臟病、牙科問題與關節保養。</li>
-      </ul>
+      <p>許多貓咪飼主都想知道「貓咪一歲等於人類幾歲？」。不同於狗狗，貓咪的年齡換算較為統一，但也並非簡單的倍數關係。根據美國獸醫師協會 (AVMA) 的標準，貓咪在生命的前兩年發育最快，其生理成熟度遠超我們的想像。</p>
 
-      <h2 id="faq">常見問題 (FAQ)</h2>
+      <h2>正確的貓咪年齡換算原理</h2>
+      <p>貓咪在出生後的第一年，約可達到人類 15 歲的生理發育水平；第二年則達到人類約 24 歲的成熟階段。此後，貓咪的每一年大約等於人類的 4 個歲月。這種非線性的成長曲線，正是我們需要專業計算機的原因，它能幫助您更精準地了解愛貓的生命歷程。</p>
+
+      <h2>如何使用貓咪年齡換算計算機？</h2>
+      <ol>
+        <li>在「貓咪目前歲數」欄位輸入您的愛貓的實際年齡。</li>
+        <li>點擊「開始換算」按鈕，即可立即查看結果。</li>
+      </ol>
+
+      <h2>貓咪各生命階段照護指南與常見問題 (FAQ)</h2>
+      <p>精確了解貓咪的換算年齡，能幫助您更好地為牠們提供適齡的飲食、遊戲與醫療照護，確保牠們健康快樂地成長與老化。</p>
       <dl>
-        <dt class="font-bold">Q: 室內貓壽命通常比較長嗎？</dt>
-        <dd class="mb-4">A: 是的，室內貓避免了戶外的寄生蟲、傳染病與交通事故，平均壽命顯著長於室外貓。</dd>
-        <dt class="font-bold">Q: 貓咪幾歲算老貓？</dt>
-        <dd class="mb-4">A: 一般獸醫學上將 10 歲以上的貓咪定義為高齡貓。</dd>
+        <dt class="font-bold mt-4">Q: 1歲的貓等於人類幾歲？</dt>
+        <dd class="mb-2">A: 根據 AVMA，1歲貓約等於人類15歲，這也是牠們生理發育最快的時期。</dd>
+
+        <dt class="font-bold mt-4">Q: 貓咪幾歲算老？</dt>
+        <dd class="mb-2">A: 一般獸醫學上，貓咪在 7-10 歲即可視為熟齡貓，10 歲以上則為高齡貓。</dd>
+
+        <dt class="font-bold mt-4">Q: 幼貓期 (0-1歲) 應注意哪些照護？</dt>
+        <dd class="mb-2">A: 幼貓期是成長的關鍵。此階段應完成所有必要的疫苗接種、進行社會化訓練，並提供高營養、易消化的幼貓專用食品，確保骨骼和肌肉的健康發育。</dd>
+
+        <dt class="font-bold mt-4">Q: 成貓期 (1-7歲) 的照護重點是什麼？</dt>
+        <dd class="mb-2">A: 成貓期需維持規律的運動，控制體重以預防肥胖。定期健康檢查（每年一次）是早期發現疾病的重要手段。選擇適合其活動量和品種的優質貓糧。</dd>
+
+        <dt class="font-bold mt-4">Q: 高齡貓 (7歲以上) 有哪些特殊的照護需求？</dt>
+        <dd class="mb-2">A: 高齡貓需要更頻繁的健康檢查（建議每半年一次），特別是針對腎臟、甲狀腺功能及牙齒問題。飲食應調整為低磷、低鈉、高纖維的處方糧，並可考慮補充關節保健品。提供溫暖舒適的休息環境。</dd>
       </dl>
+      
+      <p class="text-xs text-slate-500 mt-8"><em>免責聲明：本工具基於美國獸醫師協會 (AVMA) 指導原則與普遍獸醫科學數據開發，結果僅供參考，不具備任何診斷功能。若您的愛貓有任何健康疑慮，請務必諮詢專業獸醫師。</em></p>
+
+      <div class="mt-12 py-8 border-t border-slate-200 flex justify-between items-center">
+        <a href="/tools/dog-age-calculator" class="text-blue-600 font-bold hover:text-blue-800">← 狗狗年齡計算</a>
+        <a href="/" class="text-slate-500 hover:text-blue-600">返回首頁</a>
+      </div>
     </article>
   </div>
 
-  <script>
-    const btn = document.getElementById('calcBtn');
-    const input = document.getElementById('catAge') as HTMLInputElement;
-    const result = document.getElementById('result');
-
-    btn?.addEventListener('click', async () => {
-      const age = parseFloat(input.value);
-      const res = await fetch('/api/calculate-age', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ type: 'cat', age }),
-      });
-      const data = await res.json();
-      if (result) {
-        result.textContent = `您的愛貓約等於人類 ${data.result} 歲`;
-        result.classList.remove('hidden');
-      }
-    });
-  </script>
-
-  <script type="application/ld+json">
+  <script type="application/ld+json" is:inline>
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "貓咪人類年齡換算計算機",
-    "description": "AVMA標準計算貓咪對應人類歲數與照護指南。"
+    "applicationCategory": "Utilities",
+    "description": "採用 AVMA 獸醫標準演算法，一鍵精算貓咪年齡。"
   }
+  </script>
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "1歲的貓等於人類幾歲？",
+        "acceptedAnswer": { "@type": "Answer", "text": "根據 AVMA，1歲貓約等於人類15歲，這是牠們生理發育最快的時期。" }
+      },
+      {
+        "@type": "Question",
+        "name": "貓咪幾歲算老？",
+        "acceptedAnswer": { "@type": "Answer", "text": "一般獸醫學上，貓咪在 7-10 歲即可視為熟齡貓，10 歲以上則為高齡貓。" }
+      },
+      {
+        "@type": "Question",
+        "name": "幼貓期 (0-1歲) 應注意哪些照護？",
+        "acceptedAnswer": { "@type": "Answer", "text": "幼貓期應完成所有必要的疫苗接種、進行社會化訓練，並提供高營養、易消化的幼貓專用食品。" }
+      },
+      {
+        "@type": "Question",
+        "name": "成貓期 (1-7歲) 的照護重點是什麼？",
+        "acceptedAnswer": { "@type": "Answer", "text": "成貓期需維持規律的運動，控制體重。定期健康檢查（每年一次）是早期發現疾病的重要手段。" }
+      },
+      {
+        "@type": "Question",
+        "name": "高齡貓 (7歲以上) 有哪些特殊的照護需求？",
+        "acceptedAnswer": { "@type": "Answer", "text": "高齡貓需要更頻繁的健康檢查，飲食應調整為低磷、低鈉、高纖維的處方糧，並可考慮補充關節保健品。" }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    const ageInput = document.getElementById('catAge') as HTMLInputElement;
+    const calcBtn = document.getElementById('calcBtn');
+    const resultBox = document.getElementById('resultBox');
+    const resultDisplay = document.getElementById('result');
+    const shareBtn = document.getElementById('shareBtn');
+
+    const calculateHumanAgeCat = (age: number) => {
+      if (age <= 0) return 0;
+      if (age === 1) return 15;
+      if (age === 2) return 24;
+      return 24 + (age - 2) * 4;
+    };
+
+    const updateCalculation = () => {
+      const age = parseInt(ageInput.value);
+      const humanAge = calculateHumanAgeCat(age);
+      
+      if (resultDisplay && resultBox) {
+        resultDisplay.textContent = `您的愛貓約等於人類 ${humanAge} 歲`;
+        resultBox.classList.remove('hidden');
+      }
+    };
+
+    calcBtn?.addEventListener('click', updateCalculation);
+    ageInput?.addEventListener('input', updateCalculation);
+
+    shareBtn?.addEventListener('click', () => {
+      const age = ageInput.value;
+      const humanYears = resultDisplay?.textContent;
+      const shareText = `我的貓咪今年 ${age} 歲，換算成人類已經是 ${humanYears} 了！來算算你家毛孩幾歲：${window.location.href}`;
+      navigator.clipboard.writeText(shareText);
+      alert('分享文案已複製！');
+    });
+
+    // Initial calculation on load
+    updateCalculation();
   </script>
 </BaseLayout>
