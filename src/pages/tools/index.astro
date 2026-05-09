@@ -15,7 +15,9 @@ const allTools = await getCollection('tools');
     <div class="grid md:grid-cols-3 gap-8">
       {allTools.map((tool) => (
         <a href={`/tools/${tool.id.replace('.json', '')}`} class="group bg-white rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300">
-          <img src={tool.data.image} alt={tool.data.title} class="w-16 h-16 object-cover rounded-2xl mb-6 shadow-sm" />
+          <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
+            {tool.data.icon}
+          </div>
           <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600">{tool.data.title}</h2>
           <p class="text-slate-600 text-sm leading-relaxed">{tool.data.description}</p>
         </a>
