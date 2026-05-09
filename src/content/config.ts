@@ -12,3 +12,4 @@ const tools = defineCollection({
 });
 
 export const collections = { tools };
+// Astro v6 compliant config
