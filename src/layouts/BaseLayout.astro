@@ -2,7 +2,8 @@
 import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import AdSenseAd from '../components/AdSenseAd.astro'; // Ensure AdSenseAd is imported
+import AdSenseAd from '../components/AdSenseAd.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title?: string;
@@ -12,19 +13,16 @@ interface Props {
 
 const { title, description, breadcrumbs = [] } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="zh-TW">
-  <SEO title={title || "ToolKit"} description={description || "專業 SaaS 工具平台"} />
   <head>
+    <SEO title={title || "Pet Aging Hub - 寵物年齡與健康指南"} description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"} />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
     <!-- Global AdSense Script -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
   </head>
   <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-    <nav class="bg-white border-b">
-      <div class="max-w-5xl mx-auto px-6 py-4">
-        <a href="/" class="font-bold text-xl">ToolKit</a>
-      </div>
-    </nav>
     <!-- Header Ad Placement -->
     <div class="my-4 max-w-5xl mx-auto px-6">
       <AdSenseAd format="horizontal" />
@@ -34,16 +32,14 @@ const { title, description, breadcrumbs = [] } = Astro.props;
       {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} />}
       <slot />
     </main>
-    <footer class="border-t bg-white py-12">
-      <div class="max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
-        <a href="/about" class="block hover:text-blue-600">關於我們</a>
-        <a href="/privacy" class="block hover:text-blue-600">隱私權政策</a>
-        <a href="/terms" class="block hover:text-blue-600">使用條款</a>
-      </div>
-      <!-- Footer Ad Placement -->
-      <div class="mt-8 max-w-5xl mx-auto px-6">
+
+    <Footer />
+
+    <!-- Footer Ad Placement -->
+    <div class="bg-slate-100 py-4">
+      <div class="max-w-5xl mx-auto px-6">
         <AdSenseAd format="horizontal" />
       </div>
-    </footer>
+    </div>
   </body>
 </html>

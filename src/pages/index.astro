@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Card from '../components/Card.astro';
-import NavigationHub from '../components/NavigationHub.astro';
 ---
 
 <BaseLayout
   title="了解你的寵物：狗狗與貓咪年齡計算機與老年照護指南"
-  description="簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。提供精準的年齡計算與專業的健康建議。"
+  description="簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"
 >
-  <NavigationHub />
 
   <!-- Hero Section -->
   <div class="bg-gradient-to-b from-amber-50 to-white border-b border-amber-100">
@@ -68,90 +66,6 @@ import NavigationHub from '../components/NavigationHub.astro';
 
   <div class="max-w-5xl mx-auto px-6 py-12">
 
-    <!-- Popular Tools Section -->
-    <section class="mb-16">
-      <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <span class="text-2xl">🧮</span>
-            熱門工具
-          </h2>
-          <p class="text-slate-600 mt-1">快速了解你的寵物</p>
-        </div>
-        <a href="/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">
-          查看全部 →
-        </a>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <a href="/tools/dog-age-calculator/" class="group block">
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-4xl">🐕</span>
-              <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">熱門</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">狗狗年齡計算機</h3>
-            <p class="text-sm text-slate-600">輸入狗狗年齡與體型，計算人類年齡對照與生命階段建議</p>
-          </Card>
-        </a>
-
-        <a href="/tools/cat-age-calculator/" class="group block">
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-4xl">🐱</span>
-              <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">熱門</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">貓咪年齡計算機</h3>
-            <p class="text-sm text-slate-600">了解你家貓咪處於哪個生命階段，獲得針對性的照護建議</p>
-          </Card>
-        </a>
-
-        <a href="/tools/compare-aging/" class="group block">
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-4xl">⚖️</span>
-              <span class="px-2 py-1 bg-teal-100 text-teal-700 text-xs font-bold rounded-full">新功能</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">年齡對照工具</h3>
-            <p class="text-sm text-slate-600">同時比較狗狗和貓咪的人類年齡，快速了解誰更「老」</p>
-          </Card>
-        </a>
-
-        <a href="/tools/lifespan-calculator/" class="group block">
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-4xl">⏳</span>
-              <span class="px-2 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold rounded-full">實用</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">壽命計算機</h3>
-            <p class="text-sm text-slate-600">根據品種、年齡和生活方式估算你家寵物的剩餘壽命</p>
-          </Card>
-        </a>
-
-        <a href="/tools/symptom-checklist/" class="group block">
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-4xl">📋</span>
-              <span class="px-2 py-1 bg-red-100 text-red-700 text-xs font-bold rounded-full">健康</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">症狀檢核表</h3>
-            <p class="text-sm text-slate-600">快速評估寵物的健康狀況，獲得初步風險評估與就醫建議</p>
-          </Card>
-        </a>
-
-        <a href="/blog/pet-aging-guide/" class="group block">
-          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-            <div class="flex items-center gap-3 mb-4">
-              <span class="text-4xl">📖</span>
-              <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">導覽</span>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">老化完整指南</h3>
-            <p class="text-sm text-slate-600">所有老化相關內容的導覽頁，從基礎到進階的照護知識</p>
-          </Card>
-        </a>
-      </div>
-    </section>
-
     <!-- Featured Guides Section -->
     <section class="mb-16">
       <div class="flex items-center justify-between mb-8">
@@ -163,7 +77,7 @@ import NavigationHub from '../components/NavigationHub.astro';
           <p class="text-slate-600 mt-1">深入了解寵物老化與健康</p>
         </div>
         <a href="/blog/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">
-          查看全部文章 →
+          所有文章 →
         </a>
       </div>
 
@@ -234,9 +148,102 @@ import NavigationHub from '../components/NavigationHub.astro';
       </div>
     </section>
 
+    <!-- Popular Calculators Section -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+            <span class="text-2xl">🧮</span>
+            熱門計算機
+          </h2>
+          <p class="text-slate-600 mt-1">快速了解你的寵物年齡</p>
+        </div>
+        <a href="/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">
+          所有工具 →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="/tools/dog-age-calculator/" class="group block">
+          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-4xl">🐕</span>
+              <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">熱門</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">狗狗年齡計算機</h3>
+            <p class="text-sm text-slate-600">輸入年齡與體型，獲得人類年齡對照與生命階段建議</p>
+          </Card>
+        </a>
+
+        <a href="/tools/cat-age-calculator/" class="group block">
+          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-4xl">🐱</span>
+              <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">熱門</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">貓咪年齡計算機</h3>
+            <p class="text-sm text-slate-600">了解你家貓咪的生命階段，獲得針對性的照護建議</p>
+          </Card>
+        </a>
+
+        <a href="/tools/compare-aging/" class="group block">
+          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-4xl">⚖️</span>
+              <span class="px-2 py-1 bg-teal-100 text-teal-700 text-xs font-bold rounded-full">新功能</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">年齡對照工具</h3>
+            <p class="text-sm text-slate-600">同時比較狗狗和貓咪的人類年齡，快速了解誰更「老」</p>
+          </Card>
+        </a>
+      </div>
+    </section>
+
+    <!-- Latest Articles Section -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+            <span class="text-2xl">📰</span>
+            最新文章
+          </h2>
+          <p class="text-slate-600 mt-1">老化徵兆與早期發現</p>
+        </div>
+        <a href="/blog/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">
+          查看全部 →
+        </a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="/blog/dog-aging-signs/" class="group block">
+          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">🐕</span>
+              <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">狗狗</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">狗狗老化徵兆完整指南</h3>
+            <p class="text-sm text-slate-600 mb-3">7個不容忽視的老化徵兆與早期發現的重要性</p>
+            <span class="text-xs text-slate-500">閱讀時間：約8分鐘</span>
+          </Card>
+        </a>
+
+        <a href="/blog/cat-aging-signs/" class="group block">
+          <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
+            <div class="flex items-center gap-3 mb-3">
+              <span class="text-3xl">🐱</span>
+              <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">貓咪</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">貓咪老化徵兆完整指南</h3>
+            <p class="text-sm text-slate-600 mb-3">7個預示愛貓進入熟齡期的身體與行為變化</p>
+            <span class="text-xs text-slate-500">閱讀時間：約8分鐘</span>
+          </Card>
+        </a>
+      </div>
+    </section>
+
     <!-- Senior Pet Resources Section -->
     <section class="mb-16">
-      <div class="bg-gradient-to-r from-amber-50 to-orange-50 rounded-3xl p-8 border border-amber-100">
+      <div class="bg-slate-50 rounded-3xl p-8 border border-slate-200">
         <div class="text-center mb-8">
           <h2 class="text-2xl font-bold text-slate-900 flex items-center justify-center gap-3">
             <span class="text-3xl">❤️</span>
@@ -246,36 +253,36 @@ import NavigationHub from '../components/NavigationHub.astro';
         </div>
 
         <div class="grid md:grid-cols-3 gap-6">
-          <a href="/blog/dog-aging-signs/" class="group bg-white rounded-2xl p-5 border border-amber-100 hover:shadow-md transition-all">
+          <a href="/blog/dog-aging-signs/" class="group bg-white rounded-2xl p-5 border border-slate-200 hover:shadow-md transition-all">
             <div class="flex items-center gap-3 mb-3">
               <span class="text-3xl">🐕</span>
               <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">狗狗</span>
             </div>
             <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">狗狗老化徵兆</h3>
-            <p class="text-sm text-slate-600">7個不容忽視的老化徵兆與早期發現的重要性</p>
+            <p class="text-sm text-slate-600">7個不容忽視的老化徵兆</p>
           </a>
 
-          <a href="/blog/cat-aging-signs/" class="group bg-white rounded-2xl p-5 border border-amber-100 hover:shadow-md transition-all">
+          <a href="/blog/cat-aging-signs/" class="group bg-white rounded-2xl p-5 border border-slate-200 hover:shadow-md transition-all">
             <div class="flex items-center gap-3 mb-3">
               <span class="text-3xl">🐱</span>
               <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">貓咪</span>
             </div>
             <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">貓咪老化徵兆</h3>
-            <p class="text-sm text-slate-600">7個預示愛貓進入熟齡期的身體與行為變化</p>
+            <p class="text-sm text-slate-600">7個預示熟齡期的變化</p>
           </a>
 
-          <a href="/blog/pet-aging-guide/" class="group bg-white rounded-2xl p-5 border border-amber-100 hover:shadow-md transition-all">
+          <a href="/blog/pet-aging-guide/" class="group bg-white rounded-2xl p-5 border border-slate-200 hover:shadow-md transition-all">
             <div class="flex items-center gap-3 mb-3">
               <span class="text-3xl">📖</span>
               <span class="px-2 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">總覽</span>
             </div>
             <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">老化完整指南</h3>
-            <p class="text-sm text-slate-600">所有老化相關內容的導覽與連結集合</p>
+            <p class="text-sm text-slate-600">所有內容的導覽與連結</p>
           </a>
         </div>
 
         <div class="mt-6 text-center">
-          <p class="text-sm text-slate-600 mb-4">你需要立即評估寵物的健康狀況嗎？</p>
+          <p class="text-sm text-slate-600 mb-4">需要立即評估寵物的健康狀況嗎？</p>
           <a
             href="/tools/symptom-checklist/"
             class="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-xl transition-colors"
@@ -286,13 +293,27 @@ import NavigationHub from '../components/NavigationHub.astro';
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="mb-12">
+    <!-- Bottom CTA -->
+    <section class="mb-8">
       <div class="bg-white rounded-3xl p-8 border border-slate-200 text-center">
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">關於我們</h2>
-        <p class="text-slate-600 max-w-2xl mx-auto leading-relaxed">
-          我們提供簡單易用的寵物年齡計算機和實用的老年照護指南。從科學研究與獸醫資料出發，幫助寵物主人更好地理解和管理毛孩子的健康需求。無論你是新手寵物主人或是有經驗的照護者，這裡都有實用的工具和知識來支持你。
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">開始了解你的寵物</h2>
+        <p class="text-slate-600 max-w-xl mx-auto mb-6">
+          從簡單的年齡計算開始，建立對你家寵物健康需求的更深理解。我們的工具和指南都免費使用，幫助你成為更好的寵物照護者。
         </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a
+            href="/tools/dog-age-calculator/"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-semibold rounded-xl transition-colors"
+          >
+            🐕 狗狗計算機
+          </a>
+          <a
+            href="/tools/cat-age-calculator/"
+            class="inline-flex items-center gap-2 px-6 py-3 bg-slate-600 hover:bg-slate-700 text-white font-semibold rounded-xl transition-colors"
+          >
+            🐱 貓咪計算機
+          </a>
+        </div>
       </div>
     </section>
 
