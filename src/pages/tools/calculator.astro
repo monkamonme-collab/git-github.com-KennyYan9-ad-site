@@ -3,86 +3,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 ---
 
-<BaseLayout title="科學寵物年齡換算器 | AVMA 標準" description="採用 AVMA 科學演算法，精準計算您的愛貓愛犬人類歲數。">
-  <div class="max-w-2xl mx-auto py-12 px-6">
-    <div class="flex flex-col items-center mb-12">
-      <div class="relative flex items-center justify-center w-72 h-72">
-        <svg class="w-full h-full -rotate-90">
-          <circle cx="144" cy="144" r="130" stroke="currentColor" stroke-width="12" fill="transparent" class="text-slate-200" />
-          <circle id="progressCircle" cx="144" cy="144" r="130" stroke="currentColor" stroke-width="12" fill="transparent" 
-                  stroke-dasharray="817" stroke-dashoffset="817" class="text-blue-600 transition-all duration-300" />
-        </svg>
-        <div class="absolute text-center">
-          <p id="stageLabel" class="text-xs uppercase tracking-widest text-slate-400 font-bold">PUPPY</p>
-          <h2 id="humanYears" class="text-5xl font-bold text-slate-900">15</h2>
-          <p class="text-[10px] text-slate-400 uppercase">Human Years</p>
-        </div>
-      </div>
+<BaseLayout title="專業寵物年齡計算入口 | 選擇您的專屬工具" description="深入了解您的愛犬愛貓的人類年齡對應。選擇專屬計算機，獲取基於獸醫科學的方法論與詳細照護建議。"></BaseLayout>
+   <main class="max-w-4xl mx-auto py-12 px-6">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">選擇您的專屬寵物年齡計算機</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        我們提供基於獸醫科學研究的專業年齡換算工具。選擇您的寵物類型，深入了解其生命階段、專業照護建議與詳細計算方法論。
+      </p>
+    </header>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <a href="/tools/dog-age-calculator" class="group block">
+        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-500">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">狗狗年齡計算機</h2>
+          <p class="text-slate-600 text-base">採用 AVMA 科學演算法，精準計算狗狗人類歲數，並提供生命階段照護指南。</p>
+        </Card>
+      </a>
+      <a href="/tools/cat-age-calculator" class="group block">
+        <Card className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-500">
+          <div class="text-blue-600 mb-4">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+          </div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">貓咪年齡計算機</h2>
+          <p class="text-slate-600 text-base">精準換算貓咪人類歲數，提供生命階段照護指南，了解熟齡貓與老年貓的照護重點。</p>
+        </Card>
+      </a>
     </div>
 
-    <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200 space-y-6">
-      <div class="flex gap-2 p-1 bg-slate-100 rounded-xl">
-        <button id="btnDog" class="flex-1 py-3 rounded-lg bg-white shadow font-bold text-sm">狗狗</button>
-        <button id="btnCat" class="flex-1 py-3 rounded-lg font-bold text-sm text-slate-500">貓咪</button>
-      </div>
-      
-      <div id="dogSizeWrapper" class="space-y-2">
-        <label class="text-xs font-bold text-slate-500">狗狗體型</label>
-        <select id="sizeSelect" class="w-full p-3 bg-slate-50 rounded-xl border border-slate-200">
-          <option value="small">小型 (<10kg)</option>
-          <option value="medium">中型 (10-25kg)</option>
-          <option value="large">大型 (25-40kg)</option>
-          <option value="giant">巨型 (>40kg)</option>
-        </select>
-      </div>
-
-      <div>
-        <label class="block text-xs font-bold text-slate-500 mb-2">年齡 (歲): <span id="ageVal">1</span></label>
-        <input type="range" id="ageSlider" min="0" max="20" value="1" class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600">
-      </div>
+    <div class="max-w-xl mx-auto mt-12 text-center text-sm text-slate-500">
+      <p>我們的所有計算工具皆基於最新的科學研究與權威獸醫組織（如 AVMA, AAHA）的指南開發，旨在提供您最準確可靠的資訊。</p>
     </div>
-
-    <div class="mt-8">
-      <AdSenseAd format="rectangle" />
-    </div>
-  </div>
-
-  <script>
-    let type = 'dog';
-    const ageSlider = document.getElementById('ageSlider') as HTMLInputElement;
-    const ageVal = document.getElementById('ageVal');
-    const sizeSelect = document.getElementById('sizeSelect') as HTMLSelectElement;
-    const btnDog = document.getElementById('btnDog');
-    const btnCat = document.getElementById('btnCat');
-    const dogSizeWrapper = document.getElementById('dogSizeWrapper');
-
-    function calculate() {
-      const age = parseInt(ageSlider.value);
-      const size = sizeSelect.value;
-      let humanAge = 0;
-
-      if (type === 'dog') {
-        if (age === 0) humanAge = 0;
-        else if (age === 1) humanAge = size === 'giant' ? 12 : 15;
-        else if (age === 2) humanAge = size === 'giant' ? 22 : 24;
-        else {
-          const inc = size === 'small' ? 4 : size === 'medium' ? 5 : size === 'large' ? 6 : 7;
-          humanAge = 24 + (age - 2) * inc;
-        }
-      } else {
-        humanAge = age === 0 ? 0 : age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 4;
-      }
-
-      // Update UI
-      ageVal!.textContent = age.toString();
-      document.getElementById('humanYears')!.textContent = humanAge.toString();
-      document.getElementById('progressCircle')!.style.strokeDashoffset = (817 - (Math.min(age/20, 1) * 817)).toString();
-      document.getElementById('stageLabel')!.textContent = age < 2 ? 'PUPPY' : age < 7 ? 'ADULT' : 'SENIOR';
-    }
-
-    ageSlider.addEventListener('input', calculate);
-    sizeSelect.addEventListener('change', calculate);
-    btnDog?.addEventListener('click', () => { type = 'dog'; dogSizeWrapper!.classList.remove('hidden'); calculate(); });
-    btnCat?.addEventListener('click', () => { type = 'cat'; dogSizeWrapper!.classList.add('hidden'); calculate(); });
-  </script>
+  </main>
 </BaseLayout>
+
