@@ -1,19 +1,61 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Card from '../../components/Card.astro';
+
+const categories = [
+  { name: '寵物健康', slug: 'health', icon: '💊', description: '健康檢查、疾病預防、醫療照護' },
+  { name: '寵物營養', slug: 'nutrition', icon: '🍖', description: '飲食指南、營養建議、食品安全' },
+  { name: '寵物照護', slug: 'care', icon: '🛁', description: '日常護理、清潔保養、生活管理' },
+  { name: '寵物旅行', slug: 'travel', icon: '✈️', description: '出行準備、交通須知、旅遊攻略' },
+  { name: '寵物教育', slug: 'education', icon: '📚', description: '訓練技巧、行為教育、社會化' },
+];
 ---
-<BaseLayout title="部落格">
-  <div class="max-w-5xl mx-auto py-12 px-6">
-    <h1 class="text-3xl font-bold mb-6">部落格文章</h1>
-    <div class="grid md:grid-cols-2 gap-8">
-      <Card href="/blog/seo-checker-guide" className="h-full hover:shadow-lg transition-all duration-300 hover:border-blue-500">
-        <h2 class="text-xl font-bold text-slate-900 mb-2">SEO 工具推薦</h2>
-        <p class="text-slate-600 text-sm">了解如何使用 SEO 工具提升網站排名</p>
-      </Card>
-      <Card href="/blog/ai-writing-assistant-guide" className="h-full hover:shadow-lg transition-all duration-千年暦 300 hover:border-blue-500">
-        <h2 class="text-xl font-bold text-slate-900 mb-2">AI 寫作助手指南</h2>
-        <p class="text-slate-600 text-sm">學習如何利用 AI 提升內容創作效率</p>
-      </Card>
+
+<BaseLayout title="部落格 | 寵物知識與專業指南" description="探索專業的寵物照護知識，包括健康、營養、照護、旅遊與教育。">
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">部落格</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        探索專業的寵物照護知識，守護您毛小孩的健康與幸福
+      </p>
+    </header>
+
+    <!-- 分類導航 -->
+    <nav class="mb-12">
+      <div class="flex flex-wrap justify-center gap-4">
+        {categories.map((cat) => (
+          <a
+            href={`/blog/category/${cat.slug}/`}
+            class="px-6 py-3 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-full transition-colors text-slate-700 font-medium"
+          >
+            <span class="mr-2">{cat.icon}</span>
+            {cat.name}
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <!-- 分類概覽 -->
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-8">探索分類</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={`/blog/category/${cat.slug}/`}
+            class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all"
+          >
+            <div class="text-4xl mb-4">{cat.icon}</div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600">
+              {cat.name}
+            </h3>
+            <p class="text-slate-600 text-sm">{cat.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- 提示 -->
+    <div class="mt-16 text-center text-slate-500">
+      <p>📝 文章即將陸續上架，敬請期待！</p>
     </div>
-  </div>
+  </main>
 </BaseLayout>
