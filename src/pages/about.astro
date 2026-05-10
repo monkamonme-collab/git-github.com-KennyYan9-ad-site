@@ -1,10 +1,121 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [
+  { label: '首頁', url: '/' },
+  { label: '關於我們', url: '/about/' }
+];
 ---
-<BaseLayout title="關於我們">
-  <img src="https://source.unsplash.com/featured/1200x400?team" alt="Team banner" class="w-full mb-8 rounded-lg"/>
-  <div class="max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-3xl font-bold mb-6">關於我們</h1>
-    <p class="text-slate-600">我們致力於提供極簡、高效且專業的線上工具，幫助使用者解決日常生活與工作中的瑣碎運算需求。</p>
+
+<BaseLayout
+  title="關於我們 - Pet Aging Hub"
+  description="了解 Pet Aging Hub 的使命。我們致力於幫助寵物主人通過實用工具和專業指南，更好地理解和照護老齡寵物的健康需求。"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-3xl mx-auto">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-4">關於 Pet Aging Hub</h1>
+      <p class="text-lg text-slate-600">幫助寵物主人理解老化，成為更好的照護者</p>
+    </header>
+
+    <div class="prose-slate prose-lg max-w-none">
+      <p class="text-xl text-slate-700 leading-relaxed mb-8">
+        Pet Aging Hub 成立於2024年，是一個專注於寵物老化與老年照護的免費線上資源平台。我們相信，每一位寵物主人都值得獲得實用、可靠的資訊，來幫助他們的老年寵物度過舒適、健康的黃金歲月。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">我們的使命</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        我們的使命是<strong>將複雜的獸醫學知識轉化為易懂、實用的資訊</strong>。透過計算機、指南文章和健康評估工具，我們幫助寵物主人：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>理解自家寵物的生命階段和老化進度</li>
+        <li>識別老年寵物的健康警訊</li>
+        <li>獲得針對不同品種和體型的照護建議</li>
+        <li>在就診前就能與獸醫進行有資訊基礎的討論</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">我們不是什麼</h2>
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl mb-6">
+        <p class="text-slate-700 leading-relaxed">
+          <strong>重要的是，我們不是獸醫診所，也不提供獸醫診斷或治療建議。</strong>我們的目標是作為寵物主人與專業獸醫之間的橋樑，而非取代專業的獸醫照護。所有資訊和工具僅供教育參考，不應作為醫療決策的唯一依據。
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">我們提供的內容</h2>
+
+      <div class="grid gap-6 mb-8">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">🧮</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">年齡計算工具</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                我們的狗狗和貓咪年齡計算機基於最新的獸醫學研究，幫助你了解寵物的「人類年齡」和當前生命階段。這些工具考慮了品種、體型和體重等變數，提供更準確的估算。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">📚</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">專業指南文章</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                我們的編輯團隊研究並撰寫涵蓋老化徵兆、營養需求、生活環境調整和老年疾病預防的文章。所有內容都經過整理，引用真實的獸醫學研究和數據。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">📋</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">健康檢核工具</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                我們的症狀檢核表幫助寵物主人評估寵物是否有需要注意的健康徵兆。這些工具不是診斷系統，而是幫助你判斷是否需要預約獸醫的參考。
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">📊</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">品種與老化數據</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                不同品種的狗狗和貓咪有不同的老化速度和壽命預期。我們整理了常見品種的詳細老化時間表，幫助主人針對自家寵物的特性做更好的準備。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">我們的立場</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Pet Aging Hub 是一個獨立的線上資源平台<strong>，不接受獸醫診所或寵物藥品公司的資助</strong>。我們堅持提供公正、客觀的資訊，不推销特定產品或服務。
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        網站營運主要透過Google AdSense 廣告收益支持，這使我們能夠持續提供免費內容給所有寵物主人。我們明確標示所有廣告內容，並確保廣告不會與編輯內容混淆。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">內容準確性承諾</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        我們致力於確保網站上的所有資訊準確、及時。不過，獸醫學是一個不斷發展的領域，新的研究可能會改變現有的建議。我們建議用戶：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>將我們的內容視為參考起點，而非最終答案</li>
+        <li>與了解你家寵物病史的獸醫討論具體健康問題</li>
+        <li>定期關注我們的更新，因為內容可能會隨新研究而修訂</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">聯繫我們</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        如果你有任何關於網站內容的問題、建議，或是想回報錯誤資訊，歡迎透過我們的<a href="/contact/" class="text-blue-600 hover:text-blue-700">聯絡頁面</a>與我們聯繫。我們的目標是持續改進，成為寵物主人可信賴的資源。
+      </p>
+    </div>
   </div>
 </BaseLayout>

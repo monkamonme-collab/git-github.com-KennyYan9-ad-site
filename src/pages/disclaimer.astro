@@ -1,12 +1,223 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [
+  { label: '首頁', url: '/' },
+  { label: '免責聲明', url: '/disclaimer/' }
+];
 ---
-<BaseLayout title="免責聲明">
-  <img src="https://source.unsplash.com/featured/1200x400?disclaimer" alt="Disclaimer banner" class="w-full mb-8 rounded-lg"/>
 
+<BaseLayout
+  title="免責聲明 - Pet Aging Hub"
+  description="Pet Aging Hub 免責聲明。本網站所有內容僅供教育參考，不構成獸醫建議。請務必諮詢專業獸醫進行任何醫療相關決策。"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-3xl mx-auto">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-4">免責聲明</h1>
+      <p class="text-slate-600">最後更新日期：2024年1月1日</p>
+    </header>
 
-  <div class="max-w-3xl mx-auto px-6 py-12">
-    <h1 class="text-3xl font-bold mb-6">免責聲明</h1>
-    <p class="text-slate-600">本站工具計算結果僅供參考，不負任何法律責任。</p>
+    <div class="prose-slate prose-lg max-w-none">
+      <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-r-xl mb-8">
+        <h2 class="font-bold text-red-800 text-lg mb-2 flex items-center gap-2">
+          <span>⚠️</span> 閱讀前必讀
+        </h2>
+        <p class="text-slate-700 leading-relaxed">
+          <strong>本網站的所有內容、工具和資源僅供一般教育資訊目的，不構成獸醫學建議、診斷或治療。</strong>本網站不是獸醫診所，也不提供獸醫服務。在做任何與您寵物健康相關的決定之前，請務必諮詢持牌的獸醫專業人員。
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">一、資訊性質聲明</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Pet Aging Hub 網站上發布的所有內容，包括但不限於文章、計算機、指南和健康評估工具，都是以「現狀」和「可用」的方式提供。我們努力確保資訊的準確性，但：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>我們<strong>不對內容的準確性、完整性或時效性做任何明示或暗示的保證</strong></li>
+        <li>獸醫學研究不斷發展，新的發現可能會使某些資訊過時</li>
+        <li>個體動物的情況各有不同，我們的內容是概括性的，不能涵蓋所有例外情況</li>
+        <li>我們可能無法及時更新所有過時資訊</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">二、計算機和工具的限制</h2>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2.1 年齡計算的估算性質</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        本網站提供的寵物年齡計算機（狗狗年齡計算機、貓咪年齡計算機、壽命計算機等）僅基於：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>一般統計數據和行業認可的平均值</li>
+        <li>公開的獸醫學研究和數據</li>
+        <li>大眾化的老化公式（如「狗的1年=人的7年」等）</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        <strong>重要限制：</strong>
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>計算結果是<strong>估計值，不是精確測量</strong></li>
+        <li>不同品種的差異可能使結果偏離實際年齡</li>
+        <li>個體健康狀況、生活方式和基因會顯著影響老化速度</li>
+        <li>混合品種（米克斯）的估算可能特別不準確</li>
+        <li>營養狀況和醫療照護水平會影響個體老化</li>
+      </ul>
+
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl mb-6">
+        <h3 class="font-bold text-amber-800 mb-2">💡 使用建議</h3>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          請將年齡計算機的結果視為<strong>一般參考範圍</strong>，而非精確數值。如果您需要了解寵物的精確健康狀況，應該諮詢獸醫並進行專業檢查。
+        </p>
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2.2 症狀檢核表的非診斷性質</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        本網站的症狀檢核表和健康評估工具是<strong>教育性質的非診斷工具</strong>：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>它們<strong>不能識別、診斷、解釋或治療</strong>任何特定的健康問題</li>
+        <li>它們不能取代獸醫的臨床評估和診斷測試</li>
+        <li>它們基於一般性狀況列表，不能涵蓋所有可能的疾病</li>
+        <li>它們的結果應被視為「是否需要就醫」的初步參考，而非確定性診斷</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2.3 老化徵兆列表的限制</h3>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        我們的文章中介紹的老化徵兆是基於普遍觀察和統計趨勢，並非針對您的特定寵物。有些徵兆可能是其他健康問題的表徵，而非單純的老化。專業獸醫可以進行更全面的評估。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">三、不是獸醫建議</h2>
+
+      <div class="bg-red-50 border-2 border-red-200 p-6 rounded-2xl mb-6">
+        <h3 class="font-bold text-red-800 text-lg mb-3">🚨 明確聲明</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          <strong>Pet Aging Hub 不是獸醫診所，不提供獸醫建議、診斷或治療。</strong>
+        </p>
+        <p class="text-slate-700 leading-relaxed">
+          本網站的任何內容，無論是文字、圖像、音頻或任何其他形式，都不應被解讀為獸醫學建議。我們的編輯團隊不代表、也不聲稱代表任何獸醫專業人員。我們強烈建議：
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-700 mt-4">
+          <li>如有健康疑慮，立即諮詢持牌獸醫</li>
+          <li>不要延誤就醫，即使您剛使用過我們的症狀檢核表</li>
+          <li>不要因為網站上的資訊而忽視獸醫的建議</li>
+          <li>在做任何醫療決策前，务必諮詢專業獸醫</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">四、獸醫專業建議的必要性</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        正確的寵物健康評估需要：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>由持牌獸醫進行的親自檢查</li>
+        <li>必要的血液檢查、影像學檢查和其他診斷測試</li>
+        <li>了解寵物完整病史的獸醫評估</li>
+        <li>專業的獸醫設備和環境</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        網路上的資訊（包括本網站）無法替代這些專業評估。如果您觀察到您的寵物有任何健康問題的跡象，請預約獸醫門診。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">五、緊急情況</h2>
+
+      <div class="bg-red-100 border-2 border-red-300 p-6 rounded-2xl mb-6">
+        <h3 class="font-bold text-red-800 text-lg mb-3">⚠️ 寵物緊急情況</h3>
+        <p class="text-slate-700 leading-relaxed mb-4">
+          如果您的寵物出現以下情況，<strong>請立即就醫</strong>，不要等待或嘗試使用本網站的自助工具：
+        </p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+          <li>呼吸困難或呼吸急促</li>
+          <li>意識喪失或昏迷</li>
+          <li>大量出血</li>
+          <li>中毒症狀（如嘔吐、腹瀉、抽搐）</li>
+          <li>嚴重創傷</li>
+          <li>突然虛脫</li>
+          <li>持續嘔吐或腹瀉</li>
+          <li>無法排尿</li>
+        </ul>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">六、外部連結的責任</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        本網站可能包含指向外部網站的連結，包括：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>獸醫資源和教育網站</li>
+        <li>寵物健康資訊平台</li>
+        <li>學術研究和數據庫</li>
+        <li>產品和服務供應商</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        這些外部連結的內容由各自的網站管理者負責，我們不對其準確性、完整性或可靠性負責。造訪任何外部連結即表示您承認並同意自擔風險。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">七、品種和個體差異</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        我們承認並強調：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>不同品種的狗狗和貓咪有截然不同的老化模式和壽命預期</li>
+        <li>混合品種（米克斯）可能繼承多個品種的特徵，使預測更加困難</li>
+        <li>個體動物的基因、健康狀況和生活方式會顯著影響其老化過程</li>
+        <li>營養、運動、環境和醫療照護都會影響壽命和生活品質</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        因此，本網站提供的所有數據和建議都應被視為概括性指導，而非絕對標準。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">八、廣告和第三方內容</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        本網站展示 Google AdSense 廣告和其他第三方廣告。關於這些廣告：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>廣告內容的準確性由廣告主負責，我們不做任何保證</strong></li>
+        <li>我們不推廣或認可任何特定的寵物產品或服務</li>
+        <li>廣告鏈接的第三方網站不受本網站控制</li>
+        <li>我們不對任何第三方產品、服務或建議負責</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">九、版本更新和準確性</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        獸醫學是一個不斷發展的領域。我們的內容基於發布時可获得的最新資訊，但我們無法保證：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>所有資訊都反映最新的科學研究</li>
+        <li>推薦和建議在未來仍然有效</li>
+        <li>任何特定的計算公式或數據不會被修訂</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        我們鼓勵用戶使用多個來源來驗證重要的健康資訊，並定期檢查更新。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">十、使用條款</h2>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        本免責聲明是<a href="/terms/" class="text-blue-600 hover:text-blue-700">服務條款</a>的一部分。使用本網站即表示您同意受這些條款約束。如有衝突，應以本免責聲明為準。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">十一、如何獲取專業幫助</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        如果您需要獸醫建議，建議您：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>聯繫您所在地的持牌獸醫診所</li>
+        <li>造訪離您最近的動物醫院或急診中心</li>
+        <li>使用官方獸醫學會的資源來尋找合格的專業人員</li>
+        <li>如有緊急情況，立即就醫，不要延誤</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">十二、聯絡我們</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        如果您對本免責聲明有任何疑問，歡迎透過以下方式聯繫我們：
+      </p>
+
+      <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+        <p class="text-slate-700">
+          <strong>Pet Aging Hub</strong><br />
+          電子郵件：<a href="mailto:contact@petaginghub.com" class="text-blue-600 hover:text-blue-700">contact@petaginghub.com</a>
+        </p>
+        <p class="text-slate-500 text-sm mt-4">
+          請注意：我們無法提供個人化的獸醫建議。如需個人化的建議，請預約當地的獸醫門診。
+        </p>
+      </div>
+    </div>
   </div>
 </BaseLayout>

@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [
+  { label: '首頁', url: '/' },
+  { label: '隱私權政策', url: '/privacy-policy/' }
+];
+---
+
+<BaseLayout
+  title="隱私權政策 - Pet Aging Hub"
+  description="Pet Aging Hub 隱私權政策。了解我們如何收集、使用和保護您的個人資訊，以及 cookie 和第三方廣告的使用方式。"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-3xl mx-auto">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-4">隱私權政策</h1>
+      <p class="text-slate-600">最後更新日期：2024年1月1日</p>
+    </header>
+
+    <div class="prose-slate prose-lg max-w-none">
+      <p class="text-slate-700 leading-relaxed mb-8">
+        Pet Aging Hub（以下簡稱「本網站」、「我們」）非常重視您的隱私權。本隱私權政策說明當您造訪我們的網站時，我們如何收集、使用、揭露和保護您的資訊。請仔細閱讀以下內容，了解我們的隱私實踐。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">一、我們收集的資訊</h2>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1.1 自動收集的資訊</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        當您造訪本網站時，我們會自動收集某些資訊，包括：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>裝置資訊</strong>：包括您的 IP 位址、瀏覽器類型、作業系統、裝置類型和唯一裝置識別碼。</li>
+        <li><strong>瀏覽資訊</strong>：包括您存取的頁面、點擊的連結、在頁面上花費的時間、 referral URL 和搜尋引擎關鍵字。</li>
+        <li><strong>Cookie 資料</strong>：我們使用 cookie 和類似的追蹤技術來收集關於您瀏覽活動的資訊。詳見下方的「Cookie 政策」章節。</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">1.2 您主動提供的資訊</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        如果您選擇透過我們的聯絡表單與我們互動，我們可能會收集：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>您的電子郵件地址</li>
+        <li>您自願在訊息中提供的任何資訊</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        <strong>重要：我們的計算機和工具不要求您建立帳戶或提供個人識別資訊。</strong>所有計算都在您的瀏覽器本地完成，我們不會儲存您輸入的年齡或體重資料。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">二、Cookie 政策</h2>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2.1 什麼是 Cookie？</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Cookie 是小型文字檔案，儲存在您的裝置上，用於記住您的偏好和瀏覽活動。我們使用 cookie 來改善您的網站體驗和提供個人化內容。
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2.2 我們使用的 Cookie 類型</h3>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-4 py-3 text-left font-semibold text-slate-700 rounded-tl-lg">Cookie 類型</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">用途</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700 rounded-tr-lg">保留時間</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">必要 Cookie</td>
+              <td class="px-4 py-3 text-slate-600">網站基本功能所必需</td>
+              <td class="px-4 py-3 text-slate-600">工作階段</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">分析 Cookie</td>
+              <td class="px-4 py-3 text-slate-600">了解訪客如何與網站互動</td>
+              <td class="px-4 py-3 text-slate-600">最多 2 年</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium text-slate-700">廣告 Cookie</td>
+              <td class="px-4 py-3 text-slate-600">用於投放相關廣告</td>
+              <td class="px-4 py-3 text-slate-600">最多 1 年</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">2.3 管理 Cookie 偏好</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        大多數瀏覽器允許您透過設定來控制 cookie。您可以在瀏覽器設定中：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>檢視已儲存的 cookie</li>
+        <li>刪除特定或所有 cookie</li>
+        <li>封鎖來自特定網站的 cookie</li>
+        <li>封鎖所有 cookie</li>
+        <li>清除所有 cookie 關閉瀏覽器時</li>
+      </ul>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        請注意，如果您選擇停用 cookie，本網站的某些功能可能無法正常運作。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">三、Google Analytics 的使用</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        我們使用 Google Analytics 來分析網站流量和使用模式。Google Analytics 會收集標準的網頁日誌資訊和匿名訪客行為資訊，協助我們了解訪客如何與我們的內容互動。
+      </p>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Google Analytics 使用 cookie 來收集關於網站訪問的匿名統計資訊。這些資訊幫助我們：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>了解哪些頁面最受歡迎</li>
+        <li>識別技術問題</li>
+        <li>優化網站內容和使用者體驗</li>
+        <li>評估行銷活動的效果</li>
+      </ul>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Google Analytics 收集的資訊（包括您的 IP 位址）可能會被傳輸和儲存於 Google 的伺服器上。Google 可能會使用這些資訊來評估網站使用情況、編譯網站活動報告，並提供其他與網站活動和網際網路使用相關的服務。
+      </p>
+
+      <p class="text-slate-700 leading-relaxed mb-6">
+        您可以透過安裝 <a href="https://tools.google.com/dlpage/gaoptout" class="text-blue-600 hover:text-blue-700" rel="noopener noreferrer" target="_blank">Google Analytics 停用瀏覽器附加元件</a>來選擇不參與 Google Analytics。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">四、Google AdSense 與第三方廣告</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        本網站使用 Google AdSense 在網頁上顯示廣告。Google 可能會使用 cookie 來根據您之前造訪過的網站和興趣來投放相關廣告。
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4.1 Google 如何使用廣告 cookie</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Google 會使用 cookie 根據您過去的瀏覽記錄來個人化您在造訪本網站和其他網站時看到的廣告。這種個人化廣告的過程包括：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>記住您的偏好和設定</li>
+        <li>測量廣告效果</li>
+        <li>防止您重複看到相同的廣告</li>
+        <li>根據您的興趣投放相關廣告</li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4.2 第三方的 cookie 和資料使用</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        請注意，Google AdSense 可能允許第三方（包括 Google 自己和廣告合作夥伴）在您的瀏覽器上讀取和設置 cookie，以及基於您對本網站和其他網站的訪問來記錄您的活動。
+      </p>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4.3 選擇退出個人化廣告</h3>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        您可以透過以下方式選擇退出個人化廣告：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>訪問 <a href="https://www.google.com/settings/ads" class="text-blue-600 hover:text-blue-700" rel="noopener noreferrer" target="_blank">Google 廣告設定</a>頁面</li>
+        <li>啟用「退出網站參與資料收集」的瀏覽器插件</li>
+        <li>使用 <a href="https://optout.aboutads.info/" class="text-blue-600 hover:text-blue-700" rel="noopener noreferrer" target="_blank">Digital Advertising Alliance 的選擇退出工具</a></li>
+      </ul>
+
+      <h3 class="text-xl font-bold text-slate-900 mt-6 mb-3">4.4 廣告標示</h3>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        本網站的廣告區塊會清楚標示為「廣告」或「贊助內容」，以區分編輯內容與付費推廣內容。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">五、第三方連結</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        本網站可能包含指向第三方網站的連結，包括獸醫資源網站、健康資訊平台和社群媒體。這些第三方網站有自己的隱私權政策和使用條款，我們強烈建議您在造訪時閱讀他們的政策。
+      </p>
+
+      <p class="text-slate-700 leading-relaxed mb-6">
+        我們不對第三方網站的隱私實踐或內容負責。您在這些網站上提供的任何資訊將受該網站的隱私權政策約束。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">六、資料安全</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        我們採取合理的技術和組織措施來保護您的個人資訊，防止未經授權的訪問、使用或洩露。然而，請注意，沒有任何互聯網傳輸或電子儲存方法是 100% 安全的，我們無法保證絕對的安全性。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">七、您的隱私權利</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        根據適用的資料保護法律，您可能有權：
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li><strong>訪問</strong>您的個人資料</li>
+        <li><strong>更正</strong>不準確的個人資料</li>
+        <li><strong>刪除</strong>您的個人資料（又稱「被遺忘權」）</li>
+        <li><strong>限制</strong>處理您的個人資料</li>
+        <li><strong>反對</strong>處理您的個人資料</li>
+        <li><strong>資料可攜性</strong>權利</li>
+      </ul>
+
+      <p class="text-slate-700 leading-relaxed mb-6">
+        如需行使任何上述權利，或對我們的隱私實踐有任何疑問，請透過<a href="/contact/" class="text-blue-600 hover:text-blue-700">聯絡頁面</a>與我們聯繫。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">八、兒童隱私</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-6">
+        本網站不適用於13歲以下的兒童，我們不會故意收集13歲以下兒童的個人資訊。如果您認為我們錯誤地收集了兒童的資訊，請立即聯繫我們，我們會迅速刪除此類資訊。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">九、政策 變更</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        我們可能會不時更新本隱私權政策。任何變更都會在本頁面上公告，並更新「最後更新日期」。我們建議您定期查看本頁面，以了解我們的隱私實踐是否有任何變更。
+      </p>
+
+      <p class="text-slate-700 leading-relaxed mb-6">
+        重大變更時，我們會透過網站首頁的公告或直接發送電子郵件來通知您。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">十、聯絡我們</h2>
+
+      <p class="text-slate-700 leading-relaxed mb-4">
+        如果您對本隱私權政策有任何疑問、疑慮或請求，請透過以下方式聯繫我們：
+      </p>
+
+      <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+        <p class="text-slate-700">
+          <strong>Pet Aging Hub</strong><br />
+          電子郵件：<a href="mailto:contact@petaginghub.com" class="text-blue-600 hover:text-blue-700">contact@petaginghub.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
