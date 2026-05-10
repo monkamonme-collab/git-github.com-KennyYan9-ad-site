@@ -19,6 +19,17 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
   ]}
 >
   <article class="max-w-3xl mx-auto px-6 py-12">
+
+    <!-- Hero Image -->
+    <div class="mb-10 -mx-6 md:mx-0 md:rounded-2xl overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1587300003388-98908cca7b9c?w=1200&h=675&fit=crop"
+        alt="一位主人輕轻撫摸著老年黃金獵犬，表達溫暖的照護與陪伴"
+        class="w-full aspect-video object-cover"
+        loading="eager"
+      />
+    </div>
+
     <!-- 標題區 -->
     <header class="mb-10">
       <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
@@ -33,6 +44,20 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     <!-- 營養與餵養 -->
     <section class="mb-10">
       <h2>營養與餵養：吃得好，是一切的根本</h2>
+
+      <!-- Inline Image: Senior dog eating -->
+      <figure class="my-8 md:float-right md:ml-8 md:w-1/2">
+        <img
+          src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=450&fit=crop"
+          alt="老年犬在舒適的環境中安静進食"
+          class="w-full aspect-[4/3] object-cover rounded-xl"
+          loading="lazy"
+        />
+        <figcaption class="text-sm text-slate-500 mt-2 text-center">
+          老年寵物需要更容易咀嚼和消化的食物
+        </figcaption>
+      </figure>
+
       <p>進入老年後，寵物的新陳代謝變慢，活動量下降，但身體組織修復的需求反而增加。許多主人會問：「到底應該繼續吃成犬（成貓）飼料，還是換成年齡配方？」</p>
 
       <h3>什麼時候該換老年配方飼料？</h3>
@@ -54,6 +79,20 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     <!-- 體重與身體狀況監控 -->
     <section class="mb-10">
       <h2>體重與身體狀況：每個月看一眼，其實很重要</h2>
+
+      <!-- Inline Image: Healthy weight illustration -->
+      <figure class="my-8 md:float-right md:ml-8 md:w-1/2">
+        <img
+          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=450&fit=crop"
+          alt="健康體態的狗在草地上散步"
+          class="w-full aspect-[4/3] object-cover rounded-xl"
+          loading="lazy"
+        />
+        <figcaption class="text-sm text-slate-500 mt-2 text-center">
+          維持理想體重能減輕關節負擔
+        </figcaption>
+      </figure>
+
       <p>多數主人帶寵物去獸醫院時才會測量體重，但體重變化，其實在家就能追蹤。這件事做起來比想像中簡單，而且有時候體重的增減，是疾病的早期徵兆。</p>
 
       <h3>如何在家監控體重</h3>
@@ -74,6 +113,20 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     <!-- 情緒與行為變化 -->
     <section class="mb-10">
       <h2>情緒與行為：你最了解你的寵物</h2>
+
+      <!-- Inline Image: Owner with senior dog -->
+      <figure class="my-8">
+        <img
+          src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=450&fit=crop"
+          alt="主人在公園陪伴老年狗散步"
+          class="w-full aspect-video object-cover rounded-xl"
+          loading="lazy"
+        />
+        <figcaption class="text-sm text-slate-500 mt-2 text-center">
+          老年寵物的行為變化往往比血液檢查更早提示健康問題
+        </figcaption>
+      </figure>
+
       <p>獸醫問診時，有一個問題幾乎每次都會問：「和平時比起來，現在怎麼樣？」這說明了一件事：你的日常觀察，其實是獸醫最需要的參考資料。老年寵物的行為變化，往往比血液檢查更早提示健康問題。</p>
 
       <h3>這些變化值得注意</h3>
@@ -107,6 +160,20 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     <!-- 居家環境調整 -->
     <section class="mb-10">
       <h2>居家環境：小小的調整，大大的不同</h2>
+
+      <!-- Inline Image: Comfortable pet bed -->
+      <figure class="my-8 md:float-right md:ml-8 md:w-1/2">
+        <img
+          src="https://images.unsplash.com/photo-1520087619250-584c0cbd35e8?w=600&h=450&fit=crop"
+          alt="舒適的狗床放在温暖的家裡"
+          class="w-full aspect-[4/3] object-cover rounded-xl"
+          loading="lazy"
+        />
+        <figcaption class="text-sm text-slate-500 mt-2 text-center">
+          選擇支撐性良好的床墊能減輕關節壓力
+        </figcaption>
+      </figure>
+
       <p>老年寵物的生活品質，很大一部分取決於居家環境的友善程度。很多時候，只要做一點小小的調整，牠們就能過得更舒適、更安全。</p>
 
       <h3>關節與行動方面</h3>
@@ -136,6 +203,20 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     <!-- 最後的陪伴 -->
     <section class="mb-10">
       <h2>關於陪伴：這段時間對你們都很重要</h2>
+
+      <!-- Final Image: Pet and owner bond -->
+      <figure class="my-8">
+        <img
+          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=450&fit=crop"
+          alt="狗和貓一起依偎，表達寵物與主人的深厚情感連結"
+          class="w-full aspect-video object-cover rounded-xl"
+          loading="lazy"
+        />
+        <figcaption class="text-sm text-slate-500 mt-2 text-center">
+          老年寵物的陪伴同樣珍贵有意義
+        </figcaption>
+      </figure>
+
       <p>說到老年寵物照護，很難不提「時間」這個話題。老年寵物的照護，确实需要投入額外的精力與時間——帶去看診、調整居家環境、注意行為變化。有時候會覺得累，會質疑自己是否做得不夠好。這些感受都很正常。</p>
 
       <p>但很多走過這段路的飼主，最終都說：這段時光是值得的。因為當你看著你的狗或貓安詳地走過生命的最後階段，你會知道，你盡了一切努力。這種問心無愧，本身就是一種回報。</p>
@@ -257,12 +338,18 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     "@type": "Article",
     "headline": "老年寵物健康完整指南：照護相伴多年的家人",
     "description": "了解老年狗與老貓的健康需求。從常見疾病、警訊观察到日常照護，提供獸醫師建議的完整攻略，幫助你守護毛小孩的生活品質。",
-    "author": { "@type": "Organization", "name": "ToolKit 寵物知識團隊" },
+    "author": { "@type": "Organization", "name": "Pet Aging Hub 寵物知識團隊" },
     "datePublished": "2026-05-10",
     "publisher": {
       "@type": "Organization",
-      "name": "ToolKit",
+      "name": "Pet Aging Hub",
       "logo": { "@type": "ImageObject", "url": "https://git-github-com-kenny-yan9-ad-site.vercel.app/favicon.svg" }
+    },
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://images.unsplash.com/photo-1587300003388-98908cca7b9c?w=1200&h=675&fit=crop",
+      "width": 1200,
+      "height": 675
     }
   }
   </script>
@@ -331,9 +418,19 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
     margin-top: 0;
   }
 
-  /* FAQ section */
-  article section:has(h2) + section h2,
-  article section:has(h2:nth-of-type(1)) ~ section h2 {
-    scroll-margin-top: 2rem;
+  /* 浮動圖片在小螢幕時恢復為區塊 */
+  @media (max-width: 768px) {
+    article figure {
+      float: none !important;
+      margin-left: 0 !important;
+      width: 100% !important;
+    }
+  }
+
+  /* 清除浮動 */
+  article section::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 </style>
