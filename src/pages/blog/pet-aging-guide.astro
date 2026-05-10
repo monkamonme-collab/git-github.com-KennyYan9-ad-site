@@ -31,12 +31,26 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
 
     <!-- 標題區 -->
     <header class="mb-10">
-      <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
+      <p class="text-sm text-slate-500 mb-3">Updated May 2026 · 12 min read · 寵物健康</p>
       <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
       <p class="text-lg text-slate-600 leading-relaxed">
         毛小孩的一生比人類快得多。當你還在適應「狗狗進入中年」的時候，牠可能已經開始需要不一樣的照護方式了。這篇指南從「年齡怎麼算」開始，一路到「老年怎麼照顧」，把寵物老化這件事，一次說清楚。
       </p>
     </header>
+
+    <!-- Key Takeaways -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-8">
+      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
+        <span>📌</span> 本篇重點
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+        <li>狗狗和貓咪的「人類年齡」計算方式不同於簡單的「1年=7年」公式</li>
+        <li>體型、品種、體重都會影響寵物的老化速度</li>
+        <li>老年寵物需要不同的營養、環境和醫療照護方式</li>
+        <li>早期發現老化徵兆，是維持生活品質的關鍵</li>
+        <li>本指南提供從計算機到完整照護建議的一站式資訊</li>
+      </ul>
+    </div>
 
     <!-- 工具橫幅 -->
     <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 mb-10 text-white">

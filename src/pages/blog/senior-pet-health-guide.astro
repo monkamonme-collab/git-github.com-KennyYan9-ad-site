@@ -32,12 +32,26 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
 
     <!-- 標題區 -->
     <header class="mb-10">
-      <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
+      <p class="text-sm text-slate-500 mb-3">Updated May 2026 · 15 min read · 寵物健康</p>
       <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
       <p class="text-lg text-slate-600 leading-relaxed">
         毛小孩用一輩子的時間陪在你身邊。當牠們進入老年階段，身體機能開始減緩，我們的照護方式也需要跟著調整。這篇文章整理了獸醫臨床上最常被問到的問題，以及多數飼主實際會遇到的困難，希望能在你需要的時候，成為一份實際有用的參考。
       </p>
     </header>
+
+    <!-- Key Takeaways -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-8">
+      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
+        <span>📌</span> 本篇重點
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+        <li>老年寵物需要專門的老年配方飼料，以符合退化後的營養需求</li>
+        <li>關節問題、心臟病、腎臟病是老年犬最常見的三大健康問題</li>
+        <li>甲狀腺問題和牙科疾病是老年貓最需要關注的健康議題</li>
+        <li>定期血液檢查和血壓測量，是早期發現問題的關鍵</li>
+        <li>環境調整（斜坡、軟墊、低入口砂盆）可以大幅提升生活品質</li>
+      </ul>
+    </div>
 
     <AdSenseAd format="in-article" />
 
@@ -222,6 +236,30 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
       <p>但很多走過這段路的飼主，最終都說：這段時光是值得的。因為當你看著你的狗或貓安詳地走過生命的最後階段，你會知道，你盡了一切努力。這種問心無愧，本身就是一種回報。</p>
 
       <p>如果照護過程中感到壓力過大、情緒疲憊，請記得：你不是一個人。許多城市都有寵物照護者的支持團體，和獸醫討論你的處境，他們也可能提供安寧照護的選項，幫助你在最後這段路上，盡可能維持毛小孩的生活品質。</p>
+    </section>
+
+    <!-- Warning Signs Section -->
+    <section class="mb-10">
+      <div class="bg-red-50 border-l-4 border-red-400 p-5 rounded-r-xl my-8">
+        <h3 class="font-bold text-red-800 mb-3 flex items-center gap-2">
+          <span>⚠️</span> 需要立即就醫的緊急情況
+        </h3>
+        <p class="text-slate-700 text-sm mb-3">老年寵物的健康變化可能很快，以下情況請立即就醫：</p>
+        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+          <li>呼吸困難、用力喘氣或嘴唇發紫</li>
+          <li>突然倒下、意識混亂或癲癇發作</li>
+          <li>嚴重嘔吐或腹瀉超過24小時</li>
+          <li>腹部明顯腫脹且觸摸時有疼痛反應</li>
+          <li>完全不吃不喝超過24小時</li>
+          <li>排尿困難、尿量明顯減少或血尿</li>
+          <li>眼部突然發紅、發白或視力明顯下降</li>
+          <li>肢體突然無力、無法站立或行走</li>
+          <li>身上出現不明腫塊且快速增大</li>
+        </ul>
+        <p class="text-slate-700 text-sm mt-3">
+          若不確定是否是緊急狀況，請致電你的獸醫診所詢問。及早處理往往能搶救更多黃金時間。
+        </p>
+      </div>
     </section>
 
     <!-- FAQ -->

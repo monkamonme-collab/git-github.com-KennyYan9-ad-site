@@ -31,12 +31,26 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
 
     <!-- 標題區 -->
     <header class="mb-10">
-      <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
+      <p class="text-sm text-slate-500 mb-3">Updated May 2026 · 10 min read · 寵物健康</p>
       <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
       <p class="text-lg text-slate-600 leading-relaxed">
         同樣是毛小孩，狗狗和貓咪的老化方式，卻有著根本性的差異。了解這些不同，不只是知識上的興趣——而是直接影響你每天餵食、運動、就醫的每一個決定。這篇文章把兩者的老化差異一次說清楚，讓你在陪伴寵物老去的路上，少走彎路。
       </p>
     </header>
+
+    <!-- Key Takeaways -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-8">
+      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
+        <span>📌</span> 本篇重點
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+        <li>貓咪平均壽命比狗狗長，但兩者的老化速度因體型而異</li>
+        <li>狗狗需要更多運動互動，貓咪則以環境調整為主</li>
+        <li>兩者的老年徵兆相似，但出現時間和頻率不同</li>
+        <li>營養需求有差異，選對食物才能延緩老化</li>
+        <li>無論是狗是貓，定期健檢是老年照護的核心</li>
+      </ul>
+    </div>
 
     <!-- 工具橫幅 -->
     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-5 mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">

@@ -31,12 +31,26 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
 
     <!-- 標題區 -->
     <header class="mb-10">
-      <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
+      <p class="text-sm text-slate-500 mb-3">Updated May 2026 · 10 min read · 寵物健康</p>
       <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
       <p class="text-lg text-slate-600 leading-relaxed">
         貓咪是出了名的隱藏疾病高手。當你終於發現「好像哪裡不對」的時候，問題可能已經悄悄累積了好一段時間。了解熟齡貓常見的老化徵兆，是每一位貓奴遲早需要面對的功課——不是為了焦慮，而是為了及早行動。
       </p>
     </header>
+
+    <!-- Key Takeaways -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-8">
+      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
+        <span>📌</span> 本篇重點
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+        <li>貓咪7歲後進入熟齡期，外表變化不明顯，但內部機能已開始衰退</li>
+        <li>跳躍高度下降、活動量減少是最常見的早期老化徵兆</li>
+        <li>理毛頻率減少可能預示關節疼痛或口腔問題</li>
+        <li>夜間嚎叫可能與認知功能退化或聽力減退相關</li>
+        <li>早期發現老化徵兆，有助於及時調整照護方式</li>
+      </ul>
+    </div>
 
     <!-- 工具提醒橫幅 -->
     <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-5 mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -112,7 +126,26 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
       <h3>⑦ 貓砂盆事故增加：在砂盆外上廁所</h3>
       <p>這是老年貓最常見的「最後才被發現」的徵兆之一。當貓咪在砂盆外上廁所，多數主人的第一反應是「在發脾氣」或「報復行為」——但在老年貓身上，更可能的原因是：關節疼痛讓牠爬進砂盆時感到疼痛、腎臟問題導致尿量增加且憋不住、認知退化讓牠忘記砂盆位置。</p>
       <p><strong>你可以觀察：</strong>事故是在砂盆附近發生（可能爬不進去），還是隨機發生在房子各處？貓砂盆的入口高度，對於行動不便的老年貓是否已經太過困難？</p>
-      <p>實際的處理方式，取決於背後的根本原因：如果是關節問題，降低砂盆入口高度或更換成側開式的砂盆，往往就能大幅改善。如果是泌尿系統問題，則需要進一步的獸醫檢查與治療。</p>
+      <p>實際的處理方式，取決於背後的根本原因：如果是關節問題，降低砂盆入口高度或更換成側開式的砂盆，往往就能大幅改善。如果是泌尿系統問題，則需要進一步的獸醫檢查與治療。
+    </section>
+
+    <!-- Warning Signs Section -->
+    <section class="mb-10">
+      <div class="bg-red-50 border-l-4 border-red-400 p-5 rounded-r-xl my-8">
+        <h3 class="font-bold text-red-800 mb-3 flex items-center gap-2">
+          <span>⚠️</span> 需要立即就醫的情況
+        </h3>
+        <p class="text-slate-700 text-sm mb-3">如果你的貓出現以下情況，請不要延誤，儘快帶去獸醫院：</p>
+        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+          <li>突然完全不吃不喝（超過24小時）</li>
+          <li>體重在一個月內明顯下降（超過10%）</li>
+          <li>飲水量突然大幅增加或減少</li>
+          <li>呼吸困難或呼吸急促</li>
+          <li>連續嘔吐或腹瀉超過24小時</li>
+          <li>在砂盆外持續尿尿或排便</li>
+          <li>突然行為大幅改變（極度嗜睡或攻擊性增強）</li>
+        </ul>
+      </div>
     </section>
 
     <AdSenseAd format="in-article" />

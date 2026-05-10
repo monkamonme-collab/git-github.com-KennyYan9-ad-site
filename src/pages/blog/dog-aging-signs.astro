@@ -18,23 +18,38 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
   ]}
 >
   <article class="max-w-3xl mx-auto px-6 py-12">
+
+    <!-- Hero Image -->
+    <div class="mb-8 -mx-6 md:mx-0 md:rounded-2xl overflow-hidden">
+      <img
+        src="https://images.unsplash.com/photo-1587300003388-98908cca7b9c?w=1200&h=675&fit=crop"
+        alt="老年黃金獵犬眼神溫柔，等待主人的關愛"
+        class="w-full aspect-video object-cover"
+        loading="eager"
+      />
+    </div>
+
     <!-- 標題區 -->
-    <header class="mb-10">
-      <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
+    <header class="mb-8">
+      <p class="text-sm text-slate-500 mb-3">Updated May 2026 · 8 min read · 寵物健康</p>
       <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
       <p class="text-lg text-slate-600 leading-relaxed">
         狗狗的年齡走得比人類快得多。當你開始注意到「他好像沒有以前那麼愛跑了」、「走樓梯變得很慢」的時候，很可能是身體機能正在悄悄走下坡。這篇文整理了獸醫門診中最常被問到的幾個老化徵兆，幫助你在狀況還沒有惡化之前，就先做好準備。
       </p>
     </header>
 
-    <!-- Hero Image -->
-    <div class="mb-8 -mx-6 md:mx-0 md:rounded-2xl overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1587300003388-98908cca7b9c?w=1200&h=675&fit=crop"
-        alt="老年黃金獵犬眼神温柔，等待主人的關愛"
-        class="w-full aspect-video object-cover"
-        loading="eager"
-      />
+    <!-- Key Takeaways -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-6">
+      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
+        <span>📌</span> 本篇重點
+      </h3>
+      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+        <li>狗狗5-7歲後進入熟齡期，大型犬可能更早（5-6歲）</li>
+        <li>視力與聽力退化通常是漸進的，可以透過環境調整延緩影響</li>
+        <li>夜間焦慮或行為改變可能是認知功能退化的徵兆</li>
+        <li>關節問題是老年犬最常見的疼痛原因，容易被忽略</li>
+        <li>早期發現、及早調整照護方式，是維持生活品質的關鍵</li>
+      </ul>
     </div>
 
     <!-- 工具提醒橫幅 -->
@@ -110,7 +125,27 @@ const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-y
       <h3>⑦ 如廁習慣改變：在家裡上錯地方</h3>
       <p>老年犬突然在家裡尿尿或便便，是很多主人感到困惑的問題。它可能由多種原因造成：關節疼痛讓牠來不及走到戶外、認知功能退化導致忘記位置、泌尿系統感染、腎臟或膀胱問題，甚至糖尿病。</p>
       <p><strong>你可以觀察：</strong>狗狗是每次都在同一個地方失誤，還是位置不固定？白天獨處時特別容易發生，還是夜間也會？尿液的顏色有沒有異常？</p>
-      <p>千萬不要責怪狗狗——牠很可能不是故意的。這些行為改變往往是健康問題的訊號，而不是服從度下降。如果持續發生，建議帶給獸醫做尿液與血液檢查，排除泌尿系統感染、腎功能問題或糖尿病的可能性。</p>
+      <p>千萬不要責怪狗狗——牠很可能不是故意的。這些行為改變往往是健康問題的訊號，而不是服從度下降。如果持續發生，建議帶給獸醫做尿液與血液檢查，排除泌尿系統感染、腎功能問題或糖尿病的可能性。
+    </section>
+
+    <!-- Warning Signs Section -->
+    <section class="mb-10">
+      <div class="bg-red-50 border-l-4 border-red-400 p-5 rounded-r-xl my-8">
+        <h3 class="font-bold text-red-800 mb-3 flex items-center gap-2">
+          <span>⚠️</span> 需要立即就醫的情況
+        </h3>
+        <p class="text-slate-700 text-sm mb-3">如果你的狗出現以下情況，請不要延誤，儘快帶去獸醫院：</p>
+        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
+          <li>突然完全不吃東西超過24小時</li>
+          <li>飲水量突然大幅增加或減少</li>
+          <li>體重在一個月內明顯下降（超過10%）</li>
+          <li>呼吸困難、用力喘氣或咳嗽</li>
+          <li>腹部明顯腫脹或疼痛</li>
+          <li>突然無法站立或行走</li>
+          <li>癲癇發作或意識混亂</li>
+          <li>眼睛發紅、發白或有明顯分泌物</li>
+        </ul>
+      </div>
     </section>
 
     <AdSenseAd format="in-article" />
