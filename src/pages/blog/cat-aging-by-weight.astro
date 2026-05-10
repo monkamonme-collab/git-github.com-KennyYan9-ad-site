@@ -1,0 +1,566 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdSenseAd from '../../components/AdSenseAd.astro';
+
+const title = "貓咪體重與老化速度：室內貓、室外貓與大型品種的年齡對照";
+const description = "你的貓是嬌小的室內貓還是結實的大型緬甸貓？不同體型的貓咪老化速度差異大。這份指南幫助你根據貓咪的體重和品種，了解牠的老年時間表。";
+---
+
+<BaseLayout title={title} description={description}>
+  <div class="bg-gradient-to-br from-purple-50 to-indigo-50 border-b border-purple-100">
+    <div class="max-w-4xl mx-auto px-6 py-12 text-center">
+      <nav class="text-sm text-slate-500 mb-4">
+        <a href="/" class="hover:text-blue-600">首頁</a>
+        <span class="mx-2">/</span>
+        <a href="/blog/" class="hover:text-blue-600">部落格</a>
+        <span class="mx-2">/</span>
+        <a href="/blog/category/health/" class="hover:text-blue-600">健康</a>
+        <span class="mx-2">/</span>
+        <span class="text-slate-400">貓咪體重與老化速度</span>
+      </nav>
+      <div class="inline-flex items-center gap-2 bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
+        🐱 健康與照護
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 leading-tight">
+        貓咪體重與老化速度：<br class="hidden md:block" />
+        室內貓、室外貓與大型品種的年齡對照
+      </h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        你的貓是嬌小的室內貓還是結實的大型緬甸貓？不同體型的貓咪老化速度差異大。這份指南幫助你根據貓咪的體重和品種，了解牠的老年時間表。
+      </p>
+      <div class="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
+        <span>更新時間：2024年</span>
+        <span>·</span>
+        <span>閱讀時間：約10分鐘</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Banner -->
+  <div class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+    <div class="max-w-4xl mx-auto px-6 py-6 text-center">
+      <p class="text-sm mb-2 opacity-90">想知道你家貓咪的人類年齡嗎？</p>
+      <a
+        href="/tools/cat-age-calculator/"
+        class="inline-flex items-center gap-2 bg-white text-indigo-700 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50 transition-colors"
+      >
+        🐱 貓咪年齡計算機
+        <span class="text-lg">→</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <div class="mb-10">
+      <p class="text-lg text-slate-700 leading-relaxed mb-6">
+        與狗狗不同，貓咪的體型範圍相對狹窄——從約2公斤的玩具虎斑到10公斤以上的巨型緬甸貓，體重差異可達5倍。這意味著<strong>貓咪的老化速度雖然主要取決於年齡，但體型和品種仍有一定影響</strong>。
+      </p>
+      <p class="text-slate-600 leading-relaxed">
+        普遍來說，室內家貓的壽命約為12-18年，而室外/流浪貓的平均壽命僅約2-5年。這個巨大差異說明環境和照護品質對貓咪老化的影響，可能比體型更重要。本指南專注於室內貓的體重分類，幫助你估算愛貓的老年時間表。
+      </p>
+    </div>
+
+    <AdSenseAd format="in-article" />
+
+    <!-- Table of Contents -->
+    <div class="bg-slate-50 rounded-2xl p-6 mb-10">
+      <h2 class="text-lg font-bold text-slate-900 mb-4">文章目錄</h2>
+      <ol class="space-y-2 text-sm">
+        <li class="flex gap-2">
+          <span class="text-indigo-600 font-bold">01.</span>
+          <a href="#why-weight-matters" class="text-slate-700 hover:text-indigo-600">為什麼體重對貓咪老化很重要</a>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-indigo-600 font-bold">02.</span>
+          <a href="#weight-categories" class="text-slate-700 hover:text-indigo-600">室內貓體重分類與老化時間表</a>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-indigo-600 font-bold">03.</span>
+          <a href="#breed-differences" class="text-slate-700 hover:text-indigo-600">常見品種的體重與老化特徵</a>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-indigo-600 font-bold">04.</span>
+          <a href="#indoor-vs-outdoor" class="text-slate-700 hover:text-indigo-600">室內貓 vs 室外貓：壽命差異的原因</a>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-indigo-600 font-bold">05.</span>
+          <a href="#obesity-risks" class="text-slate-700 hover:text-indigo-600">肥胖對老化的影響</a>
+        </li>
+        <li class="flex gap-2">
+          <span class="text-indigo-600 font-bold">06.</span>
+          <a href="#faq" class="text-slate-700 hover:text-indigo-600">常見問題</a>
+        </li>
+      </ol>
+    </div>
+
+    <!-- Section 1: Why Weight Matters -->
+    <section id="why-weight-matters" class="mb-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-lg font-bold">1</span>
+        為什麼體重對貓咪老化很重要
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        貓咪的身體結構和狗狗不同。狗狗的體型差異是數千年選擇性育種的結果，而貓咪的體型變異較小，但<strong>體重差異主要是由代謝條件和生活方式決定的</strong>——而非品種本身。
+      </p>
+
+      <div class="bg-purple-50 border-l-4 border-purple-400 p-5 rounded-r-xl mb-6">
+        <h3 class="font-bold text-slate-900 mb-2">🐱 關鍵數據</h3>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          根據美國寵物肥胖預防協會（APOP）的調查，全美約60%的家貓有體重過重的問題。肥胖貓咪的壽命平均比正常體重貓咪縮短<strong>2-3年</strong>，而且老年期的生活品質也明顯較差。腎臟病、關節炎、糖尿病是肥胖貓咪最常見的老年併發症。
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-6">
+        <div class="bg-green-50 rounded-xl p-5">
+          <h4 class="font-bold text-green-800 mb-3">正常體重貓咪（3-5kg）</h4>
+          <ul class="text-sm text-slate-700 space-y-1">
+            <li>· 平均壽命：15-18年</li>
+            <li>· 老化加速年齡：10-11歲</li>
+            <li>· 老年問題：腎臟、關節、牙齒</li>
+            <li>· 照護重點：定期檢查、牙齒清潔</li>
+          </ul>
+        </div>
+        <div class="bg-red-50 rounded-xl p-5">
+          <h4 class="font-bold text-red-800 mb-3">肥胖貓咪（>6kg）</h4>
+          <ul class="text-sm text-slate-700 space-y-1">
+            <li>· 平均壽命：12-15年</li>
+            <li>· 老化加速年齡：7-9歲</li>
+            <li>· 老年問題：糖尿病、關節炎、腎臟</li>
+            <li>· 照護重點：體重控制、關節保護</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="text-slate-700 leading-relaxed">
+        這裡有一個重要的區分：我們討論的是「品種典型體型」 vs 「實際體重」。一隻健康的緬甸貓可能是5-6公斤，但這對緬甸貓來說是正常體重，不算肥胖。關鍵在於<strong>你能夠摸到肋骨嗎？腰線明顯嗎？</strong>如果答案是模糊的，那麼你的貓可能需要減重了。
+      </p>
+    </section>
+
+    <AdSenseAd format="in-article" />
+
+    <!-- Section 2: Weight Categories -->
+    <section id="weight-categories" class="mb-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-lg font-bold">2</span>
+        室內貓體重分類與老化時間表
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-6">
+        貓咪的年齡階段可以用以下方式劃分。與狗狗不同，貓咪的體型對老化時間表的影響較小，但體重（無論是過輕或過重）會顯著改變老年期的健康狀態。
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-slate-100">
+              <th class="px-4 py-3 text-left font-semibold text-slate-700 rounded-tl-lg">體重類別</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">體重範圍</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">典型年齡階段</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700">進入中年</th>
+              <th class="px-4 py-3 text-left font-semibold text-slate-700 rounded-tr-lg">進入老年</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200">
+            <tr class="bg-teal-50">
+              <td class="px-4 py-3 font-semibold text-teal-800">小型/玩具貓</td>
+              <td class="px-4 py-3 text-slate-700">2-3kg</td>
+              <td class="px-4 py-3 text-slate-700">新加坡貓、玩具虎斑</td>
+              <td class="px-4 py-3 text-slate-700">9-10歲</td>
+              <td class="px-4 py-3 text-slate-700">12-13歲</td>
+            </tr>
+            <tr class="bg-green-50">
+              <td class="px-4 py-3 font-semibold text-green-800">標準室內貓</td>
+              <td class="px-4 py-3 text-slate-700">3.5-5kg</td>
+              <td class="px-4 py-3 text-slate-700">家貓（domestic shorthair/longhair）</td>
+              <td class="px-4 py-3 text-slate-700">8-9歲</td>
+              <td class="px-4 py-3 text-slate-700">11-12歲</td>
+            </tr>
+            <tr class="bg-yellow-50">
+              <td class="px-4 py-3 font-semibold text-yellow-800">大型/肌肉型</td>
+              <td class="px-4 py-3 text-slate-700">5-7kg</td>
+              <td class="px-4 py-3 text-slate-700">緬甸貓、暹羅混種、部分家貓</td>
+              <td class="px-4 py-3 text-slate-700">8-9歲</td>
+              <td class="px-4 py-3 text-slate-700">11-12歲</td>
+            </tr>
+            <tr class="bg-orange-50">
+              <td class="px-4 py-3 font-semibold text-orange-800">過重/肥胖</td>
+              <td class="px-4 py-3 text-slate-700">>6kg（普通貓）/ >8kg（大型品種）</td>
+              <td class="px-4 py-3 text-slate-700">任何品種的肥胖個體</td>
+              <td class="px-4 py-3 text-slate-700">6-7歲</td>
+              <td class="px-4 py-3 text-slate-700">9-10歲</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-blue-50 border-l-4 border-blue-400 p-5 rounded-r-xl mb-6">
+        <h3 class="font-bold text-slate-900 mb-2">💡 如何判斷貓咪體重是否健康</h3>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          的理想體重可從以下幾點判斷：<strong>1）</strong>從上方看時有明顯腰線；<strong>2）</strong>肋骨可通過輕壓撫摸到但不明顯突出；<strong>3）</strong>腹部無明顯下垂的脂肪墊。理想體型的貓咪肋骨與皮毛之間大約有1公分厚的脂肪覆蓋。如果看不到腰線或肋骨完全摸不到，則有體重問題。
+        </p>
+      </div>
+
+      <p class="text-slate-700 leading-relaxed">
+        值得注意的是，<strong>室內貓的活動量通常遠低於室外貓</strong>，因此即使食量不大的室內貓也可能隨年齡增加而發胖。老年貓的新陳代謝減緩，更容易堆積脂肪。如果你的室內貓超過7歲且體重持續上升，這可能是老年新陳代謝變化的信號，需要調整飲食。
+      </p>
+    </section>
+
+    <!-- Section 3: Breed Differences -->
+    <section id="breed-differences" class="mb-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-lg font-bold">3</span>
+        常見品種的體重與老化特徵
+      </h2>
+
+      <div class="space-y-4">
+        <div class="bg-gradient-to-r from-teal-50 to-green-50 rounded-2xl p-6 border border-teal-100">
+          <h3 class="text-lg font-bold text-teal-800 mb-4">🐱 小型/嬌小品種（典型體重 2-4kg）</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">新加坡貓（Singapura）</h4>
+              <p class="text-xs text-slate-600">成年體重：2-3kg｜平均壽命：15-18年</p>
+              <p class="text-xs text-slate-500 mt-1">最小的家貓品種之一。基因多樣性高，遺傳疾病少。老年期通常活潑依舊。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">玩具虎斑（Toyger）/ 玩具貓</h4>
+              <p class="text-xs text-slate-600">成年體重：2-3.5kg｜平均壽命：14-16年</p>
+              <p class="text-xs text-slate-500 mt-1">活潑好動，需要豐富的環境刺激。關節問題少見，但牙齒問題需注意。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-50 to-yellow-50 rounded-2xl p-6 border border-green-100">
+          <h3 class="text-lg font-bold text-green-800 mb-4">🐱 標準體型品種（典型體重 3.5-5.5kg）</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">美國短毛貓（American Shorthair）</h4>
+              <p class="text-xs text-slate-600">成年體重：4-5.5kg｜平均壽命：15-20年</p>
+              <p class="text-xs text-slate-500 mt-1">強壯、易於照顧。肥胖問題較常見，需控制飲食。老年腎臟問題需定期監測。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">英國短毛貓（British Shorthair）</h4>
+              <p class="text-xs text-slate-600">成年體重：4-7kg｜平均壽命：12-17年</p>
+              <p class="text-xs text-slate-500 mt-1">易發胖，關節負荷大。建議控制體重在6kg以下。心脏问题（肥厚型心肌病）在老年期常見。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">異國短毛貓（Exotic Shorthair）</h4>
+              <p class="text-xs text-slate-600">成年體重：3.5-5.5kg｜平均壽命：12-15年</p>
+              <p class="text-xs text-slate-500 mt-1">短吻構造導致呼吸道和淚腺問題。老年期的腎臟和心臟問題需特別關注。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">家貓（Domestic Shorthair/Longhair）</h4>
+              <p class="text-xs text-slate-600">成年體重：3.5-5.5kg｜平均壽命：12-18年</p>
+              <p class="text-xs text-slate-500 mt-1">基因多樣性最高，通常最健康。老年問題因個體差異大，需定期健康檢查。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-2xl p-6 border border-yellow-100">
+          <h3 class="text-lg font-bold text-orange-800 mb-4">🐱 大型/肌肉型品種（典型體重 5-10kg）</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">緬甸貓（Burmese）</h4>
+              <p class="text-xs text-slate-600">成年體重：4-6kg｜平均壽命：16-20年</p>
+              <p class="text-xs text-slate-500 mt-1">肌肉發達，體型結實。寿命是貓咪中最長的品種之一。老年期活潑度通常維持良好。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">波斯貓（Persian）</h4>
+              <p class="text-xs text-slate-600">成年體重：3.5-6kg｜平均壽命：12-17年</p>
+              <p class="text-xs text-slate-500 mt-1">短吻導致呼吸道和腎臟問題。多囊性腎病（PKD）在老年期發病率高，需定期超聲波檢查。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">緬因浣熊（Maine Coon）</h4>
+              <p class="text-xs text-slate-600">成年體重：5-10kg｜平均壽命：12-15年</p>
+              <p class="text-xs text-slate-500 mt-1">最大型的家貓品種之一。肥厚型心肌病（HCM）和髖關節問題在老年期常見。體重控制非常重要。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">布偶貓（Ragdoll）</h4>
+              <p class="text-xs text-slate-600">成年體重：4.5-9kg｜平均壽命：12-17年</p>
+              <p class="text-xs text-slate-500 mt-1">性格溫和，結紮後容易發胖。肥厚型心肌病（HCM）遺傳風險需注意。關節問題在老年期可能出現。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">挪威森林貓（Norwegian Forest Cat）</h4>
+              <p class="text-xs text-slate-600">成年體重：4-9kg｜平均壽命：14-16年</p>
+              <p class="text-xs text-slate-500 mt-1">肌肉發達，活動能力強。髖關節問題和心臟問題在老年期可能出現。</p>
+            </div>
+            <div>
+              <h4 class="font-semibold text-slate-800 text-sm mb-1">孟加拉貓（Bengal）</h4>
+              <p class="text-xs text-slate-600">成年體重：4-7kg｜平均壽命：12-16年</p>
+              <p class="text-xs text-slate-500 mt-1">活潑好動，需要大量活動。老年期的關節問題需注意。建議保持環境豐富化。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <AdSenseAd format="in-article" />
+
+    <!-- Section 4: Indoor vs Outdoor -->
+    <section id="indoor-vs-outdoor" class="mb-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-lg font-bold">4</span>
+        室內貓 vs 室外貓：壽命差異的原因
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        這是理解貓咪老化最重要的一個區分：<strong>室內貓和室外貓的壽命差異可以達到3-5倍</strong>。這個差異不是因為體型或品種，而是完全因為環境風險因素。
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-green-50 rounded-2xl p-6 border border-green-200">
+          <h3 class="font-bold text-green-800 mb-4 flex items-center gap-2">
+            <span class="text-2xl">🏠</span> 室內貓的優勢
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>✓ 無交通意外風險</li>
+            <li>✓ 無被捕食風險（郊狼、野狗）</li>
+            <li>✓ 傳染病暴露風險極低</li>
+            <li>✓ 無中毒風險（除家中植物）</li>
+            <li>✓ 飲食控制較容易</li>
+            <li>✓ 可及早發現健康問題</li>
+          </ul>
+          <p class="text-xs text-slate-600 mt-4">
+            平均壽命：12-18年，甚至可達20年以上
+          </p>
+        </div>
+
+        <div class="bg-red-50 rounded-2xl p-6 border border-red-200">
+          <h3 class="font-bold text-red-800 mb-4 flex items-center gap-2">
+            <span class="text-2xl">🌳</span> 室外貓的風險
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700">
+            <li>✗ 交通意外是室外貓死亡的第二大原因</li>
+            <li>✗ 與其他動物打鬥（抓傷、咬傷感染）</li>
+            <li>✗ 傳染病（貓愛滋、貓白血病、狂犬病）</li>
+            <li>✗ 中毒（老鼠藥、除草劑）</li>
+            <li>✗ 惡劣天氣暴露</li>
+            <li>✗ 被盜或虐待風險</li>
+          </ul>
+          <p class="text-xs text-slate-600 mt-4">
+            平均壽命：2-5年（野外）/ 5-8年（半室內外）
+          </p>
+        </div>
+      </div>
+
+      <p class="text-slate-700 leading-relaxed">
+        這也是為什麼本指南專注於室內貓的體重與老化——當我們養的是室內貓時，體重管理成為影響壽命的可控因素中最重要的變數之一。一隻體重正常的室內貓，如果接受良好的照護和定期健康檢查，完全有可能活到18-20歲。
+      </p>
+    </section>
+
+    <!-- Section 5: Obesity Risks -->
+    <section id="obesity-risks" class="mb-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-lg font-bold">5</span>
+        肥胖對老化的影響
+      </h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        肥胖是室內貓面臨的最大健康威脅之一。不同於野外的貓咪，室內貓的能量消耗極低，但食物供應充足，這種失衡導致體重快速增加。
+      </p>
+
+      <div class="space-y-4 mb-6">
+        <div class="flex gap-4 items-start">
+          <span class="w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">1</span>
+          <div>
+            <h4 class="font-semibold text-slate-900">關節损伤</h4>
+            <p class="text-sm text-slate-600">額外的重量對關節軟骨造成持續磨損。肥胖貓咪的退化性關節炎發病年齡比正常體重貓咪提早3-5年。</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">2</span>
+          <div>
+            <h4 class="font-semibold text-slate-900">糖尿病</h4>
+            <p class="text-sm text-slate-600">肥胖導致胰島素阻抗，約15-20%的肥胖貓咪會發展成第2型糖尿病。需要終身胰島素治療。</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">3</span>
+          <div>
+            <h4 class="font-semibold text-slate-900">腎臟負擔</h4>
+            <p class="text-sm text-slate-600">肥胖導致腎臟血流量增加，加速腎小管損傷。腎臟病是老年貓咪的頭號死因，肥胖會使發病年齡提早。</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="w-8 h-8 bg-red-100 text-red-700 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">4</span>
+          <div>
+            <h4 class="font-semibold text-slate-900">心臟病</h4>
+            <p class="text-sm text-slate-600">肥胖性心肌病和由此引發的心衰竭風險增加。心臟需要更大的力量來推送血液通過龐大的身體。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-yellow-50 border-l-4 border-yellow-400 p-5 rounded-r-xl mb-6">
+        <h3 class="font-bold text-slate-900 mb-2">💡 減重建議</h3>
+        <p class="text-sm text-slate-700 leading-relaxed">
+          安全的減重速度是每週減去原有體重的0.5-2%。一個安全的減重計劃應該是：<strong>1）</strong>諮詢獸醫，確認沒有其他健康問題；<strong>2）</strong>測量每日熱量攝入；<strong>3）</strong>選擇高蛋白低碳水的減重配方食物；<strong>4）</strong>增加活動量（互動玩具、貓跳台）。千萬不要用節食的方式讓貓咪挨餓——這會導致致命的肝臟脂肪沉積症。
+        </p>
+      </div>
+    </section>
+
+    <AdSenseAd format="in-article" />
+
+    <!-- Section 6: FAQ -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+        <span class="w-10 h-10 bg-indigo-100 text-indigo-700 rounded-full flex items-center justify-center text-lg font-bold">6</span>
+        常見問題
+      </h2>
+
+      <div class="space-y-4">
+        <details class="bg-slate-50 rounded-xl p-5 group">
+          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+            <span>我的貓已經10歲了，需要改吃老年貓粮嗎？</span>
+            <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+            老年貓粮的設計重點是：低熱量（因應新陳代謝減緩）、高消化率（老年貓的腸胃吸收能力下降）、適量的蛋白質（維持肌肉量，但不过高以免負擔腎臟）、以及關節保護成分（葡萄糖胺、軟骨素、Omega-3）。一般建議在<strong>7-8歲</strong>時逐漸轉換為老年配方。轉換時要混合新舊食物，慢慢增加新食物的比例，約需2-3週完成過渡。
+          </p>
+        </details>
+
+        <details class="bg-slate-50 rounded-xl p-5 group">
+          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+            <span>我的室內貓體重6公斤，這算肥胖嗎？</span>
+            <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+            這取決於品種和體型結構。一隻正常的家貓（domestic shorthair）理想體重約為3.5-5公斤，6公斤已經是明顯超重。但如果你的貓是緬因浣熊或布偶貓等大型品種，6公斤可能在正常範圍內。最準確的判斷方式是讓獸醫進行身體評分（BCS, Body Condition Score），1-9分制中4-5分為理想，6分以上為過重。
+          </p>
+        </details>
+
+        <details class="bg-slate-50 rounded-xl p-5 group">
+          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+            <span>室外貓和室內貓的年齡計算方式不同嗎？</span>
+            <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+            不論室內或室外，貓咪的生理年齡計算方式是相同的——2歲時約等於人類24歲，之後每年增加約4歲。但室外貓的「生理年齡」往往比實際年齡更老，因為環境壓力（創傷、疾病、營養不良）加速了細胞老化。所以雖然年齡計算相同，但室外貓的健康狀態通常比同齡室內貓差很多。
+          </p>
+        </details>
+
+        <details class="bg-slate-50 rounded-xl p-5 group">
+          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+            <span>我的貓咪已經12歲了，還需要每年打疫苗嗎？</span>
+            <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+            老年貓咪的免疫系統功能下降，疫苗反應可能不如年輕時強。建議與獸醫討論：<strong>核心疫苗</strong>（貓瘟、皰疹病毒、卡西里病毒）如果室內貓且室內環境穩定，可以在10-12歲後考慮不再追加；<strong>狂犬病疫苗</strong>根據當地法規，多數地區仍要求每1-3年追加一次。重要的是，每年的健康檢查不應該因為貓咪年紀大而省略。
+          </p>
+        </details>
+
+        <details class="bg-slate-50 rounded-xl p-5 group">
+          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
+            <span>緬因浣熊等大型貓咪的壽命比一般貓短嗎？</span>
+            <span class="text-indigo-600 group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+            大型品種的壽命略低於中小型品種，但差異不大。緬因浣熊的平均壽命約為12-15年，而小型新加坡貓可達15-18年。這個差異主要是因為大型品種心臟負擔更重、以及某些品種特有的遺傳疾病（如緬因浣熊的HCM）。但比起體型，<strong>體重管理</strong>對壽命的影響更大——一隻體重理想的緬因浣熊，往往比一隻超重的家貓活得更久、更健康。
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Related Content -->
+    <div class="border-t border-slate-200 pt-10">
+      <h2 class="text-xl font-bold text-slate-900 mb-6">延伸閱讀</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/tools/cat-age-calculator/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">🧮</span>
+            <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full">工具</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-indigo-700">貓咪年齡計算機</h3>
+          <p class="text-sm text-slate-600">輸入貓咪年齡，計算人類年齡對照與生命階段</p>
+        </a>
+
+        <a href="/blog/cat-aging-signs/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">🐱</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">文章</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-purple-700">貓咪老化徵兆完整指南</h3>
+          <p class="text-sm text-slate-600">7個預示愛貓進入熟齡期的身體與行為變化</p>
+        </a>
+
+        <a href="/blog/senior-pet-health-guide/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">📋</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">文章</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-purple-700">老年寵物健康完整指南</h3>
+          <p class="text-sm text-slate-600">從營養到環境的全方位老年照護攻略</p>
+        </a>
+
+        <a href="/blog/dog-vs-cat-aging/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="text-2xl">📊</span>
+            <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">文章</span>
+          </div>
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-amber-700">狗與貓老化差異完整比較</h3>
+          <p class="text-sm text-slate-600">兩種寵物的老化速度、壽命與照護重點對照</p>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "貓咪體重與老化速度：室內貓、室外貓與大型品種的年齡對照",
+      "description": "你的貓是嬌小的室內貓還是結實的大型緬甸貓？不同體型的貓咪老化速度差異大。這份指南幫助你根據貓咪的體重和品種，了解牠的老年時間表。",
+      "author": {
+        "@type": "Organization",
+        "name": "Pet Age Calculator"
+      },
+      "datePublished": "2024-01-01",
+      "dateModified": "2024-01-01"
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "我的貓已經10歲了，需要改吃老年貓粮嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "一般建議在7-8歲時逐漸轉換為老年配方貓粮，選擇低熱量、高消化率、適量蛋白質的配方，並在2-3週內逐步過渡。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的室內貓體重6公斤，這算肥胖嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "普通家貓理想體重為3.5-5公斤，6公斤屬於過重。但大型品種如緬因浣熊，6公斤可能在正常範圍。最準確的判斷方式是讓獸醫進行身體評分（BCS）。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "室外貓和室內貓的年齡計算方式不同嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "年齡計算方式相同，但室外貓的生理老化速度更快。室外/流浪貓平均壽命僅2-5年，而室內貓可達12-18年。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "我的貓咪已經12歲了，還需要每年打疫苗嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "建議與獸醫討論。核心疫苗可在10-12歲後考慮不再追加，但狂犬病疫苗仍需按當地法規注射。每年的健康檢查不應省略。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "緬因浣熊等大型貓咪的壽命比一般貓短嗎？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "大型品種壽命略低於中小型（緬因浣熊12-15年 vs 新加坡貓15-18年），但體重管理的影響更大。一隻體重理想的大型貓往往比超重的一般家貓更健康長壽。"
+          }
+        }
+      ]
+    }
+  </script>
+</BaseLayout>
