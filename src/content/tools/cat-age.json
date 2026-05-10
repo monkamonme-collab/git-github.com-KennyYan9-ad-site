@@ -1,0 +1,8 @@
+{
+  "title": "貓咪年齡計算機",
+  "description": "採用 AAHA 及 AVMA 標準，精準計算愛貓對應人類年齡。",
+  "icon": "🐱",
+  "image": "/assets/tools/cat-age.webp",
+  "category": "calculator",
+  "pubDate": "2026-05-10"
+}
