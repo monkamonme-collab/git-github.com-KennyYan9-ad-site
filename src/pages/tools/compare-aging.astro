@@ -1,0 +1,428 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdSenseAd from '../../components/AdSenseAd.astro';
+---
+
+<BaseLayout
+  title="狗與貓年齡比較：輸入年齡一次對照兩種寵物的人類年齡"
+  description="比較你家狗狗和貓咪的年齡與生命階段。輸入年齡後同時顯示狗與貓的人類年齡對照，並提供個別的詳細老化指南連結。"
+>
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div class="max-w-5xl mx-auto px-6 py-16 text-center">
+      <div class="inline-flex items-center gap-2 bg-blue-500/20 border border-blue-400/30 rounded-full px-4 py-1.5 text-sm text-blue-300 mb-6">
+        <span>🐕 🐱</span>
+        <span>一次比較兩種寵物的年齡</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+        狗與貓年齡<br class="hidden md:block" />
+        <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
+          完整比較工具
+        </span>
+      </h1>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
+        同時計算你家狗狗和貓咪的人類年齡對照，快速了解兩種寵物的生命階段差異。依據 AVMA 科學數據，適用於所有體型與年齡。
+      </p>
+
+      <!-- Main Calculator Form -->
+      <div class="max-w-xl mx-auto bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <!-- Dog Input -->
+          <div class="text-left">
+            <label class="block text-sm text-slate-300 mb-2 font-medium">🐕 狗狗年齡（歲）</label>
+            <input
+              type="number"
+              id="dog-age"
+              min="0"
+              max="30"
+              value="5"
+              class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white text-lg focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-slate-400"
+              placeholder="輸入狗狗年齡"
+            />
+          </div>
+          <!-- Cat Input -->
+          <div class="text-left">
+            <label class="block text-sm text-slate-300 mb-2 font-medium">🐱 貓咪年齡（歲）</label>
+            <input
+              type="number"
+              id="cat-age"
+              min="0"
+              max="30"
+              value="5"
+              class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-xl text-white text-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 placeholder-slate-400"
+              placeholder="輸入貓咪年齡"
+            />
+          </div>
+        </div>
+
+        <button
+          id="compare-btn"
+          class="w-full py-4 bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600 text-white font-bold text-lg rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl"
+        >
+          比較年齡 →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Results Section (hidden until calculated) -->
+  <div id="results-section" class="max-w-5xl mx-auto px-6 py-16 hidden">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl font-bold text-slate-900 mb-2">比較結果</h2>
+      <p class="text-slate-500">以下為你家狗狗與貓咪的人類年齡對照</p>
+    </div>
+
+    <!-- Age Comparison Cards -->
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <!-- Dog Result Card -->
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 border border-blue-200">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🐕</span>
+          <div>
+            <h3 class="font-bold text-slate-900">狗狗年齡</h3>
+            <p class="text-sm text-blue-600" id="dog-stage-label">中型犬 · 成年期</p>
+          </div>
+        </div>
+        <div class="text-center py-6">
+          <p class="text-sm text-slate-500 mb-1">人類年齡對照</p>
+          <p class="text-6xl font-extrabold text-blue-700" id="dog-human-age">36</p>
+          <p class="text-lg text-slate-600 mt-1">歲</p>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-600">生命階段</span>
+            <span class="font-medium text-blue-700" id="dog-life-stage">成年期</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-600">建議健康檢查</span>
+            <span class="font-medium text-blue-700" id="dog-checkup">每年一次</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-600">距離老年還需</span>
+            <span class="font-medium text-blue-700" id="dog-years-left">約2年</span>
+          </div>
+        </div>
+        <a
+          href="/tools/dog-age-calculator/"
+          class="mt-6 block w-full py-3 bg-blue-600 hover:bg-blue-700 text-white text-center rounded-xl font-semibold transition-colors"
+        >
+          查看完整狗狗年齡計算機 →
+        </a>
+      </div>
+
+      <!-- Cat Result Card -->
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-100 rounded-2xl p-6 border border-indigo-200">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🐱</span>
+          <div>
+            <h3 class="font-bold text-slate-900">貓咪年齡</h3>
+            <p class="text-sm text-indigo-600" id="cat-stage-label">室內貓 · 成熟期</p>
+          </div>
+        </div>
+        <div class="text-center py-6">
+          <p class="text-sm text-slate-500 mb-1">人類年齡對照</p>
+          <p class="text-6xl font-extrabold text-indigo-700" id="cat-human-age">36</p>
+          <p class="text-lg text-slate-600 mt-1">歲</p>
+        </div>
+        <div class="space-y-2">
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-600">生命階段</span>
+            <span class="font-medium text-indigo-700" id="cat-life-stage">成熟期</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-600">建議健康檢查</span>
+            <span class="font-medium text-indigo-700" id="cat-checkup">每年一次</span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-slate-600">距離老年還需</span>
+            <span class="font-medium text-indigo-700" id="cat-years-left">約2年</span>
+          </div>
+        </div>
+        <a
+          href="/tools/cat-age-calculator/"
+          class="mt-6 block w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white text-center rounded-xl font-semibold transition-colors"
+        >
+          查看完整貓咪年齡計算機 →
+        </a>
+      </div>
+    </div>
+
+    <!-- Summary Banner -->
+    <div class="bg-slate-100 rounded-2xl p-6 text-center">
+      <p class="text-slate-700 font-medium" id="summary-text">
+        你的狗狗目前處於中年階段，與同年齡的室內貓相比，狗狗的生理年齡通常對應更老化——這是因為大型犬的老化速度比貓咪更快。
+      </p>
+      <p class="text-sm text-slate-500 mt-3">
+        了解更詳細的
+        <a href="/blog/dog-vs-cat-aging/" class="text-blue-600 hover:text-blue-800 underline">
+          狗與貓老化差異完整分析
+        </a>
+        →
+      </p>
+    </div>
+  </div>
+
+  <!-- Comparison Reference Table -->
+  <div class="bg-slate-50 border-t border-slate-200">
+    <div class="max-w-5xl mx-auto px-6 py-16">
+      <h2 class="text-2xl font-bold text-slate-900 text-center mb-8">
+        狗與貓年齡對照表（常見年齡快速查詢）
+      </h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="bg-slate-200">
+              <th class="px-4 py-3 font-semibold text-slate-700 rounded-tl-lg">年份</th>
+              <th class="px-4 py-3 font-semibold text-slate-700">🐕 小型犬</th>
+              <th class="px-4 py-3 font-semibold text-slate-700">🐕 中型犬</th>
+              <th class="px-4 py-3 font-semibold text-slate-700">🐕 大型犬</th>
+              <th class="px-4 py-3 font-semibold text-slate-700 rounded-tr-lg">🐱 室內貓</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-200" id="comparison-table-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+      <p class="text-xs text-slate-500 text-center mt-4">
+        * 狗狗體型分類：小型犬（&lt;10kg&gt;）、中型犬（10-25kg）、大型犬（&gt;25kg）。貓咪數值適用於室內家貓。
+      </p>
+      <div class="text-center mt-6">
+        <a
+          href="/blog/dog-vs-cat-aging/"
+          class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
+        >
+          了解更多狗與貓老化差異 →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <AdSenseAd format="in-article" />
+
+  <!-- Related Content -->
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold text-slate-900 text-center mb-8">
+      相關內容推薦
+    </h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Dog Calculator -->
+      <a href="/tools/dog-age-calculator/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🐕</span>
+          <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">工具</span>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-700">狗狗年齡計算機</h3>
+        <p class="text-sm text-slate-600">使用 AVMA 科學演算法，計算你家狗狗的人類年齡與生命階段</p>
+      </a>
+
+      <!-- Cat Calculator -->
+      <a href="/tools/cat-age-calculator/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🐱</span>
+          <span class="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full">工具</span>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-indigo-700">貓咪年齡計算機</h3>
+        <p class="text-sm text-slate-600">了解愛貓的生命階段與照護重點，快速對照人類年齡</p>
+      </a>
+
+      <!-- Comparison Article -->
+      <a href="/blog/dog-vs-cat-aging/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">📊</span>
+          <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">文章</span>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-700">狗與貓老化差異完整比較</h3>
+        <p class="text-sm text-slate-600">從壽命、衰老速度到照護重點，全面解析兩種寵物的老化歷程</p>
+      </a>
+
+      <!-- Dog Aging Signs -->
+      <a href="/blog/dog-aging-signs/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🐕</span>
+          <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">文章</span>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-700">狗狗老化徵兆完整指南</h3>
+        <p class="text-sm text-slate-600">7個不可忽視的狗狗老化徵兆與應對策略</p>
+      </a>
+
+      <!-- Cat Aging Signs -->
+      <a href="/blog/cat-aging-signs/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">🐱</span>
+          <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">文章</span>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-purple-700">貓咪老化徵兆完整指南</h3>
+        <p class="text-sm text-slate-600">7個預示愛貓進入熟齡期的身體與行為變化</p>
+      </a>
+
+      <!-- Senior Pet Guide -->
+      <a href="/blog/senior-pet-health-guide/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-3xl">📋</span>
+          <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">文章</span>
+        </div>
+        <h3 class="font-bold text-slate-900 mb-2 group-hover:text-purple-700">老年寵物健康完整指南</h3>
+        <p class="text-sm text-slate-600">從營養到居家環境調整，貓狗都適用的全方位老年照護攻略</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // AVMA-based age conversion functions
+    function dogToHuman(years, size = 'medium') {
+      if (years <= 0) return 0;
+
+      let humanAge = 0;
+      let remaining = years;
+
+      // Year 1
+      if (remaining >= 1) {
+        humanAge += size === 'large' ? 20 : 15;
+        remaining -= 1;
+      }
+      // Year 2
+      if (remaining >= 1) {
+        humanAge += 9;
+        remaining -= 1;
+      }
+      // Year 3+
+      const perYear = size === 'large' ? 8 : size === 'medium' ? 7 : 6;
+      humanAge += Math.floor(remaining) * perYear;
+
+      return humanAge;
+    }
+
+    function catToHuman(years) {
+      if (years <= 0) return 0;
+
+      let humanAge = 0;
+      if (years >= 1) humanAge += 15;
+      if (years >= 2) humanAge += 9;
+      if (years > 2) humanAge += (years - 2) * 4;
+
+      return humanAge;
+    }
+
+    function getDogStage(years, size = 'medium') {
+      const thresholds = size === 'large'
+        ? { adult: 2, mature: 5, senior: 7, geriatric: 10 }
+        : size === 'small'
+        ? { adult: 2, mature: 6, senior: 9, geriatric: 13 }
+        : { adult: 2, mature: 5, senior: 8, geriatric: 11 };
+
+      if (years < thresholds.adult) return '幼年期';
+      if (years < thresholds.mature) return '成年期';
+      if (years < thresholds.senior) return '中年期';
+      if (years < thresholds.geriatric) return '老年期';
+      return '高齡期';
+    }
+
+    function getCatStage(years) {
+      if (years < 1) return '幼年期';
+      if (years < 7) return '成熟期';
+      if (years < 11) return '老年期';
+      return '高齡期';
+    }
+
+    function getCheckupFrequency(years, isCat = false) {
+      if (isCat) {
+        if (years >= 11) return '每半年一次';
+        if (years >= 7) return '每年一次';
+        return '每年一次';
+      }
+
+      if (years >= 8) return '每半年一次';
+      if (years >= 5) return '每年一次';
+      return '每年一次';
+    }
+
+    function getYearsToSenior(years, isCat = false, dogSize = 'medium') {
+      const threshold = isCat ? 7 : dogSize === 'large' ? 5 : dogSize === 'small' ? 9 : 6;
+      const diff = threshold - years;
+      if (diff <= 0) return '已進入';
+      if (diff < 1) return '不到1年';
+      return `約${Math.round(diff)}年`;
+    }
+
+    function getDogSizeHumanAge(years) {
+      return {
+        small: catToHuman(years) + 5,
+        medium: catToHuman(years),
+        large: catToHuman(years) - 5
+      };
+    }
+
+    function calculate() {
+      const dogAge = parseFloat(document.getElementById('dog-age').value) || 0;
+      const catAge = parseFloat(document.getElementById('cat-age').value) || 0;
+
+      if (dogAge <= 0 || catAge <= 0) return;
+
+      const dogHumanAge = dogToHuman(dogAge, 'medium');
+      const catHumanAge = catToHuman(catAge);
+
+      // Update DOM
+      document.getElementById('dog-human-age').textContent = dogHumanAge;
+      document.getElementById('dog-life-stage').textContent = getDogStage(dogAge, 'medium');
+      document.getElementById('dog-stage-label').textContent = `中型犬 · ${getDogStage(dogAge, 'medium')}`;
+      document.getElementById('dog-checkup').textContent = getCheckupFrequency(dogAge, false);
+      document.getElementById('dog-years-left').textContent = getYearsToSenior(dogAge, false, 'medium');
+
+      document.getElementById('cat-human-age').textContent = catHumanAge;
+      document.getElementById('cat-life-stage').textContent = getCatStage(catAge);
+      document.getElementById('cat-stage-label').textContent = `室內貓 · ${getCatStage(catAge)}`;
+      document.getElementById('cat-checkup').textContent = getCheckupFrequency(catAge, true);
+      document.getElementById('cat-years-left').textContent = getYearsToSenior(catAge, true);
+
+      // Summary text
+      let summary = '';
+      if (dogAge > catAge + 1) {
+        summary = `你的狗狗年齡比貓咪大 ${(dogAge - catAge).toFixed(1)} 歲。從生理年齡來看，狗狗可能已經進入中年階段，而同齡的室內貓可能還處於成熟期——大型犬的老化速度尤其快於貓咪。`;
+      } else if (catAge > dogAge + 1) {
+        summary = `你的貓咪年齡比狗狗大 ${(catAge - dogAge).toFixed(1)} 歲。從生理年齡對照來看，貓咪的衰老速度通常比同齡的中型犬慢，這也是室內貓往往比多數狗更長壽的原因之一。`;
+      } else {
+        summary = `你的狗狗和貓咪年齡相近。從人類年齡對照來看，兩者的生理階段可能相近，但具體的老化程度仍會因體型（狗狗）和個體健康狀況而有所差異。`;
+      }
+      document.getElementById('summary-text').textContent = summary;
+
+      // Show results
+      document.getElementById('results-section').classList.remove('hidden');
+
+      // Scroll to results
+      document.getElementById('results-section').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Build comparison table
+    function buildComparisonTable() {
+      const tbody = document.getElementById('comparison-table-body');
+      const rows = [1, 2, 3, 5, 7, 10, 12, 15];
+
+      rows.forEach(year => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="px-4 py-3 font-medium text-slate-700">${year}歲</td>
+          <td class="px-4 py-3 text-slate-600">${dogToHuman(year, 'small')}歲</td>
+          <td class="px-4 py-3 text-slate-600">${dogToHuman(year, 'medium')}歲</td>
+          <td class="px-4 py-3 text-slate-600">${dogToHuman(year, 'large')}歲</td>
+          <td class="px-4 py-3 text-slate-600">${catToHuman(year)}歲</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // Event listeners
+    document.getElementById('compare-btn').addEventListener('click', calculate);
+
+    document.getElementById('dog-age').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') calculate();
+    });
+    document.getElementById('cat-age').addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') calculate();
+    });
+
+    // Initialize
+    buildComparisonTable();
+    calculate();
+  </script>
+</BaseLayout>
