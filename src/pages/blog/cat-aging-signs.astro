@@ -1,0 +1,392 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AdSenseAd from '../../components/AdSenseAd.astro';
+
+const title = "貓咪老化徵兆：7個預示愛貓進入熟齡期的身體與行為變化";
+const description = "你的貓開始老了嗎？從跳躍高度下降、隱藏時間變長到理毛頻率減少，解析7個貓咪常見老化徵兆，幫助你在早期階段調整照護方式，延續主子舒適的熟齡生活。";
+const publishDate = "2026-05-10";
+const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { label: '部落格', url: '/blog/' },
+    { label: '寵物健康', url: '/blog/category/health/' },
+    { label: '貓咪老化徵兆', url: canonicalURL.pathname }
+  ]}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <!-- 標題區 -->
+    <header class="mb-10">
+      <p class="text-sm text-blue-600 font-medium mb-3">{publishDate} · 寵物健康</p>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        貓咪是出了名的隱藏疾病高手。當你終於發現「好像哪裡不對」的時候，問題可能已經悄悄累積了好一段時間。了解熟齡貓常見的老化徵兆，是每一位貓奴遲早需要面對的功課——不是為了焦慮，而是為了及早行動。
+      </p>
+    </header>
+
+    <!-- 工具提醒橫幅 -->
+    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-5 mb-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <div class="flex-1">
+        <p class="text-sm text-indigo-600 font-medium mb-1">先算算看</p>
+        <p class="text-slate-700 text-sm">
+          不確定你家貓咪現在相當於人類的幾歲？
+          使用我們的
+          <a href="/tools/cat-age-calculator/" class="font-bold text-indigo-700 underline underline-offset-2">
+            貓咪年齡計算機
+          </a>
+          根據 AVMA 科學演算法，快速估算人類年齡對應與生命階段。
+        </p>
+      </div>
+      <a
+        href="/tools/cat-age-calculator/"
+        class="shrink-0 px-5 py-2.5 bg-indigo-600 text-white rounded-lg font-semibold text-sm hover:bg-indigo-700 transition-colors whitespace-nowrap"
+      >
+        立即計算 →
+      </a>
+    </div>
+
+    <AdSenseAd format="in-article" />
+
+    <!-- 老化是漸進的過程 -->
+    <section class="mb-10">
+      <h2>老化是漸進的過程，不是某一刻突然發生</h2>
+      <p>很多人以為「貓咪變老」是某一天的事實，但現實是：老化是一條緩緩向下的曲線，每個徵兆都是路邊的一個指標，提示你：「這裡需要多注意了。」</p>
+      <p>不同貓咪的老化速度差異很大。基因、品種、飲食、生活環境和過往的健康狀況，都會影響一隻貓何時開始出現老化跡象。一般來說：</p>
+      <ul>
+        <li><strong>室內貓（7-10歲）</strong>：正式進入熟齡期，多數在7歲左右開始出現第一個老化徵兆。</li>
+        <li><strong>室內貓（10-14歲）</strong>：進入老年階段，各項生理機能逐步減緩。</li>
+        <li><strong>14歲以上</strong>：依據貓咪的整體健康狀況，需要更密集的健康監控與照護調整。</li>
+        <li><strong>室外或半室外貓</strong>：老化跡象可能出現得更早，因為環境壓力與活動量不同。</li>
+      </ul>
+      <p>用我們的<a href="/tools/cat-age-calculator/">貓咪年齡計算機</a>快速得到你家貓咪的人類年齡對照，然後帶著這個數字，繼續閱讀以下7個常見老化徵兆，判斷哪些問題可能正在悄悄發生。</p>
+    </section>
+
+    <!-- 7個老化徵兆 -->
+    <section class="mb-10">
+      <h2>7個常見的貓咪老化徵兆</h2>
+
+      <h3>① 跳躍高度明顯下降</h3>
+      <p>這是貓咪退化性關節疾病（DJD）最明顯的徵兆之一。健康的成年貓通常可以跳到身高5-6倍的高度；但當關節開始退化，許多貓會放棄嘗試跳到高處，轉而只跳到低矮的家具，或者要求主人抱上去。</p>
+      <p><strong>你可以觀察：</strong>你家貓咪以前最喜歡待的高處（例如書櫃頂、冷氣機上），現在是否不再上去？跳躍前是否會先停留、評估，比以前更謹慎？</p>
+      <p>退化性關節疾病在老年貓中極為常見，研究顯示12歲以上的貓咪中超過90%有某種程度的關節退化。及早發現的意義在於：體重管理、環境調整和適當的營養補充，都可以顯著延緩退化速度。<a href="/blog/senior-pet-health-guide/">老年寵物健康完整指南</a>中有關節問題的詳細照護建議。</p>
+
+      <h3>② 隱藏時間變長、社交意願降低</h3>
+      <p>很多人以為貓咪「本來就喜歡躲起來」，但如果隱藏的時間突然比以前更長、或者選擇的位置比以前更隱密，這可能是疼痛、不適或認知功能開始退化的訊號。</p>
+      <p><strong>你可以觀察：</strong>貓咪是否比過去更常躲在家具後方、衣櫃深處或床底？當你走進房間時，牠是否比以前更慢才出現？</p>
+      <p>慢性疼痛（關節炎、牙科疾病）是老年貓隱藏時間變長最常見的原因。牙科問題尤其容易被忽略——研究顯示3歲以上的貓咪中約有70-90%有某種形式的牙科疾病，但因為貓咪會正常進食，主人往往直到牙齦明顯紅腫或流口水才發現。</p>
+
+      <h3>③ 理毛頻率減少，毛髮品質下降</h3>
+      <p>理毛是貓咪健康的重要指標。健康成年貓每天約花費30-50%的清醒時間理毛。當這個行為明顯減少時，可能是關節疼痛（彎腰理毛會不舒服）、認知功能退化，或者全身性疾病的早期徵兆。</p>
+      <p><strong>你可以觀察：</strong>貓咪的毛髮是否變得比以往粗糙、打結？背後或後腿這些需要高難度姿勢才能理到的部位，是否開始出現毛髮凌亂或脫毛？</p>
+      <p>理毛減少的另一個後果是：指甲可能過度生長，因為貓咪磨爪的頻率也跟著下降。定期檢查指甲長度，每2-3週修剪一次，對老年貓來說是很重要的日常護理。</p>
+
+      <h3>④ 對叫喚的反應延遲或消失</h3>
+      <p>和狗狗不同，貓咪本來就不是因為「聽話」而聞名的動物。但如果你發現，過去會對食物晃動鑰匙聲有反應的貓，現在完全不理會——那可能是聽力正在減退。</p>
+      <p><strong>你可以觀察：</strong>在貓咪視線範圍內叫牠的名字，牠會回頭嗎？還是只有看見你走動才會走過來？</p>
+      <p>老年貓的聽力退化通常從高頻率聲音開始，與狗狗的情況類似。聽力減退本身不需要治療，但需要注意：聽不見汽車靠近聲音的戶外貓面臨更高風險，且室內貓在聽不到門鈴的情況下可能受到驚嚇。在<a href="/blog/senior-pet-health-guide/">老年寵物健康完整指南</a>中，有針對聽覺退化環境調整的具體建議。</p>
+
+      <h3>⑤ 體重異常：突然變瘦或變胖</h3>
+      <p>體重變化是老年貓健康狀況最靈敏的指標之一。甲狀腺機能亢進（貓咪最常見的內分泌疾病，7歲以上貓咪發病率顯著上升）通常導致食慾增加但體重下降；慢性腎臟病則可能同時影響食慾與體重。</p>
+      <p><strong>你可以觀察：</strong>過去6個月內，貓咪的體重有沒有明顯增減？肋骨和脊椎骨的輪廓，是否比過去更容易摸到或更突出？</p>
+      <p>建議每個月在就診或美容時測量體重，建立記錄。如果體重在3個月內變化超過5%，無論增減，都應該安排獸醫檢查——血液學與甲狀腺功能檢查是老年貓的標準健康評估項目，<a href="/blog/senior-pet-health-guide/">老年寵物健康完整指南</a>中有更詳細的說明。</p>
+
+      <h3>⑥ 睡眠型態改變：白天更愛睡，深夜更活躍</h3>
+      <p>老年貓的日夜節律常常逆轉——白天昏昏沉沉，深夜卻開始走動、叫喚或在屋子裡徘徊。這與貓的認知功能退化（貓癡呆）有直接關聯，也可能是甲狀腺問題的徵兆。</p>
+      <p><strong>你可以觀察：</strong>貓咪白天是否幾乎都在睡覺，到了半夜才開始在家裡走動？有沒有對著空氣盯著看，或者在角落卡住出不來的情況？</p>
+      <p>夜間躁動的行為，對飼主和貓咪本身的睡眠品質都是負擔。環境調整（固定作息時間、小夜燈、白天增加輕度互動遊戲以消耗精力）是第一線的應對方式。如果行為問題持續，與獸醫討論認知功能支持的補充品或藥物選項。</p>
+
+      <h3>⑦ 貓砂盆事故增加：在砂盆外上廁所</h3>
+      <p>這是老年貓最常見的「最後才被發現」的徵兆之一。當貓咪在砂盆外上廁所，多數主人的第一反應是「在發脾氣」或「報復行為」——但在老年貓身上，更可能的原因是：關節疼痛讓牠爬進砂盆時感到疼痛、腎臟問題導致尿量增加且憋不住、認知退化讓牠忘記砂盆位置。</p>
+      <p><strong>你可以觀察：</strong>事故是在砂盆附近發生（可能爬不進去），還是隨機發生在房子各處？貓砂盆的入口高度，對於行動不便的老年貓是否已經太過困難？</p>
+      <p>實際的處理方式，取決於背後的根本原因：如果是關節問題，降低砂盆入口高度或更換成側開式的砂盆，往往就能大幅改善。如果是泌尿系統問題，則需要進一步的獸醫檢查與治療。</p>
+    </section>
+
+    <AdSenseAd format="in-article" />
+
+    <!-- 發現老化徵兆後該怎麼做 -->
+    <section class="mb-10">
+      <h2>發現徵兆後，該怎麼做？</h2>
+      <p>和老年的狗狗一樣，貓咪的老化問題在早期發現時，控制效果最好。以下的步驟適用於你觀察到任何一個或多個徵兆的情況。</p>
+
+      <h3>第一步：記錄觀察</h3>
+      <p>用手機或紙本記下以下資訊：</p>
+      <ul>
+        <li>什麼時候開始的？（大約幾歲？）</li>
+        <li>症狀是逐漸出現，還是突然發生？</li>
+        <li>哪些行為有變化？（跳躍、理毛、進食、飲水、睡眠、社交、上廁所）</li>
+        <li>環境最近有沒有改變？（新家具、新貓、新食物、搬家？）</li>
+      </ul>
+      <p>這些細節能幫助獸醫快速縮小問題範圍，節省檢查時間與費用。</p>
+
+      <h3>第二步：安排獸醫檢查</h3>
+      <p>如果你觀察到2個或以上的老化徵兆，建議安排基礎健康檢查。老年貓建議的檢查項目包括：</p>
+      <ul>
+        <li><strong>血液學檢查</strong>：CBC（全血球計數）與血液生化，評估肝腎功能、甲狀腺機能。甲狀腺機能亢進是7歲以上貓咪最常見的內分泌疾病，血液檢查是確診的唯一方式。</li>
+        <li><strong>尿液檢查</strong>：搭配血液檢查可以更完整評估腎臟與泌尿系統健康。慢性腎臟病（CKD）是老年貓的頭號死因，早期發現可以通過飲食管理顯著延緩病程。</li>
+        <li><strong>血壓測量</strong>：高血壓在老年貓中並不罕見，且會對腎臟、眼睛（視網膜剝離）和心臟造成不可逆的損害。</li>
+        <li><strong>牙科評估</strong>：老年貓的牙科問題往往需要全身麻醉才能完整檢查與治療。如果獸醫建議洗牙，不要因為年紀而過度抗拒——延遲處理的牙科感染，對心臟和腎臟的傷害往往更大。</li>
+      </ul>
+
+      <h3>第三步：環境與飲食調整</h3>
+      <p>在確診之前，有些事情可以先開始做：</p>
+      <ul>
+        <li><strong>降低砂盆入口高度</strong>：使用入口較低或側開式的砂盆，方便行動不便的貓咪進出。</li>
+        <li><strong>在喜歡的高處放置台階或斜坡</strong>：如果貓咪因為跳不上去而放棄那些高處，放一個結實的台階可以恢復牠的巡視領地。</li>
+        <li><strong>固定餵食時間與位置</strong>：有助於觀察食慾變化，也便於監控體重。</li>
+        <li><strong>增加飲水點</strong>：老年貓容易脫水，多處放置乾淨的水碗可以鼓勵多喝水。</li>
+        <li><strong>維持家具位置固定</strong>：視力或認知功能退化時，突然改變家具位置會讓貓咪非常焦慮。</li>
+      </ul>
+      <p>完整的居家調整建議，可以參考<a href="/blog/senior-pet-health-guide/">老年寵物健康完整指南</a>中的專門章節。</p>
+    </section>
+
+    <!-- 貓咪老化時間表 -->
+    <section class="mb-10">
+      <h2>貓咪老化進程：從成年到高齡的完整對照</h2>
+      <p>與狗狗不同，貓咪的老化不以體型大小区分，而是以年齡階段為基准。以下是室內家貓的典型老化進程參考：</p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm text-left">
+          <thead>
+            <tr class="bg-slate-50">
+              <th class="px-4 py-3 font-semibold text-slate-700">生命階段</th>
+              <th class="px-4 py-3 font-semibold text-slate-700">年齡範圍</th>
+              <th class="px-4 py-3 font-semibold text-slate-700">人類年齡對照</th>
+              <th class="px-4 py-3 font-semibold text-slate-700">主要變化</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="px-4 py-3 font-medium">年輕成貓</td>
+              <td class="px-4 py-3">1-6 歲</td>
+              <td class="px-4 py-3">15-40 歲</td>
+              <td class="px-4 py-3">活動力巊峰期，肌肉量穩定</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="px-4 py-3 font-medium">成熟貓</td>
+              <td class="px-4 py-3">7-10 歲</td>
+              <td class="px-4 py-3">44-56 歲</td>
+              <td class="px-4 py-3">新陳代謝放緩，部分個體開始出現老化徵兆</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-medium">老年貓</td>
+              <td class="px-4 py-3">11-14 歲</td>
+              <td class="px-4 py-3">60-72 歲</td>
+              <td class="px-4 py-3">關節退化、聽力視力減退、認知功能下滑開始出現</td>
+            </tr>
+            <tr class="bg-slate-50/50">
+              <td class="px-4 py-3 font-medium">高齡貓</td>
+              <td class="px-4 py-3">15 歲以上</td>
+              <td class="px-4 py-3">76 歲以上</td>
+              <td class="px-4 py-3">多系統老化同步進行，需要密集的健康監控</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-slate-500">* 數據為統計平均值，個別差異可達 ±2 歲。室內家貓與室外貓的老化速度也有所不同。</p>
+      <p class="mt-4">用我們的<a href="/tools/cat-age-calculator/">貓咪年齡計算機</a>直接得到你家貓咪的個人化人類年齡對照。</p>
+
+      <!-- 狗 vs 貓的對照 -->
+      <h3 class="mt-8">與狗狗的老化徵兆有什麼不同？</h3>
+      <p>貓咪和狗狗的老化徵兆有幾個關鍵差異：</p>
+      <ul>
+        <li><strong>隱藏疼痛的方式</strong>：狗狗會表現出跛行或不願走動；貓咪則更傾向於減少跳躍和躲起來，而不是明顯表現出不適。</li>
+        <li><strong>社交表現</strong>：老年狗狗通常會變得更黏人、更需要關注；老年貓咪則可能變得更冷漠或更加選擇性社交。</li>
+        <li><strong>如廁行為</strong>：狗狗在室內上錯地方往往是服從度或泌尿系統的問題；貓咪在砂盆外上廁所，則更可能是關節疼痛、認知退化或腎臟疾病的徵兆。</li>
+        <li><strong>體重變化方向</strong>：老年狗狗常見體重增加（甲狀腺機能減退）；老年貓咪則常見體重下降（甲狀腺機能亢進），方向恰恰相反。</li>
+      </ul>
+      <p>如果你同時養了狗和貓，建議分別參考我們的<a href="/blog/dog-aging-signs/">狗狗老化徵兆文章</a>和本篇文章，針對不同物種的特點分別觀察。</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mb-10">
+      <h2>常見問題</h2>
+
+      <h3>我的貓才6歲，算是老了嗎？</h3>
+      <p>6歲的貓咪通常還處於年輕成貓階段，但這是因貓而異的。使用<a href="/tools/cat-age-calculator/">貓咪年齡計算機</a>可以快速得到你家貓咪的人類年齡對照，約相當於人類40歲左右——這時候是開始建立定期健康檢查習慣的好時機。</p>
+
+      <h3>老年貓突然變得很黏人，正常嗎？</h3>
+      <p>需要看情形。有些老年貓因為視力或聽力減退而變得更依賴主人，是正常的適應行為。但如果伴隨食慾改變、體重增減或如廁習慣混亂，建議安排獸醫檢查，因為這些可能是甲狀腺機能亢進、慢性腎病或認知退化的徵兆。</p>
+
+      <h3>老年貓不願意跳高了，是關節問題嗎？</h3>
+      <p>很有可能是。退化性關節疾病在老年貓中極為常見，但因為貓咪會隱藏疼痛，往往直到問題嚴重才被發現。除了關節問題，甲狀腺機能亢進也會導致肌肉流失，使跳躍能力下降。建議帶給獸醫檢查以確定根本原因。</p>
+
+      <h3>老年貓的飲食需要調整嗎？</h3>
+      <p>不一定所有老年貓都需要更換食物，但如果獸醫確認有慢性腎病、甲狀腺問題或關節退化，選擇適合的處方食品或調整蛋白質與磷的攝取量，確實可以改善生活品質與延長壽命。具體的飲食建議請和獸醫討論。</p>
+
+      <h3>貓咪和狗狗的老化徵兆有什麼主要不同？</h3>
+      <p>最大的差異在於：貓咪更擅長隱藏疼痛與不適，往往只透過間接行為（如減少跳躍、增加隱藏時間）而非明顯症狀（如跛行）來表現問題。體重變化的方向也不同：老年狗狗常見變胖，而老年貓咪則常見變瘦。如果你同時養了兩種寵物，建議分別閱讀我們的<a href="/blog/dog-aging-signs/">狗狗老化徵兆</a>與本文，針對不同物種的特點分別觀察。</p>
+    </section>
+
+    <!-- 延伸閱讀 -->
+    <section class="mb-10 border-t border-slate-200 pt-8">
+      <h2>延伸閱讀與相關工具</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <a href="/tools/cat-age-calculator/" class="group p-4 bg-indigo-50 rounded-xl hover:bg-indigo-100 transition-colors">
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-indigo-700">🐱 貓咪年齡計算機</h3>
+          <p class="text-sm text-slate-600">馬上算出你家貓咪的人類年齡對照，快速掌握生命階段</p>
+        </a>
+        <a href="/blog/dog-aging-signs/" class="group p-4 bg-amber-50 rounded-xl hover:bg-amber-100 transition-colors">
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-amber-700">🐕 狗狗老化徵兆</h3>
+          <p class="text-sm text-slate-600">比較：貓咪和狗狗的老化方式有什麼不同？</p>
+        </a>
+        <a href="/blog/senior-pet-health-guide/" class="group p-4 bg-purple-50 rounded-xl hover:bg-purple-100 transition-colors">
+          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-purple-700">📋 老年寵物健康完整指南</h3>
+          <p class="text-sm text-slate-600">從營養到居家環境調整，貓狗都適用的老年照護攻略</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- 更新日期 -->
+    <footer class="text-sm text-slate-400 border-t border-slate-100 pt-6">
+      <p>最後更新：{publishDate}</p>
+      <p class="mt-1">免責聲明：本文章內容僅供一般參考用途，不構成醫療建議。如有健康疑慮，請諮詢你的獸醫師。</p>
+    </footer>
+  </article>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "我的貓才6歲，算是老了嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "6歲的貓咪通常還處於年輕成貓階段（約人類40歲）。使用貓咪年齡計算機可以快速得到人類年齡對照，這個階段是開始建立定期健康檢查習慣的好時機。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "老年貓突然變得很黏人，正常嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "視情況而定。如果伴隨食慾改變、體重增減或如廁習慣混亂，建議安排獸醫檢查。如果只是變得更依賴但其他行為正常，可能是視力或聽力減退的適應行為。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "老年貓不願意跳高了，是關節問題嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "退化性關節疾病在老年貓中極為常見，12歲以上貓咪超過90%有某種程度的關節退化。但體重下降和跳躍能力減退也可能是甲狀腺機能亢進的徵兆。建議帶給獸醫檢查以確定根本原因。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "老年貓的飲食需要調整嗎？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "不一定所有老年貓都需要更換食物。但如果確認有慢性腎病、甲狀腺問題或關節退化，選擇適合的處方食品或調整蛋白質與磷的攝取量，確實可以改善生活品質。具體建議請和獸醫討論。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "貓咪和狗狗的老化徵兆有什麼主要不同？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "最大的差異是：貓咪更擅長隱藏疼痛，往往透過間接行為表現。體重變化方向也相反：老年狗常見變胖，而老年貓常見變瘦。老年狗狗通常變得更黏人，老年貓則可能變得更冷漠。"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Article Schema -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "貓咪老化徵兆：7個預示愛貓進入熟齡期的身體與行為變化",
+    "description": "你的貓開始老了嗎？從跳躍高度下降、隱藏時間變長到理毛頻率減少，解析7個貓咪常見老化徵兆，幫助你在早期階段調整照護方式。",
+    "author": { "@type": "Organization", "name": "ToolKit 寵物知識團隊" },
+    "datePublished": "2026-05-10",
+    "publisher": {
+      "@type": "Organization",
+      "name": "ToolKit",
+      "logo": { "@type": "ImageObject", "url": "https://git-github-com-kenny-yan9-ad-site.vercel.app/favicon.svg" }
+    }
+  }
+  </script>
+</BaseLayout>
+
+<style>
+  article h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e2e8f0;
+  }
+
+  article h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  article p {
+    color: #334155;
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  article ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.25rem;
+  }
+
+  article ul li {
+    color: #334155;
+    line-height: 1.7;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    position: relative;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  article ul li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+  }
+
+  article a {
+    color: #4f46e5;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+  }
+
+  article a:hover {
+    color: #3730a3;
+  }
+
+  article table {
+    border-collapse: collapse;
+    font-size: 0.875rem;
+  }
+
+  article thead th {
+    background: #f8fafc;
+    font-weight: 600;
+    color: #334155;
+    border-bottom: 2px solid #e2e8f0;
+  }
+
+  article tbody td {
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+  }
+</style>
