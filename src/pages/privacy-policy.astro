@@ -1,30 +1,86 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+
+const breadcrumbs = [
+  { label: '首頁', url: '/' },
+  { label: '隱私權政策', url: '/privacy-policy/' }
+];
 ---
 
-<BaseLayout title="隱私權政策 - Pet Aging Hub" description="了解我們如何收集、使用和保護您的個人資訊。">
-  <article class="prose prose-slate max-w-none mx-auto py-10">
-    <h1>隱私權政策</h1>
-    <p class="text-sm text-slate-500">最後更新日期：2026年5月11日</p>
+<BaseLayout
+  title="隱私權政策 - Pet Aging Hub"
+  description="了解我們如何收集、使用和保護您的個人資訊。"
+  breadcrumbs={breadcrumbs}
+>
+  <div class="max-w-4xl mx-auto py-10 px-4">
+    <header class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 text-sm font-bold px-4 py-2 rounded-full mb-4">
+        <span>🔒</span>
+        <span>隱私安全保障</span>
+      </div>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">隱私權政策</h1>
+      <p class="text-slate-500 font-medium text-lg">最後更新日期：2026年5月11日</p>
+    </header>
 
-    <p>Pet Aging Hub（以下簡稱「本網站」、「我們」）非常重視您的隱私權。本隱私權政策說明當您造訪我們的網站時，我們如何收集、使用、揭露和保護您的資訊。</p>
+    <div class="space-y-8">
+      
+      <section class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+          <span class="text-blue-500">01.</span> 我們收集的資訊
+        </h2>
+        <div class="prose prose-slate max-w-none text-slate-600 leading-relaxed">
+          <p>Pet Aging Hub 重視您的隱私。請注意：</p>
+          <ul class="list-disc pl-6 space-y-2">
+            <li><strong>隱私優先：</strong>我們的計算機和工具不要求您建立帳戶或提供個人識別資訊。</li>
+            <li><strong>本地運算：</strong>所有計算都在您的瀏覽器本地完成，我們不會儲存您輸入的年齡或體重資料。</li>
+          </ul>
+        </div>
+      </section>
 
-    <h2>一、我們收集的資訊</h2>
-    <p>我們的計算機和工具不要求您建立帳戶或提供個人識別資訊。所有計算都在您的瀏覽器本地完成，我們不會儲存您輸入的年齡或體重資料。</p>
+      <section class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900 mb-4 flex items-center gap-3">
+          <span class="text-blue-500">02.</span> Google Analytics
+        </h2>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          我們使用 Google Analytics 來分析網站流量，以優化使用者體驗。
+        </p>
+        <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold border-b-2 border-blue-100 hover:border-blue-600 transition-all">
+          安裝停用瀏覽器附加元件 →
+        </a>
+      </section>
 
-    <h2>二、Google Analytics 的使用</h2>
-    <p>我們使用 Google Analytics 來分析網站流量。您可以透過安裝 <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics 停用瀏覽器附加元件</a>來選擇不參與。</p>
+      <section class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 border border-blue-100 shadow-sm">
+        <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
+          <span class="text-indigo-600">03.</span> AdSense 與廣告條款
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-white">
+            <h3 class="font-bold text-slate-900 mb-2">個人化廣告</h3>
+            <p class="text-sm text-slate-600 leading-relaxed">Google 會使用 Cookie 根據您過去的瀏覽記錄來投放與您興趣相關的廣告。</p>
+          </div>
+          <div class="bg-white/80 backdrop-blur-sm p-6 rounded-2xl border border-white">
+            <h3 class="font-bold text-slate-900 mb-2">您的選擇權</h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-4">您可以造訪廣告設定頁面選擇退出個人化廣告。</p>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" class="text-xs bg-slate-900 text-white px-3 py-2 rounded-lg font-bold">Google 廣告設定</a>
+              <a href="https://www.aboutads.info" target="_blank" rel="noopener" class="text-xs bg-white text-slate-900 border border-slate-200 px-3 py-2 rounded-lg font-bold">AboutAds 退出</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <h2>三、Google AdSense 與第三方廣告 (AdSense 合規條款)</h2>
-    <p>本網站使用 Google AdSense 在網頁上顯示廣告。</p>
-    <ul>
-      <li><strong>個人化廣告：</strong>Google 會使用 Cookie 根據您過去的瀏覽記錄來個人化您在造訪本網站和其他網站時看到的廣告。</li>
-      <li><strong>選擇退出：</strong>您可以透過造訪 Google <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">廣告設定</a> 網頁，選擇退出個人化廣告。</li>
-      <li><strong>第三方供應商：</strong>您可以造訪 <a href="https://www.aboutads.info" target="_blank" rel="noopener">www.aboutads.info</a> 選擇退出第三方供應商為個人化廣告使用的 Cookie。</li>
-    </ul>
+      <section class="bg-slate-900 text-white rounded-3xl p-8 shadow-xl">
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+          <span>📧</span> 聯絡我們
+        </h2>
+        <p class="text-slate-300 mb-6">如果您對本隱私權政策有任何疑問，請隨時透過電子郵件與我們聯繫。</p>
+        <div class="inline-block bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-4 rounded-2xl transition-colors">
+          <span class="text-slate-400 block text-sm mb-1">官方聯絡信箱</span>
+          <a href="mailto:monkamonme@gmail.com" class="text-xl font-bold text-amber-400">monkamonme@gmail.com</a>
+        </div>
+      </section>
 
-    <h2>四、聯絡我們</h2>
-    <p>如果您對本隱私權政策有任何疑問，請透過以下方式聯繫我們：</p>
-    <p>電子郵件：<a href="mailto:monkamonme@gmail.com">monkamonme@gmail.com</a></p>
-  </article>
+    </div>
+  </div>
 </BaseLayout>
