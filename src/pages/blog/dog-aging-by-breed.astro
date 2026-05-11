@@ -3,716 +3,109 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 
 const title = "狗狗品種與老化速度：從吉娃娃到拉布拉多，各體型與品種的老年時程";
-const description = "不同品種的狗狗老化速度差異極大。吉娃娃可能17歲仍活蹦亂跳，拉布拉多可能7歲就出現關節問題。本指南整理常見品種的老化時間表，幫助主人提前準備。";
+const description = "不同品種的狗狗老化速度差異極大。本指南整理常見品種的老化時間表，幫助主人提前根據體型準備老年照護。";
+const date = "2026-05-12";
+const image = "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&q=80";
 ---
 
 <BaseLayout title={title} description={description}>
   <div class="bg-gradient-to-br from-amber-50 to-orange-50 border-b border-amber-100">
     <div class="max-w-4xl mx-auto px-6 py-12 text-center">
-      <nav class="text-sm text-slate-500 mb-4">
+      <nav class="text-sm text-slate-500 mb-4 font-medium">
         <a href="/" class="hover:text-blue-600">首頁</a>
         <span class="mx-2">/</span>
         <a href="/blog/" class="hover:text-blue-600">部落格</a>
         <span class="mx-2">/</span>
-        <a href="/blog/category/health/" class="hover:text-blue-600">健康</a>
-        <span class="mx-2">/</span>
         <span class="text-slate-400">狗狗品種與老化速度</span>
       </nav>
       <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
-        🐕 健康與照護
+        🐕 品種健康研究
       </div>
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 leading-tight">
+      <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
         狗狗品種與老化速度：<br class="hidden md:block" />
-        從吉娃娃到拉布拉多，各體型與品種的老年時程
+        各體型與品種的老年時程
       </h1>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        不同品種的狗狗老化速度差異極大。吉娃娃可能17歲仍活蹦亂跳，拉布拉多可能7歲就出現關節問題。本指南整理常見品種的老化時間表，幫助主人提前準備。
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        為什麼大丹犬 6 歲就算老？而吉娃娃 12 歲還像青少年？了解品種背後的生理時鐘，才能給予最精準的照護。
       </p>
-      <div class="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
-        <span>更新時間：2024年</span>
+      <div class="flex items-center justify-center gap-4 mt-8 text-sm text-slate-500 font-medium">
+        <span>更新時間：{date}</span>
         <span>·</span>
-        <span>閱讀時間：約12分鐘</span>
+        <span>閱讀時間：約 12 分鐘</span>
       </div>
     </div>
   </div>
 
-  <!-- Hero Image -->
-  <div class="max-w-4xl mx-auto px-6 mt-[-2rem] md:mt-0 md:px-6 md:rounded-b-2xl overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 mt-[-2rem] md:mt-0 md:px-6">
     <img
-      src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&h=675&fit=crop&fm=webp"
-      alt="各年齡的狗狗並排站立，展示從幼犬到老犬的生命歷程"
-      class="w-full aspect-video object-cover rounded-2xl shadow-lg"
-      loading="eager"
+      src={image}
+      alt="不同體型狗狗的生命階段對比圖"
+      class="w-full aspect-video object-cover rounded-3xl shadow-2xl border-4 border-white"
     />
   </div>
 
-  <!-- CTA Banner -->
-  <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-    <div class="max-w-4xl mx-auto px-6 py-6 text-center">
-      <p class="text-sm mb-2 opacity-90">想知道你家狗狗的人類年齡嗎？</p>
+  <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-inner">
+    <div class="max-w-4xl mx-auto px-6 py-8 text-center">
+      <p class="text-base mb-4 opacity-95 font-medium">想知道你家狗狗對應的人類年齡嗎？</p>
       <a
         href="/tools/dog-age-calculator/"
-        class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-6 py-3 rounded-xl hover:bg-blue-50 transition-colors"
+        class="inline-flex items-center gap-2 bg-white text-blue-700 font-bold px-8 py-3.5 rounded-2xl hover:bg-blue-50 transition-all shadow-lg hover:scale-105"
       >
-        🐕 狗狗年齡計算機
-        <span class="text-lg">→</span>
+        🐕 狗狗年齡計算機 →
       </a>
     </div>
   </div>
 
-  <!-- Content -->
-<article class="max-w-3xl mx-auto px-6 py-12">
-
-    <!-- Key Takeaways -->
-    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-6">
-      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-2xl my-8 shadow-sm">
+      <h3 class="font-bold text-amber-900 mb-4 flex items-center gap-2 text-lg">
         <span>📌</span> 本篇重點
       </h3>
-      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
-        <li>大型犬老化速度較快，可能5-6歲就進入老年期</li>
-        <li>小型犬和玩具犬平均壽命最長，可達15-17歲</li>
-        <li>混種犬通常比純種犬更健康，壽命也更長</li>
-        <li>不同體型的狗狗面臨不同的健康風險</li>
-        <li>了解品種特性，有助於提前規劃老年照護</li>
+      <ul class="space-y-2 text-slate-700 text-base leading-relaxed">
+        <li class="flex gap-2"><strong>·</strong> 大型犬老化速度極快，6 歲即進入老年階段。</li>
+        <li class="flex gap-2"><strong>·</strong> 小型犬與玩具犬平均壽命最長，照護重點在於心臟與牙齒。</li>
+        <li class="flex gap-2"><strong>·</strong> 體重每增加 2kg，預期壽命可能減少約一個月。</li>
       </ul>
     </div>
 
-    <!-- 標題區 -->
-    <div class="mb-10">
-      <p class="text-lg text-slate-700 leading-relaxed mb-6">
-        獸醫文獻中有一個說法：「小型犬活得像時間充裕的富人，大型犬活得像時間匆忙的窮人。」這句話道出了狗狗世界中一個殘酷的事實——<strong>體型越大的狗狗，老化速度通常越快，壽命也越短。</strong>
-      </p>
-      <p class="text-slate-600 leading-relaxed">
-        根據美國獸醫學院（AVMA）和英國犬類研究數據，大型犬的平均壽命約為8至12年，而小型犬往往能活到12至17年。這個差異的背後，是育種選擇、基因負荷和新陳代謝速度的復雜交互作用。本指南整理了六大體型類別的常見品種老化時間表，幫助你了解自家狗狗目前處於生命周期的哪個階段。
-      </p>
-    </div>
+    <section id="size-differences" class="prose prose-slate max-w-none">
+      <h2 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-2">為什麼大型犬老得快？</h2>
+      <p>根據「Gompertz-Makeham 老化法則」，大型犬的細胞分裂頻率更高、氧化壓力更大。這意味著牠們的身體器官在更短的時間內承受了更多的消耗。</p>
+      
+      [Image of aging correlation with dog size]
 
-    <AdSenseAd format="in-article" />
+      <AdSenseAd format="in-article" />
 
-    <!-- Table of Contents -->
-    <div class="bg-slate-50 rounded-2xl p-6 mb-10">
-      <h2 class="text-lg font-bold text-slate-900 mb-4">文章目錄</h2>
-      <ol class="space-y-2 text-sm">
-        <li class="flex gap-2">
-          <span class="text-blue-600 font-bold">01.</span>
-          <a href="#size-differences" class="text-slate-700 hover:text-blue-600">為什麼大型犬老得快？——從基因到新陳代謝</a>
-        </li>
-        <li class="flex gap-2">
-          <span class="text-blue-600 font-bold">02.</span>
-          <a href="#size-chart" class="text-slate-700 hover:text-blue-600">體型分類與老化時間表</a>
-        </li>
-        <li class="flex gap-2">
-          <span class="text-blue-600 font-bold">03.</span>
-          <a href="#popular-breeds" class="text-slate-700 hover:text-blue-600">熱門品種詳細分析（附老化時間表）</a>
-        </li>
-        <li class="flex gap-2">
-          <span class="text-blue-600 font-bold">04.</span>
-          <a href="#signs-by-breed" class="text-slate-700 hover:text-blue-600">不同品種的早期老化徵兆</a>
-        </li>
-        <li class="flex gap-2">
-          <span class="text-blue-600 font-bold">05.</span>
-          <a href="#care-strategies" class="text-slate-700 hover:text-blue-600">各體型狗狗的老年照護策略</a>
-        </li>
-        <li class="flex gap-2">
-          <span class="text-blue-600 font-bold">06.</span>
-          <a href="#faq" class="text-slate-700 hover:text-blue-600">常見問題</a>
-        </li>
-      </ol>
-    </div>
-
-    <!-- Section 1: Why Large Dogs Age Faster -->
-    <section id="size-differences" class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-        <span class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-lg font-bold">1</span>
-        為什麼大型犬老得快？——從基因到新陳代謝
-      </h2>
-      <div class="prose-slate max-w-none">
-        <p class="text-slate-700 leading-relaxed mb-4">
-          演化生物學中有一個重要的概念稱為「Gompertz-Makeham 老化法則」——動物的死亡率隨年齡指數增長，但這個增長速率因物種而異。在犬類世界中，這個速率與體型大小呈現一種令人意外的「老化加速」關係。
-        </p>
-
-        <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl mb-6">
-          <h3 class="font-bold text-slate-900 mb-2">🐕 關鍵發現</h3>
-          <p class="text-slate-700 text-sm leading-relaxed">
-            美國加州大學戴維斯分校獸醫學院的研究顯示，狗狗的體型與老化速度之間存在一個非線性關係：每增加2公斤體重，預期壽命約減少一個 月。這是因為大型犬的細胞分裂頻率更高、氧化壓力更大，而且心臟和關節承受的負荷也相對更重。
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4 mb-6">
-          <div class="bg-blue-50 rounded-xl p-5">
-            <h4 class="font-bold text-blue-800 mb-3">大型犬（>25kg）</h4>
-            <ul class="text-sm text-slate-700 space-y-1">
-              <li>· 平均壽命：6-10年</li>
-              <li>· 老化加速年齡：5-7歲</li>
-              <li>· 主要死因：癌症、關節問題、心臟病</li>
-              <li>· 基因負荷最高（近親繁殖導致）</li>
-            </ul>
-          </div>
-          <div class="bg-green-50 rounded-xl p-5">
-            <h4 class="font-bold text-green-800 mb-3">小型犬（<10kg）</h4>
-            <ul class="text-sm text-slate-700 space-y-1">
-              <li>· 平均壽命：12-17年</li>
-              <li>· 老化加速年齡：9-12歲</li>
-              <li>· 主要死因：腎臟問題、器官衰竭</li>
-              <li>· 基因多樣性相對較高</li>
-            </ul>
-          </div>
-        </div>
-
-        <p class="text-slate-700 leading-relaxed">
-          另一個重要因素是「劍橋貓科動物老化研究」（the Dog Ageing Project）於2021年發表的基因分析結果：大型犬的基因中調控生長發育的IGF-1基因（胰島素生長因子）變異型態，會同時加速老化和增加癌症風險。這是一個演化上的「權衡」——大型體型需要快速生長，但代價是壽命縮短。
-        </p>
-      </div>
-    </section>
-
-    <!-- Section 2: Size Chart -->
-    <section id="size-chart" class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-        <span class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-lg font-bold">2</span>
-        體型分類與老化時間表
-      </h2>
-      <p class="text-slate-700 leading-relaxed mb-6">
-        獸醫學界通常根據狗狗的成年體重將品種分為四類。以下是各體型類別的「老化分水嶺」——在這些年齡左右，狗狗通常會開始出現明顯的老化徵兆。
-      </p>
-
-      <div class="overflow-x-auto mb-6">
+      <h2 id="size-chart" class="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b pb-2">體型分類與老化分水嶺</h2>
+      <div class="overflow-hidden rounded-2xl border border-slate-200 shadow-sm mb-8">
         <table class="w-full text-sm">
-          <thead>
-            <tr class="bg-slate-100">
-              <th class="px-4 py-3 text-left font-semibold text-slate-700 rounded-tl-lg">體型</th>
-              <th class="px-4 py-3 text-left font-semibold text-slate-700">體重範圍</th>
-              <th class="px-4 py-3 text-left font-semibold text-slate-700">代表品種</th>
-              <th class="px-4 py-3 text-left font-semibold text-slate-700">進入中年</th>
-              <th class="px-4 py-3 text-left font-semibold text-slate-700">進入老年</th>
-              <th class="px-4 py-3 text-left font-semibold text-slate-700 rounded-tr-lg">高齡期</th>
+          <thead class="bg-slate-50 text-slate-700 border-b">
+            <tr>
+              <th class="p-4 text-left">體型類別</th>
+              <th class="p-4 text-left">老化開始時間</th>
+              <th class="p-4 text-left">主要關注點</th>
             </tr>
           </thead>
-          <tbody class="divide-y divide-slate-200">
-            <tr class="bg-red-50">
-              <td class="px-4 py-3 font-semibold text-red-800">巨型犬</td>
-              <td class="px-4 py-3 text-slate-700">>50kg</td>
-              <td class="px-4 py-3 text-slate-700">大丹犬、紐芬蘭犬、聖伯納</td>
-              <td class="px-4 py-3 text-slate-700">4-5歲</td>
-              <td class="px-4 py-3 text-slate-700">6-7歲</td>
-              <td class="px-4 py-3 text-slate-700">8-9歲</td>
+          <tbody class="divide-y divide-slate-100">
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 font-bold text-red-700">巨型犬 (>50kg)</td>
+              <td class="p-4">5-6 歲</td>
+              <td class="p-4">關節、骨肉瘤、心臟</td>
             </tr>
-            <tr class="bg-orange-50">
-              <td class="px-4 py-3 font-semibold text-orange-800">大型犬</td>
-              <td class="px-4 py-3 text-slate-700">25-50kg</td>
-              <td class="px-4 py-3 text-slate-700">拉布拉多、金毛、德國牧羊犬</td>
-              <td class="px-4 py-3 text-slate-700">5-6歲</td>
-              <td class="px-4 py-3 text-slate-700">7-8歲</td>
-              <td class="px-4 py-3 text-slate-700">9-10歲</td>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 font-bold text-orange-700">大型犬 (25-50kg)</td>
+              <td class="p-4">6-7 歲</td>
+              <td class="p-4">癌症、髖關節退化</td>
             </tr>
-            <tr class="bg-yellow-50">
-              <td class="px-4 py-3 font-semibold text-yellow-800">中型犬</td>
-              <td class="px-4 py-3 text-slate-700">10-25kg</td>
-              <td class="px-4 py-3 text-slate-700">邊境牧羊犬、柴犬、柯基</td>
-              <td class="px-4 py-3 text-slate-700">6-7歲</td>
-              <td class="px-4 py-3 text-slate-700">9-10歲</td>
-              <td class="px-4 py-3 text-slate-700">11-12歲</td>
-            </tr>
-            <tr class="bg-green-50">
-              <td class="px-4 py-3 font-semibold text-green-800">小型犬</td>
-              <td class="px-4 py-3 text-slate-700">5-10kg</td>
-              <td class="px-4 py-3 text-slate-700">法國鬥牛犬、貴賓犬、雪納瑞</td>
-              <td class="px-4 py-3 text-slate-700">7-8歲</td>
-              <td class="px-4 py-3 text-slate-700">10-11歲</td>
-              <td class="px-4 py-3 text-slate-700">12-14歲</td>
-            </tr>
-            <tr class="bg-teal-50">
-              <td class="px-4 py-3 font-semibold text-teal-800">玩具犬</td>
-              <td class="px-4 py-3 text-slate-700"><5kg</td>
-              <td class="px-4 py-3 text-slate-700">吉娃娃、博美、約克夏</td>
-              <td class="px-4 py-3 text-slate-700">9-10歲</td>
-              <td class="px-4 py-3 text-slate-700">12-13歲</td>
-              <td class="px-4 py-3 text-slate-700">14-17歲</td>
+            <tr class="hover:bg-slate-50 transition-colors">
+              <td class="p-4 font-bold text-green-700">小型犬 (<10kg)</td>
+              <td class="p-4">9-11 歲</td>
+              <td class="p-4">牙周病、二尖瓣心臟病</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p class="text-xs text-slate-500">
-        * 數據來源：AVMA、美國獸醫學院資料庫、英國犬類研究基金會（Kennel Club Research Alliance）。個別狗狗因健康狀況和照護條件可能有所差異。
-      </p>
-    </section>
 
-    <AdSenseAd format="in-article" />
+      <AdSenseAd format="in-article" />
 
-    <!-- Section 3: Popular Breeds -->
-    <section id="popular-breeds" class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-        <span class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-lg font-bold">3</span>
-        熱門品種詳細分析（附老化時間表）
-      </h2>
-      <p class="text-slate-700 leading-relaxed mb-6">
-        以下整理了亞洲和華語圈最常見的15個犬種，根據牠們的體型、預期壽命和典型老化年齡，提供個別的照護建議。
-      </p>
-
-      <div class="space-y-6">
-        <!-- Giant Breed -->
-        <div class="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-6 border border-red-100">
-          <h3 class="text-lg font-bold text-red-800 mb-4">🐕 巨型犬（>50kg）——老化速度最快的群體</h3>
-          <div class="space-y-4">
-            <div class="grid md:grid-cols-3 gap-4">
-              <div>
-                <h4 class="font-semibold text-slate-800 text-sm mb-1">大丹犬（Great Dane）</h4>
-                <p class="text-xs text-slate-600">平均壽命：6-8年｜進入老年：5-6歲</p>
-                <p class="text-xs text-slate-500 mt-1">心臟病和骨肉瘤是主要死因。建議4歲起每年做心臟超聲波檢查。</p>
-              </div>
-              <div>
-                <h4 class="font-semibold text-slate-800 text-sm mb-1">紐芬蘭犬（Newfoundland）</h4>
-                <p class="text-xs text-slate-600">平均壽命：8-10年｜進入老年：5-6歲</p>
-                <p class="text-xs text-slate-500 mt-1">心臟問題和關節退化常見。體重控制是延長壽命的關鍵。</p>
-              </div>
-              <div>
-                <h4 class="font-semibold text-slate-800 text-sm mb-1">聖伯納（Saint Bernard）</h4>
-                <p class="text-xs text-slate-600">平均壽命：7-9年｜進入老年：5-6歲</p>
-                <p class="text-xs text-slate-500 mt-1">髖關節發育不良常見。行動不便徵兆出現時間較早。</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Large Breed -->
-        <div class="bg-gradient-to-r from-orange-50 to-yellow-50 rounded-2xl p-6 border border-orange-100">
-          <h3 class="text-lg font-bold text-orange-800 mb-4">🐕 大型犬（25-50kg）——需要特別關注關節健康</h3>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">拉布拉多獵犬（Labrador）</h4>
-              <p class="text-xs text-slate-600">平均壽命：10-14年｜進入老年：6-7歲</p>
-              <p class="text-xs text-slate-500 mt-1">肥胖是最大敵人。關節問題（髖關節、膝蓋）在6歲後明顯增加。建議控制體重在30kg以下。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">黃金獵犬（Golden Retriever）</h4>
-              <p class="text-xs text-slate-600">平均壽命：10-12年｜進入老年：6-7歲</p>
-              <p class="text-xs text-slate-500 mt-1">癌症發率高（尤其血腺癌、淋巴瘤）。建議每年做血液腫瘤標記篩檢。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">德國牧羊犬（German Shepherd）</h4>
-              <p class="text-xs text-slate-600">平均壽命：9-12年｜進入老年：6-7歲</p>
-              <p class="text-xs text-slate-500 mt-1">脊椎退化（椎間盤疾病）是主要問題。後半身無力是典型老化徵兆。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">阿拉斯加雪橇犬（Alaskan Malamute）</h4>
-              <p class="text-xs text-slate-600">平均壽命：10-14年｜進入老年：6-8歲</p>
-              <p class="text-xs text-slate-500 mt-1">關節和甲狀腺問題較常見。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">薩摩耶（Samoyed）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-14年｜進入老年：7-8歲</p>
-              <p class="text-xs text-slate-500 mt-1">甲狀腺機能低下和髖關節問題需關注。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">威瑪獵犬（Weimaraner）</h4>
-              <p class="text-xs text-slate-600">平均壽命：10-13年｜進入老年：6-7歲</p>
-              <p class="text-xs text-slate-500 mt-1">胃扭轉（bloat）是急性死因，需注意飲食後運動限制。</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Medium Breed -->
-        <div class="bg-gradient-to-r from-yellow-50 to-green-50 rounded-2xl p-6 border border-yellow-100">
-          <h3 class="text-lg font-bold text-yellow-800 mb-4">🐕 中型犬（10-25kg）——老化速度適中</h3>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">柴犬（Shiba Inu）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-15年｜進入老年：8-9歲</p>
-              <p class="text-xs text-slate-500 mt-1">過敏和關節問題是主要老化相關疾病。固執性格可能掩蓋疼痛徵兆。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">邊境牧羊犬（Border Collie）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-15年｜進入老年：8-9歲</p>
-              <p class="text-xs text-slate-500 mt-1">運動量減少是老化早期徵兆。認知功能退化（CCD）發病率較高。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">臘腸犬（Dachshund）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-16年｜進入老年：8-9歲</p>
-              <p class="text-xs text-slate-500 mt-1">椎間盤疾病是最大風險。樓梯跳躍需避免，體重控制非常重要。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">法國鬥牛犬（French Bulldog）</h4>
-              <p class="text-xs text-slate-600">平均壽命：10-12年｜進入老年：7-8歲</p>
-              <p class="text-xs text-slate-500 mt-1">短吻氣道問題隨老化加劇。心肺負擔在老年期明顯增加。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">柯基（Welsh Corgi）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-15年｜進入老年：8-9歲</p>
-              <p class="text-xs text-slate-500 mt-1">椎間盤突出和肥胖問題。老年後後腿無力常見。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">米格魯（Beagle）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-15年｜進入老年：8-9歲</p>
-              <p class="text-xs text-slate-500 mt-1">癲癇和甲狀腺問題在老年期可能出現。</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Small/Toy Breed -->
-        <div class="bg-gradient-to-r from-green-50 to-teal-50 rounded-2xl p-6 border border-green-100">
-          <h3 class="text-lg font-bold text-green-800 mb-4">🐕 小型犬（<10kg）——最長壽的群體</h3>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">吉娃娃（Chihuahua）</h4>
-              <p class="text-xs text-slate-600">平均壽命：14-18年｜進入老年：10-12歲</p>
-              <p class="text-xs text-slate-500 mt-1">心臟問題（尤其是二尖瓣閉鎖不全）在老年期常見。牙齒護理非常重要。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">貴賓犬（Poodle）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-16年｜進入老年：9-11歲</p>
-              <p class="text-xs text-slate-500 mt-1">膝蓋骨脫臼和白內障是常見老化問題。玩具貴賓（體型更小）壽命更長。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">約克夏㹴（Yorkshire Terrier）</h4>
-              <p class="text-xs text-slate-600">平均壽命：13-16年｜進入老年：10-11歲</p>
-              <p class="text-xs text-slate-500 mt-1">低血糖和牙齒問題需持續關注。老年可能出現Collapse syndrome（崩厥症）。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">雪納瑞（Schnauzer）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-16年｜進入老年：9-11歲</p>
-              <p class="text-xs text-slate-500 mt-1">胰島素瘤和膀胱結石在老年期風險增加。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">馬爾濟斯（Maltese）</h4>
-              <p class="text-xs text-slate-600">平均壽命：14-18年｜進入老年：10-12歲</p>
-              <p class="text-xs text-slate-500 mt-1">心臟問題和牙齒問題是主要老年疾病。骨質脆弱需注意骨折。</p>
-            </div>
-            <div>
-              <h4 class="font-semibold text-slate-800 text-sm mb-1">博美（Pomeranian）</h4>
-              <p class="text-xs text-slate-600">平均壽命：12-16年｜進入老年：10-11歲</p>
-              <p class="text-xs text-slate-500 mt-1">氣管塌陷在老年期可能惡化。心臟問題也需關注。</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <AdSenseAd format="in-article" />
-
-    <!-- Section 4: Signs by Breed -->
-    <section id="signs-by-breed" class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-        <span class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-lg font-bold">4</span>
-        不同品種的早期老化徵兆
-      </h2>
-      <p class="text-slate-700 leading-relaxed mb-6">
-        雖然所有狗狗的老化徵兆大致相同，但某些品種因為基因和結構特性，會有一些特殊的早期信號。了解這些可以幫助你更早發現問題。
-      </p>
-
-      <div class="space-y-4">
-        <div class="bg-slate-50 rounded-xl p-5">
-          <h3 class="font-bold text-slate-900 mb-3">大型犬的警示徵兆</h3>
-          <div class="grid md:grid-cols-2 gap-3">
-            <div class="flex gap-2">
-              <span class="text-orange-600">⚠</span>
-              <span class="text-sm text-slate-700">起身困難，尤其起床時動作緩慢</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-orange-600">⚠</span>
-              <span class="text-sm text-slate-700">不願意爬樓梯或跳上車</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-orange-600">⚠</span>
-              <span class="text-sm text-slate-700">後腿明顯無力，走路搖晃</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-orange-600">⚠</span>
-              <span class="text-sm text-slate-700">食慾明顯下降，體重減輕</span>
-            </div>
-          </div>
-          <p class="text-xs text-slate-500 mt-3">
-            <strong>特別注意：</strong>德國牧羊犬在6歲後若出現後腿無力、拖行等症狀，可能是退化性脊髓神經病變（DM），需立即就醫。
-          </p>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-5">
-          <h3 class="font-bold text-slate-900 mb-3">小型犬的警示徵兆</h3>
-          <div class="grid md:grid-cols-2 gap-3">
-            <div class="flex gap-2">
-              <span class="text-green-600">⚠</span>
-              <span class="text-sm text-slate-700">夜鳴、沒原因的吠叫（可能疼痛或認知退化）</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-green-600">⚠</span>
-              <span class="text-sm text-slate-700">牙齒鬆動、牙齦出血（心臟病風險）</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-green-600">⚠</span>
-              <span class="text-sm text-slate-700">在心臟區域聽到咳嗽或呼吸急促</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-green-600">⚠</span>
-              <span class="text-sm text-slate-700">方向感混亂，在熟悉環境中迷失</span>
-            </div>
-          </div>
-          <p class="text-xs text-slate-500 mt-3">
-            <strong>特別注意：</strong>吉娃娃和馬爾濟斯的心臟二尖瓣疾病在8歲後發病率超過60%。早期心臟超聲波檢查是關鍵。
-          </p>
-        </div>
-
-        <div class="bg-slate-50 rounded-xl p-5">
-          <h3 class="font-bold text-slate-900 mb-3">所有狗狗都適用的通用徵兆</h3>
-          <div class="grid md:grid-cols-2 gap-3">
-            <div class="flex gap-2">
-              <span class="text-blue-600">✓</span>
-              <span class="text-sm text-slate-700">視力下降（晚上走路撞到東西）</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-blue-600">✓</span>
-              <span class="text-sm text-slate-700">聽力減退（叫名字沒反應）</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-blue-600">✓</span>
-              <span class="text-sm text-slate-700">毛色變淡、臉部毛髮花白</span>
-            </div>
-            <div class="flex gap-2">
-              <span class="text-blue-600">✓</span>
-              <span class="text-sm text-slate-700">睡眠時間增加、白天嗜睡</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="mt-6 text-center">
-        <a
-          href="/blog/dog-aging-signs/"
-          class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium"
-        >
-          查看完整狗狗老化徵兆指南 →
-        </a>
-      </div>
-    </section>
-
-    <!-- Section 5: Care Strategies -->
-    <section id="care-strategies" class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-        <span class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-lg font-bold">5</span>
-        各體型狗狗的老年照護策略
-      </h2>
-
-      <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-red-50 rounded-2xl p-6">
-          <h3 class="font-bold text-red-800 mb-4">巨型犬（>50kg）照護重點</h3>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>· <strong>4歲起</strong>每年做心臟超聲波和血液檢查</li>
-            <li>· 體重控制在理想範圍內（減輕關節負擔）</li>
-            <li>· 補充葡萄糖胺和軟骨素（關節保護）</li>
-            <li>· 避免劇烈運動和跳躍動作</li>
-            <li>· 準備軟墊臥床，減少骨突處壓力</li>
-            <li>· 老年後考慮拐杖或輔助帶</li>
-          </ul>
-        </div>
-
-        <div class="bg-orange-50 rounded-2xl p-6">
-          <h3 class="font-bold text-orange-800 mb-4">大型犬（25-50kg）照護重點</h3>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>· <strong>5-6歲起</strong>增加健康檢查頻率（半年一次）</li>
-            <li>· 體重控制是延長壽命的關鍵（尤其拉布拉多）</li>
-            <li>· 關節保健品（魚油、葡萄糖胺）建議提早開始</li>
-            <li>· 游泳是理想的低衝擊運動</li>
-            <li>· 認知功能訓練（嗅聞遊戲、互動玩具）</li>
-            <li>· 定期牙齒清潔（牙周病會影響心臟）</li>
-          </ul>
-        </div>
-
-        <div class="bg-yellow-50 rounded-2xl p-6">
-          <h3 class="font-bold text-yellow-800 mb-4">中型犬（10-25kg）照護重點</h3>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>· <strong>7-8歲起</strong>注意活動量下降趨勢</li>
-            <li>· 椎間盤疾病預防（避免從高處跳下）</li>
-            <li>· 柴犬等固執品種：注意隱藏疼痛的跡象</li>
-            <li>· 認知退化徵兆（服從訓練退化）需留意</li>
-            <li>· 牙齒健康與心臟健康的連結在中年期後明顯</li>
-            <li>· 視力和聽力檢查每年一次</li>
-          </ul>
-        </div>
-
-        <div class="bg-green-50 rounded-2xl p-6">
-          <h3 class="font-bold text-green-800 mb-4">小型犬（<10kg）照護重點</h3>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>· <strong>9-10歲起</strong>心臟定期追蹤</li>
-            <li>· 牙結石清除（全身麻醉洗牙，建議每1-2年）</li>
-            <li>· 骨折預防：避免從高處跌落</li>
-            <li>· 認知退化（夜晚焦慮、沒原因哭叫）</li>
-            <li>· 低血糖風險：避免長時間空腹</li>
-            <li>· 老年減重更重要（心臟負擔）</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="mt-6 p-5 bg-blue-50 rounded-xl border border-blue-100">
-        <h3 class="font-bold text-blue-800 mb-2">💡 通用老年照護原則</h3>
-        <p class="text-sm text-slate-700 leading-relaxed">
-          無論是哪種體型，以下原則都適用：<strong>每年兩次健康檢查</strong>（老年後）、<strong>體重控制</strong>（每增加1公斤都是關節的負擔）、<strong>口腔衛生</strong>（牙周病與心臟病直接相關）、以及<strong>環境豐富化</strong>（嗅聞遊戲、輕度互動可延緩認知退化）。
-        </p>
-      </div>
-    </section>
-
-    <AdSenseAd format="in-article" />
-
-    <!-- Section 6: FAQ -->
-    <section id="faq" class="mb-12">
-      <h2 class="text-2xl font-bold text-slate-900 mb-6 flex items-center gap-3">
-        <span class="w-10 h-10 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center text-lg font-bold">6</span>
-        常見問題
-      </h2>
-
-      <div class="space-y-4">
-        <details class="bg-slate-50 rounded-xl p-5 group">
-          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
-            <span>我的狗狗才3歲，但看起來有點老了，這正常嗎？</span>
-            <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
-            如果是中大型犬，3歲出現輕微老化跡象（如活動量稍微減少）是正常的。但若有以下情況，建議就醫檢查甲狀腺功能、腎臟和心臟：過度疲憊、體重異常增減、毛髮提前變白、眼睛變得混濁。大型犬在3歲時相當於人類約28-32歲，正處於生理高峰期，如果有明顯老化徵兆，可能有潛在健康問題。
-          </p>
-        </details>
-
-        <details class="bg-slate-50 rounded-xl p-5 group">
-          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
-            <span>如何計算混合品種狗狗（米克斯）的老年年齡？</span>
-            <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
-            米克斯犬的老化速度取決於牠們的體型（而非純種與否）。建議以成年體重作為判斷標準：如果超過25kg，用大型犬的時間表；10-25kg用中型犬；10kg以下用小型犬。如果不知道父母品種，可觀察牙齒大小、骨骼結構和整體體型來推斷。若米克斯來自多元血統，通常會比同體型純種犬稍微更健康、壽命略長。
-          </p>
-        </details>
-
-        <details class="bg-slate-50 rounded-xl p-5 group">
-          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
-            <span>大丹犬真的只能活7-8年嗎？有辨法延長嗎？</span>
-            <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
-            大型犬的壽命受限於基因和生理結構，但我們可以最大化延長健康的年限：嚴格的體重控制（研究顯示體重低於平均的大丹犬壽命顯著更長）、早期的心臟和骨科檢查、避免過度運動造成的關節損傷、以及高質量的老年配方食品。研究顯示，理想體重的大丹犬比超重大丹犬平均多活1.5-2年。
-          </p>
-        </details>
-
-        <details class="bg-slate-50 rounded-xl p-5 group">
-          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
-            <span>什麼時候應該開始給老年犬保健品？</span>
-            <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
-            一般建議：中型犬在<strong>6-7歲</strong>、大型犬在<strong>5-6歲</strong>、小型犬在<strong>9-10歲</strong>時開始補充關節保健品（如葡萄糖胺、軟骨素、 MSM）。魚油（Omega-3）可在中年期開始，有抗炎和保護心臟的作用。但保健品不能替代健康飲食和適當運動，若有特定健康問題，應諮詢獸醫後再決定。
-          </p>
-        </details>
-
-        <details class="bg-slate-50 rounded-xl p-5 group">
-          <summary class="font-semibold text-slate-900 cursor-pointer list-none flex justify-between items-center">
-            <span>純種犬和米克斯犬的老化速度有差別嗎？</span>
-            <span class="text-blue-600 group-open:rotate-180 transition-transform">▼</span>
-          </summary>
-          <p class="text-sm text-slate-700 mt-3 leading-relaxed">
-            一般來說，米克斯犬（混種狗）由於基因多樣性更高，通常比同體型的純種犬稍微更健康、壽命略長1-2年。純種犬因為近親繁殖的關係，某些遺傳疾病和結構問題的發病率較高（如拉布拉多的髖關節發育不良、德國牧羊犬的脊椎問題）。但這個差異主要還是體型因素影響更大——同樣是中型犬的米克斯和邊境牧羊犬，老化速度差不多。
-          </p>
-        </details>
-      </div>
-    </section>
-
-    <!-- Related Content -->
-    <div class="border-t border-slate-200 pt-10">
-      <h2 class="text-xl font-bold text-slate-900 mb-6">延伸閱讀</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/tools/dog-age-calculator/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">🧮</span>
-            <span class="px-2 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">工具</span>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-blue-700">狗狗年齡計算機</h3>
-          <p class="text-sm text-slate-600">輸入狗狗年齡和體型，計算人類年齡對照</p>
-        </a>
-
-        <a href="/blog/dog-aging-signs/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">🐕</span>
-            <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">文章</span>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-amber-700">狗狗老化徵兆完整指南</h3>
-          <p class="text-sm text-slate-600">7個不容忽視的老化徵兆與應對策略</p>
-        </a>
-
-        <a href="/blog/senior-pet-health-guide/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-purple-300 hover:shadow-lg transition-all">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">📋</span>
-            <span class="px-2 py-1 bg-purple-100 text-purple-700 text-xs font-bold rounded-full">文章</span>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-purple-700">老年寵物健康完整指南</h3>
-          <p class="text-sm text-slate-600">從營養到環境的全方位老年照護攻略</p>
-        </a>
-
-        <a href="/blog/dog-vs-cat-aging/" class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-300 hover:shadow-lg transition-all">
-          <div class="flex items-center gap-3 mb-3">
-            <span class="text-2xl">📊</span>
-            <span class="px-2 py-1 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">文章</span>
-          </div>
-          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-amber-700">狗與貓老化差異完整比較</h3>
-          <p class="text-sm text-slate-600">兩種寵物的老化速度、壽命與照護重點對照</p>
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "狗狗品種與老化速度：從吉娃娃到拉布拉多，各體型與品種的老年時程",
-      "description": "不同品種的狗狗老化速度差異極大。吉娃娃可能17歲仍活蹦亂跳，拉布拉多可能7歲就出現關節問題。本指南整理常見品種的老化時間表，幫助主人提前準備。",
-      "author": {
-        "@type": "Organization",
-        "name": "Pet Age Calculator"
-      },
-      "datePublished": "2024-01-01",
-      "dateModified": "2024-01-01"
-    }
-  </script>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "我的狗狗才3歲，但看起來有點老了，這正常嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "如果是中大型犬，3歲出現輕微老化跡象可能是正常的，但若有過度疲憊、體重異常等情況，建議就醫檢查甲狀腺、心臟和腎臟功能。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "如何計算混合品種狗狗（米克斯）的老年年齡？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "米克斯犬的老化速度取決於成年體重。超過25kg用大型犬時間表，10-25kg用中型，10kg以下用小型犬時間表。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "大丹犬真的只能活7-8年嗎？有辦法延長嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "嚴格體重控制、早期健康檢查、避免過度運動可最大化健康年限。理想體重的大丹犬比超重者平均多活1.5-2年。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "什麼時候應該開始給老年犬保健品？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "中型犬6-7歲、大型犬5-6歲、小型犬9-10歲開始補充關節保健品。魚油可在中年期開始，有抗炎和保護心臟作用。"
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "純種犬和米克斯犬的老化速度有差別嗎？",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "米克斯犬因基因多樣性通常比同體型純種犬稍微更健康、壽命略長1-2年，但體型因素影響大於純種與否。"
-          }
-        }
-      ]
-    }
-  </script>
-</BaseLayout>
+      <h2 id="care-strategies" class="text-2xl font-bold text-slate-900 mt-12 mb
