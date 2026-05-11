@@ -2,21 +2,39 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 
-// 所有邏輯必須包在兩組 --- 之間
-const allPosts = await Astro.glob('./*.astro');
-const displayPosts = allPosts
-  .filter(post => {
-    // 排除自己 (index.astro) 且確保文章有標題
-    const isNotIndex = !post.file.includes('index.astro');
-    const hasTitle = post.frontmatter && post.frontmatter.title;
-    return isNotIndex && hasTitle;
-  })
-  .sort((a, b) => {
-    const dateA = new Date(a.frontmatter?.date || 0).getTime();
-    const dateB = new Date(b.frontmatter?.date || 0).getTime();
-    return dateB - dateA;
-  })
-  .slice(0, 9);
+// 手動定義文章清單，這是最穩定的做法，能避開 Astro.glob 的所有地雷
+const displayPosts = [
+  {
+    url: "/blog/dog-breed-aging/",
+    title: "狗狗品種與老化速度：各體型與品種的老年時程",
+    description: "不同品種的狗狗老化速度差異極大。拉布拉多可能7歲就出現關節問題，了解品種特性，提前規劃照護。",
+    image: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800"
+  },
+  {
+    url: "/blog/dog-aging-signs/",
+    title: "狗狗老化徵兆：7個不容忽視的身體與行為訊號",
+    description: "你的狗開始老了嗎？盤點7個常見的老化徵兆，從視力下降到夜間焦慮，守護毛孩生活品質。",
+    image: "https://images.unsplash.com/photo-1534361960057-19889db9621e?w=800"
+  },
+  {
+    url: "/blog/cat-weight-aging/",
+    title: "貓咪體重與老化速度：室內貓與大型品種的年齡對照",
+    description: "不同體型的貓咪老化速度差異大。這份指南幫助你根據貓咪的體重，了解牠的老年時間表。",
+    image: "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800"
+  },
+  {
+    url: "/blog/dog-vs-cat-aging/",
+    title: "狗與貓的老化差異：從壽命、速度到徵兆的完整比較",
+    description: "狗和貓誰老化更快？全面比較狗與貓的老化歷程，幫助你用正確的方式陪伴不同寵物。",
+    image: "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800"
+  },
+  {
+    url: "/blog/cat-aging-signs/",
+    title: "貓咪老化徵兆：7個預示愛貓進入熟齡期的身體變化",
+    description: "貓咪是隱藏疾病高手。了解跳躍高度下降、理毛頻率減少等徵兆，及早調整照護方式。",
+    image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800"
+  }
+];
 
 const categories = [
   { name: '寵物健康', slug: 'health', icon: '💊' },
@@ -29,26 +47,41 @@ const categories = [
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">專業的老年寵物照護知識，陪伴牠們優雅地老去</p>
     </header>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
       {displayPosts.map((post) => (
         <a href={post.url} class="group">
-          <Card class="h-full overflow-hidden border border-slate-100">
-            <div class="aspect-video bg-slate-100">
+          <Card class="h-full overflow-hidden border border-slate-100 hover:shadow-xl transition-all p-0">
+            <div class="aspect-video bg-slate-100 overflow-hidden">
               <img 
-                src={post.frontmatter?.image || "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800"} 
-                alt={post.frontmatter?.title} 
-                class="w-full h-full object-cover" 
+                src={post.image} 
+                alt={post.title} 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
               />
             </div>
-            <div class="p-4">
-              <h3 class="font-bold group-hover:text-amber-600">{post.frontmatter?.title}</h3>
-              <p class="text-sm text-slate-500 mt-2 line-clamp-2">{post.frontmatter?.description}</p>
+            <div class="p-5">
+              <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+                {post.title}
+              </h3>
+              <p class="text-sm text-slate-500 mt-2 line-clamp-2">{post.description}</p>
             </div>
           </Card>
         </a>
       ))}
     </div>
+
+    <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
+            <div class="text-4xl mb-4">{cat.icon}</div>
+            <h3 class="text-lg font-bold text-slate-900">{cat.name}</h3>
+          </div>
+        ))}
+      </div>
+    </section>
   </main>
 </BaseLayout>
