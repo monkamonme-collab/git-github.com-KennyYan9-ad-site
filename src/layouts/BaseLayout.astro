@@ -17,13 +17,20 @@ const { title, description, breadcrumbs = [] } = Astro.props;
 <!doctype html>
 <html lang="zh-TW">
   <head>
-    <SEO title={title || "Pet Aging Hub - 寵物年齡與健康指南"} description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"} />
+    <SEO 
+      title={title || "Pet Aging Hub - 寵物年齡與健康指南"} 
+      description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"} 
+    />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
-    <!-- Global AdSense Script -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    
+    <script 
+      async 
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6107150024201925" 
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-    <!-- Header Ad Placement -->
+    
     <div class="my-4 max-w-5xl mx-auto px-6">
       <AdSenseAd format="horizontal" />
     </div>
@@ -35,12 +42,25 @@ const { title, description, breadcrumbs = [] } = Astro.props;
 
     <Footer />
 
-    <!-- Footer Ad Placement -->
     <div class="bg-slate-100 py-4">
       <div class="max-w-5xl mx-auto px-6">
         <AdSenseAd format="horizontal" />
       </div>
     </div>
-  <script>document.addEventListener('DOMContentLoaded',function(){document.addEventListener('error',function(e){var el=e.target;if(el.tagName==='IMG'&&!el.dataset.f){el.dataset.f='true';var w=el.width||el.getAttribute('width')||'800',h=el.height||el.getAttribute('height')||'600';var s='<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"'+w+'\" height=\"'+h+'\" viewBox=\"0 0 '+w+' '+h+'"><rect width=\"100%\" height=\"100%\" fill=\"#e5e7eb\"/><line x1=\"0\" y1=\"0\" x2=\"'+w+'\" y2=\"'+h+'\" stroke=\"#9ca3af\" stroke-width=\"20\"/><line x1=\"'+w+'\" y1=\"0\" x2=\"0\" y2=\"'+h+'\" stroke=\"#9ca3af\" stroke-width=\"20\"/></svg>';el.src='data:image/svg+xml,'+encodeURIComponent(s);}},true);});</script>
-</body>
+
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('error', function(e) {
+          var el = e.target;
+          if (el.tagName === 'IMG' && !el.dataset.f) {
+            el.dataset.f = 'true';
+            var w = el.width || el.getAttribute('width') || '800',
+                h = el.height || el.getAttribute('height') || '600';
+            var s = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '"><rect width="100%" height="100%" fill="#e5e7eb"/><line x1="0" y1="0" x2="' + w + '" y2="' + h + '" stroke="#9ca3af" stroke-width="20"/><line x1="' + w + '" y1="0" x2="0" y2="' + h + '" stroke="#9ca3af" stroke-width="20"/></svg>';
+            el.src = 'data:image/svg+xml,' + encodeURIComponent(s);
+          }
+        }, true);
+      });
+    </script>
+  </body>
 </html>
