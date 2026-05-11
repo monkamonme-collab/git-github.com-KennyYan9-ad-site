@@ -1,61 +1,73 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+// 1. 自動抓取所有文章 (假設在 src/pages/blog/ 裡)
+// 如果你用 Content Collections，請改用 getCollection
+const posts = await Astro.glob('./*.astro');
+// 過濾掉 index.astro 本身，並限制顯示最新 6 篇
+const displayPosts = posts
+  .filter(post => !post.url.endsWith('/blog/'))
+  .slice(0, 6);
 
 const categories = [
-  { name: '寵物健康', slug: 'health', icon: '💊', description: '健康檢查、疾病預防、醫療照護' },
-  { name: '寵物營養', slug: 'nutrition', icon: '🍖', description: '飲食指南、營養建議、食品安全' },
-  { name: '寵物照護', slug: 'care', icon: '🛁', description: '日常護理、清潔保養、生活管理' },
-  { name: '寵物旅行', slug: 'travel', icon: '✈️', description: '出行準備、交通須知、旅遊攻略' },
-  { name: '寵物教育', slug: 'education', icon: '📚', description: '訓練技巧、行為教育、社會化' },
+  { name: '寵物健康', slug: 'health', icon: '💊', description: '健康檢查、疾病預防' },
+  { name: '寵物營養', slug: 'nutrition', icon: '🍖', description: '飲食指南、營養建議' },
+  { name: '寵物照護', slug: 'care', icon: '🛁', description: '日常護理、生活管理' },
 ];
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南" description="探索專業的寵物照護知識，包括健康、營養、照護、旅遊與教育。">
+<BaseLayout title="部落格 | 寵物知識與專業指南" description="探索專業的老年寵物照護知識，守護您毛小孩的健康與幸福。">
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">部落格</h1>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
       <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        探索專業的寵物照護知識，守護您毛小孩的健康與幸福
+        專業的老年寵物照護知識，陪伴牠們優雅地老去
       </p>
     </header>
 
-    <!-- 分類導航 -->
-    <nav class="mb-12">
-      <div class="flex flex-wrap justify-center gap-4">
-        {categories.map((cat) => (
-          <a
-            href={`/blog/category/${cat.slug}/`}
-            class="px-6 py-3 bg-slate-100 hover:bg-blue-600 hover:text-white rounded-full transition-colors text-slate-700 font-medium"
-          >
-            <span class="mr-2">{cat.icon}</span>
-            {cat.name}
-          </a>
-        ))}
-      </div>
-    </nav>
-
-    <!-- 分類概覽 -->
-    <section>
-      <h2 class="text-2xl font-bold text-slate-900 mb-8">探索分類</h2>
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {categories.map((cat) => (
-          <a
-            href={`/blog/category/${cat.slug}/`}
-            class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all"
-          >
-            <div class="text-4xl mb-4">{cat.icon}</div>
-            <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600">
-              {cat.name}
-            </h3>
-            <p class="text-slate-600 text-sm">{cat.description}</p>
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+        <span>🆕</span> 最新發布
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {displayPosts.map((post) => (
+          <a href={post.url} class="group">
+            <Card class="h-full hover:shadow-xl transition-all p-0 overflow-hidden">
+              <div class="aspect-video bg-slate-100 overflow-hidden">
+                <img 
+                  src={post.frontmatter?.image || "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800"} 
+                  alt={post.frontmatter?.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                />
+              </div>
+              <div class="p-5">
+                <h3 class="font-bold text-slate-900 mb-2 line-clamp-2 group-hover:text-blue-600">
+                  {post.frontmatter?.title || "未命名文章"}
+                </h3>
+                <p class="text-sm text-slate-500 line-clamp-2">
+                  {post.frontmatter?.description}
+                </p>
+              </div>
+            </Card>
           </a>
         ))}
       </div>
     </section>
 
-    <!-- 提示 -->
-    <div class="mt-16 text-center text-slate-500">
-      <p>📝 文章即將陸續上架，敬請期待！</p>
-    </div>
+    <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={`/blog/`} 
+            class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-500 transition-all text-center"
+          >
+            <div class="text-4xl mb-4">{cat.icon}</div>
+            <h3 class="text-lg font-bold text-slate-900">{cat.name}</h3>
+          </a>
+        ))}
+      </div>
+    </section>
   </main>
 </BaseLayout>
