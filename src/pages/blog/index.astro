@@ -2,25 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 
-// 1. 抓取當前目錄下所有 .astro 檔案
+// 所有邏輯必須嚴格封裝在兩組 --- 之間
 const allPosts = await Astro.glob('./*.astro');
-
-// 2. 嚴格過濾邏輯：排除 index 檔案並確保有 frontmatter 資料
 const displayPosts = allPosts
-  .filter((post) => {
-    // 排除 index.astro 避免遞迴抓取
-    const isNotIndex = !post.file.includes('index.astro');
-    // 必須具備 frontmatter 且有 title 才視為有效文章
-    const hasMetadata = post.frontmatter && post.frontmatter.title;
-    return isNotIndex && hasMetadata;
-  })
-  .sort((a, b) => {
-    // 排序邏輯優化：確保日期不存在時也能穩定排序
-    const dateA = new Date(a.frontmatter.date || 0).getTime();
-    const dateB = new Date(b.frontmatter.date || 0).getTime();
-    return dateB - dateA;
-  })
-  .slice(0, 12);
+  .filter(post => !post.file.includes('index.astro') && post.frontmatter?.title)
+  .sort((a, b) => (new Date(b.frontmatter?.date || 0).getTime() - new Date(a.frontmatter?.date || 0).getTime()))
+  .slice(0, 9);
 
 const categories = [
   { name: '寵物健康', slug: 'health', icon: '💊' },
@@ -29,71 +16,27 @@ const categories = [
 ];
 ---
 
-<BaseLayout 
-  title="部落格 | 寵物知識與專業指南" 
-  description="探索專業的老年寵物照護知識，守護您毛小孩的健康與幸福。"
->
+<BaseLayout title="部落格 | 寵物知識與專業指南">
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        專業的老年寵物照護知識，陪伴牠們優雅地老去
-      </p>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">專業的老年寵物照護知識</p>
     </header>
 
-    <section class="mb-16">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-        <span>🆕</span> 最新發布
-      </h2>
-      
-      {displayPosts.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayPosts.map((post) => (
-            <a href={post.url} class="group">
-              <Card class="h-full hover:shadow-xl transition-all p-0 overflow-hidden border border-slate-100">
-                <div class="aspect-video bg-slate-200 overflow-hidden">
-                  <img 
-                    src={post.frontmatter.image || "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&q=80"} 
-                    alt={post.frontmatter.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="p-5">
-                  <div class="flex items-center gap-2 mb-2">
-                     <span class="text-xs font-bold px-2 py-1 bg-slate-100 text-slate-600 rounded">Article</span>
-                  </div>
-                  <h3 class="font-bold text-slate-900 mb-2 line-clamp-2 group-hover:text-amber-600 transition-colors">
-                    {post.frontmatter.title}
-                  </h3>
-                  <p class="text-sm text-slate-500 line-clamp-2">
-                    {post.frontmatter.description}
-                  </p>
-                </div>
-              </Card>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div class="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
-          <p class="text-slate-400 font-medium">目前尚無文章，內容準備中...</p>
-        </div>
-      )}
-    </section>
-
-    <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        {categories.map((cat) => (
-          <a
-            href={`/blog/`} 
-            class="group bg-white rounded-2xl p-6 border border-slate-200 hover:border-amber-500 hover:shadow-md transition-all text-center"
-          >
-            <div class="text-4xl mb-4 group-hover:scale-110 transition-transform">{cat.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900 group-hover:text-amber-600">{cat.name}</h3>
-          </a>
-        ))}
-      </div>
-    </section>
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      {displayPosts.map((post) => (
+        <a href={post.url} class="group">
+          <Card class="overflow-hidden h-full">
+            <div class="aspect-video bg-slate-100">
+              <img src={post.frontmatter.image} alt={post.frontmatter.title} class="w-full h-full object-cover" />
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold group-hover:text-blue-600">{post.frontmatter.title}</h3>
+              <p class="text-sm text-slate-500 mt-2 line-clamp-2">{post.frontmatter.description}</p>
+            </div>
+          </Card>
+        </a>
+      ))}
+    </div>
   </main>
 </BaseLayout>
