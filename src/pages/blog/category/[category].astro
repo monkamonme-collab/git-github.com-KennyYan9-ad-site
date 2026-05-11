@@ -1,137 +1,86 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
 
-export function getStaticPaths() {
-  return [
-    { params: { category: 'health' } },
-    { params: { category: 'nutrition' } },
-    { params: { category: 'care' } },
-    { params: { category: 'travel' } },
-    { params: { category: 'education' } },
-  ];
-}
+// 1. 抓取當前資料夾下所有 .astro 檔案
+const allPosts = await Astro.glob('./*.astro');
 
-const { category } = Astro.params;
+// 2. 過濾邏輯：排除 index.astro 並確保只抓取包含 title 的文章
+const displayPosts = allPosts
+  .filter(post => {
+    // 排除 index.astro 避免無窮迴圈，且只顯示有 frontmatter title 的頁面
+    const isNotIndex = !post.file.includes('index.astro');
+    const hasTitle = post.frontmatter?.title;
+    return isNotIndex && hasTitle;
+  })
+  .sort((a, b) => (a.frontmatter?.date > b.frontmatter?.date ? -1 : 1)) // 按日期排序
+  .slice(0, 9); // 顯示前 9 篇
 
-const categoryInfo = {
-  health: {
-    name: '寵物健康',
-    icon: '💊',
-    description: '健康檢查、疾病預防、醫療照護',
-    color: 'blue'
-  },
-  nutrition: {
-    name: '寵物營養',
-    icon: '🍖',
-    description: '飲食指南、營養建議、食品安全',
-    color: 'green'
-  },
-  care: {
-    name: '寵物照護',
-    icon: '🛁',
-    description: '日常護理、清潔保養、生活管理',
-    color: 'purple'
-  },
-  travel: {
-    name: '寵物旅行',
-    icon: '✈️',
-    description: '出行準備、交通須知、旅遊攻略',
-    color: 'amber'
-  },
-  education: {
-    name: '寵物教育',
-    icon: '📚',
-    description: '訓練技巧、行為教育、社會化',
-    color: 'rose'
-  },
-};
-
-const info = categoryInfo[category] || {
-  name: '未知分類',
-  icon: '📂',
-  description: '敬請期待更多內容',
-  color: 'slate'
-};
-
-const allCategories = Object.entries(categoryInfo).map(([slug, data]) => ({
-  slug,
-  ...data
-}));
+const categories = [
+  { name: '寵物健康', slug: 'health', icon: '💊', description: '健康檢查、疾病預防' },
+  { name: '寵物營養', slug: 'nutrition', icon: '🍖', description: '飲食指南、營養建議' },
+  { name: '寵物照護', slug: 'care', icon: '🛁', description: '日常護理、生活管理' },
+];
 ---
 
-<BaseLayout
-  title={`${info.name}分類 | 寵物部落格`}
-  description={info.description}
->
+<BaseLayout title="部落格 | 寵物知識與專業指南" description="探索專業的老年寵物照護知識，守護您毛小孩的健康與幸福。">
   <main class="max-w-5xl mx-auto px-6 py-12">
-    <!-- 返回連結 -->
-    <a href="/blog/" class="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8">
-      <span>←</span>
-      <span class="ml-1">返回部落格</span>
-    </a>
-
-    <!-- 分類標題 -->
-    <header class="text-center mb-12">
-      <div class="text-6xl mb-4">{info.icon}</div>
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">{info.name}</h1>
-      <p class="text-lg text-slate-600">{info.description}</p>
+    <header class="text-center mb-16">
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        專業的老年寵物照護知識，陪伴牠們優雅地老去
+      </p>
     </header>
 
-    <!-- 其他分類連結 -->
-    <nav class="mb-12">
-      <h2 class="text-sm font-semibold text-slate-500 uppercase tracking-wide mb-4">探索其他分類</h2>
-      <div class="flex flex-wrap gap-3">
-        {allCategories
-          .filter((cat) => cat.slug !== category)
-          .map((cat) => (
-            <a
-              href={`/blog/category/${cat.slug}/`}
-              class="px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-full text-slate-700 text-sm transition-colors"
-            >
-              <span class="mr-1">{cat.icon}</span>
-              {cat.name}
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
+        <span>🆕</span> 最新發布
+      </h2>
+      
+      {displayPosts.length > 0 ? (
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {displayPosts.map((post) => (
+            <a href={post.url} class="group">
+              <Card class="h-full hover:shadow-xl transition-all p-0 overflow-hidden">
+                <div class="aspect-video bg-slate-100 overflow-hidden">
+                  <img 
+                    src={post.frontmatter?.image || "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800"} 
+                    alt={post.frontmatter?.title}
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="p-5">
+                  <h3 class="font-bold text-slate-900 mb-2 line-clamp-2 group-hover:text-blue-600">
+                    {post.frontmatter?.title}
+                  </h3>
+                  <p class="text-sm text-slate-500 line-clamp-2">
+                    {post.frontmatter?.description}
+                  </p>
+                </div>
+              </Card>
             </a>
           ))}
-      </div>
-    </nav>
-
-    <!-- 文章列表（目前為空） -->
-    <section>
-      <h2 class="text-2xl font-bold text-slate-900 mb-8">
-        {info.name}文章
-        <span class="text-sm font-normal text-slate-500 ml-2">即將推出</span>
-      </h2>
-
-      <!-- 提示 -->
-      <div class="bg-slate-50 rounded-2xl p-12 text-center">
-        <div class="text-4xl mb-4">📝</div>
-        <p class="text-slate-600">
-          {info.name}相關文章正在準備中，敬請期待！
-        </p>
-        <p class="text-sm text-slate-500 mt-2">
-          我們的專家團隊正在為您撰寫優質內容
-        </p>
-      </div>
+        </div>
+      ) : (
+        <div class="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
+          <p class="text-slate-400">目前尚無文章，內容準備中...</p>
+        </div>
+      )}
     </section>
 
-    <!-- 相關工具連結 -->
-    <section class="mt-16 py-12 border-t border-slate-200">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">相關實用工具</h2>
-      <div class="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-        <a
-          href="/tools/dog-age-calculator/"
-          class="bg-blue-50 hover:bg-blue-100 rounded-2xl p-6 transition-colors group"
-        >
-          <h3 class="font-bold text-slate-900 mb-2 group-hover:text-blue-700">🐕 狗狗年齡計算機</h3>
-          <p class="text-sm text-slate-600">使用 AVMA 科學演算法，計算狗狗的人類年齡</p>
-        </a>
-        <a
-          href="/tools/cat-age-calculator/"
-          class="bg-purple-50 hover:bg-purple-100 rounded-2xl p-6 transition-colors group"
-        >
-          <h3 class="font-bold text-slate-900 mb-2 group-hover:text-purple-700">🐱 貓咪年齡計算機</h3>
-          <p class="text-sm text-slate-600">了解愛貓的生命階段與照護重點</p>
-        </a>
+    <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
+      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={`/blog/`} 
+            class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-500 transition-all text-center"
+          >
+            <div class="text-4xl mb-4">{cat.icon}</div>
+            <h3 class="text-lg font-bold text-slate-900">{cat.name}</h3>
+          </a>
+        ))}
       </div>
     </section>
   </main>
