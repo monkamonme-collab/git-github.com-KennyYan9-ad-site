@@ -6,21 +6,17 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
 ---
 
 <footer class="bg-slate-900 text-slate-300">
-  <!-- Main Footer -->
   <div class="max-w-5xl mx-auto px-6 py-12">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
-      <!-- About Column -->
       <div>
         <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">關於我們</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="/about/" class="hover:text-white transition-colors">關於 Pet Aging Hub</a></li>
           <li><a href="/blog/pet-aging-guide/" class="hover:text-white transition-colors">老化完整指南</a></li>
           <li><a href="/blog/senior-pet-health-guide/" class="hover:text-white transition-colors">老年健康指南</a></li>
           <li><a href="/blog/dog-vs-cat-aging/" class="hover:text-white transition-colors">狗貓老化比較</a></li>
         </ul>
       </div>
 
-      <!-- Pet Care Guides Column -->
       <div>
         <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">照護指南</h3>
         <ul class="space-y-2 text-sm">
@@ -31,7 +27,6 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
         </ul>
       </div>
 
-      <!-- Calculators Column -->
       <div>
         <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">實用工具</h3>
         <ul class="space-y-2 text-sm">
@@ -43,7 +38,6 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
         </ul>
       </div>
 
-      <!-- Health Resources Column -->
       <div>
         <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">健康資源</h3>
         <ul class="space-y-2 text-sm">
@@ -54,7 +48,6 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
         </ul>
       </div>
 
-      <!-- Legal/Contact Column -->
       <div>
         <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">法律與聯絡</h3>
         <ul class="space-y-2 text-sm">
@@ -67,14 +60,12 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
       </div>
     </div>
 
-    <!-- Disclaimer Banner -->
     <div class="bg-slate-800 rounded-xl p-4 mb-8">
       <p class="text-xs text-slate-400 leading-relaxed">
         <strong class="text-slate-300">重要聲明：</strong>本網站所有內容僅供教育參考，不構成獸醫建議。我們不是獸醫診所，不提供診斷或治療。如有健康疑慮，請諮詢持牌獸醫。
       </p>
     </div>
 
-    <!-- Bottom Bar -->
     <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-3">
         <span class="text-2xl">🐾</span>
