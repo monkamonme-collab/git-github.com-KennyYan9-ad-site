@@ -2,10 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 
-// 所有邏輯必須在這一對 --- 之間
+// 所有邏輯必須包在兩組 --- 之間
 const allPosts = await Astro.glob('./*.astro');
 const displayPosts = allPosts
-  .filter(post => !post.file.includes('index.astro') && post.frontmatter?.title)
+  .filter(post => {
+    // 排除自己 (index.astro) 且確保文章有標題
+    const isNotIndex = !post.file.includes('index.astro');
+    const hasTitle = post.frontmatter && post.frontmatter.title;
+    return isNotIndex && hasTitle;
+  })
   .sort((a, b) => {
     const dateA = new Date(a.frontmatter?.date || 0).getTime();
     const dateB = new Date(b.frontmatter?.date || 0).getTime();
@@ -20,21 +25,25 @@ const categories = [
 ];
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南" description="探索專業的老年寵物照護知識。">
+<BaseLayout title="部落格 | 寵物知識與專業指南">
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
     </header>
 
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
+    <div class="grid md:grid-cols-3 gap-8">
       {displayPosts.map((post) => (
         <a href={post.url} class="group">
-          <Card class="overflow-hidden h-full">
+          <Card class="h-full overflow-hidden border border-slate-100">
             <div class="aspect-video bg-slate-100">
-              <img src={post.frontmatter?.image || "https://images.unsplash.com/photo-1544568100-847a948585b9"} alt={post.frontmatter?.title} class="w-full h-full object-cover" />
+              <img 
+                src={post.frontmatter?.image || "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800"} 
+                alt={post.frontmatter?.title} 
+                class="w-full h-full object-cover" 
+              />
             </div>
             <div class="p-4">
-              <h3 class="font-bold group-hover:text-blue-600">{post.frontmatter?.title}</h3>
+              <h3 class="font-bold group-hover:text-amber-600">{post.frontmatter?.title}</h3>
               <p class="text-sm text-slate-500 mt-2 line-clamp-2">{post.frontmatter?.description}</p>
             </div>
           </Card>
