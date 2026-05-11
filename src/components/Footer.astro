@@ -8,6 +8,7 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
 <footer class="bg-slate-900 text-slate-300">
   <div class="max-w-5xl mx-auto px-6 py-12">
     <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+      
       <div>
         <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">老化指南</h3>
         <ul class="space-y-2 text-sm">
@@ -43,8 +44,8 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
         <ul class="space-y-2 text-sm">
           <li><a href="/blog/" class="hover:text-white transition-colors">所有文章</a></li>
           <li><a href="/tools/" class="hover:text-white transition-colors">所有工具</a></li>
-          <li><a href="/blog/category/health/" class="hover:text-white transition-colors">健康分類</a></li>
-          <li><a href="/blog/category/nutrition/" class="hover:text-white transition-colors">營養分類</a></li>
+          <li><a href="/blog/" class="hover:text-white transition-colors">寵物健康資源</a></li>
+          <li><a href="/blog/" class="hover:text-white transition-colors">營養照護知識</a></li>
         </ul>
       </div>
 
@@ -60,26 +61,26 @@ const { currentYear = new Date().getFullYear() } = Astro.props;
       </div>
     </div>
 
-    <div class="bg-slate-800 rounded-xl p-4 mb-8">
+    <div class="bg-slate-800 rounded-xl p-6 mb-8 border border-slate-700">
       <p class="text-xs text-slate-400 leading-relaxed">
-        <strong class="text-slate-300">重要聲明：</strong>本網站所有內容僅供教育參考，不構成獸醫建議。我們不是獸醫診所，不提供診斷或治療。如有健康疑慮，請諮詢持牌獸醫。
+        <strong class="text-slate-200">重要聲明：</strong>本網站 Pet Aging Hub 提供之所有內容、計算工具及健康指南僅供一般教育資訊參考，不構成專業獸醫學建議、診斷或治療。在針對您的寵物做出任何醫療或照護決策前，請務必諮詢合格之持牌獸醫專業人員。
       </p>
     </div>
 
     <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-3">
-        <span class="text-2xl">🐾</span>
-        <span class="font-bold text-white">Pet Aging Hub</span>
+        <span class="text-2xl" aria-hidden="true">🐾</span>
+        <span class="font-bold text-white tracking-tight">Pet Aging Hub</span>
       </div>
       <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
-        <a href="/about/" class="hover:text-white transition-colors">關於</a>
-        <a href="/contact/" class="hover:text-white transition-colors">聯絡</a>
-        <a href="/privacy-policy/" class="hover:text-white transition-colors">隱私</a>
-        <a href="/terms/" class="hover:text-white transition-colors">條款</a>
-        <a href="/disclaimer/" class="hover:text-white transition-colors">免責</a>
+        <a href="/about/" class="hover:text-white transition-all">關於</a>
+        <a href="/contact/" class="hover:text-white transition-all">聯絡</a>
+        <a href="/privacy-policy/" class="hover:text-white transition-all">隱私</a>
+        <a href="/terms/" class="hover:text-white transition-all">條款</a>
+        <a href="/disclaimer/" class="hover:text-white transition-all">免責</a>
       </div>
       <p class="text-sm text-slate-500">
-        &copy; {currentYear} Pet Aging Hub
+        &copy; {currentYear} Pet Aging Hub. All Rights Reserved.
       </p>
     </div>
   </div>
