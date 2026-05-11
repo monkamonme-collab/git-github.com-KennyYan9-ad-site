@@ -1,88 +1,34 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro'; // 改為三層 ../
-import Card from '../../../components/Card.astro';         // 改為三層 ../
-// ... 其他代碼
----
-// 1. 抓取當前資料夾下所有 .astro 檔案
-const allPosts = await Astro.glob('./*.astro');
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
 
-// 2. 過濾邏輯：排除 index.astro 並確保只抓取包含 title 的文章
+// 必須在 --- 之內執行抓取
+const allPosts = await Astro.glob('./*.astro');
 const displayPosts = allPosts
-  .filter(post => {
-    // 排除 index.astro 避免無窮迴圈，且只顯示有 frontmatter title 的頁面
-    const isNotIndex = !post.file.includes('index.astro');
-    const hasTitle = post.frontmatter?.title;
-    return isNotIndex && hasTitle;
-  })
-  .sort((a, b) => (a.frontmatter?.date > b.frontmatter?.date ? -1 : 1)) // 按日期排序
-  .slice(0, 9); // 顯示前 9 篇
+  .filter(post => !post.file.includes('index.astro') && post.frontmatter?.title)
+  .sort((a, b) => (new Date(b.frontmatter?.date || 0).getTime() - new Date(a.frontmatter?.date || 0).getTime()))
+  .slice(0, 9);
 
 const categories = [
-  { name: '寵物健康', slug: 'health', icon: '💊', description: '健康檢查、疾病預防' },
-  { name: '寵物營養', slug: 'nutrition', icon: '🍖', description: '飲食指南、營養建議' },
-  { name: '寵物照護', slug: 'care', icon: '🛁', description: '日常護理、生活管理' },
+  { name: '寵物健康', slug: 'health', icon: '💊' },
+  { name: '寵物營養', slug: 'nutrition', icon: '🍖' },
+  { name: '寵物照護', slug: 'care', icon: '🛁' },
 ];
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南" description="探索專業的老年寵物照護知識，守護您毛小孩的健康與幸福。">
+<BaseLayout title="部落格 | 寵物知識與專業指南">
   <main class="max-w-5xl mx-auto px-6 py-12">
-    <header class="text-center mb-16">
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-        專業的老年寵物照護知識，陪伴牠們優雅地老去
-      </p>
-    </header>
-
-    <section class="mb-16">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-2">
-        <span>🆕</span> 最新發布
-      </h2>
-      
-      {displayPosts.length > 0 ? (
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayPosts.map((post) => (
-            <a href={post.url} class="group">
-              <Card class="h-full hover:shadow-xl transition-all p-0 overflow-hidden">
-                <div class="aspect-video bg-slate-100 overflow-hidden">
-                  <img 
-                    src={post.frontmatter?.image || "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800"} 
-                    alt={post.frontmatter?.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform"
-                    loading="lazy"
-                  />
-                </div>
-                <div class="p-5">
-                  <h3 class="font-bold text-slate-900 mb-2 line-clamp-2 group-hover:text-blue-600">
-                    {post.frontmatter?.title}
-                  </h3>
-                  <p class="text-sm text-slate-500 line-clamp-2">
-                    {post.frontmatter?.description}
-                  </p>
-                </div>
-              </Card>
-            </a>
-          ))}
-        </div>
-      ) : (
-        <div class="text-center py-20 bg-slate-50 rounded-3xl border-2 border-dashed border-slate-200">
-          <p class="text-slate-400">目前尚無文章，內容準備中...</p>
-        </div>
-      )}
-    </section>
-
-    <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        {categories.map((cat) => (
-          <a
-            href={`/blog/`} 
-            class="bg-white rounded-2xl p-6 border border-slate-200 hover:border-blue-500 transition-all text-center"
-          >
-            <div class="text-4xl mb-4">{cat.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900">{cat.name}</h3>
-          </a>
-        ))}
-      </div>
-    </section>
+    <h1 class="text-4xl font-bold text-center mb-12">寵物健康部落格</h1>
+    
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      {displayPosts.map((post) => (
+        <a href={post.url}>
+          <Card>
+             <img src={post.frontmatter.image} alt={post.frontmatter.title} />
+             <h3 class="p-4 font-bold">{post.frontmatter.title}</h3>
+          </Card>
+        </a>
+      ))}
+    </div>
   </main>
 </BaseLayout>
