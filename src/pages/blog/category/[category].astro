@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
+// 必須有這個函數，Astro 靜態導出才不會噴錯
 export function getStaticPaths() {
   return [
     { params: { category: 'health' } },
@@ -13,9 +14,11 @@ const { category } = Astro.params;
 ---
 
 <BaseLayout title={`${category} 分類 - Pet Aging Hub`}>
-  <div class="max-w-5xl mx-auto py-20 text-center px-6">
-    <h1 class="text-4xl font-bold capitalize text-slate-900">{category} 相關文章</h1>
-    <p class="mt-6 text-slate-500 text-lg">正在準備更多內容...</p>
-    <a href="/blog/" class="mt-8 inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-bold">回到部落格</a>
+  <div class="max-w-3xl mx-auto py-20 text-center px-6">
+    <h1 class="text-4xl font-bold capitalize text-slate-900 mb-6">{category} 相關文章</h1>
+    <p class="text-slate-500 text-lg mb-10">內容正在準備中，請先回到首頁查看最新資訊。</p>
+    <a href="/blog/" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+      回到部落格首頁
+    </a>
   </div>
 </BaseLayout>
