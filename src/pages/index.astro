@@ -5,12 +5,12 @@ import Card from '../components/Card.astro';
 const featuredArticles = [
   {
     href: '/blog/senior-pet-health-guide/',
-    image: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=600&fit=crop&fm=webp',
+    image: 'https://images.unsplash.com/photo-1581888227599-779811939961?w=800&h=600&fit=crop&fm=webp',
     category: '旗艦文章',
     categoryColor: 'purple',
     title: '老年寵物健康完整指南',
-    description: '從營養需求到環境調整，全方位解析7歲以上寵物的照護要點',
-    readTime: '約15分鐘',
+    description: '從營養需求到環境調整，全方位解析 7 歲以上寵物的照護要點。',
+    readTime: '約 15 分鐘',
     emoji: '📋'
   },
   {
@@ -19,8 +19,8 @@ const featuredArticles = [
     category: '比較分析',
     categoryColor: 'blue',
     title: '狗與貓老化差異完整比較',
-    description: '9個維度全面對比：老化速度、壽命、老年常見疾病與照護重點',
-    readTime: '約10分鐘',
+    description: '9 個維度全面對比：老化速度、壽命、老年常見疾病與照護重點。',
+    readTime: '約 10 分鐘',
     emoji: '📊'
   },
   {
@@ -29,8 +29,8 @@ const featuredArticles = [
     category: '狗狗',
     categoryColor: 'amber',
     title: '狗狗品種與老化速度',
-    description: '從吉娃娃到大丹犬，15+品種的老化時間表與照護建議',
-    readTime: '約12分鐘',
+    description: '從吉娃娃到大丹犬，15+ 品種的老化時間表與照護建議。',
+    readTime: '約 12 分鐘',
     emoji: '🐕'
   },
   {
@@ -39,42 +39,13 @@ const featuredArticles = [
     category: '貓咪',
     categoryColor: 'purple',
     title: '貓咪體重與老化速度',
-    description: '室內貓、室外貓與大型品種的年齡對照，肥胖對壽命的影響',
-    readTime: '約10分鐘',
+    description: '室內貓、室外貓與大型品種的年齡對照，肥胖對壽命的影響。',
+    readTime: '約 10 分鐘',
     emoji: '🐱'
   }
 ];
 
-const latestArticles = [
-  {
-    href: '/blog/dog-aging-signs/',
-    image: 'https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=800&h=600&fit=crop&fm=webp',
-    title: '狗狗老化徵兆完整指南',
-    description: '7個不容忽視的老化徵兆與早期發現的重要性',
-    readTime: '約8分鐘',
-    emoji: '🐕',
-    tag: '狗狗'
-  },
-  {
-    href: '/blog/cat-aging-signs/',
-    image: 'https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=800&h=600&fit=crop&fm=webp',
-    title: '貓咪老化徵兆完整指南',
-    description: '7個預示愛貓進入熟齡期的身體與行為變化',
-    readTime: '約8分鐘',
-    emoji: '🐱',
-    tag: '貓咪'
-  },
-  {
-    href: '/blog/pet-aging-guide/',
-    image: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=800&h=600&fit=crop&fm=webp',
-    title: '寵物老化完整指南',
-    description: '了解老化過程、影響因素與如何提供最好的照護',
-    readTime: '約12分鐘',
-    emoji: '📖',
-    tag: '總覽'
-  }
-];
-
+// 工具選單資料
 const tools = [
   {
     href: '/tools/dog-age-calculator/',
@@ -82,7 +53,7 @@ const tools = [
     badge: '熱門',
     badgeColor: 'blue',
     title: '狗狗年齡計算機',
-    description: '輸入年齡與體型，獲得人類年齡對照與生命階段建議'
+    description: '輸入年齡與體型，獲得人類年齡對照與生命階段建議。'
   },
   {
     href: '/tools/cat-age-calculator/',
@@ -90,7 +61,7 @@ const tools = [
     badge: '熱門',
     badgeColor: 'purple',
     title: '貓咪年齡計算機',
-    description: '了解你家貓咪的生命階段，獲得針對性的照護建議'
+    description: '了解你家貓咪的生命階段，獲得針對性的照護建議。'
   },
   {
     href: '/tools/compare-aging/',
@@ -98,31 +69,7 @@ const tools = [
     badge: '新功能',
     badgeColor: 'teal',
     title: '年齡對照工具',
-    description: '同時比較狗狗和貓咪的人類年齡，快速了解誰更「老」'
-  },
-  {
-    href: '/tools/lifespan-calculator/',
-    emoji: '📅',
-    badge: '推薦',
-    badgeColor: 'amber',
-    title: '壽命計算機',
-    description: '根據品種、體型和健康狀況估算預期壽命'
-  },
-  {
-    href: '/tools/symptom-checklist/',
-    emoji: '📋',
-    badge: '實用',
-    badgeColor: 'green',
-    title: '症狀檢核表',
-    description: '評估寵物的健康徵兆，判斷是否需要就醫'
-  },
-  {
-    href: '/tools/',
-    emoji: '🧮',
-    badge: '全部',
-    badgeColor: 'slate',
-    title: '所有工具',
-    description: '瀏覽我們所有的寵物年齡與健康工具'
+    description: '同時比較狗狗和貓咪的人類年齡，快速了解誰更「老」。'
   }
 ];
 ---
@@ -132,6 +79,7 @@ const tools = [
   description="簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"
 >
 
+  {/* Hero 區塊 */}
   <div class="relative bg-slate-900 overflow-hidden">
     <div class="absolute inset-0">
       <img
@@ -143,93 +91,53 @@ const tools = [
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/60"></div>
     </div>
 
-    <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28">
+    <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28 text-center md:text-left">
       <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 text-sm font-medium px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-amber-400/30">
         <span>🐾</span>
-        <span>寵物年齡與健康資源</span>
+        <span>寵物年齡與健康資源中心</span>
       </div>
 
-      <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-        了解你的寵物<br class="hidden md:block" />
-        年齡與健康
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+        了解你的寵物<br />
+        年齡與健康狀況
       </h1>
 
       <p class="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">
-        簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。
+        提供科學的數據工具與專業照護指南，陪伴你的毛孩健康走過每一個生命階段。
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a
-          href="/tools/dog-age-calculator/"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl transition-colors shadow-lg"
-        >
-          <span class="text-xl">🐕</span>
-          狗狗年齡計算機
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <a href="/tools/dog-age-calculator/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl transition-colors shadow-lg">
+          <span class="text-xl">🐕</span> 狗狗年齡計算
         </a>
-        <a
-          href="/tools/cat-age-calculator/"
-          class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors border border-white/20"
-        >
-          <span class="text-xl">🐱</span>
-          貓咪年齡計算機
+        <a href="/tools/cat-age-calculator/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors border border-white/20">
+          <span class="text-xl">🐱</span> 貓咪年齡計算
         </a>
       </div>
     </div>
   </div>
 
-  <div class="bg-slate-50 border-b border-slate-200">
-    <div class="max-w-5xl mx-auto px-6 py-6">
-      <div class="flex flex-wrap justify-center gap-8 md:gap-16 text-center">
-        <div>
-          <p class="text-2xl font-bold text-slate-900">6+</p>
-          <p class="text-sm text-slate-600">實用工具</p>
-        </div>
-        <div>
-          <p class="text-2xl font-bold text-slate-900">8+</p>
-          <p class="text-sm text-slate-600">專業文章</p>
-        </div>
-        <div>
-          <p class="text-2xl font-bold text-slate-900">30+</p>
-          <p class="text-sm text-slate-600">涵蓋品種</p>
-        </div>
-        <div>
-          <p class="text-2xl font-bold text-slate-900">100%</p>
-          <p class="text-sm text-slate-600">免費使用</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="max-w-5xl mx-auto px-6 py-12">
-
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    {/* 精選指南區塊 */}
     <section class="mb-16">
       <div class="flex items-center justify-between mb-8">
         <div>
           <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <span class="text-2xl">📚</span>
-            精選指南
+            <span class="text-2xl">📚</span> 精選照護指南
           </h2>
-          <p class="text-slate-600 mt-1">深入了解寵物老化與健康</p>
+          <p class="text-slate-600 mt-1">來自獸醫專家與學術研究的權威建議</p>
         </div>
-        <a href="/blog/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">
-          所有文章 →
-        </a>
+        <a href="/blog/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">所有文章 →</a>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-8">
         {featuredArticles.map((article) => (
           <a href={article.href} class="group block">
             <Card class="h-full hover:shadow-xl transition-all duration-300 hover:border-amber-300 overflow-hidden p-0">
               <div class="aspect-video overflow-hidden bg-slate-100">
-                <img
-                  src={article.image}
-                  alt={article.title}
-                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <img src={article.image} alt={article.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               </div>
-              <div class="p-5">
+              <div class="p-6">
                 <div class="flex items-center gap-2 mb-3">
                   <span class={`px-2 py-1 text-xs font-bold rounded-full ${
                     article.categoryColor === 'purple' ? 'bg-purple-100 text-purple-700' :
@@ -239,16 +147,9 @@ const tools = [
                     {article.category}
                   </span>
                 </div>
-                <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">
-                  {article.title}
-                </h3>
-                <p class="text-sm text-slate-600 mb-3 line-clamp-2">{article.description}</p>
-                <span class="text-xs text-slate-500 flex items-center gap-1">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  閱讀時間：{article.readTime}
-                </span>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{article.title}</h3>
+                <p class="text-slate-600 mb-4 line-clamp-2 text-sm">{article.description}</p>
+                <span class="text-xs text-slate-500 flex items-center gap-1">⏱️ 閱讀時間：{article.readTime}</span>
               </div>
             </Card>
           </a>
@@ -256,69 +157,39 @@ const tools = [
       </div>
     </section>
 
+    {/* 熱門工具區塊 */}
     <section class="mb-16">
-      <div class="flex items-center justify-between mb-8">
-        <div>
+        <div class="flex items-center justify-between mb-8">
           <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <span class="text-2xl">🧮</span>
-            熱門工具
+            <span class="text-2xl">🧮</span> 快速計算工具
           </h2>
-          <p class="text-slate-600 mt-1">快速了解你的寵物年齡</p>
+          <a href="/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm">更多工具 →</a>
         </div>
-        <a href="/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">
-          所有工具 →
-        </a>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {tools.slice(0, 3).map((tool) => (
-          <a href={tool.href} class="group block">
-            <Card class="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300">
-              <div class="flex items-center gap-3 mb-3">
-                <span class="text-3xl">{tool.emoji}</span>
-                <span class={`px-2 py-1 text-xs font-bold rounded-full ${
-                  tool.badgeColor === 'blue' ? 'bg-blue-100 text-blue-700' :
-                  tool.badgeColor === 'purple' ? 'bg-purple-100 text-purple-700' :
-                  tool.badgeColor === 'teal' ? 'bg-teal-100 text-teal-700' :
-                  tool.badgeColor === 'amber' ? 'bg-amber-100 text-amber-700' :
-                  'bg-slate-100 text-slate-700'
-                }`}>
-                  {tool.badge}
-                </span>
-              </div>
-              <h3 class="text-base font-bold text-slate-900 mb-1 group-hover:text-amber-600 transition-colors">
-                {tool.title}
-              </h3>
-              <p class="text-sm text-slate-600 line-clamp-2">{tool.description}</p>
-            </Card>
-          </a>
-        ))}
-      </div>
+        <div class="grid md:grid-cols-3 gap-6">
+          {tools.map((tool) => (
+            <a href={tool.href} class="group block">
+              <Card class="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300 text-center">
+                <div class="text-4xl mb-4">{tool.emoji}</div>
+                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{tool.title}</h3>
+                <p class="text-sm text-slate-600">{tool.description}</p>
+              </Card>
+            </a>
+          ))}
+        </div>
     </section>
 
-    <section class="mb-16">
+    {/* 最近更新區塊 (補上旗艦指南連結) */}
+    <section>
       <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <span class="text-2xl">🕐</span>
-            最近更新
-          </h2>
-          <p class="text-slate-600 mt-1">內容持續優化中，感謝您的關注</p>
-        </div>
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">🕐</span> 最近更新
+        </h2>
         <div class="flex items-center gap-2 text-sm text-slate-500">
           <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
-          2026年5月更新
+          2026 年 5 月
         </div>
       </div>
 
-      <div class="bg-gradient-to-br from-slate-50 to-amber-50 rounded-2xl p-6 border border-slate-200">
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-white rounded-xl p-5 border border-slate-100">
-            <div class="flex items-start gap-3">
-              <span class="text-2xl">📝</span>
-              <div>
-                <p class="text-xs text-slate-500 mb-1">2026年5月10日 · 內容更新</p>
-                <h3 class="font-bold text-slate-900 mb-1">狗狗品種與老化速度</h3>
-                <p class="text-sm text-slate-600">新增 15+ 品種的老化時間表與照護建議</p>
-              </div>
-            </div>
+      <div class="bg-gradient-to-br from-slate-50 to-amber-50 rounded-3xl p-8 border border-slate-200">
+        <div class="grid md:grid-cols-2 gap-8">
+          {/* 旗艦文章更新
