@@ -5,17 +5,17 @@ import Card from '../../components/Card.astro';
 // 1. 抓取當前目錄下所有 .astro 檔案
 const allPosts = await Astro.glob('./*.astro');
 
-// 2. 嚴格過濾邏輯
+// 2. 嚴格過濾邏輯：排除 index 檔案並確保有 frontmatter 資料
 const displayPosts = allPosts
   .filter((post) => {
-    // 排除 index.astro 避免無窮迴圈
+    // 排除 index.astro 避免遞迴抓取
     const isNotIndex = !post.file.includes('index.astro');
     // 必須具備 frontmatter 且有 title 才視為有效文章
     const hasMetadata = post.frontmatter && post.frontmatter.title;
     return isNotIndex && hasMetadata;
   })
-  // 按照日期排序（如果有提供 date 的話）
   .sort((a, b) => {
+    // 排序邏輯優化：確保日期不存在時也能穩定排序
     const dateA = new Date(a.frontmatter.date || 0).getTime();
     const dateB = new Date(b.frontmatter.date || 0).getTime();
     return dateB - dateA;
@@ -53,7 +53,7 @@ const categories = [
               <Card class="h-full hover:shadow-xl transition-all p-0 overflow-hidden border border-slate-100">
                 <div class="aspect-video bg-slate-200 overflow-hidden">
                   <img 
-                    src={post.frontmatter.image || "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800"} 
+                    src={post.frontmatter.image || "https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&q=80"} 
                     alt={post.frontmatter.title}
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
