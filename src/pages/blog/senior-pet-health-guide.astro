@@ -1,474 +1,53 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 
-const title = "老年寵物健康完整指南：照護相伴多年的家人";
-const description = "了解老年狗與老貓的健康需求。從常見疾病、警訊观察到日常照護，提供獸醫師建議的完整攻略，幫助你守護毛小孩的生活品質。";
-const publishDate = "2026-05-10";
-const canonicalURL = new URL(Astro.url.pathname, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
+const title = "老年寵物健康照護全攻略：獸醫師建議的年度健檢與日常管理";
+const description = "當毛孩步入熟齡，預防勝於治療。本指南完整解析老年犬貓的健康風險、必做健檢項目以及如何透過居家環境調整延緩衰老。";
+const date = "2026-05-12";
+const image = "https://images.unsplash.com/photo-1581888227599-779811939961?w=1200&q=80";
 ---
 
-<BaseLayout
-  title={title}
-  description={description}
-  breadcrumbs={[
-    { label: '部落格', url: '/blog/' },
-    { label: '寵物健康', url: '/blog/category/health/' },
-    { label: '老年寵物健康指南', url: canonicalURL.pathname }
-  ]}
->
+<BaseLayout title={title} description={description}>
   <article class="max-w-3xl mx-auto px-6 py-12">
-
-    <!-- Hero Image -->
-    <div class="mb-10 -mx-6 md:mx-0 md:rounded-2xl overflow-hidden">
-      <img
-        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&h=675&fit=crop&fm=webp"
-        alt="一位主人輕轻撫摸著老年黃金獵犬，表達溫暖的照護與陪伴"
-        class="w-full aspect-video object-cover"
-        loading="eager"
-      />
-    </div>
-
-    <!-- 標題區 -->
-    <header class="mb-10">
-      <p class="text-sm text-slate-500 mb-3">Updated May 2026 · 15 min read · 寵物健康</p>
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">{title}</h1>
-      <p class="text-lg text-slate-600 leading-relaxed">
-        毛小孩用一輩子的時間陪在你身邊。當牠們進入老年階段，身體機能開始減緩，我們的照護方式也需要跟著調整。這篇文章整理了獸醫臨床上最常被問到的問題，以及多數飼主實際會遇到的困難，希望能在你需要的時候，成為一份實際有用的參考。
-      </p>
+    <header class="mb-12 text-center">
+      <p class="text-sm text-indigo-600 font-bold mb-3">旗艦指南 · 寵物健康</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">{title}</h1>
+      <img src={image} alt="老年寵物健康管理" class="w-full aspect-video object-cover rounded-3xl shadow-xl" />
     </header>
 
-    <!-- Key Takeaways -->
-    <div class="bg-amber-50 border-l-4 border-amber-400 p-5 rounded-r-xl my-8">
-      <h3 class="font-bold text-amber-800 mb-3 flex items-center gap-2">
-        <span>📌</span> 本篇重點
-      </h3>
-      <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
-        <li>老年寵物需要專門的老年配方飼料，以符合退化後的營養需求</li>
-        <li>關節問題、心臟病、腎臟病是老年犬最常見的三大健康問題</li>
-        <li>甲狀腺問題和牙科疾病是老年貓最需要關注的健康議題</li>
-        <li>定期血液檢查和血壓測量，是早期發現問題的關鍵</li>
-        <li>環境調整（斜坡、軟墊、低入口砂盆）可以大幅提升生活品質</li>
+    <div class="prose prose-slate max-w-none mb-12">
+      <p class="text-lg leading-relaxed text-slate-700">
+        隨著獸醫醫學的進步，寵物的平均壽命正在顯著延長。然而，長壽不代表「健康地老去」。針對 7 歲以上的犬貓，照護的核心必須從「生病才看病」轉向「主動健康管理」。
+      </p>
+
+      <div class="bg-blue-50 p-6 rounded-2xl my-8 border border-blue-100">
+        <h3 class="text-blue-900 font-bold mt-0">📌 熟齡毛孩的「黃金健康守則」</h3>
+        <ul class="text-slate-700 mb-0">
+          <li><strong>每半年一次基礎健檢</strong>：對老毛孩來說，半年等於人類過了 3 年。</li>
+          <li><strong>精準體重管理</strong>：多餘的重量會加速器官與關節的負擔。</li>
+          <li><strong>環境減壓</strong>：減少高難度攀爬，維持作息穩定。</li>
+        </ul>
+      </div>
+
+      <AdSenseAd format="in-article" />
+
+      <h2>一、獸醫建議的老年犬貓健檢項目</h2>
+      <p>基礎的理學檢查已經不足以應對老齡化帶來的風險，專業的健檢應包含：</p>
+      <ul>
+        <li><strong>SDMA 檢測</strong>：比傳統肌酸酐更能早期發現腎功能衰退。</li>
+        <li><strong>T4 甲狀腺素篩檢</strong>：特別是老貓，甲亢是極常見的隱形殺手。</li>
+        <li><strong>血壓監測</strong>：預防突發性的視網膜剝離或腦中風。</li>
       </ul>
     </div>
 
-    <AdSenseAd format="in-article" />
-
-    <!-- 營養與餵養 -->
-    <section class="mb-10">
-      <h2>營養與餵養：吃得好，是一切的根本</h2>
-
-      <!-- Inline Image: Senior dog eating -->
-      <figure class="my-8 md:float-right md:ml-8 md:w-1/2">
-        <img
-          src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=600&h=450&fit=crop&fm=webp"
-          alt="老年犬在舒適的環境中安静進食"
-          class="w-full aspect-[4/3] object-cover rounded-xl"
-          loading="lazy"
-        />
-        <figcaption class="text-sm text-slate-500 mt-2 text-center">
-          老年寵物需要更容易咀嚼和消化的食物
-        </figcaption>
-      </figure>
-
-      <p>進入老年後，寵物的新陳代謝變慢，活動量下降，但身體組織修復的需求反而增加。許多主人會問：「到底應該繼續吃成犬（成貓）飼料，還是換成年齡配方？」</p>
-
-      <h3>什麼時候該換老年配方飼料？</h3>
-      <p>一般來說，小型犬大約7歲、中大型犬約5-6歲、貓咪約7-8歲開始進入熟齡期。不過，每個個體的衰老速度不同，最準確的判断方式，還是和你的獸醫師討論。他們可以根據寵物的體重、體態、血液檢查結果，給出個人化的建議，而不是單純看年齡數字。</p>
-      <p>如果想快速估算自己寵物的「人類年齡」與所處的生命階段，我們的<a href="/tools/dog-age-calculator/">狗狗年齡計算機</a>和<a href="/tools/cat-age-calculator/">貓咪年齡計算機</a>可以提供一個基礎的參考框架。</p>
-
-      <h3>日常餵養的重點原則</h3>
-      <ul>
-        <li><strong>控制熱量攝取</strong>：老年寵物容易發胖，肥胖會加重關節與心臟負擔。選擇熱量密度適中的食物，並根據活動量調整份量。</li>
-        <li><strong>注意蛋白質品質</strong>：過去有迷思認為老年犬要降低蛋白質，但其實優質蛋白質對維持肌肉量非常重要。重點是「品質」，而非「量少」。</li>
-        <li><strong>增加水分攝取</strong>：老年貓尤其容易有脫水傾向，這與慢性腎病有直接相關。可以考慮在乾飼料之外加入濕食，增加水分攝取。</li>
-        <li><strong>定時定量</strong>：比起自由採食，定時餵養更容易掌握進食量，也方便觀察食慾變化——而食慾改變往往是健康問題的第一個指標。</li>
-      </ul>
-
-      <h3>關節保健與補充品</h3>
-      <p>退化性關節疾病是老年寵物最常見的慢性問題之一。根據美國獸醫師協會（AVMA）的資料，約有20%的成年犬有某種程度的關節問題，而在7歲以上的犬隻中，這個比例更高。除了藥物治療，葡萄糖胺、軟骨素、Omega-3不飽和脂肪酸等成分的補充品，在獸醫臨床上被廣泛使用。開始任何補充品之前，請先和獸醫確認，因為有些成分可能與現有的藥物產生交互作用。</p>
-    </section>
-
-    <!-- 體重與身體狀況監控 -->
-    <section class="mb-10">
-      <h2>體重與身體狀況：每個月看一眼，其實很重要</h2>
-
-      <!-- Inline Image: Healthy weight illustration -->
-      <figure class="my-8 md:float-right md:ml-8 md:w-1/2">
-        <img
-          src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=450&fit=crop&fm=webp"
-          alt="健康體態的狗在草地上散步"
-          class="w-full aspect-[4/3] object-cover rounded-xl"
-          loading="lazy"
-        />
-        <figcaption class="text-sm text-slate-500 mt-2 text-center">
-          維持理想體重能減輕關節負擔
-        </figcaption>
-      </figure>
-
-      <p>多數主人帶寵物去獸醫院時才會測量體重，但體重變化，其實在家就能追蹤。這件事做起來比想像中簡單，而且有時候體重的增減，是疾病的早期徵兆。</p>
-
-      <h3>如何在家監控體重</h3>
-      <p>最簡單的方法：用嬰兒體重計或家中體重機，先測量自己的體重，再抱著寵物一起測，兩次相減就是寵物的體重。每個月固定一天測量一次（例如每月1日），並記錄下來。三個月內體重變化超過5%，就應該和獸醫討論。</p>
-
-      <h3>身體狀況評分（BCS）</h3>
-      <p>除了體重數字，身體狀況評分（Body Condition Score）是獸醫臨床上用來判断胖瘦的工具。簡單來說：</p>
-      <ul>
-        <li>肋骨可以摸到但看不到，腹部有明顯腰線——這是理想體態</li>
-        <li>肋骨難以摸到、腰線消失、腹部下垂——過重</li>
-        <li>肋骨明顯可見、骨頭突出、肌肉流失明顯——過輕</li>
-      </ul>
-      <p>如果發現寵物變瘦了，即使食慾看起來正常，也建議安排獸醫檢查。甲狀腺亢進（貓咪常見）、糖尿病、慢性腎病等問題，都可能在體重下降的階段被發現。</p>
-    </section>
-
-    <AdSenseAd format="in-article" />
-
-    <!-- 情緒與行為變化 -->
-    <section class="mb-10">
-      <h2>情緒與行為：你最了解你的寵物</h2>
-
-      <!-- Inline Image: Owner with senior dog -->
-      <figure class="my-8">
-        <img
-          src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=800&h=450&fit=crop&fm=webp"
-          alt="主人在公園陪伴老年狗散步"
-          class="w-full aspect-video object-cover rounded-xl"
-          loading="lazy"
-        />
-        <figcaption class="text-sm text-slate-500 mt-2 text-center">
-          老年寵物的行為變化往往比血液檢查更早提示健康問題
-        </figcaption>
-      </figure>
-
-      <p>獸醫問診時，有一個問題幾乎每次都會問：「和平時比起來，現在怎麼樣？」這說明了一件事：你的日常觀察，其實是獸醫最需要的參考資料。老年寵物的行為變化，往往比血液檢查更早提示健康問題。</p>
-
-      <h3>這些變化值得注意</h3>
-      <ul>
-        <li><strong>睡眠型態改變</strong>：老年貓和老年犬都可能在白天變得更嗜睡，夜間則變得不安。這與認知功能退化（俗稱的「狗癡呆」、「貓癡呆」）可能相關。</li>
-        <li><strong>如廁習慣改變</strong>：在錯誤的地方上廁所，是老年寵物常見的問題，但背後的原因多樣——可能是關節疼痛讓牠來不及走到砂盆，也可能是認知退化導致忘記位置。</li>
-        <li><strong>對人或同類的反應改變</strong>：原本親人的狗變得退縮，或原本獨立的貓變得特別黏人，這些微妙的變化，都值得記錄下來告诉獸醫。</li>
-        <li><strong>活動意願下降</strong>：很多主人會說「只是老了不愛動」，但關節疼痛、心臟問題、肺部疾病，都會讓寵物不想走動。如果活動力突然下降，不要只是歸因於年紀。</li>
-      </ul>
-
-      <h3>認知功能退化（CDS）</h3>
-      <p>犬類認知功能障礙症候群（Canine Cognitive Dysfunction, CCD）和貓咪的認知功能退化，其實比多數主人知道的更常見。典型的表現包括：在熟悉的家中迷路、對叫名字沒有反應、在角落卡住出不來、夜間特別焦慮等。目前雖然無法治癒，但早期介入（藥物、補充品、環境調整）可以延緩退化速度，提升生活品質。</p>
-    </section>
-
-    <!-- 健康檢查頻率 -->
-    <section class="mb-10">
-      <h2>健康檢查：老年寵物建議半年一次</h2>
-      <p>一般成年寵物建議每年做一次健康檢查，但進入老年後，建議改為每半年一次。原因是：寵物的老化速度比人類快，半年對牠們來說，已經是相當長的時間。</p>
-
-      <h3>每次健檢建議包含的項目</h3>
-      <ul>
-        <li><strong>血液學檢查</strong>：血球計數、肝腎功能、甲狀腺功能（老年貓特別建議）。腎臟疾病是老年貓的頭號死因，甲狀腺機能亢進則是7歲以上貓咪最常見的內分泌疾病，兩者都可以透過血液檢查早期發現。</li>
-        <li><strong>尿液檢查</strong>：搭配血液檢查，可以更完整評估腎臟與泌尿系統健康。</li>
-        <li><strong>血壓測量</strong>：高血壓在老年貓中並不罕見，且會影響腎臟、眼睛和心臟。</li>
-        <li><strong>心臟超聲波或心電圖</strong>（如有需要）：老年小型犬的心臟瓣膜疾病發病率高，若健檢時聽到心雜音，獸醫可能會建議進一步檢查。</li>
-      </ul>
-
-      <p>這些檢查下來，費用確實不低。但換個角度想：早期發現、早期介入，往往比等到病情嚴重時再治療，來的省時、省力，也對寵物的身體負擔更小。</p>
-    </section>
-
-    <!-- 居家環境調整 -->
-    <section class="mb-10">
-      <h2>居家環境：小小的調整，大大的不同</h2>
-
-      <!-- Inline Image: Comfortable pet bed -->
-      <figure class="my-8 md:float-right md:ml-8 md:w-1/2">
-        <img
-          src="https://images.unsplash.com/photo-1520087619250-584c0cbd35e8?w=600&h=450&fit=crop&fm=webp"
-          alt="舒適的狗床放在温暖的家裡"
-          class="w-full aspect-[4/3] object-cover rounded-xl"
-          loading="lazy"
-        />
-        <figcaption class="text-sm text-slate-500 mt-2 text-center">
-          選擇支撐性良好的床墊能減輕關節壓力
-        </figcaption>
-      </figure>
-
-      <p>老年寵物的生活品質，很大一部分取決於居家環境的友善程度。很多時候，只要做一點小小的調整，牠們就能過得更舒適、更安全。</p>
-
-      <h3>關節與行動方面</h3>
-      <ul>
-        <li><strong>斜坡或台階</strong>：如果家中有沙發、床、階梯，老年犬每天跳上跳下會對關節造成負擔。可以放置寵物斜坡或台階，降低關節衝擊。</li>
-        <li><strong>防滑墊</strong>：老年寵物的關節疼痛，讓牠們不喜歡在光滑地面上行走。浴室防滑墊或瑜珈墊，鋪在瓷磚或木地板上，可以大幅改善行走意願。</li>
-        <li><strong>軟墊與床鋪</strong>：關節炎讓骨頭突出的地方更容易磨損。一個厚實的記憶床墊，可以減輕壓力點的不適。</li>
-      </ul>
-
-      <h3>視力與聽力方面</h3>
-      <ul>
-        <li><strong>不要移動家具</strong>：視力退化的老年犬，會用記憶地圖在家中行動。突然改變家具位置，會讓牠們非常焦慮。</li>
-        <li><strong>使用觸碰而非聲音</strong>：對於聽力減退的寵物，輕輕拍打肩膀或用掌心碰觸，比叫名字更有效果。</li>
-        <li><strong>夜間照明</strong>：視力減退的寵物在黑暗中行走可能會撞到家具，小夜燈可以提供基本的方向指引。</li>
-      </ul>
-
-      <h3>其他實用建議</h3>
-      <ul>
-        <li>食盆和水碗，建議放在固定位置，且放在方便到達的地方，不需要抬頭或低頭太多。</li>
-        <li>外出散步時，選擇平穩的路線，減少樓梯和不平路面。</li>
-        <li>老年貓的砂盆，入口要夠低，方便行動不便的貓咪進出。</li>
-      </ul>
-    </section>
-
-    <AdSenseAd format="in-article" />
-
-    <!-- 最後的陪伴 -->
-    <section class="mb-10">
-      <h2>關於陪伴：這段時間對你們都很重要</h2>
-
-      <!-- Final Image: Pet and owner bond -->
-      <figure class="my-8">
-        <img
-          src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800&h=450&fit=crop&fm=webp"
-          alt="狗和貓一起依偎，表達寵物與主人的深厚情感連結"
-          class="w-full aspect-video object-cover rounded-xl"
-          loading="lazy"
-        />
-        <figcaption class="text-sm text-slate-500 mt-2 text-center">
-          老年寵物的陪伴同樣珍贵有意義
-        </figcaption>
-      </figure>
-
-      <p>說到老年寵物照護，很難不提「時間」這個話題。老年寵物的照護，确实需要投入額外的精力與時間——帶去看診、調整居家環境、注意行為變化。有時候會覺得累，會質疑自己是否做得不夠好。這些感受都很正常。</p>
-
-      <p>但很多走過這段路的飼主，最終都說：這段時光是值得的。因為當你看著你的狗或貓安詳地走過生命的最後階段，你會知道，你盡了一切努力。這種問心無愧，本身就是一種回報。</p>
-
-      <p>如果照護過程中感到壓力過大、情緒疲憊，請記得：你不是一個人。許多城市都有寵物照護者的支持團體，和獸醫討論你的處境，他們也可能提供安寧照護的選項，幫助你在最後這段路上，盡可能維持毛小孩的生活品質。</p>
-    </section>
-
-    <!-- Warning Signs Section -->
-    <section class="mb-10">
-      <div class="bg-red-50 border-l-4 border-red-400 p-5 rounded-r-xl my-8">
-        <h3 class="font-bold text-red-800 mb-3 flex items-center gap-2">
-          <span>⚠️</span> 需要立即就醫的緊急情況
-        </h3>
-        <p class="text-slate-700 text-sm mb-3">老年寵物的健康變化可能很快，以下情況請立即就醫：</p>
-        <ul class="list-disc pl-5 space-y-1 text-slate-700 text-sm">
-          <li>呼吸困難、用力喘氣或嘴唇發紫</li>
-          <li>突然倒下、意識混亂或癲癇發作</li>
-          <li>嚴重嘔吐或腹瀉超過24小時</li>
-          <li>腹部明顯腫脹且觸摸時有疼痛反應</li>
-          <li>完全不吃不喝超過24小時</li>
-          <li>排尿困難、尿量明顯減少或血尿</li>
-          <li>眼部突然發紅、發白或視力明顯下降</li>
-          <li>肢體突然無力、無法站立或行走</li>
-          <li>身上出現不明腫塊且快速增大</li>
-        </ul>
-        <p class="text-slate-700 text-sm mt-3">
-          若不確定是否是緊急狀況，請致電你的獸醫診所詢問。及早處理往往能搶救更多黃金時間。
-        </p>
+    <div class="bg-slate-900 text-white p-8 rounded-3xl my-16">
+      <h3 class="text-2xl font-bold mb-4">掌握毛孩的生命時鐘</h3>
+      <p class="mb-6 opacity-80 text-sm md:text-base">不同的體型與品種，老化曲線截然不同。立即使用計算機獲取個人化建議。</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/tools/dog-age-calculator/" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold transition-all">狗狗計算機</a>
+        <a href="/tools/cat-age-calculator/" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-bold transition-all">貓咪計算機</a>
       </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="mb-10">
-      <h2>常見問題</h2>
-
-      <h3>狗幾歲算老？貓咪呢？</h3>
-      <p>一般小型犬7歲以上、中大型犬5-6歲以上可視為老年；貓咪則通常在7-10歲進入熟齡階段。不過，每個個體差異很大，用我們的<a href="/tools/dog-age-calculator/">狗狗年齡計算機</a>和<a href="/tools/cat-age-calculator/">貓咪年齡計算機</a>估算人類年齡對應，可以得到一個實用的參考。</p>
-
-      <h3>老年寵物需要吃特殊的飼料嗎？</h3>
-      <p>不一定。市面上有「老年配方」飼料，但並非所有老年寵物都必須更換。重點是選擇優質蛋白質、熱量適中、適合你家寵目前健康狀況的食物。建議與獸醫討論，根據血液檢查結果和體態，決定是否需要調整飲食。</p>
-
-      <h3>老年寵物不願意走動，是不是只是老了？</h3>
-      <p>不一定。老年寵物活動力下降，常見的原因包括退化性關節疾病、心臟問題、肌肉流失、甲狀腺疾病等。建議帶給獸醫檢查，找出具體原因。如果確實是關節問題，藥物、體重控制、物理治療或營養補充，都可能改善活動力。</p>
-
-      <h3>老年貓突然變得很黏人，正常嗎？</h3>
-      <p>需要看情形。有些老年貓因為視力或聽力減退，變得更依賴主人在身邊，是正常的適應行為。但如果伴隨其他變化（如食慾改變、體重增減、如廁習慣混亂等），建議帶去檢查，因為這些可能是甲狀腺疾病、認知退化或其他健康問題的徵兆。</p>
-
-      <h3>我該什麼時候考虑安寧照護？</h3>
-      <p>這是每個飼主最終都會面對的問題。當寵物的疾病已經無法逆轉，治療目標從「康復」轉向「維持生活品質」時，安寧照護（palliative care）就是一個選項。和信賴的獸醫詳細討論，了解疾病自然發展的過程，以及每個階段可以做的事情，會幫助你做出適合你和寵物的決定。</p>
-
-      <h3>如何知道我的狗或貓是不是很痛？</h3>
-      <p>寵物很擅長隱藏疼痛。狗狗可能不跛行，但會減少跳躍、走得變慢、不願意爬樓梯。貓咪則可能減少跳躍高度、停留在地面上不願意跳上傢具。觀察日常行為的細微變化，比觀察是否有明顯症狀更重要。有任何懷疑，就應該和獸醫討論。</p>
-    </section>
-
-    <!-- 延伸閱讀 -->
-    <section class="mb-10 border-t border-slate-200 pt-8">
-      <h2>延伸閱讀與相關工具</h2>
-      <div class="grid md:grid-cols-2 gap-4">
-        <a href="/tools/dog-age-calculator/" class="group p-4 bg-blue-50 rounded-xl hover:bg-blue-100 transition-colors">
-          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-blue-700">🐕 狗狗年齡計算機</h3>
-          <p class="text-sm text-slate-600">使用 AVMA 科學演算法，計算你家狗狗的人類年齡</p>
-        </a>
-        <a href="/tools/cat-age-calculator/" class="group p-4 bg-purple-50 rounded-xl hover:bg-purple-100 transition-colors">
-          <h3 class="font-bold text-slate-900 mb-1 group-hover:text-purple-700">🐱 貓咪年齡計算機</h3>
-          <p class="text-sm text-slate-600">了解愛貓的生命階段與照護重點</p>
-        </a>
-        <a href="/blog/category/health/" class="group p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-          <h3 class="font-bold text-slate-900 mb-1">💊 更多寵物健康文章</h3>
-          <p class="text-sm text-slate-600">瀏覽其他健康相關的專業知識文章</p>
-        </a>
-      </div>
-    </section>
-
-    <!-- 更新日期 -->
-    <footer class="text-sm text-slate-400 border-t border-slate-100 pt-6">
-      <p>最後更新：{publishDate}</p>
-      <p class="mt-1">免責聲明：本文章的內容僅供一般參考用途，不構成醫療建議。如有健康疑慮，請諮詢你的獸醫師。</p>
-    </footer>
+    </div>
   </article>
-
-  <!-- FAQ Schema -->
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "狗幾歲算老？貓咪呢？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "一般小型犬7歲以上、中大型犬5-6歲以上可視為老年；貓咪則通常在7-10歲進入熟齡階段。使用狗狗年齡計算機或貓咪年齡計算機可得到人類年齡對應的實用參考。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "老年寵物需要吃特殊的飼料嗎？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "不一定。建議與獸醫討論，根據血液檢查結果和體態，決定是否需要調整飲食。重點是選擇優質蛋白質、熱量適中、適合物目前健康狀況的食物。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "老年寵物不願意走動，是不是只是老了？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "不一定。常見原因包括退化性關節疾病、心臟問題、肌肉流失、甲狀腺疾病等。建議帶給獸醫檢查，找出具體原因。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "老年貓突然變得很黏人，正常嗎？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "需要看情形。有些老年貓因為視力或聽力減退變得更依賴主人，是正常的適應行為。但如果伴隨食慾改變、體重增減、如廁習慣混亂等，建議帶去檢查。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "我該什麼時候考慮安寧照護？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "當寵物的疾病已經無法逆轉，治療目標從康復轉向維持生活品質時，安寧照護是一個選項。建議和信賴的獸醫詳細討論，了解疾病自然發展過程與每個階段的選項。"
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "如何知道我的狗或貓是不是很痛？",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "寵物很擅長隱藏疼痛。狗狗可能不跛行但會減少跳躍；貓咪可能減少跳躍高度。觀察日常行為的細微變化，有任何懷疑就應該和獸醫討論。"
-        }
-      }
-    ]
-  }
-  </script>
-
-  <!-- Article Schema -->
-  <script type="application/ld+json" is:inline>
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "老年寵物健康完整指南：照護相伴多年的家人",
-    "description": "了解老年狗與老貓的健康需求。從常見疾病、警訊观察到日常照護，提供獸醫師建議的完整攻略，幫助你守護毛小孩的生活品質。",
-    "author": { "@type": "Organization", "name": "Pet Aging Hub 寵物知識團隊" },
-    "datePublished": "2026-05-10",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Pet Aging Hub",
-      "logo": { "@type": "ImageObject", "url": "https://git-github-com-kenny-yan9-ad-site.vercel.app/favicon.svg" }
-    },
-    "image": {
-      "@type": "ImageObject",
-      "url": "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&h=675&fit=crop&fm=webp",
-      "width": 1200,
-      "height": 675
-    }
-  }
-  </script>
 </BaseLayout>
-
-<style>
-  /* 內文排版 */
-  article h2 {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e2e8f0;
-  }
-
-  article h3 {
-    font-size: 1.125rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-top: 1.75rem;
-    margin-bottom: 0.75rem;
-  }
-
-  article p {
-    color: #334155;
-    line-height: 1.75;
-    margin-bottom: 1rem;
-  }
-
-  article ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.25rem;
-  }
-
-  article ul li {
-    color: #334155;
-    line-height: 1.7;
-    padding: 0.5rem 0 0.5rem 1.5rem;
-    position: relative;
-    border-bottom: 1px solid #f1f5f9;
-  }
-
-  article ul li::before {
-    content: "▸";
-    position: absolute;
-    left: 0;
-    color: #3b82f6;
-    font-weight: bold;
-  }
-
-  article a {
-    color: #2563eb;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-  }
-
-  article a:hover {
-    color: #1d4ed8;
-  }
-
-  article section:first-of-type h2 {
-    margin-top: 0;
-  }
-
-  /* 浮動圖片在小螢幕時恢復為區塊 */
-  @media (max-width: 768px) {
-    article figure {
-      float: none !important;
-      margin-left: 0 !important;
-      width: 100% !important;
-    }
-  }
-
-  /* 清除浮動 */
-  article section::after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-</style>
