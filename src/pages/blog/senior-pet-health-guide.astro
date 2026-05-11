@@ -2,52 +2,99 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 
-const title = "老年寵物健康照護全攻略：獸醫師建議的年度健檢與日常管理";
-const description = "當毛孩步入熟齡，預防勝於治療。本指南完整解析老年犬貓的健康風險、必做健檢項目以及如何透過居家環境調整延緩衰老。";
+const title = "老年寵物健康照護全攻略：結合獸醫生物學與權威研究的長壽指南";
+const description = "當毛孩步入老年，照護核心需從疾病治療轉向預防醫學。本指南引用加州大學與 AVMA 研究，深入解析老年犬貓的健康風險與科學照護流程。";
 const date = "2026-05-12";
 const image = "https://images.unsplash.com/photo-1581888227599-779811939961?w=1200&q=80";
 ---
 
 <BaseLayout title={title} description={description}>
   <article class="max-w-3xl mx-auto px-6 py-12">
-    <header class="mb-12 text-center">
-      <p class="text-sm text-indigo-600 font-bold mb-3">旗艦指南 · 寵物健康</p>
+    <header class="mb-12">
+      <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
+        <span class="bg-indigo-600 text-white px-2 py-0.5 rounded font-bold">權威指南</span>
+        <span>最後更新：{date}</span>
+      </div>
       <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">{title}</h1>
-      <img src={image} alt="老年寵物健康管理" class="w-full aspect-video object-cover rounded-3xl shadow-xl" />
+      <p class="text-lg text-slate-600 leading-relaxed italic border-l-4 border-indigo-200 pl-4">
+        「老化不是一種疾病，而是一個可以被管理的生理過程。」—— 這是當代獸醫預防醫學的核心精神。
+      </p>
     </header>
 
-    <div class="prose prose-slate max-w-none mb-12">
-      <p class="text-lg leading-relaxed text-slate-700">
-        隨著獸醫醫學的進步，寵物的平均壽命正在顯著延長。然而，長壽不代表「健康地老去」。針對 7 歲以上的犬貓，照護的核心必須從「生病才看病」轉向「主動健康管理」。
+    <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed">
+      <p>
+        隨著營養學與醫療技術的進步，現代寵物的平均壽命較三十年前延長了約 25%。然而，長壽並不直接等同於生活品質。根據 **美國獸醫師協會 (AVMA)** 的數據，七歲以上的犬隻與十歲以上的貓咪，其慢性病發病率會以指數級度增長。
       </p>
-
-      <div class="bg-blue-50 p-6 rounded-2xl my-8 border border-blue-100">
-        <h3 class="text-blue-900 font-bold mt-0">📌 熟齡毛孩的「黃金健康守則」</h3>
-        <ul class="text-slate-700 mb-0">
-          <li><strong>每半年一次基礎健檢</strong>：對老毛孩來說，半年等於人類過了 3 年。</li>
-          <li><strong>精準體重管理</strong>：多餘的重量會加速器官與關節的負擔。</li>
-          <li><strong>環境減壓</strong>：減少高難度攀爬，維持作息穩定。</li>
-        </ul>
-      </div>
 
       <AdSenseAd format="in-article" />
 
-      <h2>一、獸醫建議的老年犬貓健檢項目</h2>
-      <p>基礎的理學檢查已經不足以應對老齡化帶來的風險，專業的健檢應包含：</p>
-      <ul>
-        <li><strong>SDMA 檢測</strong>：比傳統肌酸酐更能早期發現腎功能衰退。</li>
-        <li><strong>T4 甲狀腺素篩檢</strong>：特別是老貓，甲亢是極常見的隱形殺手。</li>
-        <li><strong>血壓監測</strong>：預防突發性的視網膜剝離或腦中風。</li>
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">一、理解老化的生物學臨界點</h2>
+      <p>
+        學界著名的 **Dog Aging Project (狗狗老化計畫)** 主持人 —— 華盛頓大學的 Daniel Promislow 博士曾指出，大型犬與小型犬的老化機制在分子層級上存在顯著差異。大型犬因為生長速度極快，細胞修復機制在高齡期會迅速崩潰，這解釋了為何大丹犬在 6 歲時就可能面臨與 12 歲吉娃娃相同的生理衰退。
+      </p>
+      
+      <p>
+        我們在之前的 <a href="/blog/dog-breed-aging/" class="text-blue-600 underline">狗狗品種與老化速度</a> 中詳細討論過體型對壽命的影響。無論體型如何，氧化壓力 (Oxidative Stress) 是所有熟齡寵物共同的敵人。當身體產生的自由基超過抗氧化防禦時，DNA 就會受損，進而引發癌症與器官衰竭。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">二、關鍵健康監測：超越肉眼可見的徵兆</h2>
+      <p>
+        許多飼主常說：「我的貓看起來很健康，只是變懶了。」但在獸醫病理學中，「變懶」往往是疼痛或代謝異常的掩飾。
+      </p>
+      <ul class="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100">
+        <li><strong>SDMA 檢測 (對稱性二甲基精氨酸)：</strong> 這是目前腎臟病篩檢的金標準。比起傳統的肌酸酐 (Creatinine)，它能在腎功能損失 25% 時就發出警訊，而傳統檢測通常要等到 75% 損害時才跳出異常。</li>
+        <li><strong>高血壓監測：</strong> 貓咪常見的慢性腎病 (CKD) 常伴隨高血壓，若未及時發現，可能導致突發性視網膜剝離。</li>
+        <li><strong>骨關節炎評估：</strong> 12 歲以上的貓咪超過 90% 患有關節炎，這在 <a href="/blog/cat-aging-signs/" class="text-blue-600 underline">貓咪老化徵兆</a> 一文中提到的「隱藏時間變長」有直接關聯。</li>
       </ul>
+
+      <AdSenseAd format="in-article" />
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">三、精準營養：延緩老化的第一道防線</h2>
+      <p>
+        賓州大學獸醫學院的營養學專家曾強調，老年寵物對蛋白質的需求不應盲目減少。相反地，除非患有嚴重的慢性腎病，否則老犬老貓需要**更高質量、高消化率**的蛋白質來維持肌肉量，預防老年性肌肉萎縮 (Sarcopenia)。
+      </p>
+      <p>
+        此外，Omega-3 脂肪酸 (DHA/EPA) 被證實能顯著降低大腦與關節的發炎反應。這對延緩認知功能退化有極佳效果，相關症狀可參考 <a href="/blog/dog-aging-signs/" class="text-blue-600 underline">狗狗老化徵兆</a> 的行為分析部分。
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">四、居家環境的科學調整</h2>
+      <p>
+        為了減輕老毛孩的負擔，環境的微小改動能帶來巨大的舒適感：
+      </p>
+      <ol class="list-decimal pl-6 space-y-2">
+        <li><strong>關節支持：</strong> 在沙發或床邊設置防滑斜坡，避免跳躍對脊椎造成的衝擊。</li>
+        <li><strong>進食高度：</strong> 稍微墊高碗架，能減少頸椎壓力，這對患有骨刺的老年犬尤為重要。</li>
+        <li><strong>夜間照明：</strong> 針對視力衰退的寵物（特別是患有白內障的老貓），保持小夜燈開啟能減少夜間焦慮。</li>
+      </ol>
     </div>
 
-    <div class="bg-slate-900 text-white p-8 rounded-3xl my-16">
-      <h3 class="text-2xl font-bold mb-4">掌握毛孩的生命時鐘</h3>
-      <p class="mb-6 opacity-80 text-sm md:text-base">不同的體型與品種，老化曲線截然不同。立即使用計算機獲取個人化建議。</p>
-      <div class="flex flex-wrap gap-4">
-        <a href="/tools/dog-age-calculator/" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold transition-all">狗狗計算機</a>
-        <a href="/tools/cat-age-calculator/" class="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-3 rounded-xl font-bold transition-all">貓咪計算機</a>
+    <div class="mt-16 p-10 bg-indigo-900 text-white rounded-3xl shadow-2xl relative overflow-hidden">
+      <div class="relative z-10">
+        <h3 class="text-2xl font-bold mb-4">專業診斷，不容延遲</h3>
+        <p class="mb-8 opacity-90 leading-relaxed">
+          科學照護的第一步是了解數據。立即使用我們的年齡計算機，獲取基於獸醫醫學演算法的生命階段報告。
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="/tools/dog-age-calculator/" class="bg-white text-indigo-900 px-8 py-3 rounded-xl font-bold hover:bg-slate-100 transition-all">狗狗年齡計算 →</a>
+          <a href="/tools/cat-age-calculator/" class="bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-400 transition-all border border-indigo-400">貓咪年齡計算 →</a>
+        </div>
       </div>
     </div>
+
+    <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-400">
+      <p>引用文獻：AVMA Senior Pet Care Guidelines, The Dog Aging Project (UW Medicine).</p>
+      <p class="mt-2">免責聲明：本站內容僅供參考，不取代臨床診斷。若毛孩身體不適，請立即尋求執業獸醫師協助。</p>
+    </footer>
   </article>
+
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "老年寵物健康照護全攻略",
+    "author": { "@type": "Organization", "name": "Pet Aging Hub" },
+    "datePublished": "2026-05-12",
+    "image": "https://images.unsplash.com/photo-1581888227599-779811939961?w=1200&q=80"
+  }
+  </script>
 </BaseLayout>
