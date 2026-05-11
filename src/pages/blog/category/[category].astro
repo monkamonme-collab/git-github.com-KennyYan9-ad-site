@@ -1,7 +1,8 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Card from '../../components/Card.astro';
-
+import BaseLayout from '../../../layouts/BaseLayout.astro'; // 改為三層 ../
+import Card from '../../../components/Card.astro';         // 改為三層 ../
+// ... 其他代碼
+---
 // 1. 抓取當前資料夾下所有 .astro 檔案
 const allPosts = await Astro.glob('./*.astro');
 
