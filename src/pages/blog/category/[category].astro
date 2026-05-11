@@ -1,34 +1,20 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Card from '../../components/Card.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
 
-// 必須在 --- 之內執行抓取
-const allPosts = await Astro.glob('./*.astro');
-const displayPosts = allPosts
-  .filter(post => !post.file.includes('index.astro') && post.frontmatter?.title)
-  .sort((a, b) => (new Date(b.frontmatter?.date || 0).getTime() - new Date(a.frontmatter?.date || 0).getTime()))
-  .slice(0, 9);
+export function getStaticPaths() {
+  return [
+    { params: { category: 'health' } },
+    { params: { category: 'nutrition' } },
+    { params: { category: 'care' } },
+  ];
+}
 
-const categories = [
-  { name: '寵物健康', slug: 'health', icon: '💊' },
-  { name: '寵物營養', slug: 'nutrition', icon: '🍖' },
-  { name: '寵物照護', slug: 'care', icon: '🛁' },
-];
+const { category } = Astro.params;
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南">
-  <main class="max-w-5xl mx-auto px-6 py-12">
-    <h1 class="text-4xl font-bold text-center mb-12">寵物健康部落格</h1>
-    
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-      {displayPosts.map((post) => (
-        <a href={post.url}>
-          <Card>
-             <img src={post.frontmatter.image} alt={post.frontmatter.title} />
-             <h3 class="p-4 font-bold">{post.frontmatter.title}</h3>
-          </Card>
-        </a>
-      ))}
-    </div>
-  </main>
+<BaseLayout title={`${category} 分類 - Pet Aging Hub`}>
+  <div class="max-w-5xl mx-auto py-20 text-center">
+    <h1 class="text-3xl font-bold capitalize">{category} 相關文章</h1>
+    <p class="mt-4 text-slate-500">內容建置中，請回到 <a href="/blog/" class="text-blue-600">部落格首頁</a> 查看最新文章。</p>
+  </div>
 </BaseLayout>
