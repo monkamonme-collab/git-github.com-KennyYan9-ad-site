@@ -19,7 +19,7 @@ const featuredArticles = [
     category: '比較分析',
     categoryColor: 'blue',
     title: '狗與貓老化差異完整比較',
-    description: '9 個維度全面對比：老化速度、壽命、老年常見疾病與照護重點。',
+    description: '9 個維度全面對比：老化速度、壽命、老年常見疾病與照護重點參照。',
     readTime: '約 10 分鐘',
     emoji: '📊'
   },
@@ -45,7 +45,6 @@ const featuredArticles = [
   }
 ];
 
-// 工具選單資料
 const tools = [
   {
     href: '/tools/dog-age-calculator/',
@@ -53,7 +52,7 @@ const tools = [
     badge: '熱門',
     badgeColor: 'blue',
     title: '狗狗年齡計算機',
-    description: '輸入年齡與體型，獲得人類年齡對照與生命階段建議。'
+    description: '獲得人類年齡對照與生命階段建議。'
   },
   {
     href: '/tools/cat-age-calculator/',
@@ -61,7 +60,7 @@ const tools = [
     badge: '熱門',
     badgeColor: 'purple',
     title: '貓咪年齡計算機',
-    description: '了解你家貓咪的生命階段，獲得針對性的照護建議。'
+    description: '獲得針對性的老齡貓照護建議。'
   },
   {
     href: '/tools/compare-aging/',
@@ -69,7 +68,7 @@ const tools = [
     badge: '新功能',
     badgeColor: 'teal',
     title: '年齡對照工具',
-    description: '同時比較狗狗和貓咪的人類年齡，快速了解誰更「老」。'
+    description: '同時比較狗狗和貓咪的人類年齡。'
   }
 ];
 ---
@@ -84,7 +83,7 @@ const tools = [
     <div class="absolute inset-0">
       <img
         src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1400&h=700&fit=crop&fm=webp"
-        alt="一位主人輕輕撫摸著老年黃金獵犬，表達溫暖的照護與陪伴"
+        alt="照護與陪伴老年毛孩"
         class="w-full h-full object-cover opacity-40"
         loading="eager"
       />
@@ -102,10 +101,6 @@ const tools = [
         年齡與健康狀況
       </h1>
 
-      <p class="text-lg md:text-xl text-slate-300 max-w-2xl mb-10 leading-relaxed">
-        提供科學的數據工具與專業照護指南，陪伴你的毛孩健康走過每一個生命階段。
-      </p>
-
       <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
         <a href="/tools/dog-age-calculator/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl transition-colors shadow-lg">
           <span class="text-xl">🐕</span> 狗狗年齡計算
@@ -118,15 +113,11 @@ const tools = [
   </div>
 
   <div class="max-w-5xl mx-auto px-6 py-16">
-    {/* 精選指南區塊 */}
     <section class="mb-16">
       <div class="flex items-center justify-between mb-8">
-        <div>
-          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <span class="text-2xl">📚</span> 精選照護指南
-          </h2>
-          <p class="text-slate-600 mt-1">來自獸醫專家與學術研究的權威建議</p>
-        </div>
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">📚</span> 精選照護指南
+        </h2>
         <a href="/blog/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">所有文章 →</a>
       </div>
 
@@ -149,7 +140,7 @@ const tools = [
                 </div>
                 <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{article.title}</h3>
                 <p class="text-slate-600 mb-4 line-clamp-2 text-sm">{article.description}</p>
-                <span class="text-xs text-slate-500 flex items-center gap-1">⏱️ 閱讀時間：{article.readTime}</span>
+                <span class="text-xs text-slate-500">⏱️ 閱讀時間：{article.readTime}</span>
               </div>
             </Card>
           </a>
@@ -157,7 +148,6 @@ const tools = [
       </div>
     </section>
 
-    {/* 熱門工具區塊 */}
     <section class="mb-16">
         <div class="flex items-center justify-between mb-8">
           <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
@@ -178,18 +168,46 @@ const tools = [
         </div>
     </section>
 
-    {/* 最近更新區塊 (補上旗艦指南連結) */}
     <section>
       <div class="flex items-center justify-between mb-8">
         <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
           <span class="text-2xl">🕐</span> 最近更新
         </h2>
-        <div class="flex items-center gap-2 text-sm text-slate-500">
-          <span class="inline-block w-2 h-2 bg-green-500 rounded-full"></span>
-          2026 年 5 月
-        </div>
       </div>
 
       <div class="bg-gradient-to-br from-slate-50 to-amber-50 rounded-3xl p-8 border border-slate-200">
         <div class="grid md:grid-cols-2 gap-8">
-          {/* 旗艦文章更新
+          <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🏆</span>
+              <div>
+                <p class="text-xs text-indigo-600 font-bold mb-1">重點發布</p>
+                <a href="/blog/senior-pet-health-guide/" class="text-lg font-bold text-slate-900 hover:text-amber-600 block mb-2">
+                  老年寵物健康照護全攻略
+                </a>
+                <p class="text-sm text-slate-600">
+                  深度解析熟齡犬貓的器官功能監測、精準營養與環境減壓建議。
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">📝</span>
+              <div>
+                <p class="text-xs text-slate-500 mb-1">內容優化</p>
+                <a href="/blog/dog-aging-by-breed/" class="text-lg font-bold text-slate-900 hover:text-amber-600 block mb-2">
+                  狗狗品種與老化速度更新
+                </a>
+                <p class="text-sm text-slate-600">
+                  新增了包含柴犬、柯基在內的多個熱門品種老化時間表。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
