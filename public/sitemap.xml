@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- 首頁 -->
+  <url>
+    <loc>https://git-github-com-kenny-yan9-ad-site.vercel.app/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- 寵物年齡計算機頁面 -->
+  <url>
+    <loc>https://git-github-com-kenny-yan9-ad-site.vercel.app/tools/dog-age-calculator/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- 部落格列表頁 -->
+  <url>
+    <loc>https://git-github-com-kenny-yan9-ad-site.vercel.app/blog/</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>
