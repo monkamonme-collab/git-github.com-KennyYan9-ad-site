@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-  title = "利基型專業工具網站", 
-  description = "高效、免費、直覺的線上工具站" 
+  title = "寵物年齡與健康資源中心", 
+  description = "提供專業寵物年齡計算與高齡毛孩照護指南" 
 } = Astro.props;
 
 // 設定你的正式網域
@@ -24,18 +24,20 @@ const canonicalURL = "https://git-github-com-kenny-yan9-ad-site.vercel.app/";
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         
         <SEO title={title} description={description} />
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6107150024201925" crossorigin="anonymous"></script>
     </head>
     <body class="bg-gray-50 text-gray-900 min-h-screen">
         <nav class="bg-white shadow-sm p-4 border-b">
             <div class="max-w-5xl mx-auto flex justify-between items-center">
-                <a href="/" class="text-xl font-bold text-blue-600">利基工具站</a>
+                <a href="/" class="text-xl font-bold text-blue-600">Pet Aging Hub</a>
             </div>
         </nav>
         <main class="max-w-5xl mx-auto p-6">
             <slot />
         </main>
         <footer class="text-center p-6 text-gray-500 text-sm">
-            &copy; 2026 利基工具站. All rights reserved.
+            &copy; 2026 Pet Aging Hub. All rights reserved.
         </footer>
     </body>
 </html>
