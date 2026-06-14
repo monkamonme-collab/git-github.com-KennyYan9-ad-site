@@ -20,6 +20,7 @@ const { title, description, breadcrumbs = [] } = Astro.props;
     <SEO 
       title={title || "Pet Aging Hub - 寵物年齡與健康指南"} 
       description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"} 
+      canonicalPath={Astro.url.pathname}
     />
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
