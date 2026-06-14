@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { title, description, canonicalPath = "", schemaType = "WebApplication" } = Astro.props;
-const siteUrl = "https://your-domain.com"; // 請替換為您的實際網域
+const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://git-github-com-kenny-yan9-ad-site.vercel.app";
 const canonicalURL = new URL(canonicalPath, siteUrl);
 ---
 
