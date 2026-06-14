@@ -7,7 +7,7 @@ import LifeStageBar from '../../components/LifeStageBar.astro';
 const title = "狗狗年齡計算機 | AVMA 標準科算人類年齡";
 const description = "使用美國獸醫師協會 (AVMA) 標準公式，精準計算狗狗對應人類年齡。支援小型犬、中型犬、大型犬、巨型犬體型換算。";
 const canonicalPath = "/tools/dog-age-calculator";
-const canonicalURL = new URL(canonicalPath, "https://pet-calculators.example.com/");
+const canonicalURL = new URL(canonicalPath, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
 
 const breadcrumbs = [
   { label: '工具集', url: '/tools' },
@@ -24,7 +24,6 @@ const lifeStages = [
 ---
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
 
   <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
@@ -278,14 +277,14 @@ const lifeStages = [
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">延伸閱讀</h2>
     <div class="grid md:grid-cols-2 gap-4">
-      <a href="/blog/dog-life-stages" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+      <a href="/blog/dog-aging-signs/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-lg">📖</span>
           <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗各生命階段的照護指南</span>
         </div>
         <p class="text-sm text-slate-500">從幼犬到老年犬，每個階段的飲食、運動與健康監測建議。</p>
       </a>
-      <a href="/blog/common-dog-health-problems" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+      <a href="/blog/senior-pet-health-guide/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-lg">🏥</span>
           <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗常見健康問題與預防</span>
@@ -366,7 +365,7 @@ const lifeStages = [
     const ageInput = document.getElementById('dogAge') as HTMLInputElement;
     const sizeInput = document.getElementById('dogSize') as HTMLSelectElement;
     const resultDisplay = document.getElementById('result');
-    const lifeStageText = document.getElementById('resultText');
+    const lifeStageText = document.getElementById('lifeStageText');
 
     const calculateHumanAge = (age: number, size: string): { humanAge: number; stage: string; stageText: string } => {
       if (age <= 0) return { humanAge: 0, stage: 'puppy', stageText: '幼年階段' };
