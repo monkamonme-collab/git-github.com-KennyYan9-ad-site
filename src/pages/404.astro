@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="找不到頁面 | Pet Aging Hub"
+  description="您要找的頁面不存在，但這裡有一些實用的寵物年齡計算工具與照護指南可以幫助您。"
+>
+  <div class="max-w-3xl mx-auto px-6 py-20 text-center">
+    <p class="text-7xl mb-6">🐾</p>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">404 - 找不到頁面</h1>
+    <p class="text-lg text-slate-600 mb-10">
+      抱歉，您要找的頁面不存在，可能已被移除或網址有誤。不過別擔心，以下這些內容或許對您有幫助：
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-4 text-left mb-12">
+      <a href="/tools/dog-age-calculator/" class="bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+        <div class="text-2xl mb-2">🐕</div>
+        <h2 class="font-bold text-slate-900">狗狗年齡計算機</h2>
+        <p class="text-sm text-slate-500 mt-1">換算狗狗對應的人類年齡</p>
+      </a>
+      <a href="/tools/cat-age-calculator/" class="bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+        <div class="text-2xl mb-2">🐱</div>
+        <h2 class="font-bold text-slate-900">貓咪年齡計算機</h2>
+        <p class="text-sm text-slate-500 mt-1">換算貓咪對應的人類年齡</p>
+      </a>
+      <a href="/blog/" class="bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+        <div class="text-2xl mb-2">📚</div>
+        <h2 class="font-bold text-slate-900">部落格文章</h2>
+        <p class="text-sm text-slate-500 mt-1">瀏覽所有寵物照護指南</p>
+      </a>
+      <a href="/tools/" class="bg-white rounded-2xl p-5 border border-slate-200 hover:border-blue-300 hover:shadow-lg transition-all">
+        <div class="text-2xl mb-2">🧮</div>
+        <h2 class="font-bold text-slate-900">所有工具</h2>
+        <p class="text-sm text-slate-500 mt-1">查看完整工具列表</p>
+      </a>
+    </div>
+
+    <a href="/" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-xl transition-colors">
+      ← 回到首頁
+    </a>
+  </div>
+</BaseLayout>
