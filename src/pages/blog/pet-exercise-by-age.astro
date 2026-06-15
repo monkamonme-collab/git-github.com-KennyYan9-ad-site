@@ -6,9 +6,10 @@ const title = "寵物各年齡階段的運動量需求完整指南：幼犬幼�
 const description = "狗狗每天該運動多久？貓咪需要規律運動嗎？本指南依據 AAHA 與 AVMA 生命階段照護指引，完整解析幼年、成年、熟齡與老年寵物的運動量需求、適合的活動類型，以及常見的運動迷思與風險。";
 const date = "2026-06-15";
 const image = "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=1200&q=80";
+const currentPath = Astro.url.pathname;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog/' }, { label: '寵物運動量需求指南', url: currentPath }]}>
 <article class="max-w-3xl mx-auto px-6 py-12">
 <header class="mb-12">
 <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
