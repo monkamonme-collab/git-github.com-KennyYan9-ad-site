@@ -6,9 +6,10 @@ const title = "寵物各年齡階段的營養需求完整指南：幼年、成�
 const description = "狗狗幾歲該換飼料？貓咪不同年齡該怎麼吃？本指南依據 AAFCO 營養標準與 AVMA、WSAVA 獸醫指引，完整解析幼年、成年與老年寵物的營養需求差異，並提供換糧時機與常見飲食迷思的科學解答。";
 const date = "2026-06-14";
 const image = "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&q=80";
+const currentPath = Astro.url.pathname;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog/' }, { label: '寵物營養需求指南', url: currentPath }]}>
   <article class="max-w-3xl mx-auto px-6 py-12">
     <header class="mb-12">
       <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
