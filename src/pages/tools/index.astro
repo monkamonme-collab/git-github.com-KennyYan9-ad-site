@@ -5,7 +5,7 @@ import { getCollection } from 'astro:content';
 const allTools = await getCollection('tools');
 ---
 
-<BaseLayout title="工具大全 | 專業實用工具箱">
+<BaseLayout title="工具大全 | 專業實用工具箱" breadcrumbs={[{ label: '工具集', url: '/tools' }]}>
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">為您的專業需求而生：一站式數據工具</h1>
