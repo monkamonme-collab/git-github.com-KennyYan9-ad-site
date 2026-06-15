@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
+
+const currentPath = Astro.url.pathname;
 ---
 
 <BaseLayout
   title="狗與貓年齡比較：輸入年齡一次對照兩種寵物的人類年齡"
   description="比較你家狗狗和貓咪的年齡與生命階段。輸入年齡後同時顯示狗與貓的人類年齡對照，並提供個別的詳細老化指南連結。"
+  breadcrumbs={[{ label: '工具集', url: '/tools' }, { label: '狗貓年齡比較', url: currentPath }]}
 >
   <!-- Hero Section -->
   <div class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
