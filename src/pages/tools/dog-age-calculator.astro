@@ -4,14 +4,14 @@ import Breadcrumb from '../../components/Breadcrumb.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 import LifeStageBar from '../../components/LifeStageBar.astro';
 
-const title = "ççå¹´é½¡è¨ç®æ© | AVMA æ¨æºç§ç®äººé¡å¹´é½¡";
-const description = "ä½¿ç¨ç¾åç¸é«å¸«åæ (AVMA) æ¨æºå¬å¼ï¼ç²¾æºè¨ç®ççå°æäººé¡å¹´é½¡ãæ¯æ´å°åç¬ãä¸­åç¬ãå¤§åç¬ãå·¨åç¬é«åæç®ã";
+const title = "狗狗年齡計算機 | AVMA 標準科算人類年齡";
+const description = "使用美國獸醫師協會 (AVMA) 標準公式，精準計算狗狗對應人類年齡。支援小型犬、中型犬、大型犬、巨型犬體型換算。";
 const canonicalPath = "/tools/dog-age-calculator";
 const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
 
 const breadcrumbs = [
-  { label: 'å·¥å·é', url: '/tools' },
-  { label: 'ççå¹´é½¡è¨ç®æ©', url: canonicalPath }
+  { label: '工具集', url: '/tools' },
+  { label: '狗狗年齡計算機', url: canonicalPath }
 ];
 
 const hrefLangAlternates = [
@@ -21,11 +21,11 @@ const hrefLangAlternates = [
 ];
 
 const lifeStages = [
-  { range: '0-1 æ­²', human: 'å¬°åæè³éå°å¹´', stage: 'puppy' },
-  { range: '1-3 æ­²', human: 'éå°å¹´è³æå¹´åæ', stage: 'young' },
-  { range: '3-7 æ­²', human: 'æå¹´æ', stage: 'adult' },
-  { range: '7-10 æ­²', human: 'çé½¡æ', stage: 'senior' },
-  { range: '10+ æ­²', human: 'èå¹´æ', stage: 'geriatric' }
+  { range: '0-1 歲', human: '嬰兒期至青少年', stage: 'puppy' },
+  { range: '1-3 歲', human: '青少年至成年初期', stage: 'young' },
+  { range: '3-7 歲', human: '成年期', stage: 'adult' },
+  { range: '7-10 歲', human: '熟齡期', stage: 'senior' },
+  { range: '10+ 歲', human: '老年期', stage: 'geriatric' }
 ];
 ---
 
@@ -35,13 +35,13 @@ const lifeStages = [
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
     <div class="flex items-center gap-3 mb-4">
       <span class="text-4xl">&#x1F436;</span>
-      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA æ¨æº</span>
+      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA 標準</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-      ççå¹´é½¡è¨ç®æ©
+      狗狗年齡計算機
     </h1>
     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-      æ³ç¥éæ¨çæç¬ç­æ¼äººé¡å¹¾æ­²åï¼æ¬å·¥å·æ¡ç¨ç¾åç¸é«å¸«åæ (AVMA) èªå¯çç§å­¸å¬å¼ï¼æ ¹æççé«åèå¹´é½¡ï¼ç²¾æºæç®å°æçäººé¡çå½éæ®µã
+      想知道您的愛犬等於人類幾歲嗎？本工具採用美國獸醫師協會 (AVMA) 認可的科學公式，根據狗狗體型與年齡，精準換算對應的人類生命階段。
     </p>
   </header>
 
@@ -51,7 +51,7 @@ const lifeStages = [
       <div class="grid md:grid-cols-2 gap-6">
         <div class="space-y-5">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">ççç®åæ­²æ¸</label>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">狗狗目前歲數</label>
             <input
               type="number"
               id="dogAge"
@@ -62,23 +62,23 @@ const lifeStages = [
             />
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 mb-2">ççé«å</label>
+            <label class="block text-sm font-semibold text-slate-700 mb-2">狗狗體型</label>
             <select
               id="dogSize"
               class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
             >
-              <option value="small">å°åç¬ (é«éä½æ¼ 10kg)</option>
-              <option value="medium">ä¸­åç¬ (10â25kg)</option>
-              <option value="large">å¤§åç¬ (25â40kg)</option>
-              <option value="giant">å·¨åç¬ (è¶é 40kg)</option>
+              <option value="small">小型犬 (體重低於 10kg)</option>
+              <option value="medium">中型犬 (10–25kg)</option>
+              <option value="large">大型犬 (25–40kg)</option>
+              <option value="giant">巨型犬 (超過 40kg)</option>
             </select>
           </div>
         </div>
 
         <div class="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-slate-50 rounded-xl p-6">
-          <p class="text-sm text-slate-500 mb-2">å°æäººé¡å¹´é½¡</p>
-          <p class="text-5xl font-black text-blue-600 mb-3" id="result">32 æ­²</p>
-          <p class="text-sm text-slate-500 text-center" id="lifeStageText">å·²é²å¥æå¹´æ</p>
+          <p class="text-sm text-slate-500 mb-2">對應人類年齡</p>
+          <p class="text-5xl font-black text-blue-600 mb-3" id="result">32 歲</p>
+          <p class="text-sm text-slate-500 text-center" id="lifeStageText">已進入成年期</p>
           <div class="w-full mt-4">
             <LifeStageBar age={3} type="dog" />
           </div>
@@ -96,9 +96,9 @@ const lifeStages = [
         </svg>
       </div>
       <div>
-        <p class="text-sm font-semibold text-slate-800">æ¬è¨ç®æ©æ¡ç¨ AVMA æ¨æºå¬å¼</p>
+        <p class="text-sm font-semibold text-slate-800">本計算機採用 AVMA 標準公式</p>
         <p class="text-sm text-slate-500 mt-0.5">
-          ç¾åç¸é«å¸«åæ (American Veterinary Medical Association) æ¯å¨çæå·æ¬å¨çç¸é«å°æ¥­æ©æ§ï¼å¶ççå¹´é½¡æç®æ¨æºå·²è¢«å¨çç¸é«å¸«å»£æ³æ¡ç¨ã
+          美國獸醫師協會 (American Veterinary Medical Association) 是全球最具權威的獸醫專業機構，其狗狗年齡換算標準已被全球獸醫師廣泛採用。
         </p>
       </div>
     </div>
@@ -111,78 +111,78 @@ const lifeStages = [
 
   <!-- SEO Introduction -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">çºä»éº¼ççå¹´é½¡ä¸è½ç´æ¥ä¹ä»¥ 7ï¼</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">為什麼狗狗年齡不能直接乘Ļ� 7？</h2>
     <div class="prose prose-slate prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600 max-w-none space-y-4">
       <p>
-        è¨±å¤äººå¨ç«¥å¹´æå°±è½éãçç 1 å¹´ç­æ¼äººé¡ 7 å¹´ãçèªªæ³ï¼ä½éåç®æ³éåº¦ç°¡åï¼å¿½ç¥äºå¹¾åéè¦ççç©e­¸äºå¯¦ãççå¨çå½ç¬¬ä¸å¹´çæé·éåº¦é æ¯äººé¡å¿«ï¼ä¸é» 1 æ­²çççå¨ççç¼è²ä¸å·²æ¥è¿äººé¡ç 15 æ­²ã
+        許多人在童年時就聽過「狗狗 1 年等於人類 7 年」的說法，但這個算法過度簡化，忽略了幾個重要的生物學事實。狗狗在生命第一年的成長速度遠比人類快，一隻 1 歲的狗狗在生理發育上已接近人類的 15 歲。
       </p>
       <p>
-        æ­¤å¤ï¼çççé«åå¤§å°ä¹æé¡¯èå½±é¿èåéåº¦ãå¤§åç¬éå¸¸æ¯å°åç¬è¡°èå¾æ´å¿«ï¼ä¸é» 5 æ­²çå¤§åç¬å¯è½å·²ç¶é²å¥çé½¡æï¼èåé½¡çå°åç¬å¯è½ä»èæ¼æå¹´å£¯å¹´æãéå°±æ¯çºä»éº¼æ¬è¨ç®æ©ææ ¹æçççé«ååé¡æä¾ä¸åçæç®çµæã
+        此外，狗狗的體型大小也會顯著影響老化速度。大型犬通常比小型犬衰老得更快，一隻 5 歲的大型犬可能已經進入熟齡期，而同齡的小型犬可能仍處於成年壯年期。這就是為什麼本計算機會根據狗狗的體型分類提供不同的換算結果。
       </p>
       <p>
-        çè§£ççççå¯¦å¹´é½¡æå©æ¼æ¨æä¾æ´é©åçç§è­·ãä¸åçå½éæ®µçççæä¸åççé¤éæ±ãéåééæ±åå¥åº·ç£æ¸¬éé»ãåæ©èª¿æ´ç§è­·æ¹å¼ï¼å¯ä»¥å¹«å©æ¨çæç¬å¥åº·å°åº¦éæ¯ä¸åçå½éæ®µã
+        理解狗狗的真實年齡有助於您提供更適切的照護。不同生命階段的狗狗有不同的營養需求、運動量需求和健康監測重點。及早調整照護方式，可以幫助您的愛犬健康地度過每一個生命階段。
       </p>
     </div>
   </section>
 
   <!-- Methodology Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">è¨ç®æ¹æ³èªªæ</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">計算方法說明</h2>
     <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
       <p class="text-slate-600">
-        æ¬è¨ç®æ©æ¡ç¨ç¾åç¸é«å¸«åæ (AVMA) èªå¯çåæ®µç·æ§å¬å¼ï¼èæ®äºçççå½æ©æçå¿«éç¼è²ï¼ä»¥åä¸åé«åéçèåå·®ç°ã
+        本計算機採用美國獸醫師協會 (AVMA) 認可的分段線性公式，考慮了狗狗生命早期的快速發育，以及不同體型間的老化差異。
       </p>
 
       <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm">
-        <p class="font-semibold text-slate-700 mb-2">è¨ç®å¬å¼ï¼</p>
-        <p class="text-slate-600">ç¬¬ä¸å¹´ = 15 æ­²ï¼å°å/ä¸­å/å¤§åç¬ï¼/ 12 æ­²ï¼å·¨åç¬ï¼</p>
-        <p class="text-slate-600">ç¬¬äºå¹´ = +9 æ­²ï¼å°å/ä¸­å/å¤§åç¬ï¼/ +10 æ­²ï¼å·¨åç¬ï¼</p>
-        <p class="text-slate-600">ç¬¬ä¸å¹´èµ·æ¯å¹´ = +4-7 æ­²ï¼ä¾é«åï¼</p>
+        <p class="font-semibold text-slate-700 mb-2">計算公式：</p>
+        <p class="text-slate-600">第一年 = 15 歲（小型/中型/大型犬）/ 12 歲（巨型犬）</p>
+        <p class="text-slate-600">第二年 = +9 歲（小型/中型/大型犬）/ +10 歲（巨型犬）</p>
+        <p class="text-slate-600">第三年起每年 = +4-7 歲（依體型）</p>
       </div>
 
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
             <tr class="border-b border-slate-200">
-              <th class="text-left py-2 text-slate-700 font-semibold">é«å</th>
-              <th class="text-right py-2 text-slate-700 font-semibold">2æ­²æäººé¡å¹´é½¡</th>
-              <th class="text-right py-2 text-slate-700 font-semibold">æ¯å¹´éå¢</th>
+              <th class="text-left py-2 text-slate-700 font-semibold">體型</th>
+              <th class="text-right py-2 text-slate-700 font-semibold">2歲時人類年齡</th>
+              <th class="text-right py-2 text-slate-700 font-semibold">每年遞增</th>
             </tr>
           </thead>
           <tbody class="text-slate-600">
             <tr class="border-b border-slate-100">
-              <td class="py-2">å°åç¬ (&lt;10kg)</td>
-              <td class="text-right py-2">24 æ­²</td>
-              <td class="text-right py-2">+4 æ­²/å¹´</td>
+              <td class="py-2">小型犬 (&lt;10kg)</td>
+              <td class="text-right py-2">24 歲</td>
+              <td class="text-right py-2">+4 歲/年</td>
             </tr>
             <tr class="border-b border-slate-100">
-              <td class="py-2">ä¸­åç¬ (10â25kg)</td>
-              <td class="text-right py-2">24 æ­²</td>
-              <td class="text-right py-2">+5 æ­²/å¹´</td>
+              <td class="py-2">中型犬 (10–25kg)</td>
+              <td class="text-right py-2">24 歲</td>
+              <td class="text-right py-2">+5 歲/年</td>
             </tr>
             <tr class="border-b border-slate-100">
-              <td class="py-2">å¤§åç¬ (25â40kg)</td>
-              <td class="text-right py-2">24 æ­²</td>
-              <td class="text-right py-2">+6 æ­²/å¹´</td>
+              <td class="py-2">大型犬 (25–40kg)</td>
+              <td class="text-right py-2">24 歲</td>
+              <td class="text-right py-2">+6 歲/年</td>
             </tr>
             <tr>
-              <td class="py-2">å·¨åç¬ (&gt;40kg)</td>
-              <td class="text-right py-2">22 æ­²</td>
-              <td class="text-right py-2">+7 æ­²/å¹´</td>
+              <td class="py-2">巨型犬 (&gt;40kg)</td>
+              <td class="text-right py-2">22 歲</td>
+              <td class="text-right py-2">+7 歲/年</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p class="text-xs text-slate-500">
-        è³æä¾æºï¼American Veterinary Medical Association (AVMA). Canine Life Stage Guidelines. JAVMA, 2012.
+        資料來源：American Veterinary Medical Association (AVMA). Canine Life Stage Guidelines. JAVMA, 2012.
       </p>
     </div>
   </section>
 
   <!-- Life Stages Reference -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">çççå½éæ®µèç§è­·éé»</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">狗狗生命階段與照護重點</h2>
     <div class="grid gap-4">
       {lifeStages.map((stage) => (
         <div class="bg-white border border-slate-200 rounded-xl p-5">
@@ -214,41 +214,41 @@ const lifeStages = [
 
   <!-- FAQ Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">å¸¸è¦åé¡</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">常見問題</h2>
     <div class="space-y-4">
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          çºä»éº¼å¤§åç¬æ¯å°åç¬èå¾å¿«ï¼
+          為什麼大型犬比小型犬老得快？
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          å¤§åç¬çæ°é³ä»£è¬è² ææ´éï¼èº«é«å¨å®éè¦æ¯ææ´å¤§çé«éï¼å æ­¤èåéåº¦æ®éè¼å¿«ãä¸é» 7 æ­²çå¤§åç¬å¯è½å·²é²å¥èå¹´æï¼èåé½¡çå°åç¬å¯è½ä»èæ¼å£¯å¹´ãéå°±æ¯çºä»éº¼é«åæ¯æºç¢ºæç®çééµå ç´ ã
+          大型犬的新陳代謝負擔更重，身體器官需要支撐更大的體重，因此老化速度普遍較快。一隻 7 歲的大型犬可能已進入老年期，而同齡的小型犬可能仍處於壯年。這就是為什麼體型是準確換算的關鍵因素。
         </div>
       </details>
 
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          çå¹´åäººå¹´çå°ç§è¡¨æ¯æéº¼ä¾çï¼
+          狗年和人年的對照表是怎麼來的？
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          éåå°ç§è¡¨åºæ¼å¤é çççé·ç¼è²ç ç©¶ï¼åæ¬çé½ç¼è²æ¨¡å¼ãéæ¥æå°æå¹´æçéæ¸¡ãä»¥åèå¹´ç¾ççç¼ççç­å ç´ ãAVMA çæåæ¯ç¶åäºéäºç ç©¶å¾çå±è­å»ºè­°ï¼èéå®ä¸ç ç©¶çµè«ã
+          這個對照表基於多項狗狗生長發育研究，包括牙齒發育模式、青春期到成年期的過渡、以及老年疾病的發病率等因素。AVMA 的指南是綜合了這些研究後的共識建議，而非單一研究結論。
         </div>
       </details>
 
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          å¦ä½å¤æ·æçççæ¯ä¸æ¯é²å¥èå¹´æäºï¼
+          如何判斷我的狗狗是不是進入老年期了？
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          é¤äºå¹´é½¡æ¸å­ï¼èå¹´æçççéå¸¸æåºç¾ä»¥ä¸å¾µåï¼æ´»åéä¸éãç¡ç æéå¢å ãåæè®æ¢ãæ¯è²è®æ·ºãè½åæè¦åæ¸éãçé½åé¡ç­ãå»ºè­° 7 æ­²ä»¥ä¸çççæ¯åå¹´é²è¡ä¸æ¬¡å¥åº·æª¢æ¥ã
+          除了年齡數字，老年期的狗狗通常會出現以下徵兆：活動量下降、睡眠時間增加、反應變慢、毛色變淺、聽力或視力減退、牙齒問題等。建議 7 歲以上的狗狗每半年進行一次健康檢查。
         </div>
       </details>
 
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          ç´ç¨®ç¬åæ··ç¨®ç¬çå£½å½æå·®ç°åï¼
+          純種犬和混種犬的壽命有差異嗎？
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          ä¸è¬èè¨ï¼æ··ç¨®ç¬å çºåºå å¤æ¨£æ§è¼é«ï¼éºå³ç¾ççç¼ççè¼ä½ï¼å£½å½å¾å¾æ¯ç´ç¨®ç¬ç¨é·ãä½ç¡è«ç´ç¨®ææ··ç¨®ï¼é©ç¶çé£²é£ãéåå,å®æå¥åº·æª¢æ¥é½æ¯å»¶é·å£½å½çééµå ç´ ã
+          一般耀言，混種犬因為基因多樣性較高，遺傳疾病的發病率較低，壽命往往比純種犬稍長。但無論純種或混種，適當的飲食、運動和定期健康檢查都是延長壽命的關鍵因素。
         </div>
       </details>
     </div>
@@ -256,46 +256,46 @@ const lifeStages = [
 
   <!-- References Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">åèæç»</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">參考文獻</h2>
     <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-3 text-sm text-slate-600">
       <p>1. American Veterinary Medical Association. <em>Canine Life Stage Guidelines</em>. Journal of the American Veterinary Medical Association, 2012; 240(5): 552-558.</p>
       <p>2. Patronek GJ, Waters DJ, Glickman LT. Comparative longevity of pet dogs and humans: Implications for gerontology research. <em>The Journals of Gerontology</em>. 1997; 52(3): B171-B178.</p>
-      <p>3. Proschowsky HF, Rugbjerg H, ErsbÃ¸ll AK. Mortality of purebred and mixedbred dogs in Denmark. <em>Preventive Veterinary Medicine</em>. 2003; 58(1-2): 63-74.</p>
+      <p>3. Proschowsky HF, Rugbjerg H, Ersbøll AK. Mortality of purebred and mixedbred dogs in Denmark. <em>Preventive Veterinary Medicine</em>. 2003; 58(1-2): 63-74.</p>
       <p>4. AVMA. <em>Senior Pet Care Guidelines</em>. American Veterinary Medical Association, 2012.</p>
     </div>
   </section>
 
   <!-- Related Calculators -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">ç¸éè¨ç®æ©</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">相關計算機</h2>
     <div class="grid md:grid-cols-2 gap-4">
       <a href="/tools/cat-age-calculator" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-3 mb-2">
           <span class="text-2xl">&#x1F431;</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">è²åªå¹´é½¡è¨ç®æ©</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">貓咪年齡計算機</span>
         </div>
-        <p class="text-sm text-slate-500">æ¡ç¨ AAHA/AVMA æ¨æºï¼è¨ç®æè²çäººé¡å¹´é½¡å°æã</p>
+        <p class="text-sm text-slate-500">採用 AAHA/AVMA 標準，計算愛貓的人類年齡對應。</p>
       </a>
     </div>
   </section>
 
   <!-- Related Articles -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">å»¶ä¼¸é±è®</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">延伸閱讀</h2>
     <div class="grid md:grid-cols-2 gap-4">
       <a href="/blog/dog-life-stages" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-lg">&#x1F4D6;</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">ççåçå½éæ®µçç§è­·æå</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗各生命階段的照護指南</span>
         </div>
-        <p class="text-sm text-slate-500">å¾å¹¼ç¬å°èå¹´ç¬ï¼æ¯åéæ®µçé£²é£ãéåèå¥åº·ç£æ¸¬å»ºè­°ã</p>
+        <p class="text-sm text-slate-500">從幼犬到老年犬，每個階段的飲食、運動與健康監測建議。</p>
       </a>
       <a href="/blog/common-dog-health-problems" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-lg">&#x1F3E5;</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">ççå¸¸è¦å¥åº·åé¡èé é²</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗常見健康問題與預防</span>
         </div>
-        <p class="text-sm text-slate-500">äºè§£èå¹´ç¬å¸¸è¦ç¾çå¾µåï¼åå¥½é é²ä¿å¥ã</p>
+        <p class="text-sm text-slate-500">了解老年犬常見疾病徵兆，做好預防保健。</p>
       </a>
     </div>
   </section>
@@ -304,7 +304,7 @@ const lifeStages = [
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <div class="border-t border-slate-200 pt-8">
       <p class="text-xs text-slate-500 leading-relaxed">
-        <strong>åè²¬è²æï¼</strong>æ¬å·¥å·çè¨ç®çµæåºæ¼ç¾åç¸é«å¸«åæ (AVMA) ç¼å¸çæ®éæ§æå°ååï¼çµæåä¾åèï¼ä¸æ§æä»»ä½ç¸é«è¨ºæ·ææ²»çå»ºè­°ãæ¯é»çççå¥åº·çæ³é½æ¯ç¨ç¹çï¼è¥æ¨å°æç¬çå¥åº·æä»»ä½çæ®ï¼è«è«®è©¢å·æ¥­ç¸é«å¸«ã
+        <strong>免責聲明：</strong>本工具的計算結果基於美國獸醫師協會 (AVMA) 發布的普遍性指導原則，結果僅供參考，不構成任何獸醫診斷或治療建議。每隻狗狗的健康狀況都是獨特的，若您對愛犬的健康有任何疑慮，請諮詢執業獸醫師。
       </p>
     </div>
   </section>
@@ -312,16 +312,16 @@ const lifeStages = [
   <!-- Navigation -->
   <nav class="max-w-4xl mx-auto px-6 pb-12 flex justify-between items-center text-sm">
     <span class="text-slate-400"></span>
-    <a href="/tools" class="text-blue-600 hover:text-blue-700 font-medium">â ææå·¥å·</a>
-    <a href="/tools/cat-age-calculator" class="text-blue-600 hover:text-blue-700 font-medium">è²åªå¹´é½¡è¨ç®æ© â</a>
+    <a href="/tools" class="text-blue-600 hover:text-blue-700 font-medium">← 所有工具</a>
+    <a href="/tools/cat-age-calculator" class="text-blue-600 hover:text-blue-700 font-medium">貓咪年齡計算機 →</a>
   </nav>
 
   <!-- JSON-LD -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "ççå¹´é½¡è¨ç®æ©",
-    "description": "æ¡ç¨ AVMA æ¨æºå¬å¼ï¼æ ¹æççé«åèå¹´é½¡ï¼ç²¾æºæç®å°æçäººé¡å¹´é½¡ã",
+    "name": "狗狗年齡計算機",
+    "description": "採用 AVMA 標準公式，根據狗狗體型與年齡，精準換算對應的人類年齡。",
     "url": siteUrl + canonicalPath,
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
@@ -334,34 +334,34 @@ const lifeStages = [
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "çºä»éº¼å¤§åç¬æ¯å°åç¬èå¾å¿«ï¼",
+        "name": "為什麼大型犬比小型犬老得快？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "å¤§åç¬çæ°é³ä»£è¬è² ææ´éï¼èº«é«å¨å®éè¦æ¯ææ´å¤§çé«éï¼å æ­¤èåéåº¦æ®éè¼å¿«ãä¸é» 7 æ­²çå¤§åç¬å¯è½å·²é²å¥èå¹´æï¼èåé½¡çå°åç¬å¯è½ä»èæ¼å£¯å¹´ã"
+          "text": "大型犬的新陳代謝負擔更重，身體器官需要支撐更大的體重，因此老化速度普遍較快。一隻 7 歲的大型犬可能已進入老年期，而同齡的小型犬可能仍處於壯年。"
         }
       },
       {
         "@type": "Question",
-        "name": "çå¹´åäººå¹´çå°ç§è¡¨æ¯æéº¼ä¾çï¼",
+        "name": "狗年和人年的對照表是怎麼來的？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "éåå°ç§è¡¨åºæ¼å¤é çççé·ç¼è²ç ç©¶ï¼åæ¬çé½ç¼è²æ¨¡å¼ãéæ¥æå°æå¹´æçéæ¸¡ãä»¥åèå¹´ç¾ççç¼ççç­å ç´ ãAVMA çæåæ¯ç¶åäºéäºç ç©¶å¾çå±è­å»ºè­°ã"
+          "text": "這個對照表基於多項狗狗生長發育研究，包括牙齒發育模式、青春期到成年期的過渡、以及老年疾病的發病率等因素。AVMA 的指南是綜合了這些研究後的共識建議。"
         }
       },
       {
         "@type": "Question",
-        "name": "å¦ä½å¤æ·ççæ¯ä¸æ¯é²å¥èå¹´æäºï¼",
+        "name": "如何判斷狗狗是不是進入老年期了？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "é¤äºå¹´é½¡æ¸å­ï¼èå¹´æçççéå¸¸æåºç¾æ´»åéä¸éãç¡ç æéå¢å ãåæè®æ¢ãæ¯è²è®æ·ºãè½åæè¦åæ¸éç­å¾µåãå»ºè­° 7 æ­²ä»¥ä¸çççæ¯åå¹´é²è¡ä¸æ¬¡å¥åº·æª¢æ¥ã"
+          "text": "除了年齡數字，老年期的狗狗通常會出現活動量下降、睡眠時間增加、反應變慢、毛色變淺、聽力或視力減退等徵兆。建議 7 歲以上的狗狗每半年進行一次健康檢查。"
         }
       },
       {
         "@type": "Question",
-        "name": "ç´ç¨®ç¬åæ··ç¨®ç¬çå£½å½æå·®ç°åï¼",
+        "name": "純種犬和混種犬的壽命有差異嗎？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ä¸è¬èè¨ï¼æ··ç¨®ç¬å çºåºå å¤æ¨£æ§è¼é«ï¼éºå³ç¾ççç¼ççè¼ä½ï¼å£½å½å¾å¾æ¯ç´ç¨®ç¬ç¨é·ãä½ç¡è«ç´ç¨®ææ··ç¨®ï¼é©ç¶çé£²é£ãéåå,å®æå¥åº·æª¢æ¥é½æ¯å»¶é·å£½å½çééµå ç´ ã"
+          "text": "一般耀言，混種犬因為基因多樣性較高，遺傳疾病的發病率較低，壽命往往比純種犬稍長。但無論純種或混種，適當的飲食、運動和定期健康檢查都是延長壽命的關鍵因素。"
         }
       }
     ]
@@ -374,15 +374,15 @@ const lifeStages = [
     const lifeStageText = document.getElementById('resultText');
 
     const calculateHumanAge = (age: number, size: string): { humanAge: number; stage: string; stageText: string } => {
-      if (age <= 0) return { humanAge: 0, stage: 'puppy', stageText: 'å¹¼å¹´éæ®µ' };
+      if (age <= 0) return { humanAge: 0, stage: 'puppy', stageText: '幼年階段' };
       if (age === 1) {
         const base = size === 'giant' ? 12 : 15;
-        return { humanAge: base, stage: 'puppy', stageText: 'éå°å¹´éæ®µ' };
+        return { humanAge: base, stage: 'puppy', stageText: '青少年階段' };
       }
       if (age === 2) {
         const base = size === 'giant' ? 22 : 24;
         const stage = size === 'giant' ? 'young' : 'adult';
-        const stageText = size === 'giant' ? 'éå°å¹´è³æå¹´åæ' : 'æå¹´åæ';
+        const stageText = size === 'giant' ? '青少年至成年初期' : '成年初期';
         return { humanAge: base, stage, stageText };
       }
 
@@ -394,11 +394,11 @@ const lifeStages = [
       const humanAge = 24 + (age - 2) * increment;
 
       let stage = 'adult';
-      let stageText = 'æå¹´æ';
-      if (age >= 10) { stage = 'geriatric'; stageText = 'èå¹´æ'; }
-      else if (age >= 7) { stage = 'senior'; stageText = 'çé½¡æ'; }
-      else if (age >= 3) { stage = 'adult'; stageText = 'æå¹´æ'; }
-      else { stage = 'young'; stageText = 'éå°å¹´è³æå¹´åæ'; }
+      let stageText = '成年期';
+      if (age >= 10) { stage = 'geriatric'; stageText = '老年期'; }
+      else if (age >= 7) { stage = 'senior'; stageText = '熟齡期'; }
+      else if (age >= 3) { stage = 'adult'; stageText = '成年期'; }
+      else { stage = 'young'; stageText = '青少年至成年初期'; }
 
       return { humanAge, stage, stageText };
     };
@@ -408,8 +408,8 @@ const lifeStages = [
       const size = sizeInput.value;
       const { humanAge, stageText } = calculateHumanAge(age, size);
 
-      if (resultDisplay) resultDisplay.textContent = `${humanAge} æ­²`;
-      if (lifeStageText) lifeStageText.textContent = `å·²é²å¥ ${stageText}`;
+      if (resultDisplay) resultDisplay.textContent = `${humanAge} 歲`;
+      if (lifeStageText) lifeStageText.textContent = `已進入 ${stageText}`;
     };
 
     ageInput.addEventListener('input', update);
