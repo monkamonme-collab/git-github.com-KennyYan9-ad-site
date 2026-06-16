@@ -58,9 +58,15 @@ const categories = [
   { name: '寵物營養', slug: 'nutrition', icon: '🍖' },
   { name: '寵物照護', slug: 'care', icon: '🛁' },
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog' },
+  { lang: 'x-default', url: siteUrl + '/blog' },
+];
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南" breadcrumbs={[{ label: '部落格', url: '/blog/' }]}>
+<BaseLayout title="部落格 | 寵物知識與專業指南" breadcrumbs={[{ label: '部落格', url: '/blog/' }]} lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
