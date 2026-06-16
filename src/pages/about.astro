@@ -6,13 +6,19 @@ const breadcrumbs = [
   { label: '首頁', url: '/' },
   { label: '關於我們', url: '/about/' }
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/about' },
+  { lang: 'x-default', url: siteUrl + '/about' },
+];
 ---
 
 <BaseLayout
   title="關於我們 - Pet Aging Hub"
   description="了解 Pet Aging Hub 的使命。我們致力於幫助寵物主人通過實用工具和專業指南，更好地理解和照護老齡寵物的健康需求。"
   breadcrumbs={breadcrumbs}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="max-w-3xl mx-auto">
     <header class="mb-10">
       <h1 class="text-3xl font-extrabold text-slate-900 mb-4">關於 Pet Aging Hub</h1>
