@@ -6,13 +6,19 @@ const breadcrumbs = [
   { label: '首頁', url: '/' },
   { label: '隱私權政策', url: '/privacy-policy/' }
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/privacy-policy' },
+  { lang: 'x-default', url: siteUrl + '/privacy-policy' },
+];
 ---
 
 <BaseLayout
   title="隱私權政策 - Pet Aging Hub"
   description="了解我們如何收集、使用和保護您的個人資訊。"
   breadcrumbs={breadcrumbs}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="max-w-4xl mx-auto py-10 px-4">
     <header class="text-center mb-12">
       <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-600 text-sm font-bold px-4 py-2 rounded-full mb-4">
