@@ -6,13 +6,19 @@ const breadcrumbs = [
   { label: '首頁', url: '/' },
   { label: '免責聲明', url: '/disclaimer/' }
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/disclaimer' },
+  { lang: 'x-default', url: siteUrl + '/disclaimer' },
+];
 ---
 
 <BaseLayout
   title="免責聲明 - Pet Aging Hub"
   description="Pet Aging Hub 免責聲明。本網站所有內容僅供教育參考，不構成獸醫建議。請務必諮詢專業獸醫進行任何醫療相關決策。"
   breadcrumbs={breadcrumbs}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="max-w-3xl mx-auto py-10">
     <header class="mb-10">
       <h1 class="text-3xl font-extrabold text-slate-900 mb-4">免責聲明</h1>
