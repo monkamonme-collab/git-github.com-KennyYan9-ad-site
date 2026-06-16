@@ -6,13 +6,19 @@ const breadcrumbs = [
   { label: '首頁', url: '/' },
   { label: '聯絡我們', url: '/contact/' }
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/contact' },
+  { lang: 'x-default', url: siteUrl + '/contact' },
+];
 ---
 
 <BaseLayout
   title="聯絡我們 - Pet Aging Hub"
   description="如有任何關於寵物老化或健康問題的疑問，歡迎聯絡 Pet Aging Hub。"
   breadcrumbs={breadcrumbs}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="max-w-2xl mx-auto py-10">
     <header class="mb-10 text-center">
       <h1 class="text-3xl font-extrabold text-slate-900 mb-4">聯絡我們</h1>
