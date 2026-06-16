@@ -3,13 +3,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 
 const currentPath = Astro.url.pathname;
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/tools/symptom-checklist' },
+  { lang: 'x-default', url: siteUrl + '/tools/symptom-checklist' },
+];
 ---
 
 <BaseLayout
   title="寵物症狀檢核表：快速評估狗狗貓咪的健康警訊"
   description="透過這份互動式檢核表，評估你家寵物的健康狀況。根據勾選的症狀，獲得初步的健康風險評估和就醫建議。"
   breadcrumbs={[{ label: '工具集', url: '/tools' }, { label: '寵物症狀檢核表', url: currentPath }]}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="bg-gradient-to-br from-red-50 to-orange-50 border-b border-red-100">
     <div class="max-w-5xl mx-auto px-6 py-12 text-center">
       <div class="inline-flex items-center gap-2 bg-red-100 text-red-800 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
