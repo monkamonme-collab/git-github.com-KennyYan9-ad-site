@@ -71,12 +71,18 @@ const tools = [
     description: '同時比較狗狗和貓咪的人類年齡。'
   }
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/' },
+  { lang: 'x-default', url: siteUrl + '/' },
+];
 ---
 
 <BaseLayout
   title="了解你的寵物：狗狗與貓咪年齡計算機與老年照護指南"
   description="簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
 
   {/* Hero 區塊 */}
   <div class="relative bg-slate-900 overflow-hidden">
