@@ -5,29 +5,30 @@ interface Props {
   canonicalPath?: string;
   schemaType?: string;
 }
-
-const { title, description, canonicalPath = "", schemaType = "WebApplication" } = Astro.props;
+const { title, description, canonicalPath = "", schemaType = "WebSite" } = Astro.props;
 const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://git-github-com-kenny-yan9-ad-site.vercel.app";
-const canonicalURL = new URL(canonicalPath, siteUrl);
+const canonicalURL = new URL(canonicalPath || Astro.url.pathname, siteUrl).toString();
+const isArticle = Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/';
+const ogType = isArticle ? 'article' : 'website';
+const effectiveSchemaType = isArticle ? "Article" : schemaType;
+const schemaData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": effectiveSchemaType,
+  "name": title,
+  "description": description,
+  "url": canonicalURL
+});
 ---
 
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Open Graph / Facebook -->
-<meta property="og:type" content="website" />
+<!-- Open Graph -->
+<meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
 
 <!-- Schema.org -->
-<script type="application/ld+json" is:inline>
-{
-  "@context": "https://schema.org",
-  "@type": "{schemaType}",
-  "name": "{title}",
-  "description": "{description}",
-  "url": "{canonicalURL}"
-}
-</script>
+<script type="application/ld+json" set:html={schemaData} />
