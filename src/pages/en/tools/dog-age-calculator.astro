@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdSenseAd from '../../../components/AdSenseAd.astro';
+
+const title = "Dog Age Calculator | AVMA Standard Human Age Conversion";
+const description = "Use the American Veterinary Medical Association (AVMA) standard formula to accurately calculate your dog's equivalent human age. Supports small, medium, large, and giant breed sizes.";
+const canonicalPath = "/en/tools/dog-age-calculator";
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+
+const breadcrumbs = [
+  { label: 'Tools', url: '/tools' },
+  { label: 'Dog Age Calculator', url: canonicalPath }
+];
+
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/tools/dog-age-calculator' },
+  { lang: 'en', url: siteUrl + '/en/tools/dog-age-calculator' },
+  { lang: 'x-default', url: siteUrl + '/tools/dog-age-calculator' },
+];
+
+const lifeStages = [
+  { range: '0-1 year', human: 'Infant to Teenager', stage: 'puppy' },
+  { range: '1-3 years', human: 'Teenager to Young Adult', stage: 'young' },
+  { range: '3-7 years', human: 'Adult', stage: 'adult' },
+  { range: '7-10 years', human: 'Middle-Aged / Senior', stage: 'senior' },
+  { range: '10+ years', human: 'Geriatric', stage: 'geriatric' }
+];
+---
+
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} lang="en" hrefLangAlternates={hrefLangAlternates}>
+
+<!-- Hero Section -->
+<header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
+  <div class="flex items-center gap-3 mb-4">
+    <span class="text-4xl">&#x1F436;</span>
+    <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA Standard</span>
+  </div>
+  <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+    Dog Age Calculator
+  </h1>
+  <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+    Wondering how old your dog is in human years? This tool uses the scientifically validated formula recognized by the American Veterinary Medical Association (AVMA) to accurately convert your dog's age based on their size and breed category.
+  </p>
+</header>
+
+<!-- Calculator Card -->
+<section class="max-w-4xl mx-auto px-6 mb-10">
+  <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Dog's Current Age (years)</label>
+          <input
+            type="number"
+            id="dogAge"
+            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+            value="3"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Dog's Size</label>
+          <select
+            id="dogSize"
+            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          >
+            <option value="small">Small (under 10 kg / 22 lbs)</option>
+            <option value="medium">Medium (10-25 kg / 22-55 lbs)</option>
+            <option value="large">Large (25-40 kg / 55-88 lbs)</option>
+            <option value="giant">Giant (over 40 kg / 88 lbs)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center justify-center bg-gradient-to-b from-blue-50 to-slate-50 rounded-xl p-6">
+        <p class="text-sm text-slate-500 mb-2">Equivalent Human Age</p>
+        <p class="text-5xl font-black text-blue-600 mb-3" id="result">32 yrs</p>
+        <p class="text-sm text-slate-500 text-center" id="lifeStageText">Adult stage</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Signal -->
+<section class="max-w-4xl mx-auto px-6 mb-12">
+  <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 flex items-start gap-4">
+    <div class="text-blue-600 mt-0.5">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+      </svg>
+    </div>
+    <div>
+      <p class="text-sm font-semibold text-slate-800">Based on AVMA Standard Formula</p>
+      <p class="text-sm text-slate-500 mt-0.5">
+        The American Veterinary Medical Association (AVMA) is one of the most authoritative veterinary organizations globally. Their canine life stage guidelines are widely adopted by veterinarians worldwide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- In-article Ad -->
+<div class="max-w-4xl mx-auto px-6 mb-12">
+  <AdSenseAd format="in-article" />
+</div>
+
+<!-- SEO Introduction -->
+<section class="max-w-4xl mx-auto px-6 mb-12">
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Why "1 Dog Year = 7 Human Years" Is a Myth</h2>
+  <div class="prose prose-slate prose-headings:text-slate-900 prose-p:text-slate-600 max-w-none space-y-4">
+    <p>
+      Many of us grew up hearing that one dog year equals seven human years. While easy to remember, it significantly oversimplifies canine biology. A 1-year-old dog is already sexually mature â developmentally equivalent to a 15-year-old human, not a 7-year-old.
+    </p>
+    <p>
+      Furthermore, a dog's breed size dramatically influences how quickly they age. Large and giant breeds age faster than small breeds. A 5-year-old Great Dane is already a senior dog, while a 5-year-old Chihuahua is still in its prime adult years. This is why accurate age conversion must account for size.
+    </p>
+    <p>
+      Understanding your dog's true biological age helps you provide the right care at the right time â the appropriate diet, exercise level, and screening tests for their life stage.
+    </p>
+  </div>
+</section>
+
+<!-- Methodology Section -->
+<section class="max-w-4xl mx-auto px-6 mb-12">
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">How We Calculate Your Dog's Human Age</h2>
+  <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
+    <p class="text-slate-600">
+      This calculator uses the AVMA-recognized segmented linear formula, which accounts for rapid early development in puppies and size-dependent aging differences between breeds.
+    </p>
+
+    <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm">
+      <p class="font-semibold text-slate-700 mb-2">Formula:</p>
+      <p class="text-slate-600">Year 1 = 15 human years (small/medium/large) / 12 years (giant)</p>
+      <p class="text-slate-600">Year 2 = +9 years (small/medium/large) / +10 years (giant)</p>
+      <p class="text-slate-600">Year 3+ = +4 to +7 years per year (varies by size)</p>
+    </div>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-200">
+            <th class="text-left py-2 text-slate-700 font-semibold">Size</th>
+            <th class="text-right py-2 text-slate-700 font-semibold">Human Age at Age 2</th>
+            <th class="text-right py-2 text-slate-700 font-semibold">Annual Increment</th>
+          </tr>
+        </thead>
+        <tbody class="text-slate-600">
+          <tr class="border-b border-slate-100">
+            <td class="py-2">Small (under 10 kg)</td>
+            <td class="text-right py-2">24 yrs</td>
+            <td class="text-right py-2">+4 yrs/year</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-2">Medium (10-25 kg)</td>
+            <td class="text-right py-2">24 yrs</td>
+            <td class="text-right py-2">+5 yrs/year</td>
+          </tr>
+          <tr class="border-b border-slate-100">
+            <td class="py-2">Large (25-40 kg)</td>
+            <td class="text-right py-2">24 yrs</td>
+            <td class="text-right py-2">+6 yrs/year</td>
+          </tr>
+          <tr>
+            <td class="py-2">Giant (over 40 kg)</td>
+            <td class="text-right py-2">22 yrs</td>
+            <td class="text-right py-2">+7 yrs/year</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-xs text-slate-500">
+      Source: American Veterinary Medical Association (AVMA). Canine Life Stage Guidelines. JAVMA, 2012.
+    </p>
+  </div>
+</section>
+
+<!-- Life Stages Reference -->
+<section class="max-w-4xl mx-auto px-6 mb-12">
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Dog Life Stages &amp; Care Highlights</h2>
+  <div class="grid gap-4">
+    {lifeStages.map((stage) => (
+      <div class="bg-white border border-slate-200 rounded-xl p-5">
+        <div class="flex items-start justify-between gap-4">
+          <div>
+            <span class={`inline-block text-xs font-bold px-2 py-0.5 rounded mb-2 ${
+              stage.stage === 'puppy' ? 'bg-pink-100 text-pink-700' :
+              stage.stage === 'young' ? 'bg-orange-100 text-orange-700' :
+              stage.stage === 'adult' ? 'bg-green-100 text-green-700' :
+              stage.stage === 'senior' ? 'bg-yellow-100 text-yellow-700' :
+              'bg-red-100 text-red-700'
+            }`}>
+              {stage.range}
+            </span>
+            <p class="text-slate-600">{stage.human}</p>
+          </div>
+          <div class={`w-3 h-3 rounded-full mt-1.5 ${
+            stage.stage === 'puppy' ? 'bg-pink-400' :
+            stage.stage === 'young' ? 'bg-orange-400' :
+            stage.stage === 'adult' ? 'bg-green-400' :
+            stage.stage === 'senior' ? 'bg-yellow-400' :
+            'bg-red-400'
+          }`}></div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto px-6 mb-12">
+  <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
+  <div class="space-y-4">
+    <details class="bg-white border border-slate-200 rounded-xl group">
+      <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
+        Why do large dogs age faster than small dogs?
+      </summary>
+      <div class="px-5 pb-5 text-slate-600">
+        Large breeds place greater metabolic demands on their organs to support a bigger body mass, which accelerates the aging process. A 7-year-old Great Dane may already be in its senior years, while a 7-year-old Pomeranian is still in its prime. Body size is a critical factor in accurate age conversion.
+      </div>
+    </details>
+
+    <details class="bg-white border border-slate-200 rounded-xl group">
+      <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
+        Where does the dog-to-human age conversion come from?
+      </summary>
+      <div class="px-5 pb-5 text-slate-600">
+        The conversion is based on research into canine development milestones â including dental eruption patterns, the puppy-to-adult transition, and onset of age-related diseases. The AVMA guidelines synthesize this body of research into a practical consensus recommendation for veterinary practitioners.
+      </div>
+    </details>
+
+    <details class="bg-white border border-slate-200 rounded-xl group">
+      <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
+        How can I tell if my dog is entering its senior years?
+      </summary>
+      <div class="px-5 pb-5 text-slate-600">
+        Beyond the age number, common signs of aging in dogs include reduced activity levels, increased sleep, slower reactions, graying around the muzzle, and gradual hearing or vision loss. The AVMA recommends bi-annual wellness exams for dogs aged 7 and older.
+      </div>
+    </details>
+
+    <details class="bg-white border border-slate-200 rounded-xl group">
+      <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
+        Do mixed-breed dogs live longer than purebreds?
+      </summary>
+      <div class="px-5 pb-5 text-slate-600">
+        Generally yes â mixed-breed dogs tend to have greater genetic diversity, which lowers the risk of heritable diseases common in specific purebred lines. However, regardless of breed, proper nutrition, regular exercise, and routine veterinary care are the most important factors for a long, healthy life.
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- References Section -->
+<section class="max-w-4xl mx-auto px-6 mb-12">
+  <h2 class="text-2xl font-bo^\Û]KNLXMY\[Ù\ÏÚ]Û\ÜÏHË\Û]KMLÜ\Ü\\Û]KLÝ[Y^MÜXÙK^KLÈ^\ÛH^\Û]KMK[Y\XØ[]\[\HYYXØ[\ÜÛØÚX][Û[OØ[[HYHÝYÙHÝZY[[\ÏÙ[OÝ\[ÙH[Y\XØ[]\[\HYYXØ[\ÜÛØÚX][ÛLÈ
+
+JN
+MLMMNÜ]ÛZÈÒØ]\ÈÛXÚÛX[ÛÛ\\]]HÛÙ]]HÙ]ÙÜÈ[[X[Î[\XØ][ÛÈÜÙ\ÛÛÙÞH\ÙX\Ú[OHÝ\[ÈÙÙ\ÛÛÙÞOÙ[ONNMÎÈ
+LÊNMÌKPMÎÜËÜØÚÝÜÚÞHYØ\È\ØÛRË[Ü[]HÙ\XY[Z^YXYYÙÜÈ[[X\Ë[O][]H]\[\HYYXÚ[OÙ[OÎÈ
+N
+KLN
+ËMÍÜUPK[OÙ[[Ü]Ø\HÝZY[[\ÏÙ[O[Y\XØ[]\[\HYYXØ[\ÜÛØÚX][ÛLÜÙ]ÜÙXÝ[ÛKKH[]YØ[Ý[]ÜÈKOÙXÝ[ÛÛ\ÜÏHX^]ËM^X]]ÈMXLLÛ\ÜÏH^LÛXÛ^\Û]KNLXM[]YØ[Ý[]ÜÏÚ]Û\ÜÏHÜYYÜYXÛÛËLØ\MHYHÙ[ÝÛÛËØØ]XYÙKXØ[Ý[]ÜÛ\ÜÏHË]Ú]HÜ\Ü\\Û]KLÝ[Y^MHÝ\Ü\XYKLÌÝ\ÚYÝË[Y[Ú][ÛX[ÜÝ\]Û\ÜÏH^][\ËXÙ[\Ø\LÈXLÜ[Û\ÜÏH^LÞQÌNÏÜÜ[Ü[Û\ÜÏHÛ\Ù[ZXÛ^\Û]KNÜÝ\ZÝ\^XYKM[Ú][ÛXÛÛÜÈØ]YÙHØ[Ý[]ÜÜÜ[Ù]Û\ÜÏH^\ÛH^\Û]KML\Ú[ÈPRKÐUPHÝ[\ÈÈÛÛ\[Ý\Ø]	ÜÈYÙHÈ[X[YX\ËÜØOÙ]ÜÙXÝ[ÛKKH\ØÛZ[Y\KOÙXÝ[ÛÛ\ÜÏHX^]ËM^X]]ÈMXLL]Û\ÜÏHÜ\]Ü\\Û]KLNÛ\ÜÏH^^È^\Û]KMLXY[Ë\[^YÝÛÏ\ØÛZ[Y\ÜÝÛÏ\Ý[ÈÛH\ÈÛÛ\H\ÙYÛÙ[\[ÝZY[[\ÈX\ÚYHH[Y\XØ[]\[\HYYXØ[\ÜÛØÚX][Û
+UPJH[\H[[YÜ[ÜX][Û[\ÜÙ\ÈÛK^HÈÝÛÛÝ]]H]\[\HXYÛÜÚ\ÈÜX]Y[YXÙK]\HÙÉÜÈX[\È[\]YH8 %X\ÙHÛÛÝ[HXÙ[ÙY]\[\X[Ü[HX[ÛÛÙ\ÈXÝ][Ý\]ÜÙ]ÜÙXÝ[ÛKKH]YØ][ÛKO]Û\ÜÏHX^]ËM^X]]ÈMLL^\ÝYKX]ÙY[][\ËXÙ[\^\ÛHHYHÝÛÛÈÛ\ÜÏH^XYKMÝ\^XYKMÌÛ[YY][H[ÛÛÏØOHYHÙ[ÝÛÛËØØ]XYÙKXØ[Ý[]ÜÛ\ÜÏH^XYKMÝ\^XYKMÌÛ[YY][HØ]YÙHØ[Ý[]Ü	\ÏØOÛ]KKHÓÓSKOØÜ\\OH\XØ][ÛÛ
+ÚÛÛ\Î[[HÙ][^ÒÓÓÝ[ÚYJÂÛÛ^ÎËÜØÚ[XKÜÈ\HÙX\XØ][Û[YHÙÈYÙHØ[Ý[]Ü\ØÜ\[ÛUPHÝ[\Ü][HÜXØÝ\][HÛÛ\[È[Ý\ÙÉÜÈYÙHÈ[X[YX\È\ÙYÛYYÚ^K\Ú]U\
+ÈØ[ÛXØ[]\XØ][ÛØ]YÛÜH][]Y\Ð\XØ][ÛÜ\][ÔÞ\Ý[H[Ù\ÈÈ\HÙ\XÙHXÙPÝ\[ÞHTÑK[[ÝXYÙH[J_HÏØÜ\\OH\XØ][ÛÛ
+ÚÛÛ\Î[[HÙ][^ÒÓÓÝ[ÚYJÂÛÛ^ÎËÜØÚ[XKÜÈ\HTTYÙHXZ[[]HÂÂ\H]Y\Ý[Û[YHÚHÈ\ÙHÙÜÈYÙH\Ý\[ÛX[ÙÜÏÈXØÙ\Y[ÝÙ\Â\H[ÝÙ\^\ÙHYYÈXÙHÜX]\Y]XÛXÈ[X[ÈÛZ\ÜØ[ÈÈÝ\ÜHYÙÙ\ÙHX\ÜËXØÙ[\][ÈHYÚ[ÈØÙ\ÜËH
+Ë^YX\[ÛÜX][HX^H[XYHH[]ÈÙ[[ÜYX\ËÚ[HH
+Ë^YX\[ÛÛY\[X[\ÈÝ[[]È[YKBKÂ\H]Y\Ý[Û[YHÚ\HÙ\ÈHÙË]ËZ[X[YÙHÛÛ\Ú[ÛÛÛYHÛOÈXØÙ\Y[ÝÙ\Â\H[ÝÙ\^HÛÛ\Ú[Û\È\ÙYÛ\ÙX\Ú[ÈØ[[H][ÜY[Z[\ÝÛ\È[ÛY[È[[]\Ë\K]ËXY[[Ú][Û[ÛÙ]ÙYÙK\[]Y\ÙX\Ù\ËUPHÝZY[[\ÈÞ[\Ú^H\È\ÙX\Ú[ÈHXÝXØ[ÛÛÙ[Ý\ÈXÛÛ[Y[][ÛBKÂ\H]Y\Ý[Û[YHÝÈØ[H[Y^HÙÈ\È[\[È]ÈÙ[[ÜYX\ÏÈXØÙ\Y[ÝÙ\Â\H[ÝÙ\^ÛÛ[[ÛÚYÛÈÙYÚ[È[ÙÜÈ[ÛYHYXÙYXÝ]]H][Ë[ÜX\ÙYÛY\ÛÝÙ\XXÝ[ÛËÜ^Z[È\Ý[H]^K[ÜYX[X\[ÈÜ\Ú[ÛÜÜËHUPHXÛÛ[Y[ÈKX[X[Ù[\ÜÈ^[\ÈÜÙÜÈYÙY
+È[Û\BKÂ\H]Y\Ý[Û[YHÈZ^YXYYÙÜÈ]HÛÙ\[\XYÏÈXØÙ\Y[ÝÙ\Â\H[ÝÙ\^Ù[\[HY\ÈHZ^YXYYÙÜÈ[È]HÜX]\Ù[]XÈ]\Ú]KÚXÚÝÙ\ÈH\ÚÈÙ\]XH\ÙX\Ù\ËÝÙ]\Ü\]][ÛYÝ[\^\Ú\ÙK[Ý][H]\[\HØ\H\HH[ÜÝ[\Ü[XÝÜÈÜHÛËX[HYKBBBJ_HÏØÜ\ÛÛÝYÙR[]HØÝ[Y[Ù][[Y[RY
+	ÙÙÐYÙIÊH\ÈS[][[Y[ÂÛÛÝÚ^R[]HØÝ[Y[Ù][[Y[RY
+	ÙÙÔÚ^IÊH\ÈSÙ[XÝ[[Y[ÂÛÛÝ\Ý[\Ü^HHØÝ[Y[Ù][[Y[RY
+	Ü\Ý[	ÊNÂÛÛÝYTÝYÙU^HØÝ[Y[Ù][[Y[RY
+	ÛYTÝYÙU^	ÊNÂÛÛÝØ[Ý[]R[X[YÙHH
+YÙN[X\Ú^NÝ[ÊNÈ[X[YÙN[X\ÈÝYÙU^Ý[ÈHOÂY
+YÙHH
+H]\È[X[YÙNÝYÙU^	Ô\HÝYÙIÈNÂY
+YÙHOOHJHÂÛÛÝ\ÙHHÚ^HOOH	ÙÚX[	ÈÈLMNÂ]\È[X[YÙN\ÙKÝYÙU^	ÐYÛ\ØÙ[ÝYÙIÈNÂBY
+YÙHOOHHÂÛÛÝ\ÙHHÚ^HOOH	ÙÚX[	ÈÈÂ]\È[X[YÙN\ÙKÝYÙU^	Ö[Ý[ÈY[	ÈNÂB][Ü[Y[H
+ÂY
+Ú^HOOH	ÛYY][IÊH[Ü[Y[H
+NÂ[ÙHY
+Ú^HOOH	Û\ÙIÊH[Ü[Y[H
+Â[ÙHY
+Ú^HOOH	ÙÚX[	ÊH[Ü[Y[H
+ÎÂÛÛÝ[X[YÙHH
+È
+YÙHHH
+[Ü[Y[Â]ÝYÙU^H	ÐY[ÝYÙIÎÂY
+YÙHHL
+HÝYÙU^H	ÑÙ\X]XÈÝYÙIÎÂ[ÙHY
+YÙHH
+ÊHÝYÙU^H	ÔÙ[[ÜÝYÙIÎÂ]\È[X[YÙKÝYÙU^NÂNÂÛÛÝ\]HH
+
+HOÂÛÛÝYÙHH\ÙR[
+YÙR[][YJHÂÛÛÝÚ^HHÚ^R[][YNÂÛÛÝÈ[X[YÙKÝYÙU^HHØ[Ý[]R[X[YÙJYÙKÚ^JNÂY
+\Ý[\Ü^JH\Ý[\Ü^K^ÛÛ[H	Ú[X[YÙ_H\ØÂY
+YTÝYÙU^
+HYTÝYÙU^^ÛÛ[HÝYÙU^ÂNÂYÙR[]Y][\Ý[\	Ú[]	Ë\]JNÂÚ^R[]Y][\Ý[\	ØÚ[ÙIË\]JNÂ\]J
+NÂÜØÜ\Ð\ÙS^[Ý]
