@@ -9,6 +9,12 @@ const image = "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=12
 
 // 修正：靜態獲取路徑，避免 URL 物件在編譯時報錯
 const currentPath = Astro.url.pathname;
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/dog-vs-cat-aging' },
+  { lang: 'x-default', url: siteUrl + '/blog/dog-vs-cat-aging' },
+];
 ---
 
 <BaseLayout
@@ -19,7 +25,7 @@ const currentPath = Astro.url.pathname;
     { label: '寵物健康', url: '/blog/category/health/' },
     { label: '狗與貓的老化差異', url: currentPath }
   ]}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <article class="max-w-3xl mx-auto px-6 py-12">
     <div class="mb-8 md:rounded-2xl overflow-hidden shadow-lg">
       <img
