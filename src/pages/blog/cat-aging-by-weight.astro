@@ -7,9 +7,15 @@ const description = "你的貓是嬌小的室內貓還是結實的大型緬甸�
 // 建議增加 date 變數，讓 index.astro 可以排序
 const date = "2024-01-01";
 const image = "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=1200&h=675&fit=crop&fm=webp";
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/cat-aging-by-weight' },
+  { lang: 'x-default', url: siteUrl + '/blog/cat-aging-by-weight' },
+];
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="bg-gradient-to-br from-purple-50 to-indigo-50 border-b border-purple-100">
     <div class="max-w-4xl mx-auto px-6 py-12 text-center">
       <nav class="text-sm text-slate-500 mb-4">
