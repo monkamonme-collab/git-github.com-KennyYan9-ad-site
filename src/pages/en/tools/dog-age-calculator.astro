@@ -1,7 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../components/Breadcrumb.astro';
-import AdSenseAd from '../../components/AdSenseAd.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdSenseAd from '../../../components/AdSenseAd.astro';
 
 const title = "Dog Age Calculator | AVMA Standard | Accurate Human Age Conversion";
 const description = "Convert your dog's age to human years using the AVMA evidence-based formula. Understand your dog's life stage — puppy, adult, senior — for better veterinary care and nutrition planning.";
@@ -28,7 +27,7 @@ const lifeStages = [
 ];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} lang="en" hrefLangAlternates={hrefLangAlternates}>
 
   <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
@@ -111,7 +110,7 @@ const lifeStages = [
       </p>
       <p>
         The AVMA categorizes dogs into five life stages: <strong>puppy</strong>, <strong>young adult</strong>, <strong>adult</strong>, <strong>mature adult</strong>, <strong>senior</strong>, and <strong>super senior</strong>. Each stage carries specific preventive care recommendations — from core vaccinations in puppyhood to cancer screenings and cognitive assessments in the senior years.
-    2 </p>
+      </p>
     </div>
   </section>
 
@@ -158,7 +157,7 @@ const lifeStages = [
             <div>
               <span class={`inline-block text-xs font-bold px-2 py-0.5 rounded mb-2 ${
                 stage.stage === 'puppy' ? 'bg-pink-100 text-pink-700' :
-             2  stage.stage === 'young' ? 'bg-orange-100 text-orange-700' :
+                stage.stage === 'young' ? 'bg-orange-100 text-orange-700' :
                 stage.stage === 'adult' ? 'bg-green-100 text-green-700' :
                 stage.stage === 'senior' ? 'bg-yellow-100 text-yellow-700' :
                 'bg-red-100 text-red-700'
@@ -296,7 +295,7 @@ const lifeStages = [
 
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
- 2  "@type": "FAQPage",
+    "@type": "FAQPage",
     "mainEntity": [
       {
         "@type": "Question",
@@ -312,7 +311,7 @@ const lifeStages = [
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. Small breeds typically become senior around 10–12 years; large breeds around 7 years; giant breeds even earlier. This calculator uses the AVMA general baseline."
-        }
+ 2      }
       },
       {
         "@type": "Question",
