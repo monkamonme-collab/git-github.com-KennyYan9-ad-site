@@ -3,9 +3,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const allTools = await getCollection('tools');
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/tools' },
+  { lang: 'en',    url: siteUrl + '/en/tools' },
+  { lang: 'x-default', url: siteUrl + '/tools' },
+];
 ---
 
-<BaseLayout title="工具大全 | 專業實用工具箱" breadcrumbs={[{ label: '工具集', url: '/tools' }]}>
+<BaseLayout title="寵物年齡工具集 | Pet Aging Hub" lang="zh-TW" hrefLangAlternates={hrefLangAlternates} breadcrumbs={[{ label: '工具集', url: '/tools' }]}>
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">為您的專業需求而生：一站式數據工具</h1>
