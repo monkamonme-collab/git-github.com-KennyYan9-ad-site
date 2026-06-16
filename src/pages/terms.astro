@@ -6,13 +6,19 @@ const breadcrumbs = [
   { label: '首頁', url: '/' },
   { label: '服務條款', url: '/terms/' }
 ];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/terms' },
+  { lang: 'x-default', url: siteUrl + '/terms' },
+];
 ---
 
 <BaseLayout
   title="服務條款 - Pet Aging Hub"
   description="Pet Aging Hub 服務條款。使用本網站即表示您同意以下條款，包括我們的免責聲明和使用限制。"
   breadcrumbs={breadcrumbs}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="max-w-3xl mx-auto">
     <header class="mb-10">
       <h1 class="text-3xl font-extrabold text-slate-900 mb-4">服務條款</h1>
