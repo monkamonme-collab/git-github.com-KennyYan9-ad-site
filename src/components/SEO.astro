@@ -4,8 +4,9 @@ interface Props {
   description: string;
   canonicalPath?: string;
   schemaType?: string;
+  hrefLangAlternates?: { lang: string; url: string }[];
 }
-const { title, description, canonicalPath = "", schemaType = "WebSite" } = Astro.props;
+const { title, description, canonicalPath = "", schemaType = "WebSite", hrefLangAlternates = [] } = Astro.props;
 const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://git-github-com-kenny-yan9-ad-site.vercel.app";
 const canonicalURL = new URL(canonicalPath || Astro.url.pathname, siteUrl).toString();
 const isArticle = Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/';
@@ -29,6 +30,11 @@ const schemaData = JSON.stringify({
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
+
+<!-- hreflang alternates -->
+{hrefLangAlternates.map(alt => (
+  <link rel="alternate" hreflang={alt.lang} href={alt.url} />
+))}
 
 <!-- Schema.org -->
 <script type="application/ld+json" set:html={schemaData} />
