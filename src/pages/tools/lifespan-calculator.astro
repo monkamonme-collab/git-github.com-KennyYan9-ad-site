@@ -3,13 +3,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 
 const currentPath = Astro.url.pathname;
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/tools/lifespan-calculator' },
+  { lang: 'x-default', url: siteUrl + '/tools/lifespan-calculator' },
+];
 ---
 
 <BaseLayout
   title="寵物壽命計算機：根據品種、年齡與健康狀況估算剩餘壽命"
   description="輸入你家寵物的品種、年齡和生活方式，估算剩餘壽命和生命階段。基於全球大規模寵物壽命研究數據，提供科學化的壽命預測。"
   breadcrumbs={[{ label: '工具集', url: '/tools' }, { label: '寵物壽命計算機', url: currentPath }]}
->
+ lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <div class="bg-gradient-to-br from-emerald-50 to-teal-50 border-b border-emerald-100">
     <div class="max-w-5xl mx-auto px-6 py-12 text-center">
       <div class="inline-flex items-center gap-2 bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1.5 rounded-full mb-4">
