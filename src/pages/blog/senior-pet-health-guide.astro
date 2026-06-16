@@ -7,9 +7,15 @@ const description = "當毛孩步入老年，照護核心需從疾病治療轉�
 const date = "2026-05-12";
 const image = "https://images.unsplash.com/photo-1581888227599-779811939961?w=1200&q=80";
 const currentPath = Astro.url.pathname;
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/senior-pet-health-guide' },
+  { lang: 'x-default', url: siteUrl + '/blog/senior-pet-health-guide' },
+];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog/' }, { label: '老年寵物健康照護指南', url: currentPath }]}>
+<BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog/' }, { label: '老年寵物健康照護指南', url: currentPath }]} lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <article class="max-w-3xl mx-auto px-6 py-12">
     <header class="mb-12">
       <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
