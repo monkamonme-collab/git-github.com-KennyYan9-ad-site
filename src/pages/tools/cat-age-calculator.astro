@@ -3,38 +3,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import AdSenseAd from '../../components/AdSenseAd.astro';
 
-const title = "貓咪年齡計算機 | AAHA/AVMA 標準精準換算";
-const description = "採用美國動物醫院協會 (AAHA) 與美國獸醫師協會 (AVMA) 標準，精準計算貓咪對應人類年齡與生命階段。了解熟齡貓與老年貓的照護重點。";
+const title = "è²åªå¹´é½¡è¨ç®æ© | AAHA/AVMA æ¨æºç²¾æºæç®";
+const description = "æ¡ç¨ç¾ååç©é«é¢åæ (AAHA) èç¾åç¸é«å¸«åæ (AVMA) æ¨æºï¼ç²¾æºè¨ç®è²åªå°æäººé¡å¹´é½¡èçå½éæ®µãäºè§£çé½¡è²èèå¹´è²çç§è­·éé»ã";
 const canonicalPath = "/tools/cat-age-calculator";
-const canonicalURL = new URL(canonicalPath, "https://git-github-com-kenny-yan9-ad-site.vercel.app/");
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
 
 const breadcrumbs = [
-  { label: '工具集', url: '/tools' },
-  { label: '貓咪年齡計算機', url: canonicalPath }
+  { label: 'å·¥å·é', url: '/tools' },
+  { label: 'è²åªå¹´é½¡è¨ç®æ©', url: canonicalPath }
+];
+
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/tools/cat-age-calculator' },
+  { lang: 'en', url: siteUrl + '/en/tools/cat-age-calculator' },
+  { lang: 'x-default', url: siteUrl + '/tools/cat-age-calculator' },
 ];
 
 const lifeStages = [
-  { range: '0-1 歲', human: '嬰兒期至青少年', stage: 'kitten' },
-  { range: '1-3 歲', human: '青少年至青年期', stage: 'young' },
-  { range: '3-7 歲', human: '成年期', stage: 'adult' },
-  { range: '7-10 歲', human: '熟齡期', stage: 'senior' },
-  { range: '10+ 歲', human: '老年期', stage: 'geriatric' }
+  { range: '0-1 æ­²', human: 'å¬°åæè³éå°å¹´', stage: 'kitten' },
+  { range: '1-3 æ­²', human: 'éå°å¹´è³éå¹´æ', stage: 'young' },
+  { range: '3-7 æ­²', human: 'æå¹´æ', stage: 'adult' },
+  { range: '7-10 æ­²', human: 'çé½¡æ', stage: 'senior' },
+  { range: '10+ æ­²', human: 'èå¹´æ', stage: 'geriatric' }
 ];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 
   <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
     <div class="flex items-center gap-3 mb-4">
-      <span class="text-4xl">🐱</span>
-      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AAHA / AVMA 雙標準</span>
+      <span class="text-4xl">ð±</span>
+      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AAHA / AVMA éæ¨æº</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-      貓咪年齡計算機
+      è²åªå¹´é½¡è¨ç®æ©
     </h1>
     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-      想知道您的愛貓等於人類幾歲嗎？本工具採用美國動物醫院協會 (AAHA) 與美國獸醫師協會 (AVMA) 共同認可的科學公式，精準換算貓咪的人類年齡對應值與生命階段。
+      æ³ç¥éæ¨çæè²ç­æ¼äººé¡å¹¾æ­²åï¼æ¬å·¥å·æ¡ç¨ç¾ååç©é«é¢åæ (AAHA) èç¾åç¸é«å¸«åæ (AVMA) å±åèªå¯çç§å­¸å¬å¼ï¼ç²¾æºæç®è²åªçäººé¡å¹´é½¡å°æå¼èçå½éæ®µã
     </p>
   </header>
 
@@ -43,7 +49,7 @@ const lifeStages = [
     <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
       <div class="max-w-sm mx-auto text-center">
         <div class="mb-6">
-          <label class="block text-sm font-semibold text-slate-700 mb-2">貓咪目前歲數</label>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">è²åªç®åæ­²æ¸</label>
           <input
             type="number"
             id="catAge"
@@ -55,16 +61,16 @@ const lifeStages = [
         </div>
 
         <div class="bg-gradient-to-b from-blue-50 to-slate-50 rounded-xl p-6 mb-4">
-          <p class="text-sm text-slate-500 mb-2">對應人類年齡</p>
-          <p class="text-5xl font-black text-blue-600 mb-2" id="result">32 歲</p>
-          <p class="text-sm text-slate-500" id="lifeStageText">已進入成年期</p>
+          <p class="text-sm text-slate-500 mb-2">å°æäººé¡å¹´é½¡</p>
+          <p class="text-5xl font-black text-blue-600 mb-2" id="result">32 æ­²</p>
+          <p class="text-sm text-slate-500" id="lifeStageText">å·²é²å¥æå¹´æ</p>
         </div>
 
         <!-- Life Stage Bar -->
         <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden border border-slate-200">
           <div id="progressFill" class="h-full transition-all duration-700 bg-blue-600 rounded-full" style="width: 15%"></div>
           <div class="absolute inset-0 flex justify-between px-2 text-[9px] text-slate-400 font-medium items-center uppercase tracking-wider">
-            <span>幼年</span><span>成年</span><span>熟齡</span><span>老年</span>
+            <span>å¹¼å¹´</span><span>æå¹´</span><span>çé½¡</span><span>èå¹´</span>
           </div>
         </div>
       </div>
@@ -80,9 +86,9 @@ const lifeStages = [
         </svg>
       </div>
       <div>
-        <p class="text-sm font-semibold text-slate-800">本計算機採用 AAHA / AVMA 雙重標準</p>
+        <p class="text-sm font-semibold text-slate-800">æ¬è¨ç®æ©æ¡ç¨ AAHA / AVMA ééæ¨æº</p>
         <p class="text-sm text-slate-500 mt-0.5">
-          美國動物醫院協會 (American Animal Hospital Association) 與美國獸醫師協會 (American Veterinary Medical Association) 是北美最具權威的伴侶動物醫療機構，其共同發布的貓咪生命階段指南是全球獸醫師的重要參考。
+          ç¾ååç©é«é¢åæ (American Animal Hospital Association) èç¾åç¸é«å¸«åæ (American Veterinary Medical Association) æ¯åç¾æå·æ¬å¨çä¼´ä¾¶åç©é«çæ©æ§ï¼å¶å±åç¼å¸çè²åªçå½éæ®µæåæ¯å¨çç¸é«å¸«çéè¦åèã
         </p>
       </div>
     </div>
@@ -95,56 +101,56 @@ const lifeStages = [
 
   <!-- SEO Introduction -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">為什麼了解貓咪的「人類年齡」很重要？</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">çºä»éº¼äºè§£è²åªçãäººé¡å¹´é½¡ãå¾éè¦ï¼</h2>
     <div class="prose prose-slate prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600 max-w-none space-y-4">
       <p>
-        貓咪的生命進程與人類截然不同。一隻 1 歲的貓咪在生理發育上已相當於人類的 15 歲，2 歲時已相當於 24 歲。這意味著貓咪在短短兩年內就完成了從嬰兒到成年的全部發育過程。
+        è²åªççå½é²ç¨èäººé¡æªç¶ä¸åãä¸é» 1 æ­²çè²åªå¨ççç¼è²ä¸å·²ç¸ç¶æ¼äººé¡ç 15 æ­²ï¼2 æ­²æå·²ç¸ç¶æ¼ 24 æ­²ãéæå³èè²åªå¨ç­ç­å©å¹´å§å°±å®æäºå¾å¬°åå°æå¹´çå¨é¨ç¼è²éç¨ã
       </p>
       <p>
-        了解貓咪的真實年齡對應值，有助於主人針對不同生命階段提供適切的照護。幼貓需要高蛋白、高熱量的飲食來支撐快速生長；成貓需要均衡營養來維持健康體態；熟齡貓與老年貓則需要低磷、低鈉的配方來保護腎臟功能。
+        äºè§£è²åªççå¯¦å¹´é½¡å°æå¼ï¼æå©æ¼ä¸»äººéå°ä¸åçå½éæ®µæä¾é©åçç§è­·ãå¹¼è²éè¦é«èç½ãé«ç±éçé£²é£ä¾æ¯æå¿«éçé·ï¼æè²éè¦åè¡¡çé¤ä¾ç¶­æå¥åº·é«éç®¡çãå¾´è²éè®ï¼è¨äº¤éæå¤ãå³æçãå¯çè²ç­é¢¨éªã
       </p>
       <p>
-        美國動物醫院協會 (AAHA) 將貓咪的生命分為六個階段：幼年 (kitten)、青年 (young adult)、成年 (adult)、壯年 (mature adult)、熟齡 (senior) 與老年 (super senior)。每個階段都有不同的健康監測重點與營養需求。
+        ç¾ååç©é«é¢åæ (AAHA) å°è²åªççå½åçºå­åéæ®µï¼å¹¼å¹´ (kitten)ãéå¹´ (young adult)ãæå¹´ (adult)ãå£¯å¹´ (mature adult)ãçé½¡ (senior) èèå¹´ (super senior)ãæ¯åéæ®µé½æä¸åçå¥åº·ç£æ¸¬éé»èçé¤éæ±ã
       </p>
     </div>
   </section>
 
   <!-- Methodology Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">計算方法說明</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">è¨ç®æ¹æ³èªªæ</h2>
     <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
       <p class="text-slate-600">
-        本計算機採用 AAHA 認可、AVMA 引用的分段線性公式。這個公式考量了貓咪在生命前兩年的極速發育，以及此後相對穩定但仍持續的老化速度。
+        æ¬è¨ç®æ©æ¡ç¨ AAHA èªå¯ãAVMA å¼ç¨çåæ®µç·æ§å¬å¼ãéåå¬å¼èéäºè²åªå¨çå½åå©å¹´çæ¥µéç¼è²ï¼ä»¥åæ­¤å¾ç¸å°ç©©å®ä½ä»æçºçèåéåº¦ã
       </p>
 
       <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm">
-        <p class="font-semibold text-slate-700 mb-2">計算公式：</p>
-        <p class="text-slate-600">第一年（1歲）= 15 歲（相當於青少年）</p>
-        <p class="text-slate-600">第二年（2歲）= 24 歲（成年初期）</p>
-        <p class="text-slate-600">第三年起每年 = +4 歲/年</p>
+        <p class="font-semibold text-slate-700 mb-2">è¨ç®å¬å¼ï¼</p>
+        <p class="text-slate-600">ç¬¬ä¸å¹´ï¼1æ­²ï¼= 15 æ­²ï¼ç¸ç¶æ¼éå°å¹´ï¼</p>
+        <p class="text-slate-600">ç¬¬äºå¹´ï¼2æ­²ï¼= 24 æ­²ï¼æå¹´åæï¼</p>
+        <p class="text-slate-600">ç¬¬ä¸å¹´èµ·æ¯å¹´ = +4 æ­²/å¹´</p>
       </div>
 
       <div class="bg-slate-50 rounded-lg p-4 text-sm">
-        <p class="font-semibold text-slate-700 mb-2">對照表：</p>
+        <p class="font-semibold text-slate-700 mb-2">å°ç§è¡¨ï¼</p>
         <div class="space-y-1 text-slate-600">
-          <p>1 歲 → 15 歲（青少年）</p>
-          <p>2 歲 → 24 歲（成年初期）</p>
-          <p>5 歲 → 36 歲（壯年）</p>
-          <p>7 歲 → 44 歲（成熟/熟齡）</p>
-          <p>10 歲 → 56 歲（老年）</p>
-          <p>15 歲 → 76 歲（高齡老年）</p>
+          <p>1 æ­² â 15 æ­²ï¼éå°å¹´ï¼</p>
+          <p>2 æ­² â 24 æ­²ï¼æå¹´åæï¼</p>
+          <p>5 æ­² â 36 æ­²ï¼å£¯å¹´ï¼</p>
+          <p>7 æ­² â 44 æ­²ï¼æç/çé½¡ï¼</p>
+          <p>10 æ­² â 56 æ­²ï¼èå¹´ï¼</p>
+          <p>15 æ­² â 76 æ­²ï¼é«é½¡èå¹´ï¼</p>
         </div>
       </div>
 
       <p class="text-xs text-slate-500">
-        資料來源：American Animal Hospital Association (AAHA). <em>Feline Life Stage Guidelines</em>. Journal of the American Animal Hospital Association, 2019; 55(1): 1-16.
+        è³æä¾æºï¼American Animal Hospital Association (AAHA). <em>Feline Life Stage Guidelines</em>. Journal of the American Animal Hospital Association, 2019; 55(1): 1-16.
       </p>
     </div>
   </section>
 
   <!-- Life Stages Reference -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">貓咪生命階段與照護重點</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">è²åªçå½éæ®µèç§è­·éé»</h2>
     <div class="grid gap-4">
       {lifeStages.map((stage) => (
         <div class="bg-white border border-slate-200 rounded-xl p-5">
@@ -176,41 +182,41 @@ const lifeStages = [
 
   <!-- FAQ Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">常見問題</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">å¸¸è¦åé¡</h2>
     <div class="space-y-4">
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          為什麼貓咪第二年只加 9 歲，而不是每年都加 4 歲？
+          çºä»éº¼è²åªç¬¬äºå¹´åªå  9 æ­²ï¼èä¸æ¯æ¯å¹´é½å  4 æ­²ï¼
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          因為貓咪第一年的發育極快（約等於人類 15 年），第二年繼續快速發育（約再加 9 年，達到 24 歲）。從第三年起，發育速度趨於穩定，每年約增加 4 年。這與狗狗的計算方式有所不同，是因為貓咪和狗狗的生命階段曲線不同。
+          å çºè²åªç¬¬ä¸å¹´çç¼è²æ¥µå¿«ï¼ç´ç­æ¼äººé¡ 15 å¹´ï¼ï¼ç¬¬äºå¹´ç¹¼çºå¿«éç¼è²ï¼ç´åå  9 å¹´ï¼éå° 24 æ­²ï¼ãå¾ç¬¬ä¸å¹´èµ·ï¼ç¼è²éåº¦è¶¨æ¼ç©©å®ï¼æ¯å¹´ç´å¢å  4 å¹´ãéèçççè¨ç®æ¹å¼ææä¸åï¼æ¯å çºè²åªåççççå½éæ®µæ²ç·ä¸åã
         </div>
       </details>
 
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          室內貓和室外貓的老化速度有差別嗎？
+          å®¤å§è²åå®¤å¤è²çèåéåº¦æå·®å¥åï¼
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          一般而言，室內貓因為生活環境較安全、營養較穩定、醫療資源較容易取得，平均壽命較室外貓長。然而室內貓可能因活動空間有限而較少運動，需要注意體重管理。室外貓則面臨交通意外、傳染病、寄生蟲等風險。
+          ä¸è¬èè ï¼å®¤å§è²å çºçæ´»ç°å¢è¼å®å¨ãçé¤è¼ç©©å®ãé«çè³æºè¼å®¹æåå¾ï¼å¹³åå£½å½è¼å®¤å¤è²é·ãç¶èå®¤å§è²å¯è½å æ´»åç©ºéæéèè¼å°éåï¼éè¦æ³¨æé«éç®¡çãå®¤å¤è²åé¢è¨äº¤éæå¤ãå³æçãå¯çè²ç­é¢¨éªã
         </div>
       </details>
 
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          貓咪幾歲算進入老年期？
+          è²åªå¹¾æ­²ç®é²å¥èå¹´æï¼
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          根據 AAHA 的定義，7 歲以上的貓咪進入成熟期（mature），11 歲以上進入老年期 (senior/super senior)。7 歲以上的貓咪建議每半年進行一次健康檢查，並留意腎臟、甲狀腺、牙齒與關節的健康狀況。
+          æ ¹æ AAHA çå®ç¾©ï¼7 æ­²ä»¥ä¸çè²åªé²å¥æçæï¼matureï¼ï¼11 æ­²ä»¥ä¸é²å¥èå¹´æ (senior/super senior)ã7 æ­²ä»¥ä¸çè²åªå»ºè­°æ¯åå¹´é²è¡$¸æ¬¡å¥åº·æª¢æ¥ï¼ä¸¦çæèèãç²çèºãçé½èéç¯çå¥åº·çæ³ã
         </div>
       </details>
 
       <details class="bg-white border border-slate-200 rounded-xl group">
         <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          老年貓的飲食需要注意什麼？
+          èå¹´è²çé£²é£éè¦æ³¨æä»éº¼ï¼
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          老年貓的腎臟功能通常會逐漸衰退，因此需要選擇低磷、低鈉的處方飼料。同時，老年貓可能出現食欲下降的問題，建議提供高品質、易消化的蛋白質來源。具體飲食調整應諮詢獸醫師，根據個別健康狀況量身定制。
+          èå¹´è²çèèåè½éå¸¸æéæ¼¸è¡°éï¼å æ­¤éè¦é¸æä½ç£·ãä½éçèæ¹é£¼æãåæï¼èå¹´è²å¯è½åºç¾é£æ¬²ä¸éçåé¡ï¼å»ºè­°æä¾é«åè³ªãææ¶åçèç½è³ªä¾æºãå·é«é£²é£èª¿æ´æè«®è©¢ç¸é«å¸«ã
         </div>
       </details>
     </div>
@@ -218,7 +224,7 @@ const lifeStages = [
 
   <!-- References Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">參考文獻</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">åèæç»</h2>
     <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-3 text-sm text-slate-600">
       <p>1. American Animal Hospital Association. <em>2019 AAHA Canine Life Stage Guidelines</em> and <em>Feline Life Stage Guidelines</em>. Journal of the American Animal Hospital Association, 2019; 55(1): 1-16.</p>
       <p>2. American Veterinary Medical Association. <em>Senior Pet Care Guidelines</em>. American Veterinary Medical Association, 2012.</p>
@@ -229,42 +235,42 @@ const lifeStages = [
 
   <!-- Related Calculators -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">相關計算機</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">ç¸éè¨ç®æ©</h2>
     <div class="grid md:grid-cols-2 gap-4">
       <a href="/tools/dog-age-calculator" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-3 mb-2">
-          <span class="text-2xl">🐶</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗年齡計算機</span>
+          <span class="text-2xl">ð¶</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">ççå¹´é½¡è¨ç®æ©</span>
         </div>
-        <p class="text-sm text-slate-500">採用 AVMA 標準，計算愛犬的人類年齡對應，支援不同體型換算。</p>
+        <p class="text-sm text-slate-500">æ¡ç¨ AVMA æ¨æºï¼è¨ç®æç¬çäººé¡å¹´é½¡å°æï¼æ¯æ´ä¸åé«åæç®ã</p>
       </a>
     </div>
   </section>
 
   <!-- Related Articles -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">延伸閱讀</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">å»¶ä¼¸é±è®</h2>
     <div class="grid md:grid-cols-2 gap-4">
       <a href="/blog/cat-aging-signs/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">📖</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">貓咪老化徵兆：7個預示愛貓進入熟齡期的變化</span>
+          <span class="text-lg">ð</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">è²åªèåå¾µåï¼7åé ç¤ºæè²é²å¥çé½¡æçè®å</span>
         </div>
-        <p class="text-sm text-slate-500">從跳躍高度下降、隱藏時間變長到理毛頻率減少，解析7個貓咪常見老化徵兆。</p>
+        <p class="text-sm text-slate-500">å¾è·³èºé«åº¦ä¸éãé±èæéè®é·å°çæ¯é »çæ¸å°ï¼è§£æ7åè²åªå¸¸è¦èåå¾µåã</p>
       </a>
       <a href="/blog/senior-pet-health-guide/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">🏥</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">老年犬貓的健康照護指南</span>
+          <span class="text-lg">ð¥</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">èå¹´ç¬è²çå¥åº·ç§è­·æå</span>
         </div>
-        <p class="text-sm text-slate-500">當毛孩步入老年，照護核心需從疾病治療轉向預防醫學，了解老年貓常見健康風險與科學照護流程。</p>
+        <p class="text-sm text-slate-500">ç¶æ¯å­©æ­¥å¥èå¹´ï¼ç§è­·æ ¸å¿éå¾ç¾çæ²»çè½åé é²é«å­¸ï¼äºè§£èå¹´è²å¸¸è¦å¥åº·é¢¨éªèç§å­¸ç§è­·æµç¨ã</p>
       </a>
       <a href="/blog/pet-nutrition-by-age/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">🍖</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">寵物各年齡階段的營養需求完整指南</span>
+          <span class="text-lg">ð</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">å¯µç©åå¹´é½¡éæ®µççé¤éæ±å®æ´æå</span>
         </div>
-        <p class="text-sm text-slate-500">貓咪年齡與飲食該如何對應？依據 AAFCO 與 AVMA 標準，了解各生命階段的飲食重點。</p>
+        <p class="text-sm text-slate-500">è²åªå¹´é½¡èé£²é£è©²å¦ä½å°æï¼ä¾æ AAFCO è AVMA æ¨æºï¼äºè§£åçå½éæ®µçé£²é£éé»ã</p>
       </a>
     </div>
   </section>
@@ -273,24 +279,24 @@ const lifeStages = [
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <div class="border-t border-slate-200 pt-8">
       <p class="text-xs text-slate-500 leading-relaxed">
-        <strong>免責聲明：</strong>本工具的計算結果基於美國動物醫院協會 (AAHA) 與美國獸醫師協會 (AVMA) 發布的普遍性指導原則，結果僅供參考，不構成任何獸醫診斷或治療建議。每隻貓咪的健康狀況都是獨特的，若您對愛貓的健康有任何疑慮，請諮詢執業獸醫師。
+        <strong>åè²¬è²æï¼</strong>æ¬å·¥å·çè¨ç®çµæåºæ¼ç¾ååç©é«é¢åæ (AAHA) èç¾åç¸é«å¸«åæ (AVMA) ç¼å¸çæ®éæ§æå°ååï¼çµæåä¾åèï¼ä¸æ§æä»»ä½ç¸é«è¨ºæ·ææ²»çå»ºè­°ãæ¯é»è²åªçå¥åº·çæ³é½æ¯ç¨ç¹çï¼è¥æ¨å°æè²çå¥åº·æä»»ä½çæ®ï¼è«è«®è©¢å·æ¥­ç¸é«å¸«ã
       </p>
     </div>
   </section>
 
   <!-- Navigation -->
   <nav class="max-w-4xl mx-auto px-6 pb-12 flex justify-between items-center text-sm">
-    <a href="/tools/dog-age-calculator" class="text-blue-600 hover:text-blue-700 font-medium">← 狗狗年齡計算機</a>
-    <a href="/tools" class="text-blue-600 hover:text-blue-700 font-medium">所有工具 →</a>
+    <a href="/tools/dog-age-calculator" class="text-blue-600 hover:text-blue-700 font-medium">â ççå¹´é½¡è¨ç®æ©</a>
+    <a href="/tools" class="text-blue-600 hover:text-blue-700 font-medium">ææå·¥å· â</a>
   </nav>
 
   <!-- JSON-LD -->
   <script type="application/ld+json" is:inline set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "貓咪年齡計算機",
-    "description": "採用 AAHA/AVMA 標準公式，精準計算貓咪對應人類年齡與生命階段。",
-    "url": canonicalURL,
+    "name": "è²åªå¹´é½¡è¨ç®æ©",
+    "description": "æ¡ç¨ AAHA/AVMA æ¨æºå¬å¼ï¼ç²¾æºè¨ç®è²åªå°æäººé¡å¹´é½¡èçå½éæ®µã",
+    "url": siteUrl + canonicalPath,
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -302,34 +308,34 @@ const lifeStages = [
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "為什麼貓咪第二年只加 9 歲，而不是每年都加 4 歲？",
+        "name": "çºä»éº¼è²åªç¬¬äºå¹´åªå  9 æ­²ï¼èä¸æ¯æ¯å¹´é½å  4 æ­²ï¼",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "因為貓咪第一年的發育極快（約等於人類 15 年），第二年繼續快速發育（約再加 9 年，達到 24 歲）。從第三年起，發育速度趨於穩定，每年約增加 4 年。"
+          "text": "å çºè²åªç¬¬ä¸å¹´çç¼è²æ¥µå¿«ï¼ç´ç­æ¼äººé¡ 15 å¹´ï¼ï¼ç¬¬äºå¹´ç¹¼çºå¿«éç¼è²ï¼ç´åå  9 å¹´ï¼éå° 24 æ­²ï¼ãå¾ç¬¬ä¸å¹´èµ·ï¼ç¼è²éåº¦è¶¨æ¼ç©©å®ï¼æ¯å¹´ç´å¢å  4 å¹´ã"
         }
       },
       {
         "@type": "Question",
-        "name": "室內貓和室外貓的老化速度有差別嗎？",
+        "name": "å®¤å§è²åå®¤å¤è²çèåéåº¦æå·®å¥åï¼",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "一般而言，室內貓因為生活環境較安全、營養較穩定、醫療資源較容易取得，平均壽命較室外貓長。但室內貓可能因活動空間有限而較少運動，需要注意體重管理。"
+          "text": "ä¸è¬èè¨ï¼å®¤å§è²å çºçæ´»ç°å¢è¼å®å¨ãçé¤è¼ç©©å®ãé«çè³æºè¼å®¹æåå¾ï¼å¹³åå£½å½è¼å®¤å¤è²é·ãä½å®¤å§è²å¯è½å æ´»åç©ºéæéèè¼å°éåï¼éè¦æ³¨æé«éç®¡çã"
         }
       },
       {
         "@type": "Question",
-        "name": "貓咪幾歲算進入老年期？",
+        "name": "è²åªå¹¾æ­²ç®é²å¥èå¹´æï¼",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "根據 AAHA 的定義，7 歲以上的貓咪進入成熟期，11 歲以上進入老年期。7 歲以上的貓咪建議每半年進行一次健康檢查，並留意腎臟、甲狀腺、牙齒與關節的健康狀況。"
+          "text": "æ ¹æ AAHA çå®ç¾©ï¼7 æ­²ä»¥ä¸çè²åªé²å¥æçæï¼11 æ­²ä»¥ä¸é²å¥èå¹´æã7 æ­²ä»¥ä¸çè²åªå»ºè­°æ¯åå¹´é²è¡$¸æ¬¡å¥åº·æª¢æ¥ï¼ä¸¦çæèèãç²çèºãçé½èéç¯çå¥åº·çæ³ã"
         }
       },
       {
         "@type": "Question",
-        "name": "老年貓的飲食需要注意什麼？",
+        "name": "èå¹´è²çé£²é£éè¦æ³¨æä»éº¼ï¼",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "老年貓的腎臟功能通常會逐漸衰退，因此需要選擇低磷、低鈉的處方飼料。同時，老年貓可能出現食欲下降的問題，建議提供高品質、易消化的蛋白質來源。具體飲食調整應諮詢獸醫師。"
+          "text": "èå¹´è²çèèåè½éå¸¸æéæ¼¸è¡°éï¼å æ­¤éè¦é¸æä½ç£·ãä½éçèæ¹é£¼æãåæï¼èå¹´è²å¯è½åºç¾é£æ¬²ä¸éçåé¡ï¼å»ºè­°æä¾é«åè³ªãææ¶åçèç½è³ªä¾æºãå·é«é£²é£èª¿æ´æè«®è©¢ç¸é«å¸«ã"
         }
       }
     ]
@@ -342,12 +348,12 @@ const lifeStages = [
     const progressFill = document.getElementById('progressFill');
 
     const getStage = (age: number): { text: string; progress: number } => {
-      if (age <= 0) return { text: '幼年階段', progress: 5 };
-      if (age === 1) return { text: '青少年階段', progress: 10 };
-      if (age === 2) return { text: '成年初期', progress: 15 };
-      if (age < 7) return { text: '成年期', progress: 20 + (age - 2) * 8 };
-      if (age < 10) return { text: '熟齡期', progress: 60 + (age - 7) * 10 };
-      return { text: '老年期', progress: Math.min(90 + (age - 10) * 3, 100) };
+      if (age <= 0) return { text: 'å¹¼å¹´éæ®µ', progress: 5 };
+      if (age === 1) return { text: 'éå°å¹´éæ®µ', progress: 10 };
+      if (age === 2) return { text: 'æå¹´åæ', progress: 15 };
+      if (age < 7) return { text: 'æå¹´æ', progress: 20 + (age - 2) * 8 };
+      if (age < 10) return { text: 'çé½¡æ', progress: 60 + (age - 7) * 10 };
+      return { text: 'èå¹´æ', progress: Math.min(90 + (age - 10) * 3, 100) };
     };
 
     const update = () => {
@@ -355,8 +361,8 @@ const lifeStages = [
       const humanAge = age <= 0 ? 0 : age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 4;
       const { text, progress } = getStage(age);
 
-      if (resultDisplay) resultDisplay.textContent = `${humanAge} 歲`;
-      if (lifeStageText) lifeStageText.textContent = `已進入 ${text}`;
+      if (resultDisplay) resultDisplay.textContent = `${humanAge} æ­²`;
+      if (lifeStageText) lifeStageText.textContent = `å·²é²å¥ ${text}`;
       if (progressFill) progressFill.style.width = `${progress}%`;
     };
 
