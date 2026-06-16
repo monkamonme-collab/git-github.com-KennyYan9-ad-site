@@ -6,9 +6,15 @@ const title = "貓咪老化徵兆：7個預示愛貓進入熟齡期的身體與�
 const description = "你的貓開始老了嗎？從跳躍高度下降、隱藏時間變長到理毛頻率減少，解析7個貓咪常見老化徵兆。";
 const publishDate = "2026-05-10";
 const currentPath = Astro.url.pathname;
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/cat-aging-signs' },
+  { lang: 'x-default', url: siteUrl + '/blog/cat-aging-signs' },
+];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog/' }, { label: '貓咪老化徵兆', url: currentPath }]}>
+<BaseLayout title={title} description={description} breadcrumbs={[{ label: '部落格', url: '/blog/' }, { label: '貓咪老化徵兆', url: currentPath }]} lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
   <article class="max-w-3xl mx-auto px-6 py-12">
     <div class="mb-8 md:rounded-2xl overflow-hidden shadow-lg">
       <img
