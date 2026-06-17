@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Dog vs Cat Aging', url: '/en/blog/dog-vs-cat-aging/' }
+];
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/dog-vs-cat-aging' },
+  { lang: 'en', url: siteUrl + '/en/blog/dog-vs-cat-aging' },
+  { lang: 'x-default', url: siteUrl + '/blog/dog-vs-cat-aging' },
+];
+---
+<BaseLayout title="Dog vs Cat Aging: Key Differences Explained - Pet Aging Hub"
+  description="How do dogs and cats age differently? Compare lifespans, life stages, and aging rates."
+  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Comparison</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Dog vs Cat Aging: Key Differences Explained</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">Dogs and cats age at very different rates — and the differences go far beyond the "multiply by 7" rule.</p>
+    </header>
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">The Myth of Multiplying by 7</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">Both dogs and cats age rapidly in their first two years — far faster than 7x — then slow down. A 1-year-old pet is developmentally equivalent to a 15-year-old human. A 2-year-old is closer to 24.</p>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Life Stage Comparison</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm border-collapse">
+            <thead><tr class="bg-slate-100">
+              <th class="p-3 text-left">Life Stage</th>
+              <th class="p-3 text-left text-amber-700">Dog (Medium)</th>
+              <th class="p-3 text-left text-purple-700">Cat (Indoor)</th>
+            </tr></thead>
+            <tbody>
+              <tr class="border-t"><td class="p-3">Junior</td><td class="p-3">0-2 years</td><td class="p-3">0-2 years</td></tr>
+              <tr class="border-t bg-slate-50"><td class="p-3">Young Adult</td><td class="p-3">2-5 years</td><td class="p-3">3-6 years</td></tr>
+              <tr class="border-t"><td class="p-3">Mature Adult</td><td class="p-3">5-7 years</td><td class="p-3">7-10 years</td></tr>
+              <tr class="border-t bg-slate-50"><td class="p-3">Senior</td><td class="p-3">7-10 years</td><td class="p-3">11-14 years</td></tr>
+              <tr class="border-t"><td class="p-3">Geriatric</td><td class="p-3">10+ years</td><td class="p-3">15+ years</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Average Lifespans</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <h3 class="font-bold text-amber-800 mb-2">Dogs</h3>
+            <ul class="text-sm text-slate-700 space-y-1">
+              <li>Average: 10-13 years (varies by size)</li>
+              <li>Giant breeds: 7-10 years</li>
+              <li>Small breeds: up to 16-18 years</li>
+              <li>Faster cell division drives faster aging</li>
+            </ul>
+          </div>
+          <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+            <h3 class="font-bold text-purple-800 mb-2">Cats</h3>
+            <ul class="text-sm text-slate-700 space-y-1">
+              <li>Indoor average: 13-17 years</li>
+              <li>Outdoor cats: 5-7 years</li>
+              <li>Record: 38 years (Creme Puff)</li>
+              <li>More uniform aging across breeds</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Different Diseases by Species</h2>
+        <div class="space-y-3">
+          <div class="bg-white rounded-xl p-4 border border-slate-200">
+            <strong class="text-slate-900">Dogs tend toward:</strong>
+            <p class="text-slate-700 text-sm mt-1">Arthritis, cancer (leading cause over 10), hypothyroidism, cognitive dysfunction syndrome, and cardiac disease.</p>
+          </div>
+          <div class="bg-white rounded-xl p-4 border border-slate-200">
+            <strong class="text-slate-900">Cats tend toward:</strong>
+            <p class="text-slate-700 text-sm mt-1">Chronic kidney disease (#1 killer of senior cats), hyperthyroidism, diabetes, IBD, and arthritis (often underdiagnosed).</p>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="/en/tools/compare-aging/" class="px-5 py-3 bg-slate-900 hover:bg-slate-700 text-white font-semibold rounded-xl text-sm">Compare Aging Tool</a>
+      <a href="/en/blog/dog-aging-by-breed/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Dog Aging by Breed</a>
+    </div>
+  </article>
+</BaseLayout>
