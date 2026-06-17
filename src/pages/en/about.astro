@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'About', url: '/en/about/' }
+];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/about' },
+  { lang: 'en', url: siteUrl + '/en/about' },
+  { lang: 'x-default', url: siteUrl + '/about' },
+];
+---
+
+<BaseLayout
+  title="About Us - Pet Aging Hub"
+  description="Learn about Pet Aging Hub's mission to help pet owners better understand and care for their aging dogs and cats through practical tools and expert guides."
+  lang="en"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}>
+
+  <div class="max-w-3xl mx-auto">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-4">About Pet Aging Hub</h1>
+      <p class="text-lg text-slate-600">Helping pet owners understand aging and become better caregivers</p>
+    </header>
+
+    <div class="prose-slate prose-lg max-w-none">
+      <p class="text-xl text-slate-700 leading-relaxed mb-8">
+        Pet Aging Hub was founded in 2024 as a free online resource platform focused on pet aging and senior care. We believe every pet owner deserves access to practical, reliable information to help their senior pets live comfortable, healthy golden years.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Our Mission</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Our mission is to <strong>translate complex veterinary knowledge into clear, actionable information</strong>. Through calculators, guide articles, and health assessment tools, we help pet owners:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Understand their pet's life stage and aging progress</li>
+        <li>Recognize health warning signs in senior pets</li>
+        <li>Get care advice tailored to different breeds and body types</li>
+        <li>Have more informed conversations with their veterinarian</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">What We Are Not</h2>
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl mb-6">
+        <p class="text-slate-700 leading-relaxed">
+          <strong>Important: we are not a veterinary clinic and do not provide veterinary diagnoses or treatment recommendations.</strong> Our goal is to serve as a bridge between pet owners and professional veterinarians, not to replace professional veterinary care. All information and tools are for educational reference only and should not be the sole basis for medical decisions.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">What We Offer</h2>
+
+      <div class="grid gap-6 mb-8">
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">🧮</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Age Calculators</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Our dog and cat age calculators are based on current veterinary research, helping you understand your pet's "human age" and current life stage. These tools account for variables like breed, size, and weight to provide more accurate estimates.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">📚</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Expert Guide Articles</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Our editorial team researches and writes articles covering aging signs, nutritional needs, environmental adjustments, and senior disease prevention. All content references real veterinary research and data.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">📋</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Health Checklist Tools</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Our symptom checklists help pet owners assess whether their pet is showing health signs that need attention. These tools are not diagnostic systems, but references to help you decide whether to schedule a vet visit.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+          <div class="flex items-start gap-4">
+            <span class="text-3xl">📊</span>
+            <div>
+              <h3 class="font-bold text-slate-900 mb-2">Breed &amp; Aging Data</h3>
+              <p class="text-slate-600 text-sm leading-relaxed">
+                Different dog and cat breeds have different aging rates and life expectancy. We compile detailed aging timelines for common breeds to help owners prepare better for their pet's specific characteristics.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Our Position</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        Pet Aging Hub is an independent online resource platform <strong>and does not accept funding from veterinary clinics or pet pharmaceutical companies</strong>. We are committed to providing fair, objective information and do not promote specific products or services.
+      </p>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        The site is primarily supported through Google AdSense advertising revenue, which allows us to continue providing free content to all pet owners. We clearly label all advertising content and ensure ads are not confused with editorial content.
+      </p>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Our Commitment to Accuracy</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        We are committed to ensuring all information on this site is accurate and up to date. However, veterinary medicine is a continuously evolving field, and new research may change existing recommendations. We recommend users:
+      </p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 mb-6">
+        <li>Treat our content as a starting reference point, not a final answer</li>
+        <li>Discuss specific health concerns with a veterinarian familiar with your pet's history</li>
+        <li>Follow our updates, as content may be revised as new research emerges</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Contact Us</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        If you have any questions about the site content, suggestions, or want to report inaccurate information, please use our <a href="/en/contact/" class="text-blue-600 hover:text-blue-700">contact page</a> to reach us. Our goal is to continuously improve and become a trusted resource for pet owners.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
