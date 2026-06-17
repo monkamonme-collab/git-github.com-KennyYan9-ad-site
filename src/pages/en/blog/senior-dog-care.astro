@@ -1,0 +1,88 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Senior Dog Care', url: '/en/blog/senior-dog-care/' }
+];
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/senior-dog-care' },
+  { lang: 'en', url: siteUrl + '/en/blog/senior-dog-care' },
+  { lang: 'x-default', url: siteUrl + '/blog/senior-dog-care' },
+];
+---
+<BaseLayout title="Senior Dog Care Guide - Pet Aging Hub"
+  description="A complete guide to caring for your senior dog — veterinary care, home comfort, nutrition, exercise, and emotional wellbeing."
+  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Dogs</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Senior Dog Care: A Practical Guide</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">Your dog is slowing down — but their senior years can still be rich, comfortable, and full of joy with the right care adjustments.</p>
+    </header>
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Recognizing the Senior Transition</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+            <li>Gray muzzle and around the eyes</li>
+            <li>Slower to rise from lying down</li>
+            <li>Less enthusiasm for long walks</li>
+            <li>More time sleeping</li>
+          </ul>
+          <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+            <li>Cloudiness in the eyes (often benign)</li>
+            <li>Weight changes (gain or loss)</li>
+            <li>Hearing decline</li>
+            <li>Changed bathroom habits</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Veterinary Care for Senior Dogs</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">Increase vet visits to twice yearly once your dog reaches senior status. A comprehensive senior wellness exam should include:</p>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+            <div><p class="font-semibold text-slate-900 text-sm">Complete Blood Count and Chemistry Panel</p><p class="text-slate-600 text-xs">Screens for organ function, anemia, infection, diabetes, and more.</p></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+            <div><p class="font-semibold text-slate-900 text-sm">Urinalysis</p><p class="text-slate-600 text-xs">Kidney function indicator; detects early signs before bloodwork changes.</p></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+            <div><p class="font-semibold text-slate-900 text-sm">Dental Examination</p><p class="text-slate-600 text-xs">Dental disease is painful and can affect heart health.</p></div>
+          </div>
+          <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+            <div><p class="font-semibold text-slate-900 text-sm">Orthopedic Assessment</p><p class="text-slate-600 text-xs">Joint pain evaluation. May recommend X-rays for arthritis staging.</p></div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Home Modifications</h2>
+        <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
+          <ul class="space-y-3 text-slate-700 text-sm">
+            <li><strong>Orthopedic bed:</strong> Memory foam reduces joint pressure. Place in warm, draft-free areas.</li>
+            <li><strong>Ramps and steps:</strong> Protect joints by eliminating jumps on/off furniture and into cars.</li>
+            <li><strong>Non-slip surfaces:</strong> Rugs on hardwood floors prevent slipping and injury.</li>
+            <li><strong>Elevated food bowls:</strong> For large dogs with neck or back pain, reduces strain during eating.</li>
+            <li><strong>More frequent bathroom access:</strong> Older dogs may need more outdoor trips to prevent accidents.</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Emotional Wellbeing</h2>
+        <p class="text-slate-700 leading-relaxed mb-3">Senior dogs still crave connection, routine, and mental engagement. Cognitive decline can cause anxiety, which is eased by:</p>
+        <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+          <li>Consistent daily routines (same walk, meal, bedtime schedule)</li>
+          <li>Gentle physical contact and calm companionship</li>
+          <li>Appropriate mental enrichment (sniff walks, gentle training)</li>
+          <li>Avoiding sudden environmental changes</li>
+        </ul>
+      </section>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="/en/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">Dog Age Calculator</a>
+      <a href="/en/blog/pet-dental-health/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Pet Dental Health</a>
+    </div>
+  </article>
+</BaseLayout>
