@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import SEO from '../components/SEO.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
-import AdSenseAd from '../components/AdSenseAd.astro';
 import Footer from '../components/Footer.astro';
 import LanguagePicker from '../components/LanguagePicker.astro';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
@@ -38,10 +37,10 @@ const siteName = isEn ? 'Pet Aging Hub' : '寵物年齡健康中心';
 <!doctype html>
 <html lang={isEn ? 'en' : 'zh-TW'}>
   <head>
-    <SEO
+    <SEO 
       title={title || 'Pet Aging Hub - 寵物年齡與健康指南'}
       description={description || '簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。'}
-          hrefLangAlternates={canonicalAlternates}    />
+      hrefLangAlternates={canonicalAlternates}  />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
@@ -50,10 +49,11 @@ const siteName = isEn ? 'Pet Aging Hub' : '寵物年齡健康中心';
       gtag('config', 'G-2TX7MK0D1Q');
     </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6107150024201925" crossorigin="anonymous"></script>
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+    <script type="text/javascript">aclib.runAutoTag({ zoneId: '3jfj9ekqwz', });</script>
   </head>
   <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-
+    
     <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <a href={homeHref} class="flex items-center gap-2 font-bold text-slate-900 hover:text-amber-600 transition-colors">
@@ -71,22 +71,13 @@ const siteName = isEn ? 'Pet Aging Hub' : '寵物年齡健康中心';
         </nav>
       </div>
     </header>
-
-    <div class="my-4 max-w-5xl mx-auto px-6">
-      <AdSenseAd format="horizontal" />
-    </div>
-
+    
     <main class="flex-grow max-w-5xl mx-auto px-6 py-8">
       {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} />}
       <slot />
     </main>
 
-  <Footer isEn={isEn} />
-    <div class="bg-slate-100 py-4">
-      <div class="max-w-5xl mx-auto px-6">
-        <AdSenseAd format="horizontal" />
-      </div>
-    </div>
+    <Footer isEn={isEn} />
 
     <script is:inline>
       document.addEventListener('DOMContentLoaded', function() {
