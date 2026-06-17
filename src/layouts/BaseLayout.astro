@@ -4,177 +4,96 @@ import SEO from '../components/SEO.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import AdSenseAd from '../components/AdSenseAd.astro';
 import Footer from '../components/Footer.astro';
+import LanguagePicker from '../components/LanguagePicker.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 interface Props {
   title?: string;
   description?: string;
-  breadcrumbs?: { label: string; url: string }[];
   lang?: string;
+  breadcrumbs?: { label: string; url: string }[];
   hrefLangAlternates?: { lang: string; url: string }[];
-  canonicalUrl?: string;
 }
 
-const {
-  title,
-  description,
-  breadcrumbs = [],
-  lang = 'zh-TW',
-  hrefLangAlternates = [],
-  canonicalUrl,
-} = Astro.props;
+const { title, description, breadcrumbs = [], hrefLangAlternates } = Astro.props;
 
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
-const isEnglish = lang === 'en';
-
-// 語言切換目標：從 hrefLangAlternates 找到另一語言的 URL，否則使用預設
-const altLangCode = isEnglish ? 'zh-TW' : 'en';
-const altEntry = hrefLangAlternates.find(a => a.lang === altLangCode);
-const switcherUrl = altEntry?.url ?? (isEnglish ? siteUrl + '/' : siteUrl + '/en/tools/');
-const switcherLabel = isEnglish ? '中文' : 'EN';
-const switcherTitle = isEnglish ? '切換至繁體中文' : 'Switch to English';
-const switcherTargetLang = isEnglish ? 'zh' : 'en';
-
-// 首頁 URL 依語言
-const homeUrl = isEnglish ? '/en/tools/' : '/';
-const logoText = isEnglish ? 'Pet Aging Hub' : '寵物年齡健康中心';
-
-// 導覽連結依語言
-const toolsUrl = isEnglish ? '/en/tools/' : '/tools';
-const blogUrl = isEnglish ? '/en/blog/' : '/blog';
-const toolsLabel = isEnglish ? 'Tools' : '工具集';
-const blogLabel = isEnglish ? 'Blog' : '部落格';
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const isEn = lang === 'en';
+const homeHref = isEn ? '/en/' : '/';
+const toolsHref = isEn ? '/en/tools/' : '/tools/';
+const blogHref = isEn ? '/en/blog/' : '/blog/';
+const siteName = isEn ? 'Pet Aging Hub' : '寵物年齡健康中心';
 ---
 
 <!doctype html>
-<html lang={lang}>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang={isEn ? 'en' : 'zh-TW'}>
+  <head>
+    <SEO
+      title={title || 'Pet Aging Hub - 寵物年齡與健康指南'}
+      description={description || '簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。'}
+      hrefLangAlternates={hrefLangAlternates}
+    />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2TX7MK0D1Q');
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6107150024201925" crossorigin="anonymous"></script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
 
-  <SEO
-    title={title || "寵物年齡健康中心 - 狗狗與貓咪年齡計算機"}
-    description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"}
-  />
-
-  <!-- hreflang alternates -->
-  {hrefLangAlternates.map(alt => (
-    <link rel="alternate" hreflang={alt.lang} href={alt.url} />
-  ))}
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
-  <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-2TX7MK0D1Q');
-  </script>
-
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
-
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6107150024201925"
-    crossorigin="anonymous"
-  ></script>
-</head>
-<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-
-  <!-- 頂部導覽列（含語言切換） -->
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-    <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-      <!-- Logo -->
-      <a href={homeUrl} class="flex items-center gap-2 font-bold text-slate-900 hover:text-blue-600 transition-colors">
-        <span class="text-xl">🐾</span>
-        <span class="text-sm font-semibold hidden sm:inline">{logoText}</span>
-      </a>
-
-      <!-- 右側：導覽 + 語言切換 -->
-      <div class="flex items-center gap-4">
-        <nav class="hidden sm:flex items-center gap-4 text-sm">
-          <a href={toolsUrl} class="text-slate-600 hover:text-blue-600 transition-colors font-medium">{toolsLabel}</a>
-          <a href={blogUrl} class="text-slate-600 hover:text-blue-600 transition-colors font-medium">{blogLabel}</a>
-        </nav>
-
-        <!-- 語言切換按鈕（永遠顯示） -->
-        <a
-          href={switcherUrl}
-          class="flex items-center gap-1 px-3 py-1.5 text-xs font-semibold rounded-full border border-slate-300 text-slate-600 hover:border-blue-400 hover:text-blue-600 hover:bg-blue-50 transition-all"
-          title={switcherTitle}
-          data-lang-switch
-          data-target-lang={switcherTargetLang}
-        >
-          <span>🌐</span>
-          <span>{switcherLabel}</span>
+    <header class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+      <div class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+        <a href={homeHref} class="flex items-center gap-2 font-bold text-slate-900 hover:text-amber-600 transition-colors">
+          <span class="text-xl" aria-hidden="true">🐾</span>
+          <span class="text-base">{siteName}</span>
         </a>
+        <nav class="flex items-center gap-1 sm:gap-2">
+          <a href={toolsHref} class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
+            {t('nav.tools')}
+          </a>
+          <a href={blogHref} class="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors">
+            {t('nav.blog')}
+          </a>
+          <LanguagePicker />
+        </nav>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <!-- 頂部廣告 -->
-  <div class="my-4 max-w-5xl mx-auto px-6">
-    <AdSenseAd format="horizontal" />
-  </div>
-
-  <main class="flex-grow max-w-5xl mx-auto px-6 py-8 w-full">
-    {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} />}
-    <slot />
-  </main>
-
-  <Footer />
-
-  <div class="bg-slate-100 py-4">
-    <div class="max-w-5xl mx-auto px-6">
+    <div class="my-4 max-w-5xl mx-auto px-6">
       <AdSenseAd format="horizontal" />
     </div>
-  </div>
 
-  <!-- 圖片錯誤處理 -->
-  <script is:inline>
-    document.addEventListener('DOMContentLoaded', function() {
-      document.addEventListener('error', function(e) {
-        var el = e.target;
-        if (el.tagName === 'IMG' && !el.dataset.f) {
-          el.dataset.f = 'true';
-          var w = el.width || el.getAttribute('width') || '800',
-              h = el.height || el.getAttribute('height') || '600';
-          var s = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '"><rect width="100%" height="100%" fill="#e5e7eb"/><line x1="0" y1="0" x2="' + w + '" y2="' + h + '" stroke="#9ca3af" stroke-width="20"/><line x1="' + w + '" y1="0" x2="0" y2="' + h + '" stroke="#9ca3af" stroke-width="20"/></svg>';
-          el.src = 'data:image/svg+xml,' + encodeURIComponent(s);
-        }
-      }, true);
-    });
-  </script>
+    <main class="flex-grow max-w-5xl mx-auto px-6 py-8">
+      {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} />}
+      <slot />
+    </main>
 
-  <!-- 🌐 自動語言偵測（首次造訪） -->
-  <script is:inline>
-    (function() {
-      try {
-        var stored = localStorage.getItem('langPref');
-        if (stored) return;
-        var path = window.location.pathname;
-        var isEnPage = path.startsWith('/en/');
-        var userLang = (navigator.language || (navigator.languages && navigator.languages[0]) || 'zh').toLowerCase();
-        var isEnUser = userLang.startsWith('en');
-        if (isEnUser && !isEnPage) {
-          localStorage.setItem('langPref', 'en');
-          window.location.replace('/en/tools/');
-        } else {
-          localStorage.setItem('langPref', isEnPage ? 'en' : 'zh');
-        }
-      } catch(e) {}
-    })();
+    <Footer />
 
-    document.addEventListener('DOMContentLoaded', function() {
-      var btn = document.querySelector('[data-lang-switch]');
-      if (btn) {
-        btn.addEventListener('click', function() {
-          try {
-            var t = this.getAttribute('data-target-lang');
-            if (t) localStorage.setItem('langPref', t);
-          } catch(e) {}
-        });
-      }
-    });
-  </script>
+    <div class="bg-slate-100 py-4">
+      <div class="max-w-5xl mx-auto px-6">
+        <AdSenseAd format="horizontal" />
+      </div>
+    </div>
 
-</body>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('error', function(e) {
+          var el = e.target;
+          if (el.tagName === 'IMG' && !el.dataset.f) {
+            el.dataset.f = 'true';
+            var w = el.width || el.getAttribute('width') || '800',
+                h = el.height || el.getAttribute('height') || '600';
+            var s = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '"><rect width="100%" height="100%" fill="#e5e7eb"/><line x1="0" y1="0" x2="' + w + '" y2="' + h + '" stroke="#9ca3af" stroke-width="20"/><line x1="' + w + '" y1="0" x2="0" y2="' + h + '" stroke="#9ca3af" stroke-width="20"/></svg>';
+            el.src = 'data:image/svg+xml,' + encodeURIComponent(s);
+          }
+        }, true);
+      });
+    </script>
+  </body>
 </html>
