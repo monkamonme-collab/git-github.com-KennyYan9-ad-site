@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Senior Cat Care', url: '/en/blog/senior-cat-care/' }
+];
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/senior-cat-care' },
+  { lang: 'en', url: siteUrl + '/en/blog/senior-cat-care' },
+  { lang: 'x-default', url: siteUrl + '/blog/senior-cat-care' },
+];
+---
+<BaseLayout title="Senior Cat Care: Complete Guide for Cats 10+ - Pet Aging Hub"
+  description="How to care for an aging cat: veterinary checkups, home environment, nutrition, pain management, and quality of life."
+  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Cats</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Senior Cat Care: A Complete Guide</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">Cats are remarkable at masking illness. Caring well for a senior cat means learning to see the subtle signals they send.</p>
+    </header>
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">The Senior Cat Threshold</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">Cats are generally considered "senior" from age 11-14 and "geriatric" from 15+. However, the biological shift begins around age 7 — by then, most cats show measurable changes in kidney function, weight maintenance, and activity. Many vets recommend transitioning to senior-care protocols around age 7-10.</p>
+        <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+          <p class="text-sm text-slate-700">Many cats aged 15-20 can maintain excellent quality of life with proper care. Old age is not the end of a good life.</p>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Biannual Veterinary Checkups</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">From age 10 onward, twice-yearly vet visits are the standard of care. A senior cat checkup should include:</p>
+        <div class="grid md:grid-cols-2 gap-3">
+          <ul class="space-y-2 text-slate-700 text-sm">
+            <li>Blood pressure measurement</li>
+            <li>Full bloodwork: CBC, chemistry, T4 (thyroid)</li>
+            <li>Urinalysis (kidney health)</li>
+            <li>Weight and body condition score</li>
+          </ul>
+          <ul class="space-y-2 text-slate-700 text-sm">
+            <li>Dental and oral examination</li>
+            <li>Eye and vision assessment</li>
+            <li>Mobility and pain assessment</li>
+            <li>Cognitive function screening</li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">The 3 Most Important Senior Cat Diseases</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-5 border border-red-200">
+            <h3 class="font-bold text-red-800 mb-2">1. Chronic Kidney Disease (CKD)</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Affects over 50% of cats over 15. Early signs: increased thirst and urination, weight loss, decreased appetite. Early detection through bloodwork and urinalysis can extend life significantly.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-orange-200">
+            <h3 class="font-bold text-orange-800 mb-2">2. Hyperthyroidism</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Affects ~10% of cats over 10. Signs: weight loss despite good appetite, hyperactivity, vomiting. Highly treatable with medication, radioactive iodine, or surgery.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-purple-200">
+            <h3 class="font-bold text-purple-800 mb-2">3. Hypertension</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Often secondary to CKD or hyperthyroidism. Can cause sudden blindness or neurological symptoms. Blood pressure should be checked at every visit for cats over 10.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Creating a Senior-Friendly Home</h2>
+        <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
+          <ul class="space-y-3 text-slate-700 text-sm">
+            <li><strong>Warm sleeping spots:</strong> Heated beds or self-warming blankets for cats who have lost muscle padding.</li>
+            <li><strong>Ramps and steps:</strong> To favorite perches and furniture. Critical if arthritis is present.</li>
+            <li><strong>Low-entry litter box:</strong> Cut-out entrance or open tray is easier with stiff joints.</li>
+            <li><strong>Multiple water sources:</strong> Cat fountains encourage hydration — crucial for kidney health.</li>
+            <li><strong>Warmth:</strong> Senior cats lose body heat more easily. Keep sleeping areas warm.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="/en/tools/cat-age-calculator/" class="px-5 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-xl text-sm">Cat Age Calculator</a>
+      <a href="/en/blog/cat-aging-signs/" class="px-5 py-3 bg-purple-100 hover:bg-purple-200 text-purple-800 font-semibold rounded-xl text-sm">Signs of Aging</a>
+    </div>
+  </article>
+</BaseLayout>
