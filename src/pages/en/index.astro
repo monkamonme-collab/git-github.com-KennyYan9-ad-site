@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Card from '../../components/Card.astro';
+
+const featuredArticles = [
+  {
+    href: '/en/blog/senior-pet-health-guide/',
+    image: 'https://images.unsplash.com/photo-1581888227599-779811939961?w=800&h=600&fit=crop&fm=webp',
+    category: 'Featured',
+    categoryColor: 'purple',
+    title: 'Complete Guide to Senior Pet Health',
+    description: 'From nutrition to environment — a comprehensive look at caring for pets 7 years and older.',
+    readTime: '~15 min read',
+    emoji: '📋'
+  },
+  {
+    href: '/en/blog/dog-vs-cat-aging/',
+    image: 'https://images.unsplash.com/photo-1544568100-847a948585b9?w=800&h=600&fit=crop&fm=webp',
+    category: 'Comparison',
+    categoryColor: 'blue',
+    title: 'Dog vs. Cat Aging: Full Comparison',
+    description: 'A 9-dimension comparison of aging speed, lifespan, common senior diseases, and care priorities.',
+    readTime: '~10 min read',
+    emoji: '📊'
+  },
+  {
+    href: '/en/blog/dog-aging-by-breed/',
+    image: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&h=600&fit=crop&fm=webp',
+    category: 'Dogs',
+    categoryColor: 'amber',
+    title: 'Dog Breed & Aging Speed',
+    description: 'Aging timelines and care tips for 15+ breeds, from Chihuahua to Great Dane.',
+    readTime: '~12 min read',
+    emoji: '🐕'
+  },
+  {
+    href: '/en/blog/cat-aging-by-weight/',
+    image: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=800&h=600&fit=crop&fm=webp',
+    category: 'Cats',
+    categoryColor: 'purple',
+    title: 'Cat Weight & Aging Speed',
+    description: 'Age charts for indoor, outdoor, and large-breed cats — and how obesity affects lifespan.',
+    readTime: '~10 min read',
+    emoji: '🐱'
+  }
+];
+
+const tools = [
+  {
+    href: '/en/tools/dog-age-calculator/',
+    emoji: '🐕',
+    badge: 'Popular',
+    badgeColor: 'blue',
+    title: 'Dog Age Calculator',
+    description: 'Get a human-age equivalent and life-stage advice for your dog.'
+  },
+  {
+    href: '/en/tools/cat-age-calculator/',
+    emoji: '🐱',
+    badge: 'Popular',
+    badgeColor: 'purple',
+    title: 'Cat Age Calculator',
+    description: 'Get targeted senior-care tips for your cat.'
+  },
+  {
+    href: '/en/tools/compare-aging/',
+    emoji: '⚖️',
+    badge: 'New',
+    badgeColor: 'teal',
+    title: 'Aging Comparison Tool',
+    description: 'Compare dog and cat human-age equivalents side by side.'
+  }
+];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/' },
+  { lang: 'en', url: siteUrl + '/en/' },
+  { lang: 'x-default', url: siteUrl + '/' },
+];
+---
+
+<BaseLayout
+  title="Pet Aging Hub — Dog & Cat Age Calculator and Senior Care Guides"
+  description="Simple tools and practical guides to help you understand your dog or cat's aging process, health changes, and senior care needs."
+  lang="en"
+  hrefLangAlternates={hrefLangAlternates}>
+
+  {/* Hero */}
+  <div class="relative bg-slate-900 overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1400&h=700&fit=crop&fm=webp"
+        alt="Caring for a senior pet"
+        class="w-full h-full object-cover opacity-40"
+        loading="eager"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/60"></div>
+    </div>
+
+    <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28 text-center md:text-left">
+      <div class="inline-flex items-center gap-2 bg-amber-500/20 text-amber-300 text-sm font-medium px-4 py-2 rounded-full mb-6 backdrop-blur-sm border border-amber-400/30">
+        <span>🐾</span>
+        <span>Pet Aging &amp; Health Resource Hub</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+        Understand Your Pet's<br />
+        Age &amp; Health
+      </h1>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <a href="/en/tools/dog-age-calculator/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl transition-colors shadow-lg">
+          <span class="text-xl">🐕</span> Dog Age Calculator
+        </a>
+        <a href="/en/tools/cat-age-calculator/" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl transition-colors border border-white/20">
+          <span class="text-xl">🐱</span> Cat Age Calculator
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="max-w-5xl mx-auto px-6 py-16">
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">📚</span> Featured Care Guides
+        </h2>
+        <a href="/en/blog/" class="text-amber-600 hover:text-amber-700 font-medium text-sm flex items-center gap-1">All Articles →</a>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {featuredArticles.map((article) => (
+          <a href={article.href} class="group block">
+            <Card class="h-full hover:shadow-xl transition-all duration-300 hover:border-amber-300 overflow-hidden p-0">
+              <div class="aspect-video overflow-hidden bg-slate-100">
+                <img src={article.image} alt={article.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              </div>
+              <div class="p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class={`px-2 py-1 text-xs font-bold rounded-full ${
+                    article.categoryColor === 'purple' ? 'bg-purple-100 text-purple-700' :
+                    article.categoryColor === 'blue' ? 'bg-blue-100 text-blue-700' :
+                    'bg-amber-100 text-amber-700'
+                  }`}>
+                    {article.category}
+                  </span>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{article.title}</h3>
+                <p class="text-slate-600 mb-4 line-clamp-2 text-sm">{article.description}</p>
+                <span class="text-xs text-slate-500">⏱️ {article.readTime}</span>
+              </div>
+            </Card>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">🧮</span> Quick Calculators
+        </h2>
+        <a href="/en/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm">More Tools →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <a href={tool.href} class="group block">
+            <Card class="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300 text-center">
+              <div class="text-4xl mb-4">{tool.emoji}</div>
+              <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{tool.title}</h3>
+              <p class="text-sm text-slate-600">{tool.description}</p>
+            </Card>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section>
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">🕐</span> Recently Updated
+        </h2>
+      </div>
+
+      <div class="bg-gradient-to-br from-slate-50 to-amber-50 rounded-3xl p-8 border border-slate-200">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">🏆</span>
+              <div>
+                <p class="text-xs text-indigo-600 font-bold mb-1">Featured Post</p>
+                <a href="/en/blog/senior-pet-health-guide/" class="text-lg font-bold text-slate-900 hover:text-amber-600 block mb-2">
+                  Senior Pet Health: A Complete Care Guide
+                </a>
+                <p class="text-sm text-slate-600">
+                  Deep-dive into organ monitoring, targeted nutrition, and environment modifications for aging dogs and cats.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl">📝</span>
+              <div>
+                <p class="text-xs text-slate-500 mb-1">Content Update</p>
+                <a href="/en/blog/dog-aging-by-breed/" class="text-lg font-bold text-slate-900 hover:text-amber-600 block mb-2">
+                  Dog Breed Aging Timelines Updated
+                </a>
+                <p class="text-sm text-slate-600">
+                  Added aging timelines for Shiba Inu, Corgi, and other popular breeds.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
