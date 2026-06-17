@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://git-github-com-kenny-yan9-ad-site.vercel.app/',
+  site: 'https://www.petaginghub.com/',
   i18n: {
     locales: ['zh-tw', 'en'],
     defaultLocale: 'zh-tw',
