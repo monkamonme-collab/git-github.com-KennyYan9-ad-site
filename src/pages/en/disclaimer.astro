@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Disclaimer', url: '/en/disclaimer/' }
+];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/disclaimer' },
+  { lang: 'en', url: siteUrl + '/en/disclaimer' },
+  { lang: 'x-default', url: siteUrl + '/disclaimer' },
+];
+---
+
+<BaseLayout
+  title="Disclaimer - Pet Aging Hub"
+  description="Read the disclaimer for Pet Aging Hub. Our tools and content are for educational purposes only and are not a substitute for professional veterinary care."
+  lang="en"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}>
+
+  <div class="max-w-3xl mx-auto py-10">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-4">Disclaimer</h1>
+      <p class="text-sm text-slate-500">Last updated: January 2024</p>
+    </header>
+
+    <div class="prose-slate prose-lg max-w-none space-y-8">
+
+      <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl">
+        <p class="text-slate-700 font-medium leading-relaxed">
+          <strong>Important Notice:</strong> Pet Aging Hub is an educational resource platform. All content, tools, and information provided on this website are for informational and educational purposes only. They are not intended to be a substitute for professional veterinary advice, diagnosis, or treatment.
+        </p>
+      </div>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Not Veterinary Advice</h2>
+        <p class="text-slate-700 leading-relaxed">
+          The information provided on this website, including articles, calculators, checklists, and other tools, does not constitute veterinary medical advice. Always seek the advice of your veterinarian or other qualified animal health provider regarding any questions you may have about your pet's health condition. Never disregard professional veterinary advice or delay seeking it because of something you have read on this website.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Age Calculator Limitations</h2>
+        <p class="text-slate-700 leading-relaxed">
+          Our age calculators use general formulas based on published veterinary research. Individual pets may age differently based on genetics, health history, diet, lifestyle, and other factors. Calculator results are estimates only and should not be used as a basis for medical decisions. Consult your veterinarian for an assessment tailored to your specific pet.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Content Accuracy</h2>
+        <p class="text-slate-700 leading-relaxed">
+          While we strive to keep the information on this site accurate and up to date, veterinary medicine is a rapidly evolving field. We make no warranties or representations, express or implied, about the completeness, accuracy, reliability, or suitability of the information contained on this website. Any reliance you place on such information is strictly at your own risk.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">External Links</h2>
+        <p class="text-slate-700 leading-relaxed">
+          This website may contain links to external websites. We have no control over the content of those sites and accept no responsibility for them or for any loss or damage that may arise from your use of them.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Advertising</h2>
+        <p class="text-slate-700 leading-relaxed">
+          Pet Aging Hub displays advertisements through Google AdSense to support site operations. Advertising content is clearly labeled and is separate from editorial content. We do not endorse advertised products or services.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Contact</h2>
+        <p class="text-slate-700 leading-relaxed">
+          If you have any questions about this disclaimer, please <a href="/en/contact/" class="text-blue-600 hover:text-blue-700">contact us</a>.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>
