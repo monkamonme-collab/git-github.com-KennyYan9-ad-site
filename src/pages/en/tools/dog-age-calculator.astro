@@ -1,6 +1,7 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import AdSenseAd from '../../../components/AdSenseAd.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import AdSenseAd from '../../components/AdSenseAd.astro';
 
 const title = "Dog Age Calculator | AVMA Standard | Accurate Human Age Conversion";
 const description = "Convert your dog's age to human years using the AVMA evidence-based formula. Understand your dog's life stage — puppy, adult, senior — for better veterinary care and nutrition planning.";
@@ -27,7 +28,7 @@ const lifeStages = [
 ];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} lang="en" hrefLangAlternates={hrefLangAlternates}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 
   <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
@@ -311,7 +312,7 @@ const lifeStages = [
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes. Small breeds typically become senior around 10–12 years; large breeds around 7 years; giant breeds even earlier. This calculator uses the AVMA general baseline."
- 2      }
+        }
       },
       {
         "@type": "Question",
