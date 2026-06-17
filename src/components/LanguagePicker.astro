@@ -1,0 +1,17 @@
+---
+import { getAlternateLangUrl, getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const alternateUrl = getAlternateLangUrl(Astro.url);
+const label = lang === 'en' ? '中文' : 'EN';
+const ariaLabel = lang === 'en' ? '切換至繁體中文' : 'Switch to English';
+---
+
+<a
+  href={alternateUrl}
+  class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg border border-slate-300 hover:border-amber-400 text-slate-600 hover:text-amber-700 text-sm font-medium transition-colors"
+  aria-label={ariaLabel}
+>
+  <span aria-hidden="true">🌐</span>
+  {label}
+</a>
