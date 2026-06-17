@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Pet Exercise by Age', url: '/en/blog/pet-exercise-by-age/' }
+];
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/pet-exercise-by-age' },
+  { lang: 'en', url: siteUrl + '/en/blog/pet-exercise-by-age' },
+  { lang: 'x-default', url: siteUrl + '/blog/pet-exercise-by-age' },
+];
+---
+<BaseLayout title="Pet Exercise Guide by Age - Pet Aging Hub"
+  description="Age-appropriate activity guides for dogs and cats at every life stage. Too little or too much exercise both cause problems."
+  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Wellness</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Age-Appropriate Exercise for Dogs and Cats</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">Exercise needs change dramatically as pets age. Too little leads to obesity and muscle loss; too much can cause injury and pain.</p>
+    </header>
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-5">Dogs: Exercise by Life Stage</h2>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-amber-800">Puppy (0-1 year)</h3>
+              <span class="text-xs bg-amber-100 text-amber-700 px-2 py-1 rounded-full">5 min per month of age, 2x/day</span>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">Over-exercise is a real risk. Avoid forced running until growth plates close (12-18 months). The 5-minute rule: 5 minutes of exercise per month of age, twice a day.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-amber-800">Adult (1-7 years)</h3>
+              <span class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full">30-60 min/day (breed dependent)</span>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">Activity needs vary enormously by breed. A Border Collie needs 2+ hours of vigorous daily exercise; a Bulldog may need 20-30 minutes. Provide both physical exercise and mental stimulation.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-slate-200">
+            <div class="flex justify-between items-start mb-2">
+              <h3 class="font-bold text-amber-800">Senior (7+ years)</h3>
+              <span class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full">20-30 min, 2-3x/day (gentle)</span>
+            </div>
+            <p class="text-slate-700 text-sm leading-relaxed">Shorter, more frequent walks are better than one long walk. Watch for post-exercise limping, reluctance to get up the next morning, or excessive panting as signs of over-exertion.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-5">Cats: Activity by Life Stage</h2>
+        <div class="space-y-4">
+          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
+            <h3 class="font-bold text-purple-800 mb-2">Kitten (0-1 year)</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Multiple play sessions per day (5-10 minutes each). Wand toys, feather toys, and puzzle feeders support physical and mental development.</p>
+          </div>
+          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
+            <h3 class="font-bold text-purple-800 mb-2">Adult (1-10 years)</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Two 10-15 minute interactive play sessions per day. Prevent obesity — weigh monthly and adjust food if weight drifts up.</p>
+          </div>
+          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
+            <h3 class="font-bold text-purple-800 mb-2">Senior (10+ years)</h3>
+            <p class="text-slate-700 text-sm leading-relaxed">Lower-intensity play — gentler wand movements, puzzle feeders, calm sessions. Even 5-minute sessions per day maintain muscle and joint flexibility. Provide ramps so senior cats do not skip enrichment due to mobility issues.</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Best Low-Impact Activities for Senior Pets</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+            <h3 class="font-bold text-amber-800 mb-2">Senior Dogs</h3>
+            <ul class="text-sm text-slate-700 space-y-1">
+              <li>Gentle leash walks on flat surfaces</li>
+              <li>Swimming and hydrotherapy</li>
+              <li>Nose work (scent games)</li>
+              <li>Short training sessions</li>
+              <li>Slow-paced fetch on soft grass</li>
+            </ul>
+          </div>
+          <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+            <h3 class="font-bold text-purple-800 mb-2">Senior Cats</h3>
+            <ul class="text-sm text-slate-700 space-y-1">
+              <li>Slow wand toy sessions</li>
+              <li>Puzzle feeders</li>
+              <li>Cat TV and bird watching setups</li>
+              <li>Gentle grooming sessions</li>
+              <li>Hiding treats for searching</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="/en/blog/pet-joint-health/" class="px-5 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl text-sm">Joint Health Guide</a>
+      <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Pet Guide</a>
+    </div>
+  </article>
+</BaseLayout>
