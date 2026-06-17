@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Signs Your Cat Is Aging', url: '/en/blog/cat-aging-signs/' }
+];
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/cat-aging-signs' },
+  { lang: 'en', url: siteUrl + '/en/blog/cat-aging-signs' },
+  { lang: 'x-default', url: siteUrl + '/blog/cat-aging-signs' },
+];
+---
+<BaseLayout title="10 Signs Your Cat Is Getting Older - Pet Aging Hub"
+  description="Learn the subtle and obvious signs that your cat is entering their senior years and what to do about each one."
+  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Cats</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">10 Signs Your Cat Is Getting Older</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">Cats are masters at hiding discomfort. Knowing what to look for helps you catch age-related changes early.</p>
+    </header>
+    <div class="space-y-4">
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">1. Sleeping More Than Usual</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">A mild increase is normal, but a dramatic change combined with reduced interest in food or play can signal pain, anemia, or organ disease.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">2. Reluctance to Jump or Climb</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">If your cat hesitates before jumping onto the couch or seems stiff getting up, arthritis may be developing. Cats hide pain extremely well — this is one of the most underdiagnosed conditions.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">3. Coat Becoming Dull or Matted</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">When grooming drops off, it is usually because bending and twisting causes discomfort. A dull, greasy, or matted coat in an older cat warrants a vet visit.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">4. Increased Thirst and Urination</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Classic signs of hyperthyroidism, diabetes, or chronic kidney disease — the three most common serious illnesses in cats over 10.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">5. Unexplained Weight Change</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Weight loss in a senior cat is almost always a medical issue. Monthly weigh-ins help you catch changes before they become severe.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">6. Behavioral Changes</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Increased vocalization (especially at night), new aggression, confusion, or litter box changes can indicate cognitive dysfunction, pain, hyperthyroidism, or hypertension.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">7. Changes in Eyes</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Cloudiness is often benign (nuclear sclerosis), but haziness in the iris or sudden vision loss can indicate hypertension. Annual eye exams are important after age 10.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">8. Dental Disease and Bad Breath</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Over 85% of cats over 3 have some dental disease. In older cats this becomes painful and can cause sudden changes in eating habits.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">9. Changes in Eating Habits</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Eating less may indicate dental pain or organ failure. Eating more despite weight loss is a hallmark of hyperthyroidism.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-5 border border-slate-200">
+        <h2 class="text-lg font-bold text-slate-900 mb-2">10. Disorientation and Confusion</h2>
+        <p class="text-slate-700 text-sm leading-relaxed">Feline cognitive dysfunction syndrome affects over 50% of cats over 15. Signs include getting lost in familiar spaces, forgetting routines, staring blankly, and nighttime yowling.</p>
+      </div>
+    </div>
+    <div class="mt-8 bg-purple-50 rounded-2xl p-5 border border-purple-100">
+      <h2 class="text-lg font-bold text-slate-900 mb-2">When to Call the Vet</h2>
+      <p class="text-slate-700 text-sm leading-relaxed">If you notice two or more of the above signs, schedule a senior wellness exam. Many conditions — hyperthyroidism, diabetes, hypertension — are highly manageable when caught early.</p>
+    </div>
+    <div class="mt-6 flex flex-wrap gap-4">
+      <a href="/en/tools/symptom-checklist/" class="px-5 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-xl text-sm">Symptom Checklist</a>
+      <a href="/en/blog/when-to-see-vet/" class="px-5 py-3 bg-red-100 hover:bg-red-200 text-red-800 font-semibold rounded-xl text-sm">When to See the Vet</a>
+    </div>
+  </article>
+</BaseLayout>
