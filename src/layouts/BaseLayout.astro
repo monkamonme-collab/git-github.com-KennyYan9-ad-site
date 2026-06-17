@@ -20,6 +20,15 @@ const { title, description, breadcrumbs = [], hrefLangAlternates } = Astro.props
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const isEn = lang === 'en';
+const siteOrigin = (Astro.site?.href ?? 'https://www.petaginghub.com/').replace(/\/$/, '');
+const pathname = Astro.url.pathname;
+const zhPath = isEn ? (pathname.replace(/^\/en/, '') || '/') : pathname;
+const enPath = isEn ? pathname : '/en' + pathname;
+const canonicalAlternates = [
+  { lang: 'zh-TW', url: siteOrigin + zhPath },
+  { lang: 'en', url: siteOrigin + enPath },
+  { lang: 'x-default', url: siteOrigin + zhPath },
+];
 const homeHref = isEn ? '/en/' : '/';
 const toolsHref = isEn ? '/en/tools/' : '/tools/';
 const blogHref = isEn ? '/en/blog/' : '/blog/';
@@ -32,8 +41,7 @@ const siteName = isEn ? 'Pet Aging Hub' : '寵物年齡健康中心';
     <SEO
       title={title || 'Pet Aging Hub - 寵物年齡與健康指南'}
       description={description || '簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。'}
-      hrefLangAlternates={hrefLangAlternates}
-    />
+          hrefLangAlternates={canonicalAlternates}    />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
