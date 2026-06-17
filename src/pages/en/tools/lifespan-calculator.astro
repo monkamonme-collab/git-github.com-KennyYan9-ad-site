@@ -1,0 +1,233 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const breadcrumbs = [
+  { label: 'Home', url: '/en/tools/' },
+  { label: 'Lifespan Calculator', url: '/en/tools/lifespan-calculator/' }
+];
+
+const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/tools/lifespan-calculator' },
+  { lang: 'en', url: siteUrl + '/en/tools/lifespan-calculator' },
+  { lang: 'x-default', url: siteUrl + '/tools/lifespan-calculator' },
+];
+---
+
+<BaseLayout
+  title="Pet Lifespan Calculator - Dog & Cat Life Expectancy - Pet Aging Hub"
+  description="Estimate your dog or cat's expected lifespan based on species, breed size, and lifestyle factors. Plan ahead for your pet's senior years."
+  lang="en"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}>
+
+  <div class="max-w-3xl mx-auto py-8 px-4">
+    <header class="mb-8 text-center">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-3">🕐 Pet Lifespan Calculator</h1>
+      <p class="text-slate-600 text-lg">Estimate how long your dog or cat is likely to live — and how many healthy years may remain.</p>
+    </header>
+
+    <div class="bg-white rounded-2xl border border-slate-200 p-6 mb-6 shadow-sm">
+      <div class="space-y-5">
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Species</label>
+          <div class="flex gap-4">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="species" value="dog" id="speciesDog" class="accent-amber-500" checked />
+              <span class="font-medium">🐶 Dog</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="radio" name="species" value="cat" id="speciesCat" class="accent-purple-500" />
+              <span class="font-medium">🐱 Cat</span>
+            </label>
+          </div>
+        </div>
+
+        <div id="dogOptions">
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Dog Size / Breed</label>
+          <select id="dogSizeSelect" class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-amber-400">
+            <option value="toy">Toy / Miniature (&lt; 5 kg) — e.g. Chihuahua, Pomeranian: avg. 14–16 yrs</option>
+            <option value="small">Small (5–10 kg) — e.g. Shih Tzu, Beagle: avg. 12–15 yrs</option>
+            <option value="medium" selected>Medium (10–25 kg) — e.g. Shiba Inu, Border Collie: avg. 11–14 yrs</option>
+            <option value="large">Large (25–40 kg) — e.g. Labrador, Golden Retriever: avg. 10–12 yrs</option>
+            <option value="giant">Giant (&gt; 40 kg) — e.g. Great Dane, Saint Bernard: avg. 7–10 yrs</option>
+          </select>
+        </div>
+
+        <div id="catOptions" class="hidden">
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Cat Type</label>
+          <select id="catTypeSelect" class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-400">
+            <option value="indoor" selected>Indoor cat — avg. 12–18 yrs</option>
+            <option value="outdoor">Outdoor / free-roaming — avg. 5–7 yrs</option>
+            <option value="indoor_outdoor">Indoor-outdoor — avg. 10–15 yrs</option>
+            <option value="large_breed">Large breed (Maine Coon, Ragdoll) — avg. 12–15 yrs</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Current Age (years)</label>
+          <input type="number" id="currentAge" min="0" max="30" step="0.5" placeholder="e.g. 5"
+            class="w-full border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-400" />
+        </div>
+
+        <div>
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Lifestyle Factors (optional)</label>
+          <div class="space-y-2">
+            <label class="flex items-center gap-3 cursor-pointer p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+              <input type="checkbox" id="neutered" class="accent-green-500 w-4 h-4" />
+              <div>
+                <span class="font-medium text-slate-800">Spayed / Neutered</span>
+                <p class="text-xs text-slate-500">Associated with longer lifespan (+1–2 yrs on average)</p>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+              <input type="checkbox" id="regularVet" class="accent-green-500 w-4 h-4" />
+              <div>
+                <span class="font-medium text-slate-800">Regular Vet Checkups</span>
+                <p class="text-xs text-slate-500">Preventive care can extend healthy years</p>
+              </div>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer p-3 rounded-xl hover:bg-slate-50 border border-transparent hover:border-slate-200 transition">
+              <input type="checkbox" id="overweight" class="accent-red-500 w-4 h-4" />
+              <div>
+                <span class="font-medium text-slate-800">Overweight / Obese</span>
+                <p class="text-xs text-slate-500">Obesity can reduce lifespan by 1–2.5 years</p>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <button id="calcBtn"
+          class="w-full py-4 bg-slate-900 hover:bg-slate-700 text-white font-bold rounded-xl text-lg transition-colors shadow-md">
+          Calculate Lifespan Estimate
+        </button>
+      </div>
+    </div>
+
+    <div id="results" class="hidden bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-6 border border-slate-200 mb-8">
+      <h2 class="text-xl font-bold text-slate-900 mb-4">📊 Your Estimate</h2>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-4 text-center border border-slate-100">
+          <div class="text-3xl font-extrabold text-blue-600" id="lifespanRange">—</div>
+          <div class="text-sm text-slate-600 mt-1">Estimated lifespan</div>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-slate-100">
+          <div class="text-3xl font-extrabold text-emerald-600" id="yearsRemaining">—</div>
+          <div class="text-sm text-slate-600 mt-1">Estimated years remaining</div>
+        </div>
+      </div>
+      <div id="lifestageInfo" class="bg-white rounded-xl p-4 border border-slate-100 mb-4">
+        <p class="font-semibold text-slate-900 mb-1" id="lifestageLabel"></p>
+        <p class="text-sm text-slate-600" id="lifestageAdvice"></p>
+      </div>
+      <div id="factorNotes" class="text-sm text-slate-600 space-y-1"></div>
+    </div>
+
+    <div class="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-8">
+      <p class="text-sm text-slate-700 leading-relaxed">
+        <strong>⚠️ Important:</strong> These estimates are statistical averages based on species, size, and general lifestyle research. Individual pets vary greatly based on genetics, diet, environment, and medical history. This tool is for educational planning purposes only — consult your veterinarian for personalized guidance.
+      </p>
+    </div>
+
+    <div class="bg-white rounded-2xl p-6 border border-slate-200 mb-6">
+      <h2 class="text-xl font-bold text-slate-900 mb-4">Average Lifespans by Breed Size</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-200">
+              <th class="text-left py-2 pr-4 font-semibold text-slate-700">Category</th>
+              <th class="text-left py-2 pr-4 font-semibold text-slate-700">Average Lifespan</th>
+              <th class="text-left py-2 font-semibold text-slate-700">Examples</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr><td class="py-2 pr-4 text-slate-700">🐶 Toy / Miniature Dog</td><td class="py-2 pr-4 font-medium">14–16 years</td><td class="py-2 text-slate-500">Chihuahua, Pomeranian, Maltese</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐶 Small Dog</td><td class="py-2 pr-4 font-medium">12–15 years</td><td class="py-2 text-slate-500">Shih Tzu, Beagle, Dachshund</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐶 Medium Dog</td><td class="py-2 pr-4 font-medium">11–14 years</td><td class="py-2 text-slate-500">Shiba Inu, Corgi, Border Collie</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐶 Large Dog</td><td class="py-2 pr-4 font-medium">10–12 years</td><td class="py-2 text-slate-500">Labrador, Golden Retriever, Husky</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐶 Giant Dog</td><td class="py-2 pr-4 font-medium">7–10 years</td><td class="py-2 text-slate-500">Great Dane, Saint Bernard, Mastiff</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐱 Indoor Cat</td><td class="py-2 pr-4 font-medium">12–18 years</td><td class="py-2 text-slate-500">Domestic shorthair, Persian, Siamese</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐱 Outdoor Cat</td><td class="py-2 pr-4 font-medium">5–7 years</td><td class="py-2 text-slate-500">Free-roaming cats</td></tr>
+            <tr><td class="py-2 pr-4 text-slate-700">🐱 Large Breed Cat</td><td class="py-2 pr-4 font-medium">12–15 years</td><td class="py-2 text-slate-500">Maine Coon, Ragdoll, Norwegian Forest</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="/en/tools/dog-age-calculator/" class="inline-flex items-center gap-2 px-6 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl transition-colors">🐶 Dog Age Calculator</a>
+      <a href="/en/tools/compare-aging/" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl transition-colors">⚖️ Compare Dog vs Cat</a>
+      <a href="/en/tools/symptom-checklist/" class="inline-flex items-center gap-2 px-6 py-3 bg-red-50 hover:bg-red-100 text-red-800 font-semibold rounded-xl transition-colors">📋 Symptom Checklist</a>
+    </div>
+  </div>
+
+  <script>
+    const lifespanData = {
+      dog: { toy: [14,16], small: [12,15], medium: [11,14], large: [10,12], giant: [7,10] },
+      cat: { indoor: [12,18], outdoor: [5,7], indoor_outdoor: [10,15], large_breed: [12,15] }
+    };
+
+    const lifestages = {
+      dog: [
+        { max: 2, label: 'Puppy / Junior', advice: 'Focus on vaccinations, socialization, and establishing healthy habits.' },
+        { max: 7, label: 'Young to Mature Adult', advice: 'Maintain regular exercise, dental care, and annual vet checkups.' },
+        { max: 10, label: 'Senior', advice: 'Increase vet visits to twice yearly; watch for joint, dental, and organ changes.' },
+        { max: 999, label: 'Geriatric', advice: 'Prioritize comfort, pain management, and quality of life. Work closely with your vet.' }
+      ],
+      cat: [
+        { max: 2, label: 'Kitten / Junior', advice: 'Vaccinations, spaying/neutering, and indoor safety are top priorities.' },
+        { max: 10, label: 'Adult', advice: 'Annual checkups, dental care, and weight management are key.' },
+        { max: 15, label: 'Senior', advice: 'Twice-yearly vet visits; monitor kidney function, thyroid, and dental health.' },
+        { max: 999, label: 'Geriatric', advice: 'Focus on comfort and quality of life. Kidney disease and hyperthyroidism are common.' }
+      ]
+    };
+
+    document.querySelectorAll('input[name="species"]').forEach(r => {
+      r.addEventListener('change', function() {
+        document.getElementById('dogOptions').classList.toggle('hidden', this.value !== 'dog');
+        document.getElementById('catOptions').classList.toggle('hidden', this.value !== 'cat');
+      });
+    });
+
+    document.getElementById('calcBtn').addEventListener('click', function() {
+      const species = document.querySelector('input[name="species"]:checked').value;
+      const currentAge = parseFloat(document.getElementById('currentAge').value);
+      const neutered = document.getElementById('neutered').checked;
+      const regularVet = document.getElementById('regularVet').checked;
+      const overweight = document.getElementById('overweight').checked;
+
+      let sizeKey = species === 'dog' ? document.getElementById('dogSizeSelect').value : document.getElementById('catTypeSelect').value;
+      let [lo, hi] = lifespanData[species][sizeKey];
+
+      let adjustment = 0;
+      const notes = [];
+      if (neutered) { adjustment += 1.5; notes.push('✅ Spayed/neutered: +1–2 yrs estimated benefit'); }
+      if (regularVet) { adjustment += 0.5; notes.push('✅ Regular vet care: positive impact on healthy years'); }
+      if (overweight) { adjustment -= 1.5; notes.push('⚠️ Overweight: −1–2.5 yrs estimated reduction'); }
+
+      lo = Math.max(1, Math.round((lo + adjustment) * 10) / 10);
+      hi = Math.max(lo + 1, Math.round((hi + adjustment) * 10) / 10);
+
+      const midpoint = (lo + hi) / 2;
+      const remaining = isNaN(currentAge) || currentAge <= 0 ? null : Math.max(0, Math.round((midpoint - currentAge) * 10) / 10);
+
+      document.getElementById('lifespanRange').textContent = lo + '–' + hi + ' yrs';
+      document.getElementById('yearsRemaining').textContent = remaining !== null ? '~' + remaining + ' yrs' : 'N/A';
+
+      const stages = lifestages[species];
+      const stage = isNaN(currentAge) ? null : stages.find(s => currentAge <= s.max);
+      if (stage) {
+        document.getElementById('lifestageLabel').textContent = 'Life Stage: ' + stage.label;
+        document.getElementById('lifestageAdvice').textContent = stage.advice;
+        document.getElementById('lifestageInfo').classList.remove('hidden');
+      } else {
+        document.getElementById('lifestageInfo').classList.add('hidden');
+      }
+
+      const notesEl = document.getElementById('factorNotes');
+      notesEl.innerHTML = notes.map(n => '<p>' + n + '</p>').join('');
+
+      document.getElementById('results').classList.remove('hidden');
+    });
+  </script>
+</BaseLayout>
