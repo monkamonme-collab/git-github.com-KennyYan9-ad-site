@@ -1,11 +1,11 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import AdSenseAd from '../../../components/AdSenseAd.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
 
 const title = "Dog Age Calculator | AVMA Standard | Accurate Human Age Conversion";
 const description = "Convert your dog's age to human years using the AVMA evidence-based formula. Understand your dog's life stage — puppy, adult, senior — for better veterinary care and nutrition planning.";
 const canonicalPath = "/en/tools/dog-age-calculator";
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const siteUrl = "https://www.petaginghub.com";
 
 const breadcrumbs = [
   { label: 'Tools', url: '/en/tools' },
@@ -13,9 +13,9 @@ const breadcrumbs = [
 ];
 
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/tools/dog-age-calculator' },
-  { lang: 'en', url: siteUrl + '/en/tools/dog-age-calculator' },
-  { lang: 'x-default', url: siteUrl + '/tools/dog-age-calculator' },
+  { lang: 'zh-TW', url: siteUrl + '/tools/dog-age-calculator/' },
+  { lang: 'en', url: siteUrl + '/en/tools/dog-age-calculator/' },
+  { lang: 'x-default', url: siteUrl + '/tools/dog-age-calculator/' },
 ];
 
 const lifeStages = [
@@ -29,43 +29,29 @@ const lifeStages = [
 
 <BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 
-  <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
     <div class="flex items-center gap-3 mb-4">
       <span class="text-4xl">🐶</span>
       <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA Standard</span>
     </div>
-    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
-      Dog Age Calculator
-    </h1>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Dog Age Calculator</h1>
     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-      Based on the <strong>American Veterinary Medical Association (AVMA)</strong> evidence-based formula, this tool converts your dog's age into human-equivalent years and identifies their life stage — helping you provide the right care at every step.
+      Based on the <strong>American Veterinary Medical Association (AVMA)</strong> evidence-based formula, this tool converts your dog's age into human-equivalent years and identifies their life stage.
     </p>
   </header>
 
-  <!-- Calculator Card -->
   <section class="max-w-4xl mx-auto px-6 mb-10">
     <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
       <div class="max-w-sm mx-auto text-center">
         <div class="mb-6">
           <label class="block text-sm font-semibold text-slate-700 mb-2">Dog's Age (years)</label>
-          <input
-            type="number"
-            id="dogAge"
-            class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-center text-lg"
-            value="3"
-            min="0"
-            max="30"
-          />
+          <input type="number" id="dogAge" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-center text-lg" value="3" min="0" max="30" />
         </div>
-
         <div class="bg-gradient-to-b from-blue-50 to-slate-50 rounded-xl p-6 mb-4">
           <p class="text-sm text-slate-500 mb-2">Equivalent human age</p>
           <p class="text-5xl font-black text-blue-600 mb-2" id="result">28 yrs</p>
           <p class="text-sm text-slate-500" id="lifeStageText">Currently: Adult</p>
         </div>
-
-        <!-- Life Stage Bar -->
         <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden border border-slate-200">
           <div id="progressFill" class="h-full transition-all duration-700 bg-blue-600 rounded-full" style="width: 30%"></div>
           <div class="absolute inset-0 flex justify-between px-2 text-[9px] text-slate-400 font-medium items-center uppercase tracking-wider">
@@ -76,78 +62,33 @@ const lifeStages = [
     </div>
   </section>
 
-  <!-- Trust Signal -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <div class="bg-slate-50 border border-slate-200 rounded-xl p-5 flex items-start gap-4">
       <div class="text-blue-600 mt-0.5">
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-        </svg>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       </div>
       <div>
         <p class="text-sm font-semibold text-slate-800">Based on AVMA Canine Life Stage Guidelines</p>
-        <p class="text-sm text-slate-500 mt-0.5">
-          The American Veterinary Medical Association (AVMA) defines standardized life stage thresholds to guide preventive care, nutrition, and veterinary screening schedules. This calculator reflects those guidelines.
-        </p>
+        <p class="text-sm text-slate-500 mt-0.5">The American Veterinary Medical Association defines standardized life stage thresholds to guide preventive care, nutrition, and veterinary screening schedules.</p>
       </div>
     </div>
   </section>
 
-  <!-- In-article Ad -->
-  <div class="max-w-4xl mx-auto px-6 mb-12">
-    <AdSenseAd format="in-article" />
-  </div>
-
-  <!-- SEO Introduction -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">How Does the Dog Age Calculator Work?</h2>
-    <div class="prose prose-slate prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600 max-w-none space-y-4">
-      <p>
-        The old "1 dog year = 7 human years" rule is a myth. Dogs mature far faster in early life and more slowly in later years. A 1-year-old dog is already sexually mature — equivalent to a 15-year-old human. By age 2, that jumps to 24 human years, and thereafter each dog year adds roughly 4 human years.
-      </p>
-      <p>
-        This non-linear pattern means a 10-year-old dog is closer to a 56-year-old human, and a 15-year-old dog is comparable to a 76-year-old. Understanding this helps owners recognize when their dog enters the "senior" stage and needs more frequent vet check-ups, joint support, and adjusted nutrition.
-      </p>
-      <p>
-        The AVMA categorizes dogs into five life stages: <strong>puppy</strong>, <strong>young adult</strong>, <strong>adult</strong>, <strong>mature adult</strong>, <strong>senior</strong>, and <strong>super senior</strong>. Each stage carries specific preventive care recommendations — from core vaccinations in puppyhood to cancer screenings and cognitive assessments in the senior years.
-      </p>
-    </div>
+    <p class="text-slate-600">The old "1 dog year = 7 human years" rule is a myth. A 1-year-old dog is equivalent to a 15-year-old human, and by age 2 that jumps to 24 human years. After that, each dog year adds roughly 4 human years.</p>
   </section>
 
-  <!-- Methodology Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">Conversion Formula</h2>
     <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
-      <p class="text-slate-600">
-        The AVMA-recommended formula is based on observed biological maturation rates validated across breed studies. It accounts for the accelerated aging in early life followed by a more gradual progression.
-      </p>
-
-      <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm">
-        <p class="font-semibold text-slate-700 mb-2">Formula:</p>
-        <p class="text-slate-600">Age 1 yr → 15 human yrs (sexual maturity)</p>
-        <p class="text-slate-600">Age 2 yrs → 24 human yrs (full maturity)</p>
-        <p class="text-slate-600">Each additional yr → +4 human yrs</p>
+      <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm text-slate-600">
+        <p>Age 1 yr → 15 human yrs | Age 2 yrs → 24 human yrs | Each additional yr → +4 human yrs</p>
       </div>
-
-      <div class="bg-slate-50 rounded-lg p-4 text-sm">
-        <p class="font-semibold text-slate-700 mb-2">Quick reference:</p>
-        <div class="space-y-1 text-slate-600">
-          <p>1 yr → 15 human yrs (young adult)</p>
-          <p>2 yrs → 24 human yrs (full maturity)</p>
-          <p>5 yrs → 36 human yrs (mature adult)</p>
-          <p>7 yrs → 44 human yrs (early senior)</p>
-          <p>10 yrs → 56 human yrs (senior)</p>
-          <p>15 yrs → 76 human yrs (super senior)</p>
-        </div>
-      </div>
-
-      <p class="text-xs text-slate-500">
-        Source: American Veterinary Medical Association (AVMA). <em>Canine Life Stage Guidelines</em>. Journal of the American Veterinary Medical Association, 2019; 255(1): 1-16.
-      </p>
+      <p class="text-xs text-slate-500">Source: AVMA. <em>Canine Life Stage Guidelines</em>. JAVMA, 2019; 255(1): 1-16.</p>
     </div>
   </section>
 
-  <!-- Life Stages Reference -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">Dog Life Stage Reference Chart</h2>
     <div class="grid gap-4">
@@ -155,181 +96,61 @@ const lifeStages = [
         <div class="bg-white border border-slate-200 rounded-xl p-5">
           <div class="flex items-start justify-between gap-4">
             <div>
-              <span class={`inline-block text-xs font-bold px-2 py-0.5 rounded mb-2 ${
-                stage.stage === 'puppy' ? 'bg-pink-100 text-pink-700' :
-                stage.stage === 'young' ? 'bg-orange-100 text-orange-700' :
-                stage.stage === 'adult' ? 'bg-green-100 text-green-700' :
-                stage.stage === 'senior' ? 'bg-yellow-100 text-yellow-700' :
-                'bg-red-100 text-red-700'
-              }`}>
-                {stage.range}
-              </span>
+              <span class={`inline-block text-xs font-bold px-2 py-0.5 rounded mb-2 ${stage.stage === 'puppy' ? 'bg-pink-100 text-pink-700' : stage.stage === 'young' ? 'bg-orange-100 text-orange-700' : stage.stage === 'adult' ? 'bg-green-100 text-green-700' : stage.stage === 'senior' ? 'bg-yellow-100 text-yellow-700' : 'bg-red-100 text-red-700'}`}>{stage.range}</span>
               <p class="text-slate-600">{stage.human}</p>
             </div>
-            <div class={`w-3 h-3 rounded-full mt-1.5 ${
-              stage.stage === 'puppy' ? 'bg-pink-400' :
-              stage.stage === 'young' ? 'bg-orange-400' :
-              stage.stage === 'adult' ? 'bg-green-400' :
-              stage.stage === 'senior' ? 'bg-yellow-400' :
-              'bg-red-400'
-            }`}></div>
           </div>
         </div>
       ))}
     </div>
   </section>
 
-  <!-- FAQ Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
     <div class="space-y-4">
       <details class="bg-white border border-slate-200 rounded-xl group">
-        <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          Why does a 9-year-old dog age faster than a 4-year-old dog per year?
-        </summary>
-        <div class="px-5 pb-5 text-slate-600">
-          Early in life, dogs experience rapid hormonal and physical development — a 1-year-old dog reaches sexual maturity equivalent to ~15 human years, then jumps to 24 by age 2. After that, aging slows to about 4 human years per dog year. This means the ratio of dog-to-human aging is not constant — it shifts throughout life, which is why both the puppy and senior stages need distinct care protocols.
-        </div>
+        <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">Does breed size affect when a dog becomes a senior?</summary>
+        <div class="px-5 pb-5 text-slate-600">Yes. Small breeds typically reach senior status around 10–12 years, large breeds around 7 years, and giant breeds even earlier. This calculator uses the AVMA general baseline.</div>
       </details>
-
       <details class="bg-white border border-slate-200 rounded-xl group">
-        <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          Does breed size affect when a dog becomes a "senior"?
-        </summary>
-        <div class="px-5 pb-5 text-slate-600">
-          Yes — significantly. Small breeds (under 20 lbs) typically reach senior status around 10–12 years, while large breeds (over 50 lbs) may be considered senior as early as 7 years. Giant breeds age even faster. This calculator uses the AVMA standard formula as a general baseline; your vet may adjust the life stage threshold based on your dog's specific breed and health status.
-        </div>
-      </details>
-
-      <details class="bg-white border border-slate-200 rounded-xl group">
-        <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          At what dog age does the "senior" life stage begin?
-        </summary>
-        <div class="px-5 pb-5 text-slate-600">
-          According to AVMA guidelines, most dogs enter the senior stage around 7 years, which corresponds to approximately 44 human years. Dogs over 11 years are considered super senior. At 7+, dogs benefit from biannual vet visits, early cancer screening, joint health monitoring, and cognitive assessments. Large breeds may reach senior status earlier; discuss with your vet for a breed-specific plan.
-        </div>
-      </details>
-
-      <details class="bg-white border border-slate-200 rounded-xl group">
-        <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">
-          What care changes should I make for a senior dog?
-        </summary>
-        <div class="px-5 pb-5 text-slate-600">
-          Senior dogs benefit from more frequent veterinary check-ups (every 6 months), bloodwork and urinalysis, joint supplements or medications, and a diet adjusted for lower calorie needs. Watch for changes in water intake, appetite, weight, mobility, and behavior — these are early indicators of common senior conditions. Ask your vet about dental cleanings, cognitive enrichment, and pain management for arthritis.
-        </div>
+        <summary class="p-5 cursor-pointer font-semibold text-slate-800 hover:text-blue-600 transition-colors">At what age does the senior life stage begin?</summary>
+        <div class="px-5 pb-5 text-slate-600">Most dogs enter the senior stage around 7 years (≈44 human years) per AVMA guidelines. At 7+, dogs benefit from biannual vet visits, early cancer screening, and joint health monitoring.</div>
       </details>
     </div>
   </section>
 
-  <!-- References Section -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">References</h2>
-    <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 space-y-3 text-sm text-slate-600">
-      <p>1. American Veterinary Medical Association. <em>2019 AVMA Canine Life Stage Guidelines</em>. Journal of the American Veterinary Medical Association, 2019; 255(1): 1-16.</p>
-      <p>2. Patronek GJ, et al. Comparative longevity of pet dogs and humans: implications for gerontology research. <em>Journal of Gerontology: Biological Sciences</em>. 1997; 52A(3): B171–178.</p>
-      <p>3. Urfer SR, et al. Risk factors associated with lifespan in pet dogs evaluated in primary care veterinary hospitals. <em>Journal of the American Animal Hospital Association</em>. 2019; 55(3): 130–137.</p>
-    </div>
-  </section>
-
-  <!-- Related Calculators -->
-  <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">Related Calculators</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">Related Calculators & Articles</h2>
     <div class="grid md:grid-cols-2 gap-4">
-      <a href="/en/tools/cat-age-calculator" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
-        <div class="flex items-center gap-3 mb-2">
-          <span class="text-2xl">🐱</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Cat Age Calculator</span>
-        </div>
-        <p class="text-sm text-slate-500">Convert your cat's age using AAHA/AVMA guidelines — from kitten to geriatric.</p>
+      <a href="/en/tools/cat-age-calculator/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+        <div class="flex items-center gap-3 mb-2"><span class="text-2xl">🐱</span><span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Cat Age Calculator</span></div>
+        <p class="text-sm text-slate-500">Convert your cat's age using AAHA/AVMA guidelines.</p>
       </a>
-    </div>
-  </section>
-
-  <!-- Related Articles -->
-  <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">Related Articles</h2>
-    <div class="grid md:grid-cols-2 gap-4">
       <a href="/blog/senior-pet-health-guide/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">🏥</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Senior Pet Health Guide</span>
-        </div>
-        <p class="text-sm text-slate-500">Everything you need to know about caring for aging pets — vet schedules, nutrition, mobility support, and cognitive health.</p>
-      </a>
-      <a href="/blog/pet-nutrition-by-age/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
-        <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">🥗</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Pet Nutrition by Life Stage</span>
-        </div>
-        <p class="text-sm text-slate-500">Learn how nutritional needs shift from puppyhood to the senior years, with AAFCO- and AVMA-aligned recommendations.</p>
+        <div class="flex items-center gap-2 mb-2"><span class="text-lg">🏥</span><span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">Senior Pet Health Guide</span></div>
+        <p class="text-sm text-slate-500">Everything you need to know about caring for aging pets.</p>
       </a>
     </div>
   </section>
 
-  <!-- Disclaimer -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <div class="border-t border-slate-200 pt-8">
-      <p class="text-xs text-slate-500 leading-relaxed">
-        <strong>Disclaimer:</strong> This calculator is based on AVMA Canine Life Stage Guidelines for general educational purposes only. It does not constitute veterinary advice. Individual dogs may age differently based on breed, size, genetics, and health status. Always consult a licensed veterinarian for health decisions specific to your dog.
-      </p>
+      <p class="text-xs text-slate-500 leading-relaxed"><strong>Disclaimer:</strong> This calculator is based on AVMA guidelines for general educational purposes only. It does not constitute veterinary advice. Always consult a licensed veterinarian for health decisions specific to your dog.</p>
     </div>
   </section>
 
-  <!-- Navigation -->
   <nav class="max-w-4xl mx-auto px-6 pb-12 flex justify-between items-center text-sm">
-    <a href="/en/tools/cat-age-calculator" class="text-blue-600 hover:text-blue-700 font-medium">← Cat Age Calculator</a>
-    <a href="/en/tools" class="text-blue-600 hover:text-blue-700 font-medium">All Tools →</a>
+    <a href="/en/tools/cat-age-calculator/" class="text-blue-600 hover:text-blue-700 font-medium">← Cat Age Calculator</a>
+    <a href="/en/tools/" class="text-blue-600 hover:text-blue-700 font-medium">All Tools →</a>
   </nav>
 
-  <!-- JSON-LD -->
-  <script type="application/ld+json" is:inline set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Dog Age Calculator",
-    "description": "Convert dog years to human years using the AVMA evidence-based formula. Identify life stage for better preventive care.",
-    "url": siteUrl + canonicalPath,
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "All",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
-  })} />
-
-  <script type="application/ld+json" is:inline set:html={JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Why does a 9-year-old dog age faster than a 4-year-old dog per year?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Dogs age rapidly in the first two years — reaching ~15 human years by age 1 and 24 by age 2 — then slow to about 4 human years per dog year. The aging ratio is non-linear."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does breed size affect when a dog becomes a senior?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Small breeds typically become senior around 10–12 years; large breeds around 7 years; giant breeds even earlier. This calculator uses the AVMA general baseline."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "At what dog age does the senior life stage begin?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most dogs enter the senior stage around 7 years (approximately 44 human years) per AVMA guidelines. Dogs over 11 are considered super senior. Large breeds may reach senior status earlier."
-        }
-      }
-    ]
-  })} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"Dog Age Calculator","description":"Convert dog years to human years using the AVMA evidence-based formula.","url":siteUrl + canonicalPath,"applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}})} />
 
   <script>
     const ageInput = document.getElementById('dogAge') as HTMLInputElement;
     const resultDisplay = document.getElementById('result');
     const lifeStageText = document.getElementById('lifeStageText');
     const progressFill = document.getElementById('progressFill');
-
     const getStage = (age: number): { text: string; progress: number } => {
       if (age <= 0) return { text: 'Newborn', progress: 5 };
       if (age === 1) return { text: 'Young Adult', progress: 10 };
@@ -338,17 +159,14 @@ const lifeStages = [
       if (age < 11) return { text: 'Senior', progress: 50 + (age - 7) * 10 };
       return { text: 'Super Senior', progress: Math.min(90 + (age - 11) * 3, 100) };
     };
-
     const update = () => {
       const age = parseInt(ageInput.value) || 0;
       const humanAge = age <= 0 ? 0 : age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 4;
       const { text, progress } = getStage(age);
-
       if (resultDisplay) resultDisplay.textContent = `${humanAge} yrs`;
       if (lifeStageText) lifeStageText.textContent = `Currently: ${text}`;
       if (progressFill) progressFill.style.width = `${progress}%`;
     };
-
     ageInput.addEventListener('input', update);
     update();
   </script>
