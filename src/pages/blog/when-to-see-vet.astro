@@ -1,0 +1,123 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "寵物什麼時候該看獸醫？緊急症狀vs.一般觀察";
+const description = "寵物出現哪些症狀需要立刻急診？哪些可以等到明天？哪些只需要觀察？這份指南幫你做出正確判斷。";
+const date = "2026-05-10";
+const siteUrl = "https://www.petaginghub.com";
+const canonicalPath = "/blog/when-to-see-vet/";
+const canonicalURL = new URL(canonicalPath, siteUrl);
+
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/when-to-see-vet/' },
+  { lang: 'en', url: siteUrl + '/en/blog/when-to-see-vet/' },
+  { lang: 'x-default', url: siteUrl + '/blog/when-to-see-vet/' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { label: '部落格', url: '/blog/' },
+    { label: '何時該看獸醫', url: canonicalURL.pathname }
+  ]}
+  lang="zh-TW"
+  hrefLangAlternates={hrefLangAlternates}>
+
+<article class="max-w-3xl mx-auto py-10 px-4">
+  <header class="mb-8">
+    <span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-4">緊急指南</span>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">{title}</h1>
+    <p class="text-xl text-slate-600 leading-relaxed">不是每個症狀都是緊急情況——但有些確實是。這份指南幫你判斷「現在就去」、「明天打電話」還是「觀察等待」。</p>
+  </header>
+
+  <div class="space-y-8">
+    <div class="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
+      <h2 class="text-2xl font-bold text-red-800 mb-4">緊急：立刻帶去急診</h2>
+      <p class="text-slate-700 text-sm mb-4">以下症狀需要立即急診處理。不要等到天亮。最好提前打電話讓診所準備。</p>
+      <div class="grid md:grid-cols-2 gap-3">
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>呼吸困難、喘氣、牙齦發藍</li>
+          <li>突然倒下或無法站立</li>
+          <li>疑似中毒或誤食有毒物質</li>
+          <li>癲癇發作（首次或 24 小時內多次）</li>
+          <li>腹部膨脹且堅硬（狗狗——可能是胃扭轉）</li>
+        </ul>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>突然癱瘓或無法使用四肢</li>
+          <li>大量出血或無法止血</li>
+          <li>尿道阻塞（貓咪——用力但排不出尿）</li>
+          <li>嚴重外傷（被車撞、從高處墜落）</li>
+          <li>突然失明</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-200">
+      <h2 class="text-2xl font-bold text-amber-800 mb-4">緊迫：今天內聯絡獸醫</h2>
+      <p class="text-slate-700 text-sm mb-4">這些症狀需要在 24 小時內就醫。如果聯絡不到固定獸醫，可考慮急診診所。</p>
+      <div class="grid md:grid-cols-2 gap-3">
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>持續嘔吐或腹瀉（3 次以上）</li>
+          <li>完全不吃東西超過 24–48 小時</li>
+          <li>跛行休息後沒有改善</li>
+          <li>眼睛混濁、有分泌物或明顯疼痛</li>
+        </ul>
+        <ul class="space-y-2 text-sm text-slate-700">
+          <li>突然出現新的腫塊</li>
+          <li>飲水量或排尿量明顯改變</li>
+          <li>傷口看起來有感染跡象</li>
+          <li>觸摸腹部時有疼痛反應</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
+      <h2 class="text-2xl font-bold text-green-800 mb-4">預約就診：1–2 週內安排常規門診</h2>
+      <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-700">
+        <li>體重緩慢變化</li>
+        <li>毛髮變化（光澤減退、稀疏、打結）</li>
+        <li>間歇性輕微跛行</li>
+        <li>緩慢生長的腫塊（數月而非數日）</li>
+        <li>口臭或牙石明顯</li>
+        <li>活動力比以前下降</li>
+        <li>老年寵物出現行為改變</li>
+        <li>年度健檢或疫苗過期</li>
+      </ul>
+    </div>
+
+    <section>
+      <h2>老年寵物的特別提醒</h2>
+      <p class="text-slate-700 leading-relaxed mb-3">10 歲以上的寵物，建議「寧可早點打電話」的原則。與年齡相關的疾病可能進展很快，看起來只是「慢下來了」的問題，有可能是一個早期發現就能有效治療的狀況。</p>
+      <p class="text-slate-700 leading-relaxed">有疑問時，直接打電話給你的獸醫描述症狀。大多數診所很樂意幫你判斷是否需要緊急處理。</p>
+    </section>
+  </div>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a href="/tools/symptom-checklist/" class="px-5 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl text-sm">症狀自我檢查工具</a>
+    <a href="/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">老年寵物健康指南</a>
+  </div>
+
+  <footer class="mt-12 pt-6 border-t border-slate-200 text-sm text-slate-400">
+    <p>最後更新：{date}</p>
+    <p class="mt-2">免責聲明：本內容僅供一般參考用途，不構成醫療建議。緊急情況請直接前往獸醫急診。</p>
+  </footer>
+</article>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "寵物什麼時候該看獸醫？緊急症狀vs.一般觀察",
+  "datePublished": "2026-05-10",
+  "author": { "@type": "Organization", "name": "Pet Aging Hub" }
+}
+</script>
+</BaseLayout>
+
+<style>
+article h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+article h3 { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+article p { color: #334155; line-height: 1.75; margin-bottom: 1rem; }
+</style>
