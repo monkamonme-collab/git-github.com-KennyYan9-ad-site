@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const siteUrl = "https://www.petaginghub.com";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/pet-aging-guide/' },
+  { lang: 'en', url: siteUrl + '/en/blog/pet-aging-guide/' },
+  { lang: 'x-default', url: siteUrl + '/blog/pet-aging-guide/' },
+];
+const breadcrumbs = [{ label: 'Blog', url: '/en/blog/' }, { label: 'Pet Aging Guide', url: '/en/blog/pet-aging-guide/' }];
+const publishDate = "2026-05-10";
+---
+<BaseLayout title="The Complete Pet Aging Guide: From Age Calculation to Senior Care" description="How old is your dog or cat in human years? What are the signs of aging? A complete guide covering pet aging from calculators to senior care." lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<article class="max-w-3xl mx-auto px-6 py-12">
+<header class="mb-10">
+<p class="text-sm text-slate-500 mb-3">Updated May 2026 · 12 min read · Pet Health</p>
+<h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">The Complete Pet Aging Guide</h1>
+<p class="text-lg text-slate-600 leading-relaxed">Pets age faster than we do. This guide covers everything from calculating your pet's age to caring for them in their senior years.</p>
+</header>
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 mb-10 text-white">
+<h2 class="text-xl font-bold mb-4">Start here: Calculate your pet's age</h2>
+<div class="grid sm:grid-cols-3 gap-3">
+<a href="/en/tools/dog-age-calculator/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors"><span class="text-2xl">🐕</span><div><p class="font-bold text-sm">Dog Age</p><p class="text-xs text-blue-100">Calculator</p></div></a>
+<a href="/en/tools/cat-age-calculator/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors"><span class="text-2xl">🐱</span><div><p class="font-bold text-sm">Cat Age</p><p class="text-xs text-blue-100">Calculator</p></div></a>
+<a href="/en/tools/compare-aging/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors"><span class="text-2xl">⚖️</span><div><p class="font-bold text-sm">Compare</p><p class="text-xs text-blue-100">Dog vs Cat</p></div></a>
+</div>
+</div>
+<section class="mb-10">
+<h2>Understanding Pet Aging</h2>
+<p>Aging is a gradual physiological process. As pets age, their cells repair more slowly, their immune systems weaken, they lose muscle mass, and their joints lose elasticity. Early detection matters because by the time you notice changes, the biology may have been shifting for months.</p>
+<h3>What affects the rate of aging?</h3>
+<ul>
+<li><strong>Size (for dogs):</strong> Large breeds age significantly faster. A 5-year-old Great Dane may already be senior.</li>
+<li><strong>Environment:</strong> Indoor cats live significantly longer (15–18 years) than outdoor cats (5–8 years).</li>
+<li><strong>Diet and exercise:</strong> Maintaining a healthy weight is one of the highest-impact things an owner can do.</li>
+</ul>
+</section>
+<section class="mb-10">
+<h2>Age Calculation: Human Years Explained</h2>
+<p>The "1 dog year = 7 human years" formula is an oversimplification. Pets age fastest in year one, then slow down.</p>
+<h3>Dog Age in Human Years</h3>
+<ul>
+<li><strong>Small dogs (&lt;10 kg):</strong> Year 1 ≈ 15 human years; Year 2 adds ~9; then ~4–6 per year.</li>
+<li><strong>Large dogs (&gt;25 kg):</strong> Year 1 ≈ 20; Year 2 adds ~9; then ~7–9 per year.</li>
+</ul>
+<p>Use our <a href="/en/tools/dog-age-calculator/">Dog Age Calculator</a> for an accurate result.</p>
+<h3>Cat Age in Human Years</h3>
+<p>Year 1 ≈ 15 human years; Year 2 adds ~9; each year after adds ~4 years. Use the <a href="/en/tools/cat-age-calculator/">Cat Age Calculator</a>.</p>
+</section>
+<section class="mb-10">
+<h2>Signs of Aging</h2>
+<h3>Dogs</h3>
+<ul><li>No longer rushes to greet you at the door</li><li>Hesitates before jumping on furniture or into the car</li><li>Restless or anxious at night, excessively sleepy during the day</li><li>Noticeable weight change in 3 months</li></ul>
+<p>Full details: <a href="/en/blog/dog-aging-signs/">7 Signs Your Dog Is Aging</a></p>
+<h3>Cats</h3>
+<ul><li>Stops jumping to favorite high spots</li><li>Reduced grooming, especially on back and hindquarters</li><li>Toileting outside the litter box</li></ul>
+<p>Full details: <a href="/en/blog/cat-aging-signs/">Signs of Aging in Cats</a></p>
+</section>
+<section class="mb-10">
+<h2>Dogs vs. Cats: How Aging Differs</h2>
+<p>Senior dogs commonly gain weight (hypothyroidism). Senior cats commonly lose weight (hyperthyroidism). Full comparison: <a href="/en/blog/dog-vs-cat-aging/">Dog vs. Cat Aging</a></p>
+</section>
+<section class="mb-10">
+<h2>Daily Care: Nutrition and Environment</h2>
+<ul>
+<li><strong>Reduce calories:</strong> Senior pets have slower metabolisms. Choose senior or weight-management formula.</li>
+<li><strong>Quality protein:</strong> Maintain muscle mass with good protein sources.</li>
+<li><strong>Non-slip surfaces:</strong> Rugs on tile or hardwood make movement less painful.</li>
+<li><strong>Ramps and steps:</strong> Reduce joint impact from jumping.</li>
+</ul>
+<p>More details: <a href="/en/blog/senior-pet-health-guide/">Senior Pet Health Guide</a></p>
+</section>
+<footer class="text-sm text-slate-400 border-t border-slate-100 pt-6">
+<p>Last updated: {publishDate}</p>
+<p class="mt-1">Disclaimer: For general informational purposes only. Consult your veterinarian for pet-specific advice.</p>
+</footer>
+</article>
+<script type="application/ld+json" is:inline>{"@context":"https://schema.org","@type":"Article","headline":"The Complete Pet Aging Guide","datePublished":"2026-05-10","author":{"@type":"Organization","name":"Pet Aging Hub"}}</script>
+</BaseLayout>
+<style>article h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; } article h3 { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-top: 1.75rem; } article p { color: #334155; line-height: 1.75; margin-bottom: 1rem; } article ul { list-style: none; padding: 0; margin-bottom: 1.25rem; } article ul li { color: #334155; line-height: 1.7; padding: 0.5rem 0 0.5rem 1.5rem; position: relative; } article ul li::before { content: "▸"; position: absolute; left: 0; color: #3b82f6; } article a { color: #2563eb; text-decoration: underline; }</style>
