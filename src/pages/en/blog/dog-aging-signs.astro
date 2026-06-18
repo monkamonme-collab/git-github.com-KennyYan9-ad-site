@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const siteUrl = "https://www.petaginghub.com";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/dog-aging-signs/' },
+  { lang: 'en', url: siteUrl + '/en/blog/dog-aging-signs/' },
+  { lang: 'x-default', url: siteUrl + '/blog/dog-aging-signs/' },
+];
+const breadcrumbs = [{ label: 'Blog', url: '/en/blog/' }, { label: 'Dog Aging Signs', url: '/en/blog/dog-aging-signs/' }];
+const date = "2026-05-10";
+---
+<BaseLayout title="7 Signs Your Dog Is Aging: What to Watch For" description="Discover 7 key signs of aging in dogs and learn how to adjust your care." lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<article class="max-w-3xl mx-auto px-6 py-12">
+<header class="mb-10">
+<div class="flex items-center gap-3 text-sm text-slate-500 mb-4"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-bold">Pet Health</span><span>Updated {date}</span></div>
+<h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">7 Signs Your Dog Is Aging</h1>
+<p class="text-lg text-slate-600 leading-relaxed">Dogs age faster than we realize. When your dog stops getting excited about walks, or struggles to climb stairs, it is time to pay closer attention.</p>
+</header>
+<div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-2xl my-8">
+<h3 class="font-bold text-amber-900 mb-3">📌 Key Points</h3>
+<ul class="text-slate-700 space-y-2 text-sm"><li>Large breeds start aging around 5; small breeds around 7.</li><li>Reduced mobility often signals arthritis, not just slowing down.</li><li>Nighttime restlessness may be an early sign of cognitive decline.</li></ul>
+</div>
+<section class="prose prose-slate max-w-none">
+<h2>7 Common Signs of Aging in Dogs</h2>
+<h3>1. Declining Vision and Hearing</h3><p>If your dog seems timid in the dark or no longer reacts to the sound of the door, this may be the beginning of sensory decline.</p>
+<h3>2. Stiffness When Rising</h3><p>Especially in the morning — if your dog struggles to stand after lying down, this is typically a sign of joint pain.</p>
+<h3>3. Changed Sleep Patterns</h3><p>Sleeping more deeply during the day while wandering restlessly at night may be linked to canine cognitive dysfunction.</p>
+<h3>4. Unexplained Weight Changes</h3><p>Thyroid issues or slowed metabolism can cause weight gain; declining organ function may cause weight loss.</p>
+<h3>5. Graying Around the Face</h3><p>Whitening fur around the muzzle and eyes is a natural marker of aging.</p>
+<h3>6. Changes in Bathroom Habits</h3><p>If a house-trained dog suddenly has accidents indoors, rule out urinary tract infection or kidney issues first.</p>
+<h3>7. Loss of Social Enthusiasm</h3><p>Losing interest in favorite toys or visitors is often the result of physical discomfort, not personality change.</p>
+</section>
+<div class="mt-12 p-8 bg-blue-50 rounded-3xl border border-blue-100">
+<h3 class="text-xl font-bold text-blue-900 mb-4">Want to know your dog's life stage?</h3>
+<a href="/en/tools/dog-age-calculator/" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-bold shadow-md hover:bg-blue-700 transition-all">Dog Age Calculator →</a>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Dog Care</a>
+<a href="/en/blog/pet-joint-health/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Pet Joint Health</a>
+</div>
+<footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-400"><p>Last updated: {date}</p></footer>
+</article>
+<script type="application/ld+json" is:inline>{"@context":"https://schema.org","@type":"Article","headline":"7 Signs Your Dog Is Aging","datePublished":"2026-05-10","author":{"@type":"Organization","name":"Pet Aging Hub"}}</script>
+</BaseLayout>
+<style>article h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 2.5rem; } article h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.75rem; } article p { line-height: 1.8; color: #334155; }</style>
