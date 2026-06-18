@@ -1,34 +1,73 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
 
-const allTools = await getCollection('tools');
-
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/tools' },
-  { lang: 'en',    url: siteUrl + '/en/tools' },
-  { lang: 'x-default', url: siteUrl + '/tools' },
+  { lang: 'zh-TW', url: siteUrl + '/tools/' },
+  { lang: 'en', url: siteUrl + '/en/tools/' },
+  { lang: 'x-default', url: siteUrl + '/tools/' },
+];
+
+const tools = [
+  {
+    icon: '🐱',
+    title: '貓咪年齡計算機',
+    description: '採用 AAHA 及 AVMA 標準，精準計算愛貓對應人類年齡。',
+    href: '/tools/cat-age-calculator/',
+  },
+  {
+    icon: '🐶',
+    title: '狗狗年齡計算機',
+    description: '採用 AVMA 獸醫標準，一鍵計算愛犬生命階段。',
+    href: '/tools/dog-age-calculator/',
+  },
+  {
+    icon: '⚖️',
+    title: '年齡對照工具',
+    description: '同時比較狗狗和貓咪的人類年齡，了解牠們的生命階段。',
+    href: '/tools/compare-aging/',
+  },
+  {
+    icon: '📋',
+    title: '症狀檢核表',
+    description: '快速確認你的寵物是否出現老年常見健康警訊。',
+    href: '/tools/symptom-checklist/',
+  },
+  {
+    icon: '🔮',
+    title: '壽命計算機',
+    description: '根據品種、體型與生活方式，估算寵物的預期壽命。',
+    href: '/tools/lifespan-calculator/',
+  },
 ];
 ---
 
-<BaseLayout title="寵物年齡工具集 | Pet Aging Hub" lang="zh-TW" hrefLangAlternates={hrefLangAlternates} breadcrumbs={[{ label: '工具集', url: '/tools' }]}>
+<BaseLayout
+  title="寵物年齡工具集 | Pet Aging Hub"
+  description="狗狗年齡計算機、貓咪年齡計算機、壽命計算機與症狀檢核表，完整工具一站搞定。"
+  lang="zh-TW"
+  breadcrumbs={[{ label: '工具集', url: '/tools/' }]}
+  hrefLangAlternates={hrefLangAlternates}>
+
   <main class="max-w-5xl mx-auto px-6 py-12">
-    <header class="text-center mb-16">
-      <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight mb-4 leading-tight">為您的專業需求而生：一站式數據工具</h1>
-      <p class="text-xl text-slate-600 max-w-2xl mx-auto">所有工具皆基於嚴謹方法論與最新研究開發，助您高效解決問題，驅動決策。</p>
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight mb-4">寵物年齡與健康工具集</h1>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">所有工具皆基於 AAHA、AVMA 等獸醫標準開發，幫助你了解毛孩的年齡與健康狀態。</p>
     </header>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      {allTools.map((tool) => (
-        <a href={`/tools/${tool.id.replace('.json', '')}`} class="group bg-white rounded-3xl p-6 border border-slate-100 hover:shadow-xl transition-all duration-300">
-          <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center text-2xl mb-6 shadow-sm">
-            {tool.data.icon}
+    <div class="grid md:grid-cols-3 gap-6">
+      {tools.map((tool) => (
+        <a href={tool.href} class="group bg-white rounded-2xl p-6 border border-slate-100 hover:shadow-lg transition-all duration-200 flex flex-col gap-4">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl">
+            {tool.icon}
           </div>
-          <h2 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600">{tool.data.title}</h2>
-          <p class="text-slate-600 text-sm leading-relaxed">{tool.data.description}</p>
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 mb-1 group-hover:text-blue-600">{tool.title}</h2>
+            <p class="text-slate-600 text-sm leading-relaxed">{tool.description}</p>
+          </div>
         </a>
       ))}
     </div>
   </main>
+
 </BaseLayout>
