@@ -7,37 +7,37 @@ interface Props {
   description?: string;
 }
 
-const { 
-  title = "寵物年齡與健康資源中心", 
-  description = "提供專業寵物年齡計算與高齡毛孩照護指南" 
+const {
+  title = "寵物年齡與健康資源中心",
+  description = "提供專業寵物年齡計算與高齡毛孩照護指南"
 } = Astro.props;
 
-// 設定你的正式網域
-const canonicalURL = "https://git-github-com-kenny-yan9-ad-site.vercel.app/";
+const canonicalURL = "https://www.petaginghub.com/";
 ---
 <!doctype html>
 <html lang="zh-TW">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="canonical" href={canonicalURL} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        
-        <SEO title={title} description={description} />
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <SEO title={title} description={description} />
+
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-        <script type="text/javascript">aclib.runAutoTag({ zoneId: '3jfj9ekqwz', });</script></head>
-    <body class="bg-gray-50 text-gray-900 min-h-screen">
-        <nav class="bg-white shadow-sm p-4 border-b">
-            <div class="max-w-5xl mx-auto flex justify-between items-center">
-                <a href="/" class="text-xl font-bold text-blue-600">Pet Aging Hub</a>
-            </div>
-        </nav>
-        <main class="max-w-5xl mx-auto p-6">
-            <slot />
-        </main>
-        <footer class="text-center p-6 text-gray-500 text-sm">
-            &copy; 2026 Pet Aging Hub. All rights reserved.
-        </footer>
-    </body>
+    <script type="text/javascript">aclib.runAutoTag({ zoneId: 'vaqcyu7guk', });</script>
+  </head>
+  <body class="bg-gray-50 text-gray-900 min-h-screen">
+    <nav class="bg-white shadow-sm p-4 border-b">
+      <div class="max-w-5xl mx-auto flex justify-between items-center">
+        <a href="/" class="text-xl font-bold text-blue-600">Pet Aging Hub</a>
+      </div>
+    </nav>
+    <main class="max-w-5xl mx-auto p-6">
+      <slot />
+    </main>
+    <footer class="text-center p-6 text-gray-500 text-sm">
+      &copy; 2026 Pet Aging Hub. All rights reserved.
+    </footer>
+  </body>
 </html>
