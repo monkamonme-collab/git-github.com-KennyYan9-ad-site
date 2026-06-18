@@ -1,12 +1,15 @@
 ---
 interface Props {
   items: { label: string; url: string }[];
+  lang?: string;
 }
-const { items } = Astro.props;
+const { items, lang = 'zh-TW' } = Astro.props;
+const homeLabel = lang === 'en' ? 'Home' : '首頁';
+const homeUrl = lang === 'en' ? '/en/' : '/';
 ---
 <nav aria-label="Breadcrumb" class="my-4 text-sm text-slate-500">
   <ol class="flex items-center space-x-2">
-    <li><a href="/" class="hover:text-blue-600">首頁</a></li>
+    <li><a href={homeUrl} class="hover:text-blue-600">{homeLabel}</a></li>
     {items.map(item => (
       <li class="flex items-center">
         <span class="mx-2">/</span>
