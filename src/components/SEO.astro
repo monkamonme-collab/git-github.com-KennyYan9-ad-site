@@ -2,22 +2,21 @@
 interface Props {
   title: string;
   description: string;
-  canonicalPath?: string;
-  schemaType?: string;
+  ogType?: string;
   hrefLangAlternates?: { lang: string; url: string }[];
 }
-const { title, description, canonicalPath = "", schemaType = "WebSite", hrefLangAlternates = [] } = Astro.props;
-const siteUrl = Astro.site?.toString().replace(/\/$/, "") || "https://www.petaginghub.com";
-const canonicalURL = new URL(canonicalPath || Astro.url.pathname, siteUrl).toString();
-const isArticle = Astro.url.pathname.startsWith('/blog/') && Astro.url.pathname !== '/blog/';
-const ogType = isArticle ? 'article' : 'website';
-const effectiveSchemaType = isArticle ? "Article" : schemaType;
-const schemaData = JSON.stringify({
+
+const { title, description, ogType = 'website', hrefLangAlternates = [] } = Astro.props;
+const siteUrl = "https://www.petaginghub.com";
+const canonicalStr = siteUrl + Astro.url.pathname;
+
+const schemaType = ogType === 'article' ? 'BlogPosting' : 'WebPage';
+const schemaJSON = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": effectiveSchemaType,
+  "@type": schemaType,
   "name": title,
   "description": description,
-  "url": canonicalURL
+  "url": canonicalStr
 });
 ---
 
@@ -25,18 +24,17 @@ const schemaData = JSON.stringify({
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>{title}</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={canonicalStr} />
+
+{hrefLangAlternates.map(alt => (
+  <link rel="alternate" hreflang={alt.lang} href={alt.url} />
+))}
 
 <!-- Open Graph -->
 <meta property="og:type" content={ogType} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:url" content={canonicalURL} />
-
-<!-- hreflang alternates -->
-{hrefLangAlternates.map(alt => (
-  <link rel="alternate" hreflang={alt.lang} href={alt.url} />
-))}
+<meta property="og:url" content={canonicalStr} />
 
 <!-- Schema.org -->
-<script type="application/ld+json" set:html={schemaData} />
+<script type="application/ld+json" set:html={schemaJSON} />
