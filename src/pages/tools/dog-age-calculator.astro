@@ -1,23 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
-import AdSenseAd from '../../components/AdSenseAd.astro';
-import LifeStageBar from '../../components/LifeStageBar.astro';
 
 const title = "狗狗年齡計算機 | AVMA 標準科算人類年齡";
 const description = "使用美國獸醫師協會 (AVMA) 標準公式，精準計算狗狗對應人類年齡。支援小型犬、中型犬、大型犬、巨型犬體型換算。";
 const canonicalPath = "/tools/dog-age-calculator";
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const canonicalURL = new URL(canonicalPath, "https://www.petaginghub.com/");
 
 const breadcrumbs = [
   { label: '工具集', url: '/tools' },
   { label: '狗狗年齡計算機', url: canonicalPath }
-];
-
-const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/tools/dog-age-calculator' },
-  { lang: 'en', url: siteUrl + '/en/tools/dog-age-calculator' },
-  { lang: 'x-default', url: siteUrl + '/tools/dog-age-calculator' },
 ];
 
 const lifeStages = [
@@ -29,12 +21,12 @@ const lifeStages = [
 ];
 ---
 
-<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs} lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
+<BaseLayout title={title} description={description} breadcrumbs={breadcrumbs}>
 
   <!-- Hero Section -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
     <div class="flex items-center gap-3 mb-4">
-      <span class="text-4xl">&#x1F436;</span>
+      <span class="text-4xl">🐶</span>
       <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA 標準</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
@@ -80,7 +72,12 @@ const lifeStages = [
           <p class="text-5xl font-black text-blue-600 mb-3" id="result">32 歲</p>
           <p class="text-sm text-slate-500 text-center" id="lifeStageText">已進入成年期</p>
           <div class="w-full mt-4">
-            <LifeStageBar age={3} type="dog" />
+            <div class="w-full bg-slate-100 rounded-full h-4 relative overflow-hidden border border-slate-200">
+              <div id="progressFill" class="h-full transition-all duration-700 bg-blue-600 rounded-full" style="width: 30%"></div>
+              <div class="absolute inset-0 flex justify-between px-2 text-[9px] text-slate-400 font-medium items-center uppercase tracking-wider">
+                <span>幼年</span><span>成年</span><span>熟齡</span><span>老年</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -104,14 +101,9 @@ const lifeStages = [
     </div>
   </section>
 
-  <!-- In-article Ad -->
-  <div class="max-w-4xl mx-auto px-6 mb-12">
-    <AdSenseAd format="in-article" />
-  </div>
-
   <!-- SEO Introduction -->
   <section class="max-w-4xl mx-auto px-6 mb-12">
-    <h2 class="text-2xl font-bold text-slate-900 mb-4">為什麼狗狗年齡不能直接乘Ļ� 7？</h2>
+    <h2 class="text-2xl font-bold text-slate-900 mb-4">為什麼狗狗年齡不能直接乘以 7？</h2>
     <div class="prose prose-slate prose-headings:text-slate-900 prose-p:text-slate-600 prose-li:text-slate-600 max-w-none space-y-4">
       <p>
         許多人在童年時就聽過「狗狗 1 年等於人類 7 年」的說法，但這個算法過度簡化，忽略了幾個重要的生物學事實。狗狗在生命第一年的成長速度遠比人類快，一隻 1 歲的狗狗在生理發育上已接近人類的 15 歲。
@@ -248,7 +240,7 @@ const lifeStages = [
           純種犬和混種犬的壽命有差異嗎？
         </summary>
         <div class="px-5 pb-5 text-slate-600">
-          一般耀言，混種犬因為基因多樣性較高，遺傳疾病的發病率較低，壽命往往比純種犬稍長。但無論純種或混種，適當的飲食、運動和定期健康檢查都是延長壽命的關鍵因素。
+          一般而言，混種犬因為基因多樣性較高，遺傳疾病的發病率較低，壽命往往比純種犬稍長。但無論純種或混種，適當的飲食、運動和定期健康檢查都是延長壽命的關鍵因素。
         </div>
       </details>
     </div>
@@ -269,9 +261,9 @@ const lifeStages = [
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">相關計算機</h2>
     <div class="grid md:grid-cols-2 gap-4">
-      <a href="/tools/cat-age-calculator" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+      <a href="/tools/cat-age-calculator/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-3 mb-2">
-          <span class="text-2xl">&#x1F431;</span>
+          <span class="text-2xl">🐱</span>
           <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">貓咪年齡計算機</span>
         </div>
         <p class="text-sm text-slate-500">採用 AAHA/AVMA 標準，計算愛貓的人類年齡對應。</p>
@@ -283,19 +275,19 @@ const lifeStages = [
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <h2 class="text-2xl font-bold text-slate-900 mb-4">延伸閱讀</h2>
     <div class="grid md:grid-cols-2 gap-4">
-      <a href="/blog/dog-life-stages" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+      <a href="/blog/dog-aging-signs/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">&#x1F4D6;</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗各生命階段的照護指南</span>
+          <span class="text-lg">📖</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗老化徵兆：7個預示愛犬進入熟齡期的變化</span>
         </div>
-        <p class="text-sm text-slate-500">從幼犬到老年犬，每個階段的飲食、運動與健康監測建議。</p>
+        <p class="text-sm text-slate-500">從活動量下降到毛色變化，解析 7 個狗狗常見老化徵兆，及早發現、及早照護。</p>
       </a>
-      <a href="/blog/common-dog-health-problems" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
+      <a href="/blog/senior-pet-health-guide/" class="bg-white border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-md transition-all group">
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-lg">&#x1F3E5;</span>
-          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">狗狗常見健康問題與預防</span>
+          <span class="text-lg">🏥</span>
+          <span class="font-semibold text-slate-800 group-hover:text-blue-600 transition-colors">老年犬貓的健康照護指南</span>
         </div>
-        <p class="text-sm text-slate-500">了解老年犬常見疾病徵兆，做好預防保健。</p>
+        <p class="text-sm text-slate-500">從營養調整到定期檢查，了解老年犬常見健康風險與科學照護流程。</p>
       </a>
     </div>
   </section>
@@ -312,8 +304,8 @@ const lifeStages = [
   <!-- Navigation -->
   <nav class="max-w-4xl mx-auto px-6 pb-12 flex justify-between items-center text-sm">
     <span class="text-slate-400"></span>
-    <a href="/tools" class="text-blue-600 hover:text-blue-700 font-medium">← 所有工具</a>
-    <a href="/tools/cat-age-calculator" class="text-blue-600 hover:text-blue-700 font-medium">貓咪年齡計算機 →</a>
+    <a href="/tools/" class="text-blue-600 hover:text-blue-700 font-medium">← 所有工具</a>
+    <a href="/tools/cat-age-calculator/" class="text-blue-600 hover:text-blue-700 font-medium">貓咪年齡計算機 →</a>
   </nav>
 
   <!-- JSON-LD -->
@@ -322,7 +314,7 @@ const lifeStages = [
     "@type": "WebApplication",
     "name": "狗狗年齡計算機",
     "description": "採用 AVMA 標準公式，根據狗狗體型與年齡，精準換算對應的人類年齡。",
-    "url": siteUrl + canonicalPath,
+    "url": canonicalURL,
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "All",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
@@ -361,7 +353,7 @@ const lifeStages = [
         "name": "純種犬和混種犬的壽命有差異嗎？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "一般耀言，混種犬因為基因多樣性較高，遺傳疾病的發病率較低，壽命往往比純種犬稍長。但無論純種或混種，適當的飲食、運動和定期健康檢查都是延長壽命的關鍵因素。"
+          "text": "一般而言，混種犬因為基因多樣性較高，遺傳疾病的發病率較低，壽命往往比純種犬稍長。但無論純種或混種，適當的飲食、運動和定期健康檢查都是延長壽命的關鍵因素。"
         }
       }
     ]
@@ -371,19 +363,18 @@ const lifeStages = [
     const ageInput = document.getElementById('dogAge') as HTMLInputElement;
     const sizeInput = document.getElementById('dogSize') as HTMLSelectElement;
     const resultDisplay = document.getElementById('result');
-    const lifeStageText = document.getElementById('resultText');
+    const lifeStageText = document.getElementById('lifeStageText');
+    const progressFill = document.getElementById('progressFill');
 
-    const calculateHumanAge = (age: number, size: string): { humanAge: number; stage: string; stageText: string } => {
-      if (age <= 0) return { humanAge: 0, stage: 'puppy', stageText: '幼年階段' };
+    const calculateHumanAge = (age: number, size: string): { humanAge: number; stage: string; stageText: string; progress: number } => {
+      if (age <= 0) return { humanAge: 0, stage: 'puppy', stageText: '幼年階段', progress: 5 };
       if (age === 1) {
         const base = size === 'giant' ? 12 : 15;
-        return { humanAge: base, stage: 'puppy', stageText: '青少年階段' };
+        return { humanAge: base, stage: 'puppy', stageText: '青少年階段', progress: 10 };
       }
       if (age === 2) {
         const base = size === 'giant' ? 22 : 24;
-        const stage = size === 'giant' ? 'young' : 'adult';
-        const stageText = size === 'giant' ? '青少年至成年初期' : '成年初期';
-        return { humanAge: base, stage, stageText };
+        return { humanAge: base, stage: 'young', stageText: '成年初期', progress: 20 };
       }
 
       let increment = 4;
@@ -395,21 +386,22 @@ const lifeStages = [
 
       let stage = 'adult';
       let stageText = '成年期';
-      if (age >= 10) { stage = 'geriatric'; stageText = '老年期'; }
-      else if (age >= 7) { stage = 'senior'; stageText = '熟齡期'; }
-      else if (age >= 3) { stage = 'adult'; stageText = '成年期'; }
-      else { stage = 'young'; stageText = '青少年至成年初期'; }
+      let progress = 30;
+      if (age >= 10) { stage = 'geriatric'; stageText = '老年期'; progress = Math.min(90 + (age - 10) * 3, 100); }
+      else if (age >= 7) { stage = 'senior'; stageText = '熟齡期'; progress = 60 + (age - 7) * 10; }
+      else { progress = 25 + (age - 2) * 5; }
 
-      return { humanAge, stage, stageText };
+      return { humanAge, stage, stageText, progress };
     };
 
     const update = () => {
       const age = parseInt(ageInput.value) || 0;
       const size = sizeInput.value;
-      const { humanAge, stageText } = calculateHumanAge(age, size);
+      const { humanAge, stageText, progress } = calculateHumanAge(age, size);
 
       if (resultDisplay) resultDisplay.textContent = `${humanAge} 歲`;
       if (lifeStageText) lifeStageText.textContent = `已進入 ${stageText}`;
+      if (progressFill) progressFill.style.width = `${progress}%`;
     };
 
     ageInput.addEventListener('input', update);
