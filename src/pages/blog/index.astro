@@ -2,19 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Card from '../../components/Card.astro';
 
-// 手動定義文章清單，這是最穩定的做法，能避開 Astro.glob 的所有地雷
-const displayPosts = [{
-    url: "/blog/pet-exercise-by-age/",
-    title: "寵物各年齡階段的運動量需求完整指南：幼犬幼貓到老年寵物的科學活動規劃",
-    description: "狗狗每天該運動多久？貓咪需要規律運動嗎？依據 AAHA 與 AVMA 指引，解析各生命階段的運動量需求與常見迷思。",
-    image: "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=800"
-    },
-    {
-    url: "/blog/pet-nutrition-by-age/",
-    title: "寵物各年齡階段的營養需求完整指南：幼年、成年到老年的科學餵養",
-    description: "狗狗幾歲該換飼料？貓咪不同年齡該怎麼吃？依據 AAFCO 與 AVMA 標準，完整解析各生命階段的飲食重點。",
-    image: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=800"
-  },
+const displayPosts = [
   {
     url: "/blog/senior-pet-health-guide/",
     title: "老年寵物健康照護全攻略：獸醫師建議的預防醫學指南",
@@ -50,6 +38,48 @@ const displayPosts = [{
     title: "貓咪老化徵兆：7個預示愛貓進入熟齡期的身體變化",
     description: "貓咪是隱藏疾病高手。了解跳躍高度下降、理毛頻率減少等徵兆，及早調整照護方式。",
     image: "https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?w=800"
+  },
+  {
+    url: "/blog/pet-nutrition-by-age/",
+    title: "寵物各年齡階段的營養需求完整指南",
+    description: "從幼年到老年，狗狗和貓咪的營養需求隨著年齡不斷改變。了解如何在每個生命階段提供最佳飲食。",
+    image: "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?w=800"
+  },
+  {
+    url: "/blog/pet-exercise-by-age/",
+    title: "寵物各年齡階段的運動量需求指南",
+    description: "了解狗狗與貓咪在幼年、成年與老年各階段的運動需求，幫助牠們維持健康活力。",
+    image: "https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=800"
+  },
+  {
+    url: "/blog/pet-dental-health/",
+    title: "寵物牙齒健康完整指南：預防口腔疾病與日常清潔",
+    description: "超過80%的三歲以上寵物有牙周病風險。學習如何正確刷牙、選擇潔牙零食，保護毛孩的口腔健康。",
+    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800"
+  },
+  {
+    url: "/blog/senior-dog-care/",
+    title: "老年狗狗完整照護指南：7歲後的健康管理要點",
+    description: "狗狗進入老年期後，需要更細心的照護。從飲食調整到定期健檢，全面了解老年犬的照護需求。",
+    image: "https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=800"
+  },
+  {
+    url: "/blog/senior-cat-care/",
+    title: "老年貓咪照護完整指南：11歲後的健康管理",
+    description: "貓咪進入高齡期後常見的健康問題與照護重點，幫助你的老貓維持良好生活品質。",
+    image: "https://images.unsplash.com/photo-1536590158209-e9d615d525e4?w=800"
+  },
+  {
+    url: "/blog/pet-joint-health/",
+    title: "寵物關節健康保養指南：預防與緩解老年關節炎",
+    description: "關節炎是老年寵物最常見的問題之一。了解關節保健補充品、適當運動與環境改善，讓毛孩活動更自在。",
+    image: "https://images.unsplash.com/photo-1560743641-3914f2c45636?w=800"
+  },
+  {
+    url: "/blog/when-to-see-vet/",
+    title: "什麼時候該帶寵物看獸醫？10個不容忽視的警示訊號",
+    description: "寵物無法開口說不舒服，學會辨識這10個緊急警示訊號，在關鍵時刻為毛孩爭取最佳治療時機。",
+    image: "https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=800"
   }
 ];
 
@@ -58,15 +88,9 @@ const categories = [
   { name: '寵物營養', slug: 'nutrition', icon: '🍖' },
   { name: '寵物照護', slug: 'care', icon: '🛁' },
 ];
-
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
-const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog' },
-  { lang: 'x-default', url: siteUrl + '/blog' },
-];
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南" breadcrumbs={[{ label: '部落格', url: '/blog/' }]} lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
+<BaseLayout title="部落格 | 寵物知識與專業指南">
   <main class="max-w-5xl mx-auto px-6 py-12">
     <header class="text-center mb-16">
       <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
