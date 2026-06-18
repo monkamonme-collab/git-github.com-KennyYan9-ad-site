@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const title = "老年狗狗照護完整指南：讓牠安老的每一個細節";
+const description = "狗狗進入老年期後，需要不同的照護方式。從定期健檢到居家環境調整，這份指南涵蓋老年犬照護的所有重點。";
+const date = "2026-05-10";
+const siteUrl = "https://www.petaginghub.com";
+const canonicalPath = "/blog/senior-dog-care/";
+const canonicalURL = new URL(canonicalPath, siteUrl);
+
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/senior-dog-care/' },
+  { lang: 'en', url: siteUrl + '/en/blog/senior-dog-care/' },
+  { lang: 'x-default', url: siteUrl + '/blog/senior-dog-care/' },
+];
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  breadcrumbs={[
+    { label: '部落格', url: '/blog/' },
+    { label: '老年狗狗照護', url: canonicalURL.pathname }
+  ]}
+  lang="zh-TW"
+  hrefLangAlternates={hrefLangAlternates}>
+
+<article class="max-w-3xl mx-auto py-10 px-4">
+  <header class="mb-8">
+    <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">狗狗</span>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">{title}</h1>
+    <p class="text-xl text-slate-600 leading-relaxed">你的狗狗慢下來了——但有了正確的照護，牠的老年歲月依然可以充實、舒適、充滿溫暖。</p>
+  </header>
+
+  <div class="space-y-10">
+    <section>
+      <h2>辨認老年期的開始</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+          <li>嘴部與眼睛周圍的毛髮變白</li>
+          <li>從躺著起身的動作變慢</li>
+          <li>對長時間散步的熱情下降</li>
+          <li>睡眠時間增加</li>
+        </ul>
+        <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+          <li>眼睛出現雲霧感（通常是良性的）</li>
+          <li>體重變化（增加或減少）</li>
+          <li>聽力下降</li>
+          <li>如廁習慣改變</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>老年狗狗的獸醫護理</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">當你的狗狗進入老年期，建議將就診頻率提高至每年兩次。老年犬完整健康檢查應包含以下項目：</p>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+          <div><p class="font-semibold text-slate-900 text-sm">全血球計數（CBC）與生化檢查</p><p class="text-slate-600 text-xs">篩查器官功能、貧血、感染、糖尿病等問題。</p></div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+          <div><p class="font-semibold text-slate-900 text-sm">尿液分析</p><p class="text-slate-600 text-xs">腎功能指標；可在血液指數異常之前早期發現問題。</p></div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+          <div><p class="font-semibold text-slate-900 text-sm">牙科檢查</p><p class="text-slate-600 text-xs">牙齦疾病會引起疼痛，並可能影響心臟健康。</p></div>
+        </div>
+        <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
+          <div><p class="font-semibold text-slate-900 text-sm">骨科評估</p><p class="text-slate-600 text-xs">關節疼痛評估。可能需要 X 光進行關節炎分期。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>居家環境調整</h2>
+      <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
+        <ul class="space-y-3 text-slate-700 text-sm">
+          <li><strong>骨科床墊：</strong>記憶床墊可減輕關節壓力點。放置在溫暖、無風處。</li>
+          <li><strong>斜坡與台階：</strong>保護關節，減少上下沙發、床和汽車時的跳躍衝擊。</li>
+          <li><strong>防滑地面：</strong>在木地板或瓷磚上鋪設地毯，防止滑倒和受傷。</li>
+          <li><strong>加高餵食碗：</strong>對有頸部或背部問題的大型犬，可減輕進食時的壓迫。</li>
+          <li><strong>增加如廁機會：</strong>老年狗狗可能需要更頻繁外出，以防止意外失禁。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>心理健康</h2>
+      <p class="text-slate-700 leading-relaxed mb-3">老年狗狗仍然渴望陪伴、規律的作息和心智刺激。認知功能退化可能引起焦慮，以下方式有助於緩解：</p>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+        <li>維持固定的日常作息（相同的散步、用餐、就寢時間）</li>
+        <li>溫和的身體接觸與安靜的陪伴</li>
+        <li>適度的心智刺激（嗅覺散步、溫和訓練）</li>
+        <li>避免突然改變生活環境</li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="mt-8 flex flex-wrap gap-4">
+    <a href="/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">狗狗年齡計算機</a>
+    <a href="/blog/pet-dental-health/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">寵物牙齒健康</a>
+  </div>
+
+  <footer class="mt-12 pt-6 border-t border-slate-200 text-sm text-slate-400">
+    <p>最後更新：{date}</p>
+    <p class="mt-2">免責聲明：本內容僅供一般參考用途，不構成醫療建議。如有疑慮，請諮詢您的獸醫師。</p>
+  </footer>
+</article>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "老年狗狗照護完整指南：讓牠安老的每一個細節",
+  "datePublished": "2026-05-10",
+  "author": { "@type": "Organization", "name": "Pet Aging Hub" }
+}
+</script>
+</BaseLayout>
+
+<style>
+article h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+article h3 { font-size: 1.125rem; font-weight: 700; color: #1e293b; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+article p { color: #334155; line-height: 1.75; margin-bottom: 1rem; }
+</style>
