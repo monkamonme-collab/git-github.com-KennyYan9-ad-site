@@ -7,86 +7,73 @@ const { currentYear = new Date().getFullYear(), isEn = false } = Astro.props;
 const p = isEn ? '/en' : '';
 ---
 
-<footer class="bg-slate-900 text-slate-300">
-  <div class="max-w-5xl mx-auto px-6 py-12">
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-10">
+<footer class="bg-slate-900 text-slate-300 mt-20">
+  <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
 
-      <div>
-        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">{isEn ? 'Aging Guides' : '老化指南'}</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href={`${p}/blog/pet-aging-guide/`} class="hover:text-white transition-colors">{isEn ? 'Complete Aging Guide' : '老化完整指南'}</a></li>
-          <li><a href={`${p}/blog/senior-pet-health-guide/`} class="hover:text-white transition-colors">{isEn ? 'Senior Pet Health' : '老年健康指南'}</a></li>
-          <li><a href={`${p}/blog/dog-vs-cat-aging/`} class="hover:text-white transition-colors">{isEn ? 'Dog vs Cat Aging' : '狗貓老化比較'}</a></li>
-        </ul>
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <a href={isEn ? '/en/' : '/'} class="flex items-center gap-2 mb-3">
+          <span class="text-2xl">🐾</span>
+          <span class="font-bold text-white text-lg">PetAgingHub</span>
+        </a>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          {isEn
+            ? 'Science-based guides and calculators to help your pet age gracefully.'
+            : '提供以科學為基礎的寵物老化指南與計算工具，幫助您的毛孩健康地度過每個生命階段。'}
+        </p>
       </div>
 
+      <!-- 老化指南 / Aging Guides -->
       <div>
-        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">{isEn ? 'Care Guides' : '照護指南'}</h3>
+        <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">
+          {isEn ? 'Aging Guides' : '老化指南'}
+        </h3>
         <ul class="space-y-2 text-sm">
+          <li><a href={`${p}/blog/senior-pet-health-guide/`} class="hover:text-white transition-colors">{isEn ? 'Senior Pet Health Guide' : '老年寵物健康指南'}</a></li>
           <li><a href={`${p}/blog/dog-aging-signs/`} class="hover:text-white transition-colors">{isEn ? 'Dog Aging Signs' : '狗狗老化徵兆'}</a></li>
           <li><a href={`${p}/blog/cat-aging-signs/`} class="hover:text-white transition-colors">{isEn ? 'Cat Aging Signs' : '貓咪老化徵兆'}</a></li>
-          <li><a href={`${p}/blog/dog-aging-by-breed/`} class="hover:text-white transition-colors">{isEn ? 'Breed & Aging' : '品種與老化'}</a></li>
-          <li><a href={`${p}/blog/cat-aging-by-weight/`} class="hover:text-white transition-colors">{isEn ? 'Weight & Aging' : '體重與老化'}</a></li>
         </ul>
       </div>
 
+      <!-- 健康資源 / Health Resources -->
       <div>
-        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">{isEn ? 'Tools' : '實用工具'}</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href={`${p}/tools/dog-age-calculator/`} class="hover:text-white transition-colors">{isEn ? 'Dog Age Calculator' : '狗狗年齡計算機'}</a></li>
-          <li><a href={`${p}/tools/cat-age-calculator/`} class="hover:text-white transition-colors">{isEn ? 'Cat Age Calculator' : '貓咪年齡計算機'}</a></li>
-          <li><a href={`${p}/tools/compare-aging/`} class="hover:text-white transition-colors">{isEn ? 'Age Comparison' : '年齡對照工具'}</a></li>
-          <li><a href={`${p}/tools/lifespan-calculator/`} class="hover:text-white transition-colors">{isEn ? 'Lifespan Calculator' : '壽命計算機'}</a></li>
-          <li><a href={`${p}/tools/symptom-checklist/`} class="hover:text-white transition-colors">{isEn ? 'Symptom Checklist' : '症狀檢核表'}</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">{isEn ? 'Health Resources' : '健康資源'}</h3>
+        <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">
+          {isEn ? 'Health Resources' : '健康資源'}
+        </h3>
         <ul class="space-y-2 text-sm">
           <li><a href={`${p}/blog/`} class="hover:text-white transition-colors">{isEn ? 'All Articles' : '所有文章'}</a></li>
           <li><a href={`${p}/tools/`} class="hover:text-white transition-colors">{isEn ? 'All Tools' : '所有工具'}</a></li>
-          <li><a href={`${p}/blog/`} class="hover:text-white transition-colors">{isEn ? 'Pet Health Resources' : '寵物健康資源'}</a></li>
-          <li><a href={`${p}/blog/`} class="hover:text-white transition-colors">{isEn ? 'Nutrition Guide' : '營養照護知識'}</a></li>
+          <li><a href={`${p}/blog/pet-nutrition-by-age/`} class="hover:text-white transition-colors">{isEn ? 'Nutrition by Age' : '各年齡營養指南'}</a></li>
         </ul>
       </div>
 
+      <!-- 計算工具 / Calculators -->
       <div>
-        <h3 class="font-bold text-white mb-4 text-sm uppercase tracking-wider">{isEn ? 'Legal & Contact' : '法律與聯絡'}</h3>
+        <h3 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider">
+          {isEn ? 'Calculators' : '計算工具'}
+        </h3>
         <ul class="space-y-2 text-sm">
-          <li><a href={`${p}/about/`} class="hover:text-white transition-colors">{isEn ? 'About Us' : '關於我們'}</a></li>
-          <li><a href={`${p}/contact/`} class="hover:text-white transition-colors">{isEn ? 'Contact Us' : '聯絡我們'}</a></li>
-          <li><a href={`${p}/privacy-policy/`} class="hover:text-white transition-colors">{isEn ? 'Privacy Policy' : '隱私權政策'}</a></li>
-          <li><a href={`${p}/terms/`} class="hover:text-white transition-colors">{isEn ? 'Terms of Use' : '服務條款'}</a></li>
-          <li><a href={`${p}/disclaimer/`} class="hover:text-white transition-colors">{isEn ? 'Disclaimer' : '免責聲明'}</a></li>
+          <li><a href={`${p}/tools/dog-age-calculator/`} class="hover:text-white transition-colors">{isEn ? 'Dog Age Calculator' : '狗狗年齡計算機'}</a></li>
+          <li><a href={`${p}/tools/cat-age-calculator/`} class="hover:text-white transition-colors">{isEn ? 'Cat Age Calculator' : '貓咪年齡計算機'}</a></li>
+          <li><a href={`${p}/tools/lifespan-calculator/`} class="hover:text-white transition-colors">{isEn ? 'Lifespan Calculator' : '壽命計算機'}</a></li>
         </ul>
       </div>
+
     </div>
 
-    <div class="bg-slate-800 rounded-xl p-6 mb-8 border border-slate-700">
-      <p class="text-xs text-slate-400 leading-relaxed">
-        {isEn ? (
-          <span><strong class="text-slate-200">Important Notice:</strong> All content, tools, and health guides provided by Pet Aging Hub are for general educational purposes only and do not constitute professional veterinary advice, diagnosis, or treatment. Before making any medical or care decisions for your pet, please consult a licensed veterinary professional.</span>
-        ) : (
-          <span><strong class="text-slate-200">重要聲明：</strong>本網站 Pet Aging Hub 提供之所有內容、計算工具及健康指南僅供一般教育資訊參考，不構成專業獸醫學建議、診斷或治療。在針對您的寵物做出任何醫療或照護決策前，請務必諮詢合格之持牌獸醫專業人員。</span>
-        )}
-      </p>
-    </div>
-
-    <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex items-center gap-3">
-        <span class="text-2xl" aria-hidden="true">🐾</span>
-        <span class="font-bold text-white tracking-tight">Pet Aging Hub</span>
+    <!-- Bottom bar -->
+    <div class="border-t border-slate-700 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+      <p>© {currentYear} PetAgingHub. {isEn ? 'All rights reserved.' : '版權所有。'}</p>
+      <div class="flex gap-4">
+        <a href={`${p}/privacy-policy/`} class="hover:text-slate-300 transition-colors">{isEn ? 'Privacy Policy' : '隱私政策'}</a>
+        <a href={`${p}/terms-of-service/`} class="hover:text-slate-300 transition-colors">{isEn ? 'Terms of Service' : '服務條款'}</a>
+        <a href={`${p}/about/`} class="hover:text-slate-300 transition-colors">{isEn ? 'About Us' : '關於我們'}</a>
       </div>
-      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-slate-500">
-        <a href={`${p}/about/`} class="hover:text-white transition-all">{isEn ? 'About' : '關於'}</a>
-        <a href={`${p}/contact/`} class="hover:text-white transition-all">{isEn ? 'Contact' : '聯絡'}</a>
-        <a href={`${p}/privacy-policy/`} class="hover:text-white transition-all">{isEn ? 'Privacy' : '隱私'}</a>
-        <a href={`${p}/terms/`} class="hover:text-white transition-all">{isEn ? 'Terms' : '條款'}</a>
-        <a href={`${p}/disclaimer/`} class="hover:text-white transition-all">{isEn ? 'Disclaimer' : '免責'}</a>
-      </div>
-      <p class="text-sm text-slate-500">
-        &copy; {currentYear} Pet Aging Hub. All Rights Reserved.
+      <p class="text-slate-600">
+        {isEn
+          ? 'Content is for informational purposes only. Consult a licensed veterinarian for medical advice.'
+          : '本站內容僅供參考，不構成獸醫診斷或治療建議。如有疑慮，請諮詢執業獸醫師。'}
       </p>
     </div>
   </div>
