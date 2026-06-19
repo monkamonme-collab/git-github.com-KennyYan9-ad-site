@@ -5,66 +5,60 @@ import Breadcrumb from '../components/Breadcrumb.astro';
 import Footer from '../components/Footer.astro';
 
 interface Props {
-  title?: string;
-  description?: string;
-  breadcrumbs?: { label: string; url: string }[];
-  lang?: string;
-  hrefLangAlternates?: { lang: string; url: string }[];
-  ogType?: string;
+title?: string;
+description?: string;
+breadcrumbs?: { label: string; url: string }[];
+lang?: string;
+hrefLangAlternates?: { lang: string; url: string }[];
+ogType?: string;
 }
 
 const { title, description, breadcrumbs = [], lang = 'zh-TW', hrefLangAlternates = [] } = Astro.props;
 
 // blog 文章頁面自動套用 article，其餘為 website
 const isBlogPost = /\/blog\/.+/.test(Astro.url.pathname) &&
-                   Astro.url.pathname !== '/blog/' &&
-                   Astro.url.pathname !== '/en/blog/';
+Astro.url.pathname !== '/blog/' &&
+Astro.url.pathname !== '/en/blog/';
 const ogType = Astro.props.ogType ?? (isBlogPost ? 'article' : 'website');
 ---
 
 <!doctype html>
 <html lang={lang}>
-  <head>
-    <SEO 
-      title={title || "Pet Aging Hub - 寵物年齡與健康指南"} 
-      description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"} 
-      hrefLangAlternates={hrefLangAlternates}
-      ogType={ogType}
-    />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2TX7MK0D1Q');
-    </script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
-    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-    <script is:inline>
-      aclib.runAutoTag({
-        zoneId: 'vaqcyu7guk',
-      });
-    </script>
-  </head>
-  <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
-    <main class="flex-grow max-w-5xl mx-auto px-6 py-8">
-      {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} lang={lang} />}
-      <slot />
-    </main>
-    <Footer />
-    <script is:inline>
-      document.addEventListener('DOMContentLoaded', function() {
-        document.addEventListener('error', function(e) {
-          var el = e.target;
-          if (el.tagName === 'IMG' && !el.dataset.f) {
-            el.dataset.f = 'true';
-            var w = el.width || el.getAttribute('width') || '800',
-                h = el.height || el.getAttribute('height') || '600';
-            var s = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '"><rect width="100%" height="100%" fill="#e5e7eb"/></svg>';
-            el.src = 'data:image/svg+xml,' + encodeURIComponent(s);
-          }
-        }, true);
-      });
-    </script>
-  </body>
+<head>
+<SEO
+title={title || "Pet Aging Hub - 寵物年齡與健康指南"}
+description={description || "簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"}
+hrefLangAlternates={hrefLangAlternates}
+ogType={ogType}
+/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
+<script is:inline>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2TX7MK0D1Q');
+</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
+</head>
+<body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+<main class="flex-grow max-w-5xl mx-auto px-6 py-8">
+{breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} lang={lang} />}
+<slot />
+</main>
+<Footer />
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('error', function(e) {
+var el = e.target;
+if (el.tagName === 'IMG' && !el.dataset.f) {
+el.dataset.f = 'true';
+var w = el.width || el.getAttribute('width') || '800',
+h = el.height || el.getAttribute('height') || '600';
+var s = '<svg xmlns="http://www.w3.org/2000/svg" width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '"><rect width="100%" height="100%" fill="#e5e7eb"/></svg>';
+el.src = 'data:image/svg+xml,' + encodeURIComponent(s);
+}
+}, true);
+});
+</script>
+</body>
 </html>
