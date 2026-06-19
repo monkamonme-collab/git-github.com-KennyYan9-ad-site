@@ -26,7 +26,7 @@ const schemaJSON = JSON.stringify({
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalStr} />
 
-{hrefLangAlternates.map(alt => (
+{hrefLangAlternates.map(alt => ({...alt, url: alt.url.replace('https://git-github-com-kenny-yan9-ad-site.vercel.app', 'https://www.petaginghub.com')})).map(alt => (
   <link rel="alternate" hreflang={alt.lang} href={alt.url} />
 ))}
 
