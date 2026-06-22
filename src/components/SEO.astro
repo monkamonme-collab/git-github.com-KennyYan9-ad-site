@@ -18,6 +18,17 @@ const schemaJSON = JSON.stringify({
   "description": description,
   "url": canonicalStr
 });
+
+// Normalize hreflang URLs: ensure trailing slash and correct domain
+function normalizeHreflangUrl(url: string): string {
+  // Replace old Vercel domain with production domain
+  let normalized = url.replace('https://git-github-com-kenny-yan9-ad-site.vercel.app', 'https://www.petaginghub.com');
+  // Ensure trailing slash (add if not present and no file extension)
+  if (!normalized.endsWith('/') && !normalized.match(/\.[a-zA-Z]{2,4}$/)) {
+    normalized = normalized + '/';
+  }
+  return normalized;
+}
 ---
 
 <meta charset="UTF-8" />
@@ -26,8 +37,8 @@ const schemaJSON = JSON.stringify({
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalStr} />
 
-{hrefLangAlternates.map(alt => ({...alt, url: alt.url.replace('https://git-github-com-kenny-yan9-ad-site.vercel.app', 'https://www.petaginghub.com')})).map(alt => (
-  <link rel="alternate" hreflang={alt.lang} href={alt.url} />
+{hrefLangAlternates.map(alt => (
+  <link rel="alternate" hreflang={alt.lang} href={normalizeHreflangUrl(alt.url)} />
 ))}
 
 <!-- Open Graph -->
