@@ -45,7 +45,7 @@ gtag('config', 'G-2TX7MK0D1Q');
 {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} lang={lang} />}
 <slot />
 </main>
-<Footer />
+<Footer isEn={lang === 'en'} />
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('error', function(e) {
