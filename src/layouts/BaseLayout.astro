@@ -14,6 +14,12 @@ ogType?: string;
 }
 
 const { title, description, breadcrumbs = [], lang = 'zh-TW', hrefLangAlternates = [] } = Astro.props;
+const isEn = lang === 'en';
+// Build the language-switch URL
+const currentPath = Astro.url.pathname;
+const langSwitchUrl = isEn
+  ? (currentPath.replace(/^\/en/, '') || '/')
+  : '/en' + currentPath;
 
 // blog 文章頁面自動套用 article，其餘為 website
 const isBlogPost = /\/blog\/.+/.test(Astro.url.pathname) &&
@@ -41,6 +47,15 @@ gtag('config', 'G-2TX7MK0D1Q');
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
+<!-- Language Switch Button -->
+<div class="fixed top-4 right-4 z-50">
+  <a
+    href={langSwitchUrl}
+    class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-slate-200 rounded-full text-sm font-medium text-slate-700 hover:bg-amber-50 hover:border-amber-300 hover:text-amber-700 shadow-sm transition-all"
+  >
+    🌐 {isEn ? '中文' : 'EN'}
+  </a>
+</div>
 <main class="flex-grow max-w-5xl mx-auto px-6 py-8">
 {breadcrumbs.length > 0 && <Breadcrumb items={breadcrumbs} lang={lang} />}
 <slot />
