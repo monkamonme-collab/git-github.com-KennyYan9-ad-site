@@ -3,14 +3,18 @@ import sitemap from '@astrojs/sitemap';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://www.petaginghub.com/',
-  i18n: {
-    locales: ['zh-tw', 'en'],
-    defaultLocale: 'zh-tw',
-    prefixDefaultLocale: false,
-  },
-  vite: {
-    plugins: [tailwindcss()],
-  },
-  integrations: [sitemap()],
+    site: 'https://www.petaginghub.com/',
+    i18n: {
+          locales: ['zh-tw', 'en'],
+          defaultLocale: 'zh-tw',
+          prefixDefaultLocale: false,
+    },
+    vite: {
+          plugins: [tailwindcss()],
+    },
+    integrations: [
+          sitemap({
+                  filter: (page) => !page.includes('/blog/content-architecture'),
+          }),
+        ],
 });
