@@ -88,47 +88,58 @@ const categories = [
   { name: '寵物營養', slug: 'nutrition', icon: '🍖' },
   { name: '寵物照護', slug: 'care', icon: '🛁' },
 ];
+
+const siteUrl = "https://www.petaginghub.com";
+const hrefLangAlternates = [
+  { lang: 'zh-TW', url: siteUrl + '/blog/' },
+  { lang: 'en', url: siteUrl + '/en/blog/' },
+  { lang: 'x-default', url: siteUrl + '/blog/' },
+];
 ---
 
-<BaseLayout title="部落格 | 寵物知識與專業指南">
-  <main class="max-w-5xl mx-auto px-6 py-12">
-    <header class="text-center mb-16">
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
-      <p class="text-lg text-slate-600 max-w-2xl mx-auto">專業的老年寵物照護知識，陪伴牠們優雅地老去</p>
-    </header>
+<BaseLayout
+  title="部落格 | 寵物知識與專業指南"
+  description="專業的老年寵物照護知識，陪伴牠們優雅地老去。涵蓋狗狗與貓咪的老化徵兆、營養建議與健康照護指南。"
+  lang="zh-TW"
+  hrefLangAlternates={hrefLangAlternates}>
+<main class="max-w-5xl mx-auto px-6 py-12">
+  <header class="text-center mb-16">
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">寵物健康部落格</h1>
+    <p class="text-lg text-slate-600 max-w-2xl mx-auto">專業的老年寵物照護知識，陪伴牠們優雅地老去</p>
+  </header>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-      {displayPosts.map((post) => (
-        <a href={post.url} class="group">
-          <Card class="h-full overflow-hidden border border-slate-100 hover:shadow-xl transition-all p-0">
-            <div class="aspect-video bg-slate-100 overflow-hidden">
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-              />
-            </div>
-            <div class="p-5">
-              <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
-                {post.title}
-              </h3>
-              <p class="text-sm text-slate-500 mt-2 line-clamp-2">{post.description}</p>
-            </div>
-          </Card>
-        </a>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    {displayPosts.map((post) => (
+      <a href={post.url} class="group">
+        <Card class="h-full overflow-hidden border border-slate-100 hover:shadow-xl transition-all p-0">
+          <div class="aspect-video bg-slate-100 overflow-hidden">
+            <img
+              src={post.image}
+              alt={post.title}
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-slate-900 group-hover:text-amber-600 transition-colors line-clamp-2">
+              {post.title}
+            </h3>
+            <p class="text-sm text-slate-500 mt-2 line-clamp-2">{post.description}</p>
+          </div>
+        </Card>
+      </a>
+    ))}
+  </div>
+
+  <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
+    <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {categories.map((cat) => (
+        <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
+          <div class="text-4xl mb-4">{cat.icon}</div>
+          <h3 class="text-lg font-bold text-slate-900">{cat.name}</h3>
+        </div>
       ))}
     </div>
-
-    <section class="bg-slate-50 rounded-3xl p-10 border border-slate-200">
-      <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">按分類探索</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        {categories.map((cat) => (
-          <div class="bg-white rounded-2xl p-6 border border-slate-200 text-center">
-            <div class="text-4xl mb-4">{cat.icon}</div>
-            <h3 class="text-lg font-bold text-slate-900">{cat.name}</h3>
-          </div>
-        ))}
-      </div>
-    </section>
-  </main>
+  </section>
+</main>
 </BaseLayout>
