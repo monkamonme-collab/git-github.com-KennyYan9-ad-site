@@ -2,15 +2,15 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const breadcrumbs = [
-  { label: 'Home', url: '/en/tools/' },
+  { label: 'Home', url: '/en/' },
   { label: 'Blog', url: '/en/blog/' }
 ];
 
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog' },
-  { lang: 'en', url: siteUrl + '/en/blog' },
-  { lang: 'x-default', url: siteUrl + '/blog' },
+  { lang: 'zh-TW', url: siteUrl + '/blog/' },
+  { lang: 'en', url: siteUrl + '/en/blog/' },
+  { lang: 'x-default', url: siteUrl + '/blog/' },
 ];
 
 function catBadge(color) {
@@ -29,16 +29,16 @@ function catBadge(color) {
 const articles = [
   { href: '/en/blog/senior-pet-health-guide/', cat: 'Featured', color: 'purple', title: 'Complete Guide to Senior Pet Health', desc: 'A comprehensive look at nutrition, exercise, environment, and preventive care for pets 7 years and older.', time: '~15 min', img: 'https://images.unsplash.com/photo-1581888227599-779811939961?w=600&h=400&fit=crop&fm=webp' },
   { href: '/en/blog/dog-vs-cat-aging/', cat: 'Comparison', color: 'blue', title: 'Dog vs. Cat Aging: Full Comparison', desc: 'A 9-dimension comparison of aging speed, lifespan, common diseases, and senior care priorities.', time: '~10 min', img: 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=600&h=400&fit=crop&fm=webp' },
-  { href: '/en/blog/dog-aging-by-breed/', cat: 'Dogs', color: 'amber', title: 'Dog Aging by Breed & Size', desc: 'Aging timelines and life expectancy for 15+ breeds from Chihuahua to Great Dane.', time: '~12 min', img: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=400&fit=crop&fm=webp' },
-  { href: '/en/blog/cat-aging-by-weight/', cat: 'Cats', color: 'purple', title: 'Cat Aging by Weight & Type', desc: 'How indoor, outdoor, and large-breed cats age differently — and how obesity affects feline lifespan.', time: '~10 min', img: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&h=400&fit=crop&fm=webp' },
+  { href: '/en/blog/dog-aging-by-breed/', cat: 'Dogs', color: 'amber', title: 'Dog Aging by Breed and Size', desc: 'Aging timelines and life expectancy for 15+ breeds from Chihuahua to Great Dane.', time: '~12 min', img: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=600&h=400&fit=crop&fm=webp' },
+  { href: '/en/blog/cat-aging-by-weight/', cat: 'Cats', color: 'purple', title: 'Cat Aging by Weight and Type', desc: 'How indoor, outdoor, and large-breed cats age differently and how obesity affects feline lifespan.', time: '~10 min', img: 'https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&h=400&fit=crop&fm=webp' },
   { href: '/en/blog/cat-aging-signs/', cat: 'Cats', color: 'purple', title: 'Signs Your Cat Is Aging', desc: 'Behavioral, physical, and cognitive changes that signal your cat is entering their senior years.', time: '~8 min', img: 'https://images.unsplash.com/photo-1495360010541-f48722b34f7d?w=600&h=400&fit=crop&fm=webp' },
-  { href: '/en/blog/pet-nutrition-by-age/', cat: 'Nutrition', color: 'green', title: 'Pet Nutrition by Life Stage', desc: "How your dog or cat's nutritional needs change from youth through senior — and what to feed at each stage.", time: '~12 min', img: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop&fm=webp' },
+  { href: '/en/blog/pet-nutrition-by-age/', cat: 'Nutrition', color: 'green', title: 'Pet Nutrition by Life Stage', desc: 'How your dog or cat nutritional needs change from youth through senior and what to feed at each stage.', time: '~12 min', img: 'https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=600&h=400&fit=crop&fm=webp' },
   { href: '/en/blog/pet-exercise-by-age/', cat: 'Care', color: 'teal', title: 'Exercise Needs by Pet Age', desc: 'Age-appropriate activity levels for dogs and cats from playful youth to gentle senior.', time: '~10 min', img: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=600&h=400&fit=crop&fm=webp' },
   { href: '/en/blog/senior-dog-care/', cat: 'Dogs', color: 'amber', title: 'Senior Dog Care: A Complete Guide', desc: 'Vet schedules, diet adjustments, mobility support, and comfort care for dogs aged 7 and up.', time: '~14 min', img: 'https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=600&h=400&fit=crop&fm=webp' },
   { href: '/en/blog/senior-cat-care/', cat: 'Cats', color: 'purple', title: 'Senior Cat Care: A Complete Guide', desc: 'How to keep your cat healthy and comfortable through their senior and geriatric years.', time: '~12 min', img: 'https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=600&h=400&fit=crop&fm=webp' },
-  { href: '/en/blog/pet-dental-health/', cat: 'Health', color: 'blue', title: 'Dental Health in Senior Pets', desc: 'Why dental disease is so common — and dangerous — in aging pets, and what you can do about it.', time: '~8 min', img: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=600&h=400&fit=crop&fm=webp' },
+  { href: '/en/blog/pet-dental-health/', cat: 'Health', color: 'blue', title: 'Dental Health in Senior Pets', desc: 'Why dental disease is so common and dangerous in aging pets, and what you can do about it.', time: '~8 min', img: 'https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=600&h=400&fit=crop&fm=webp' },
   { href: '/en/blog/when-to-see-vet/', cat: 'Health', color: 'red', title: 'When to See the Vet: Senior Pet Warning Signs', desc: 'Knowing when symptoms need urgent care vs. a scheduled checkup can make a real difference.', time: '~8 min', img: 'https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&h=400&fit=crop&fm=webp' },
-  { href: '/en/blog/pet-joint-health/', cat: 'Health', color: 'orange', title: 'Joint Health & Arthritis in Aging Pets', desc: 'Recognizing arthritis early, managing pain, and adapting your home for arthritic dogs and cats.', time: '~10 min', img: 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&h=400&fit=crop&fm=webp' },
+  { href: '/en/blog/pet-joint-health/', cat: 'Health', color: 'orange', title: 'Joint Health and Arthritis in Aging Pets', desc: 'Recognizing arthritis early, managing pain, and adapting your home for arthritic dogs and cats.', time: '~10 min', img: 'https://images.unsplash.com/photo-1596492784531-6e6eb5ea9993?w=600&h=400&fit=crop&fm=webp' },
 ];
 ---
 
@@ -49,30 +49,30 @@ const articles = [
   breadcrumbs={breadcrumbs}
   hrefLangAlternates={hrefLangAlternates}>
 
-  <div class="max-w-5xl mx-auto py-10 px-4">
-    <header class="mb-10">
-      <h1 class="text-3xl font-extrabold text-slate-900 mb-3">📚 Pet Aging Blog</h1>
-      <p class="text-slate-600 text-lg">Practical guides on caring for senior dogs and cats — nutrition, exercise, health changes, and more.</p>
-    </header>
+<div class="max-w-5xl mx-auto py-10 px-4">
+  <header class="mb-10">
+    <h1 class="text-3xl font-extrabold text-slate-900 mb-3">Pet Aging Blog</h1>
+    <p class="text-slate-600 text-lg">Practical guides on caring for senior dogs and cats — nutrition, exercise, health changes, and more.</p>
+  </header>
 
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {articles.map((a) => (
-        <a href={a.href} class="group block">
-          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-amber-300 h-full flex flex-col">
-            <div class="aspect-video overflow-hidden bg-slate-100">
-              <img src={a.img} alt={a.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-            </div>
-            <div class="p-5 flex flex-col flex-1">
-              <div class="flex items-center gap-2 mb-3">
-                <span class={catBadge(a.color)}>{a.cat}</span>
-                <span class="text-xs text-slate-400">{a.time}</span>
-              </div>
-              <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{a.title}</h2>
-              <p class="text-sm text-slate-600 mt-auto">{a.desc}</p>
-            </div>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {articles.map((a) => (
+      <a href={a.href} class="group block">
+        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-amber-300 h-full flex flex-col">
+          <div class="aspect-video overflow-hidden bg-slate-100">
+            <img src={a.img} alt={a.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
           </div>
-        </a>
-      ))}
-    </div>
+          <div class="p-5 flex flex-col flex-1">
+            <div class="flex items-center gap-2 mb-3">
+              <span class={catBadge(a.color)}>{a.cat}</span>
+              <span class="text-xs text-slate-400">{a.time}</span>
+            </div>
+            <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{a.title}</h2>
+            <p class="text-sm text-slate-600 mt-auto">{a.desc}</p>
+          </div>
+        </div>
+      </a>
+    ))}
   </div>
+</div>
 </BaseLayout>
