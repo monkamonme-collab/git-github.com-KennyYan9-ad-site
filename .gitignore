@@ -4,3 +4,7 @@ dist
 .env
 .DS_Store
 .vercel
+CORE_IDENTITY_OVERRIDE
+MODEL_RULES.md
+UI_RULES.md
+WORKFLOW_RULES.md
