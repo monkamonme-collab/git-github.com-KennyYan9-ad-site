@@ -1,17 +1,17 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
-  { label: 'Home', url: '/en/tools/' },
+    { label: 'Home', url: '/en/' },
   { label: 'Blog', url: '/en/blog/' },
   { label: 'Pet Joint Health', url: '/en/blog/pet-joint-health/' }
 ];
-const siteUrl = "https://git-github-com-kenny-yan9-ad-site.vercel.app";
+const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
   { lang: 'zh-TW', url: siteUrl + '/blog/pet-joint-health' },
   { lang: 'en', url: siteUrl + '/en/blog/pet-joint-health' },
   { lang: 'x-default', url: siteUrl + '/blog/pet-joint-health' },
 ];
----
+---h
 <BaseLayout title="Joint Health for Senior Pets: Signs, Causes, and Care - Pet Aging Hub"
   description="Learn how to recognize joint problems in aging dogs and cats, and what you can do to keep them comfortable and mobile."
   lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
