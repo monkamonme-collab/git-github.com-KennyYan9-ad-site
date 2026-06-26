@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import AdSenseAd from '../../../components/AdSenseAd.astro';
+
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
   { lang: 'zh-TW', url: siteUrl + '/blog/dog-aging-signs/' },
@@ -9,37 +11,185 @@ const hrefLangAlternates = [
 const breadcrumbs = [{ label: 'Blog', url: '/en/blog/' }, { label: 'Dog Aging Signs', url: '/en/blog/dog-aging-signs/' }];
 const date = "2026-05-10";
 ---
-<BaseLayout title="7 Signs Your Dog Is Aging: What to Watch For" description="Discover 7 key signs of aging in dogs and learn how to adjust your care." lang="en" ogType="article" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-<article class="max-w-3xl mx-auto px-6 py-12">
-<header class="mb-10">
-<div class="flex items-center gap-3 text-sm text-slate-500 mb-4"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-bold">Pet Health</span><span>Updated {date}</span></div>
-<h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 leading-tight mb-6">7 Signs Your Dog Is Aging</h1>
-<p class="text-lg text-slate-600 leading-relaxed">Dogs age faster than we realize. When your dog stops getting excited about walks, or struggles to climb stairs, it is time to pay closer attention.</p>
-</header>
-<div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-2xl my-8">
-<h3 class="font-bold text-amber-900 mb-3">📌 Key Points</h3>
-<ul class="text-slate-700 space-y-2 text-sm"><li>Large breeds start aging around 5; small breeds around 7.</li><li>Reduced mobility often signals arthritis, not just slowing down.</li><li>Nighttime restlessness may be an early sign of cognitive decline.</li></ul>
-</div>
-<section class="prose prose-slate max-w-none">
-<h2>7 Common Signs of Aging in Dogs</h2>
-<h3>1. Declining Vision and Hearing</h3><p>If your dog seems timid in the dark or no longer reacts to the sound of the door, this may be the beginning of sensory decline.</p>
-<h3>2. Stiffness When Rising</h3><p>Especially in the morning — if your dog struggles to stand after lying down, this is typically a sign of joint pain.</p>
-<h3>3. Changed Sleep Patterns</h3><p>Sleeping more deeply during the day while wandering restlessly at night may be linked to canine cognitive dysfunction.</p>
-<h3>4. Unexplained Weight Changes</h3><p>Thyroid issues or slowed metabolism can cause weight gain; declining organ function may cause weight loss.</p>
-<h3>5. Graying Around the Face</h3><p>Whitening fur around the muzzle and eyes is a natural marker of aging.</p>
-<h3>6. Changes in Bathroom Habits</h3><p>If a house-trained dog suddenly has accidents indoors, rule out urinary tract infection or kidney issues first.</p>
-<h3>7. Loss of Social Enthusiasm</h3><p>Losing interest in favorite toys or visitors is often the result of physical discomfort, not personality change.</p>
-</section>
-<div class="mt-12 p-8 bg-blue-50 rounded-3xl border border-blue-100">
-<h3 class="text-xl font-bold text-blue-900 mb-4">Want to know your dog's life stage?</h3>
-<a href="/en/tools/dog-age-calculator/" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-bold shadow-md hover:bg-blue-700 transition-all">Dog Age Calculator →</a>
-</div>
-<div class="mt-8 flex flex-wrap gap-4">
-<a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Dog Care</a>
-<a href="/en/blog/pet-joint-health/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Pet Joint Health</a>
-</div>
-<footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-400"><p>Last updated: {date}</p></footer>
-</article>
-<script type="application/ld+json" is:inline>{"@context":"https://schema.org","@type":"Article","headline":"7 Signs Your Dog Is Aging","datePublished":"2026-05-10","author":{"@type":"Organization","name":"Pet Aging Hub"}}</script>
+
+<BaseLayout
+  title="7 Signs Your Dog Is Aging: What Every Owner Should Know"
+  description="Is your dog slowing down, sleeping more, or acting different? Discover 7 key signs of aging in dogs — from joint stiffness to cognitive decline — and how to help."
+  lang="en"
+  ogType="article"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}
+>
+  <article class="max-w-3xl mx-auto px-6 py-12">
+    <div class="mb-8 md:rounded-2xl overflow-hidden shadow-lg">
+      <img
+        src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=1200&h=675&fit=crop&fm=webp"
+        alt="Senior dog resting comfortably"
+        class="w-full aspect-video object-cover"
+        loading="eager"
+      />
+    </div>
+
+    <header class="mb-10">
+      <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
+        <span class="bg-amber-100 text-amber-700 px-2 py-0.5 rounded font-bold">Dogs</span>
+        <span>Updated {date} · 10 min read</span>
+      </div>
+      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
+        7 Signs Your Dog Is Aging: What Every Owner Should Know
+      </h1>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        Dogs age faster than we realize — and they are experts at hiding discomfort. Whether your dog is 6 or 12, recognizing the early signs of aging means you can act before problems become serious.
+      </p>
+    </header>
+
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-6 rounded-r-xl my-8">
+      <h3 class="font-bold text-amber-900 mb-3 text-lg">Key Takeaways</h3>
+      <ul class="space-y-2 text-slate-700 text-sm md:text-base">
+        <li>Large breeds are considered senior at 5-6 years; small breeds at 7-8.</li>
+        <li>Reduced mobility is often joint pain, not just slowing down.</li>
+        <li>Cognitive dysfunction (canine dementia) affects 1 in 3 dogs over 11.</li>
+        <li>Many signs are subtle — weight tracking and behavior logs are your best tools.</li>
+      </ul>
+    </div>
+
+    <AdSenseAd format="in-article" />
+
+    <div class="space-y-8 text-slate-700 leading-relaxed">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4 border-b pb-2">7 Common Signs of Aging in Dogs</h2>
+        <p class="mb-6">
+          According to the American Veterinary Medical Association (AVMA), dogs are considered senior when they have completed roughly 75% of their expected lifespan — which varies dramatically by size. A 5-year-old Great Dane is already a senior, while a 5-year-old Chihuahua is still in middle age. Regardless of breed, the following signs indicate that your dog's body is entering a new stage.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">1. Reduced Mobility and Stiffness After Rest</h3>
+        <p>
+          One of the earliest and most overlooked signs is hesitation before jumping — into the car, onto the couch, or down from a step. This is not laziness. Canine osteoarthritis affects an estimated 20% of dogs over 1 year old, and that number rises sharply with age. When cartilage wears down, the bone-on-bone contact causes real pain with every stride.
+        </p>
+        <p class="mt-3">
+          Watch for stiffness specifically when your dog first gets up after sleeping — a dog that walks stiffly for the first few minutes and then loosens up is a classic arthritis presentation. Adding orthopedic bedding, non-slip rugs on hardwood floors, and a ramp at car doors can make an immediate difference. If your dog is also reluctant to use stairs or avoids certain surfaces, ask your vet about pain management and joint supplements.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">2. Unexplained Weight Changes</h3>
+        <p>
+          Both weight gain and weight loss are red flags in senior dogs, but for entirely different reasons. Weight gain often signals hypothyroidism or a slowing metabolism — a condition where the thyroid gland under-produces hormones, reducing energy expenditure even without a change in diet. Weight loss, on the other hand, may indicate cancer, kidney disease, diabetes, or Addison's disease.
+        </p>
+        <p class="mt-3">
+          Weigh your dog once a month at home (stand on a scale holding your dog, then subtract your own weight) or at your vet's office. A 10% body weight change in either direction within 2-3 months warrants a call to your veterinarian. Because senior dogs need regular bloodwork anyway, catching metabolic changes early is one of the clearest advantages of twice-yearly check-ups.
+        </p>
+
+        <AdSenseAd format="in-article" />
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">3. Changes in Sleep Patterns and Restlessness at Night</h3>
+        <p>
+          A senior dog sleeping more during the day is generally normal — aging slows metabolism and reduces stamina. But when that dog then becomes restless, pacing, or vocal at night, it is worth paying close attention. Nighttime restlessness in older dogs is frequently associated with Canine Cognitive Dysfunction (CCD), the dog equivalent of Alzheimer's disease.
+        </p>
+        <p class="mt-3">
+          CCD disrupts the sleep-wake cycle, leaving dogs confused and anxious after dark. Other signs include getting stuck in corners, staring blankly at walls, forgetting commands they knew for years, or failing to recognize familiar people. Studies show that over 28% of dogs aged 11-12 show signs of CCD, rising to over 68% in dogs aged 15-16. Early intervention with supplements like SAMe, melatonin, or Omega-3, along with veterinary medications, can significantly slow progression.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">4. Declining Vision and Hearing</h3>
+        <p>
+          Lenticular sclerosis — a bluish haze over the lens that makes older dogs' eyes look cloudy — is a normal aging change that has minimal impact on vision. It is often confused with cataracts, which do impair sight significantly. If your dog walks into furniture, misjudges jumps, or is suddenly startled when you approach from the side, a veterinary ophthalmology check is warranted.
+        </p>
+        <p class="mt-3">
+          Hearing loss follows a similar pattern: gradual and easy to miss at first. You might notice your dog no longer runs to greet you when you arrive home, fails to respond to their name, or sleeps through sounds that used to wake them instantly. Adapt by using visual cues such as hand signals instead of verbal commands, and alert your dog with a gentle tap before approaching from behind to prevent startle reactions.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">5. Changes in Bathroom Habits</h3>
+        <p>
+          A house-trained dog suddenly urinating or defecating indoors is alarming — but it is almost never a behavioral regression. In senior dogs, accidents are usually a symptom of a physical problem. Urinary incontinence is common in spayed females and is caused by declining estrogen levels that weaken the urethral sphincter. It can be treated effectively with medication.
+        </p>
+        <p class="mt-3">
+          Other causes include urinary tract infections, kidney disease causing increased thirst and urination, or diabetes. Constipation and changes in stool consistency may signal dietary issues, dehydration, or early colorectal problems. Always report sudden changes in bathroom habits to your vet — do not assume it is just old age until medical causes are ruled out.
+        </p>
+
+        <AdSenseAd format="in-article" />
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">6. Decreased Interest in Play and Social Interaction</h3>
+        <p>
+          When your dog stops greeting you at the door with the same enthusiasm, loses interest in their favorite toy, or avoids interaction with family members, it is tempting to interpret this as a personality shift. In reality, withdrawal is almost always a sign of discomfort. Pain is invisible — a dog that hurts when moving will naturally move less and engage less.
+        </p>
+        <p class="mt-3">
+          This sign is important because it can appear before other, more obvious signs like limping. If your once-social dog now retreats to a corner or growls when touched in certain areas, have your vet assess for pain sources. Meanwhile, keep daily routines consistent — short, gentle walks and brief play sessions help maintain mental stimulation and muscle tone without overloading aging joints.
+        </p>
+
+        <h3 class="text-xl font-bold text-slate-800 mt-8 mb-3">7. Graying Coat and Changes in Skin Quality</h3>
+        <p>
+          Graying around the muzzle and eyebrows is the most visible sign of aging, but coat changes go deeper than color. As dogs age, their skin produces less oil, leading to dryness, flakiness, and a dull coat. The skin also becomes thinner and more prone to lumps, warts, and slow-healing wounds. Most lumps in older dogs are benign lipomas, but any new growth should be checked by a vet.
+        </p>
+        <p class="mt-3">
+          Omega-3 fatty acids from fish oil can significantly improve coat quality and reduce skin inflammation. On your regular monthly weight checks, also run your hands along your dog's body to feel for any new lumps — catching them early is always better than finding them late.
+        </p>
+      </section>
+    </div>
+
+    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 my-10">
+      <h3 class="text-lg font-bold text-slate-900 mb-3">Senior Dog Vet Check Frequency</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm text-slate-700">
+          <thead>
+            <tr class="border-b border-slate-200">
+              <th class="text-left py-2 font-semibold">Age (Small Breeds)</th>
+              <th class="text-left py-2 font-semibold">Age (Large Breeds)</th>
+              <th class="text-left py-2 font-semibold">Recommended Frequency</th>
+              <th class="text-left py-2 font-semibold">Key Tests</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            <tr>
+              <td class="py-2">7-9 years</td>
+              <td class="py-2">5-7 years</td>
+              <td class="py-2">Once a year</td>
+              <td class="py-2">Blood panel, urinalysis, blood pressure</td>
+            </tr>
+            <tr>
+              <td class="py-2">10-12 years</td>
+              <td class="py-2">8-10 years</td>
+              <td class="py-2">Twice a year</td>
+              <td class="py-2">Thyroid, kidney, cardiac eval</td>
+            </tr>
+            <tr>
+              <td class="py-2">13+ years</td>
+              <td class="py-2">11+ years</td>
+              <td class="py-2">Every 3-4 months</td>
+              <td class="py-2">Full panel, cognitive assessment, X-ray</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="space-y-4 text-slate-700 leading-relaxed">
+      <h2 class="text-2xl font-bold text-slate-900 mb-4 border-b pb-2">What to Do When You Notice These Signs</h2>
+      <p>
+        The most important thing is not to dismiss behavioral changes as just getting old. While aging itself is normal, pain and disease are not something your dog should simply endure. Modern veterinary medicine has excellent tools for managing arthritis pain, cognitive dysfunction, and most common senior conditions — but they work best when started early.
+      </p>
+      <p>
+        Start by keeping a simple log: note which signs you see, when they started, and any changes in frequency or severity. Video clips of limping, pacing, or unusual behavior are invaluable for your vet. Then schedule a senior wellness exam — not just a vaccine visit — where a full physical, bloodwork, and behavior discussion are on the agenda.
+      </p>
+      <p>
+        For more on adjusting your dog's care routine, read our <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">Complete Senior Dog Care Guide</a>. To understand how your dog's size affects their aging timeline, see <a href="/en/blog/dog-aging-by-breed/" class="text-blue-600 underline">Dog Aging by Breed and Size</a>.
+      </p>
+    </div>
+
+    <div class="mt-12 p-8 bg-blue-50 rounded-3xl border border-blue-100">
+      <h3 class="text-xl font-bold text-blue-900 mb-4">How old is your dog in human years?</h3>
+      <p class="text-slate-600 mb-5">Use our calculator to find your dog's life stage and get age-appropriate care recommendations.</p>
+      <a href="/en/tools/dog-age-calculator/" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition-shadow shadow-md">
+        Dog Age Calculator
+      </a>
+    </div>
+  </article>
+
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "7 Signs Your Dog Is Aging: What Every Owner Should Know",
+      "author": { "@type": "Organization", "name": "Pet Aging Hub" },
+      "datePublished": "2026-05-10",
+      "image": "https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=1200&q=80"
+    }
+  </script>
 </BaseLayout>
-<style>article h2 { font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-top: 2.5rem; } article h3 { font-size: 1.25rem; font-weight: 700; margin-top: 1.75rem; } article p { line-height: 1.8; color: #334155; }</style>
