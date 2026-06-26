@@ -2,7 +2,6 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const breadcrumbs = [
-
   { label: 'Blog', url: '/en/blog/' }
 ];
 
@@ -45,36 +44,36 @@ const articles = [
 ---
 
 <BaseLayout
-  title="Senior Pet Care Blog - Dog and Cat Aging Guides - Pet Aging Hub"
+  title="Senior Pet Care Blog | Pet Aging Hub"
   description="Expert guides on senior pet care, aging signs, nutrition, exercise, and health. Practical advice for dog and cat owners."
   lang="en"
   breadcrumbs={breadcrumbs}
   hrefLangAlternates={hrefLangAlternates}>
 
-<div class="max-w-5xl mx-auto py-10 px-4">
-  <header class="mb-10">
-    <h1 class="text-3xl font-extrabold text-slate-900 mb-3">Pet Aging Blog</h1>
-    <p class="text-slate-600 text-lg">Practical guides on caring for senior dogs and cats — nutrition, exercise, health changes, and more.</p>
-  </header>
+  <div class="max-w-5xl mx-auto py-10 px-4">
+    <header class="mb-10">
+      <h1 class="text-3xl font-extrabold text-slate-900 mb-3">Pet Aging Blog</h1>
+      <p class="text-slate-600 text-lg">Practical guides on caring for senior dogs and cats — nutrition, exercise, health changes, and more.</p>
+    </header>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {articles.map((a) => (
-      <a href={a.href} class="group block">
-        <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-amber-300 h-full flex flex-col">
-          <div class="aspect-video overflow-hidden bg-slate-100">
-            <img src={a.img} alt={a.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-          </div>
-          <div class="p-5 flex flex-col flex-1">
-            <div class="flex items-center gap-2 mb-3">
-              <span class={catBadge(a.color)}>{a.cat}</span>
-              <span class="text-xs text-slate-400">{a.time}</span>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {articles.map((a) => (
+        <a href={a.href} class="group block">
+          <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-amber-300 h-full flex flex-col">
+            <div class="aspect-video overflow-hidden bg-slate-100">
+              <img src={a.img} alt={a.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
             </div>
-            <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{a.title}</h2>
-            <p class="text-sm text-slate-600 mt-auto">{a.desc}</p>
+            <div class="p-5 flex flex-col flex-1">
+              <div class="flex items-center gap-2 mb-3">
+                <span class={catBadge(a.color)}>{a.cat}</span>
+                <span class="text-xs text-slate-400">{a.time}</span>
+              </div>
+              <h2 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{a.title}</h2>
+              <p class="text-sm text-slate-600 mt-auto">{a.desc}</p>
+            </div>
           </div>
-        </div>
-      </a>
-    ))}
+        </a>
+      ))}
+    </div>
   </div>
-</div>
 </BaseLayout>
