@@ -1,96 +1,136 @@
 ---
+---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
-
-  { label: 'Blog', url: '/en/blog/' },
-  { label: 'Dog Aging by Breed', url: '/en/blog/dog-aging-by-breed/' }
+{ label: 'Blog', url: '/en/blog/' },
+{ label: 'Dog Aging by Breed', url: '/en/blog/dog-aging-by-breed/' }
 ];
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog/dog-aging-by-breed' },
-  { lang: 'en', url: siteUrl + '/en/blog/dog-aging-by-breed' },
-  { lang: 'x-default', url: siteUrl + '/blog/dog-aging-by-breed' },
+{ lang: 'zh-TW', url: siteUrl + '/blog/dog-aging-by-breed' },
+{ lang: 'en', url: siteUrl + '/en/blog/dog-aging-by-breed' },
+{ lang: 'x-default', url: siteUrl + '/blog/dog-aging-by-breed' },
 ];
 ---
 <BaseLayout title="Dog Aging by Breed and Size - Pet Aging Hub"
-  description="How long do different dog breeds live? Breed-specific aging rates, senior thresholds, and health risks by size."
-  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-  <article class="max-w-3xl mx-auto py-10 px-4">
-    <header class="mb-8">
-      <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Dogs</span>
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Dog Aging by Breed and Size</h1>
-      <p class="text-xl text-slate-600 leading-relaxed">A dog's size is the strongest predictor of how fast they age. Larger dogs age faster and have shorter lifespans than smaller dogs.</p>
-    </header>
-    <div class="space-y-10">
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Average Lifespan by Size</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div class="bg-green-50 rounded-xl p-4 text-center border border-green-100">
-            <div class="text-2xl font-bold text-green-700">14-18</div>
-            <div class="text-xs text-slate-600 mt-1">Toy breeds</div>
-            <div class="text-xs text-slate-500">years</div>
-          </div>
-          <div class="bg-blue-50 rounded-xl p-4 text-center border border-blue-100">
-            <div class="text-2xl font-bold text-blue-700">12-15</div>
-            <div class="text-xs text-slate-600 mt-1">Small breeds</div>
-            <div class="text-xs text-slate-500">years</div>
-          </div>
-          <div class="bg-amber-50 rounded-xl p-4 text-center border border-amber-100">
-            <div class="text-2xl font-bold text-amber-700">10-13</div>
-            <div class="text-xs text-slate-600 mt-1">Large breeds</div>
-            <div class="text-xs text-slate-500">years</div>
-          </div>
-          <div class="bg-red-50 rounded-xl p-4 text-center border border-red-100">
-            <div class="text-2xl font-bold text-red-700">7-10</div>
-            <div class="text-xs text-slate-600 mt-1">Giant breeds</div>
-            <div class="text-xs text-slate-500">years</div>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Why Bigger Dogs Age Faster</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">Unlike most animals where larger species outlive smaller ones, dogs are an exception. Large dogs grow from puppy to adult size very rapidly, which accelerates cellular aging and increases cancer risk. IGF-1 (insulin-like growth factor), which drives growth, is also linked to faster aging and tumor development.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Breed Overview Table</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm border-collapse">
-            <thead><tr class="bg-slate-100">
-              <th class="p-3 text-left">Breed</th>
-              <th class="p-3 text-left">Size</th>
-              <th class="p-3 text-left">Avg Lifespan</th>
-              <th class="p-3 text-left">Senior At</th>
-            </tr></thead>
-            <tbody>
-              <tr class="border-t"><td class="p-3 font-medium">Chihuahua</td><td class="p-3">Toy</td><td class="p-3">14-18 yrs</td><td class="p-3">9 yrs</td></tr>
-              <tr class="border-t bg-slate-50"><td class="p-3 font-medium">Shih Tzu</td><td class="p-3">Small</td><td class="p-3">13-16 yrs</td><td class="p-3">9 yrs</td></tr>
-              <tr class="border-t"><td class="p-3 font-medium">Beagle</td><td class="p-3">Medium</td><td class="p-3">12-15 yrs</td><td class="p-3">8 yrs</td></tr>
-              <tr class="border-t bg-slate-50"><td class="p-3 font-medium">Golden Retriever</td><td class="p-3">Large</td><td class="p-3">10-12 yrs</td><td class="p-3">7 yrs</td></tr>
-              <tr class="border-t"><td class="p-3 font-medium">Labrador</td><td class="p-3">Large</td><td class="p-3">10-13 yrs</td><td class="p-3">7 yrs</td></tr>
-              <tr class="border-t bg-slate-50"><td class="p-3 font-medium">German Shepherd</td><td class="p-3">Large</td><td class="p-3">9-13 yrs</td><td class="p-3">7 yrs</td></tr>
-              <tr class="border-t"><td class="p-3 font-medium">Great Dane</td><td class="p-3">Giant</td><td class="p-3">7-10 yrs</td><td class="p-3">5 yrs</td></tr>
-              <tr class="border-t bg-slate-50"><td class="p-3 font-medium">French Bulldog</td><td class="p-3">Small</td><td class="p-3">10-14 yrs</td><td class="p-3">8 yrs</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">When to Start Senior Care</h2>
-        <ul class="space-y-2 text-slate-700 pl-4">
-          <li><strong>Toy and Small (&lt;10 kg):</strong> Age 9-10</li>
-          <li><strong>Medium (10-25 kg):</strong> Age 7-8</li>
-          <li><strong>Large (25-45 kg):</strong> Age 7</li>
-          <li><strong>Giant (&gt;45 kg):</strong> Age 5-6</li>
-        </ul>
-      </section>
-      <section class="bg-amber-50 rounded-2xl p-6 border border-amber-100">
-        <h2 class="text-xl font-bold text-slate-900 mb-3">Mixed Breed Dogs</h2>
-        <p class="text-slate-700 leading-relaxed">Mixed-breed dogs often benefit from hybrid vigor and may live longer than purebred counterparts. Use the size category matching your dog's adult weight as the aging guide.</p>
-      </section>
-    </div>
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="/en/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">Dog Age Calculator</a>
-      <a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Dog Care Guide</a>
-    </div>
-  </article>
+description="How long do different dog breeds live? Breed-specific aging rates, senior thresholds, and health risks by size."
+lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<article class="max-w-3xl mx-auto py-10 px-4">
+<header class="mb-8">
+<span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Dogs</span>
+<h1 class="text-4xl font-extrabold text-slate-900 mb-4">Dog Aging by Breed and Size</h1>
+<p class="text-xl text-slate-600 leading-relaxed">A dog's size is the strongest predictor of how fast they age. Larger dogs age faster and have shorter lifespans than smaller dogs.</p>
+</header>
+<div class="space-y-10">
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Average Lifespan by Size</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-green-50 rounded-xl p-4 text-center border border-green-100">
+<div class="text-2xl font-bold text-green-700">14-18</div>
+<div class="text-xs text-slate-600 mt-1">Toy breeds</div>
+<div class="text-xs text-slate-500">years</div>
+</div>
+<div class="bg-blue-50 rounded-xl p-4 text-center border border-blue-100">
+<div class="text-2xl font-bold text-blue-700">12-15</div>
+<div class="text-xs text-slate-600 mt-1">Small breeds</div>
+<div class="text-xs text-slate-500">years</div>
+</div>
+<div class="bg-amber-50 rounded-xl p-4 text-center border border-amber-100">
+<div class="text-2xl font-bold text-amber-700">10-13</div>
+<div class="text-xs text-slate-600 mt-1">Large breeds</div>
+<div class="text-xs text-slate-500">years</div>
+</div>
+<div class="bg-red-50 rounded-xl p-4 text-center border border-red-100">
+<div class="text-2xl font-bold text-red-700">7-10</div>
+<div class="text-xs text-slate-600 mt-1">Giant breeds</div>
+<div class="text-xs text-slate-500">years</div>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Why Bigger Dogs Age Faster</h2>
+<p class="text-slate-700 leading-relaxed mb-4">Unlike most animals where larger species outlive smaller ones, dogs are an exception. Large dogs grow from puppy to adult size very rapidly, which accelerates cellular aging and increases cancer risk. IGF-1 (insulin-like growth factor), which drives growth, is also linked to faster aging and tumor development.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Breed Overview Table</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm border-collapse">
+<thead><tr class="bg-slate-100">
+<th class="p-3 text-left">Breed</th>
+<th class="p-3 text-left">Size</th>
+<th class="p-3 text-left">Avg Lifespan</th>
+<th class="p-3 text-left">Senior At</th>
+</tr></thead>
+<tbody>
+<tr class="border-t"><td class="p-3 font-medium">Chihuahua</td><td class="p-3">Toy</td><td class="p-3">14-18 yrs</td><td class="p-3">9 yrs</td></tr>
+<tr class="border-t bg-slate-50"><td class="p-3 font-medium">Shih Tzu</td><td class="p-3">Small</td><td class="p-3">13-16 yrs</td><td class="p-3">9 yrs</td></tr>
+<tr class="border-t"><td class="p-3 font-medium">Beagle</td><td class="p-3">Medium</td><td class="p-3">12-15 yrs</td><td class="p-3">8 yrs</td></tr>
+<tr class="border-t bg-slate-50"><td class="p-3 font-medium">Golden Retriever</td><td class="p-3">Large</td><td class="p-3">10-12 yrs</td><td class="p-3">7 yrs</td></tr>
+<tr class="border-t"><td class="p-3 font-medium">Labrador</td><td class="p-3">Large</td><td class="p-3">10-13 yrs</td><td class="p-3">7 yrs</td></tr>
+<tr class="border-t bg-slate-50"><td class="p-3 font-medium">German Shepherd</td><td class="p-3">Large</td><td class="p-3">9-13 yrs</td><td class="p-3">7 yrs</td></tr>
+<tr class="border-t"><td class="p-3 font-medium">Great Dane</td><td class="p-3">Giant</td><td class="p-3">7-10 yrs</td><td class="p-3">5 yrs</td></tr>
+<tr class="border-t bg-slate-50"><td class="p-3 font-medium">French Bulldog</td><td class="p-3">Small</td><td class="p-3">10-14 yrs</td><td class="p-3">8 yrs</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">When to Start Senior Care</h2>
+<ul class="space-y-2 text-slate-700 pl-4">
+<li><strong>Toy and Small (&lt;10 kg):</strong> Age 9-10</li>
+<li><strong>Medium (10-25 kg):</strong> Age 7-8</li>
+<li><strong>Large (25-45 kg):</strong> Age 7</li>
+<li><strong>Giant (&gt;45 kg):</strong> Age 5-6</li>
+</ul>
+</section>
+<section class="bg-amber-50 rounded-2xl p-6 border border-amber-100">
+<h2 class="text-xl font-bold text-slate-900 mb-3">Mixed Breed Dogs</h2>
+<p class="text-slate-700 leading-relaxed">Mixed-breed dogs often benefit from hybrid vigor and may live longer than purebred counterparts. Use the size category matching your dog's adult weight as the aging guide.</p>
+</section>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<a href="/en/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">Dog Age Calculator</a>
+<a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Dog Care Guide</a>
+</div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why do larger dogs have shorter lifespans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Larger dogs grow very rapidly from puppy to adult size, which accelerates cellular aging and increases cancer risk. The hormone IGF-1 (insulin-like growth factor) that drives this rapid growth is also linked to faster aging and tumor development."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long do Golden Retrievers live?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Golden Retrievers typically live 10-12 years and are considered senior at around 7 years old. They are a large breed, so they age faster than smaller dogs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age is a Great Dane considered senior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Great Danes are considered senior at just 5 years old due to their giant size. Their average lifespan is only 7-10 years, making them one of the shortest-lived dog breeds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do mixed breed dogs live longer than purebreds?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mixed breed dogs often benefit from hybrid vigor and may live longer than purebred counterparts. For aging purposes, use the size category that matches your dog's adult weight as a guide for when to start senior care."
+      }
+    }
+  ]
+})} />
+
 </BaseLayout>
