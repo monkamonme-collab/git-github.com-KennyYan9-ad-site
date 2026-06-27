@@ -4,224 +4,273 @@ import AdSenseAd from '../../../components/AdSenseAd.astro';
 
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog/pet-aging-guide/' },
-  { lang: 'en', url: siteUrl + '/en/blog/pet-aging-guide/' },
-  { lang: 'x-default', url: siteUrl + '/blog/pet-aging-guide/' },
+{ lang: 'zh-TW', url: siteUrl + '/blog/pet-aging-guide/' },
+{ lang: 'en', url: siteUrl + '/en/blog/pet-aging-guide/' },
+{ lang: 'x-default', url: siteUrl + '/blog/pet-aging-guide/' },
 ];
 const breadcrumbs = [{ label: 'Blog', url: '/en/blog/' }, { label: 'Pet Aging Guide', url: '/en/blog/pet-aging-guide/' }];
 const publishDate = "2026-05-10";
 ---
 
 <BaseLayout
-  title="The Complete Pet Aging Guide: Everything You Need to Know"
-  description="A comprehensive guide to pet aging — how to calculate your dog or cat's real age, what signs to watch for, how nutrition changes, and what senior care actually looks like."
-  lang="en"
-  ogType="article"
-  breadcrumbs={breadcrumbs}
-  hrefLangAlternates={hrefLangAlternates}
+title="The Complete Pet Aging Guide: Everything You Need to Know"
+description="A comprehensive guide to pet aging — how to calculate your dog or cat's real age, what signs to watch for, how nutrition changes, and what senior care actually looks like."
+lang="en"
+ogType="article"
+breadcrumbs={breadcrumbs}
+hrefLangAlternates={hrefLangAlternates}
 >
-  <article class="max-w-3xl mx-auto px-6 py-12">
-    <header class="mb-10">
-      <div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
-        <span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded font-bold">Comprehensive Guide</span>
-        <span>Updated {publishDate} · 15 min read</span>
-      </div>
-      <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
-        The Complete Pet Aging Guide: Everything You Need to Know
-      </h1>
-      <p class="text-lg text-slate-600 leading-relaxed">
-        Your dog or cat is aging faster than you think — and understanding that process is the single most important thing you can do to extend their healthy years. This guide covers the science, the signs, the numbers, and the practical steps.
-      </p>
-    </header>
+<article class="max-w-3xl mx-auto px-6 py-12">
+<header class="mb-10">
+<div class="flex items-center gap-3 text-sm text-slate-500 mb-4">
+<span class="bg-indigo-100 text-indigo-700 px-2 py-0.5 rounded font-bold">Comprehensive Guide</span>
+<span>Updated {publishDate} · 15 min read</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight mb-4">
+The Complete Pet Aging Guide: Everything You Need to Know
+</h1>
+<p class="text-lg text-slate-600 leading-relaxed">
+Your dog or cat is aging faster than you think — and understanding that process is the single most important thing you can do to extend their healthy years. This guide covers the science, the signs, the numbers, and the practical steps.
+</p>
+</header>
 
-    <div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 mb-10 text-white">
-      <h2 class="text-xl font-bold mb-4">Start here: Calculate your pet's real age</h2>
-      <div class="grid sm:grid-cols-3 gap-3">
-        <a href="/en/tools/dog-age-calculator/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors">
-          <span class="text-2xl">🐕</span>
-          <div><p class="font-bold text-sm">Dog Age</p><p class="text-xs text-blue-100">Calculator</p></div>
-        </a>
-        <a href="/en/tools/cat-age-calculator/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors">
-          <span class="text-2xl">🐱</span>
-          <div><p class="font-bold text-sm">Cat Age</p><p class="text-xs text-blue-100">Calculator</p></div>
-        </a>
-        <a href="/en/tools/compare-aging/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors">
-          <span class="text-2xl">⚖️</span>
-          <div><p class="font-bold text-sm">Compare</p><p class="text-xs text-blue-100">Dog vs Cat</p></div>
-        </a>
-      </div>
-    </div>
+<div class="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-6 mb-10 text-white">
+<h2 class="text-xl font-bold mb-4">Start here: Calculate your pet's real age</h2>
+<div class="grid sm:grid-cols-3 gap-3">
+<a href="/en/tools/dog-age-calculator/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors">
+<span class="text-2xl">🐕</span>
+<div><p class="font-bold text-sm">Dog Age</p><p class="text-xs text-blue-100">Calculator</p></div>
+</a>
+<a href="/en/tools/cat-age-calculator/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors">
+<span class="text-2xl">🐱</span>
+<div><p class="font-bold text-sm">Cat Age</p><p class="text-xs text-blue-100">Calculator</p></div>
+</a>
+<a href="/en/tools/compare-aging/" class="flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-3 transition-colors">
+<span class="text-2xl">⚖️</span>
+<div><p class="font-bold text-sm">Compare</p><p class="text-xs text-blue-100">Dog vs Cat</p></div>
+</a>
+</div>
+</div>
 
-    <AdSenseAd format="in-article" />
+<AdSenseAd format="in-article" />
 
-    <div class="prose prose-slate max-w-none text-slate-700 leading-relaxed">
+<div class="prose prose-slate max-w-none text-slate-700 leading-relaxed">
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 1: The Biology of Pet Aging</h2>
-      <p>
-        Aging is not a disease — it is a biological process driven by cellular wear. As pets age, their cells repair more slowly, their telomeres (protective chromosome caps) shorten, their immune systems become less precise, and inflammation becomes more chronic. The result is the gradual accumulation of damage we see as getting old.
-      </p>
-      <p>
-        Two factors influence this process more than any other: size and lifestyle. In dogs, larger breeds age significantly faster at the cellular level. A 2019 study published in Cell Systems used DNA methylation patterns to show that a 5-year-old Labrador Retriever has a biological age comparable to a 56-year-old human — far older than the 35 years the old 7x formula would suggest.
-      </p>
-      <p>
-        Cats follow a more uniform aging curve across breeds, but lifestyle matters enormously. Indoor cats average 12-18 years; outdoor cats average just 5-8 years. The difference is almost entirely explained by injury, infection, and predation exposure — not genetics.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 1: The Biology of Pet Aging</h2>
+<p>
+Aging is not a disease — it is a biological process driven by cellular wear. As pets age, their cells repair more slowly, their telomeres (protective chromosome caps) shorten, their immune systems become less precise, and inflammation becomes more chronic. The result is the gradual accumulation of damage we see as getting old.
+</p>
+<p>
+Two factors influence this process more than any other: size and lifestyle. In dogs, larger breeds age significantly faster at the cellular level. A 2019 study published in Cell Systems used DNA methylation patterns to show that a 5-year-old Labrador Retriever has a biological age comparable to a 56-year-old human — far older than the 35 years the old 7x formula would suggest.
+</p>
+<p>
+Cats follow a more uniform aging curve across breeds, but lifestyle matters enormously. Indoor cats average 12-18 years; outdoor cats average just 5-8 years. The difference is almost entirely explained by injury, infection, and predation exposure — not genetics.
+</p>
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 2: Age Conversion — The Real Numbers</h2>
-      <p>
-        The classic "1 dog year = 7 human years" formula was never based on science. It was a rough marketing estimate. The accurate picture is more nuanced, because pets age fastest in their first two years and then slow down considerably.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 2: Age Conversion — The Real Numbers</h2>
+<p>
+The classic "1 dog year = 7 human years" formula was never based on science. It was a rough marketing estimate. The accurate picture is more nuanced, because pets age fastest in their first two years and then slow down considerably.
+</p>
 
-      <h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">Dogs: Age by Size</h3>
-      <div class="overflow-x-auto my-4">
-        <table class="w-full text-sm text-slate-700 border border-slate-200 rounded-xl overflow-hidden">
-          <thead class="bg-slate-50">
-            <tr>
-              <th class="text-left py-2 px-3 font-semibold">Dog Age</th>
-              <th class="text-left py-2 px-3 font-semibold">Small (under 10 kg)</th>
-              <th class="text-left py-2 px-3 font-semibold">Medium (10-25 kg)</th>
-              <th class="text-left py-2 px-3 font-semibold">Large (over 25 kg)</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr><td class="py-2 px-3">1 year</td><td class="py-2 px-3">~15 human years</td><td class="py-2 px-3">~15</td><td class="py-2 px-3">~15</td></tr>
-            <tr><td class="py-2 px-3">5 years</td><td class="py-2 px-3">~36</td><td class="py-2 px-3">~37</td><td class="py-2 px-3">~40</td></tr>
-            <tr><td class="py-2 px-3">10 years</td><td class="py-2 px-3">~56</td><td class="py-2 px-3">~60</td><td class="py-2 px-3">~66</td></tr>
-            <tr><td class="py-2 px-3">15 years</td><td class="py-2 px-3">~76</td><td class="py-2 px-3">~83</td><td class="py-2 px-3">~93+</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <p>
-        Use our <a href="/en/tools/dog-age-calculator/" class="text-blue-600 underline">Dog Age Calculator</a> for a precise result based on breed size. For breed-specific aging curves, read <a href="/en/blog/dog-aging-by-breed/" class="text-blue-600 underline">Dog Aging by Breed and Size</a>.
-      </p>
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">Dogs: Age by Size</h3>
+<div class="overflow-x-auto my-4">
+<table class="w-full text-sm text-slate-700 border border-slate-200 rounded-xl overflow-hidden">
+<thead class="bg-slate-50">
+<tr>
+<th class="text-left py-2 px-3 font-semibold">Dog Age</th>
+<th class="text-left py-2 px-3 font-semibold">Small (under 10 kg)</th>
+<th class="text-left py-2 px-3 font-semibold">Medium (10-25 kg)</th>
+<th class="text-left py-2 px-3 font-semibold">Large (over 25 kg)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<tr><td class="py-2 px-3">1 year</td><td class="py-2 px-3">~15 human years</td><td class="py-2 px-3">~15</td><td class="py-2 px-3">~15</td></tr>
+<tr><td class="py-2 px-3">5 years</td><td class="py-2 px-3">~36</td><td class="py-2 px-3">~37</td><td class="py-2 px-3">~40</td></tr>
+<tr><td class="py-2 px-3">10 years</td><td class="py-2 px-3">~56</td><td class="py-2 px-3">~60</td><td class="py-2 px-3">~66</td></tr>
+<tr><td class="py-2 px-3">15 years</td><td class="py-2 px-3">~76</td><td class="py-2 px-3">~83</td><td class="py-2 px-3">~93+</td></tr>
+</tbody>
+</table>
+</div>
+<p>
+Use our <a href="/en/tools/dog-age-calculator/" class="text-blue-600 underline">Dog Age Calculator</a> for a precise result based on breed size. For breed-specific aging curves, read <a href="/en/blog/dog-aging-by-breed/" class="text-blue-600 underline">Dog Aging by Breed and Size</a>.
+</p>
 
-      <h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">Cats: A More Consistent Curve</h3>
-      <p>
-        Cat aging is less size-dependent. Year 1 equals roughly 15 human years; year 2 adds about 9 more (reaching approximately 24). After that, each additional cat year adds approximately 4 human years. A 10-year-old cat is roughly 56 in human terms; a 15-year-old is about 76. Use the <a href="/en/tools/cat-age-calculator/" class="text-blue-600 underline">Cat Age Calculator</a> for an exact conversion.
-      </p>
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">Cats: A More Consistent Curve</h3>
+<p>
+Cat aging is less size-dependent. Year 1 equals roughly 15 human years; year 2 adds about 9 more (reaching approximately 24). After that, each additional cat year adds approximately 4 human years. A 10-year-old cat is roughly 56 in human terms; a 15-year-old is about 76. Use the <a href="/en/tools/cat-age-calculator/" class="text-blue-600 underline">Cat Age Calculator</a> for an exact conversion.
+</p>
 
-      <AdSenseAd format="in-article" />
+<AdSenseAd format="in-article" />
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 3: When Does Senior Begin?</h2>
-      <p>
-        There is no universal cutoff — the threshold depends on species and size:
-      </p>
-      <ul class="space-y-2 bg-slate-50 p-5 rounded-xl border border-slate-100 my-4">
-        <li><strong>Small dogs (under 10 kg):</strong> Senior at 7-8 years; geriatric at 12+</li>
-        <li><strong>Medium dogs (10-25 kg):</strong> Senior at 7 years; geriatric at 11+</li>
-        <li><strong>Large dogs (over 25 kg):</strong> Senior at 5-6 years; geriatric at 9+</li>
-        <li><strong>Cats (any size):</strong> Mature at 7-10 years; senior at 11-14; geriatric at 15+</li>
-      </ul>
-      <p>
-        These thresholds guide when to increase vet visit frequency, when to switch to senior nutrition, and when to start proactive screening for age-related diseases.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 3: When Does Senior Begin?</h2>
+<p>
+There is no universal cutoff — the threshold depends on species and size:
+</p>
+<ul class="space-y-2 bg-slate-50 p-5 rounded-xl border border-slate-100 my-4">
+<li><strong>Small dogs (under 10 kg):</strong> Senior at 7-8 years; geriatric at 12+</li>
+<li><strong>Medium dogs (10-25 kg):</strong> Senior at 7 years; geriatric at 11+</li>
+<li><strong>Large dogs (over 25 kg):</strong> Senior at 5-6 years; geriatric at 9+</li>
+<li><strong>Cats (any size):</strong> Mature at 7-10 years; senior at 11-14; geriatric at 15+</li>
+</ul>
+<p>
+These thresholds guide when to increase vet visit frequency, when to switch to senior nutrition, and when to start proactive screening for age-related diseases.
+</p>
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 4: Recognizing the Signs of Aging</h2>
-      <p>
-        Early aging signs are behavioral as much as physical. The physical changes — gray muzzle, cloudy eyes, slower gait — are easy to see. But the behavioral shifts often come first and carry more clinical information.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 4: Recognizing the Signs of Aging</h2>
+<p>
+Early aging signs are behavioral as much as physical. The physical changes — gray muzzle, cloudy eyes, slower gait — are easy to see. But the behavioral shifts often come first and carry more clinical information.
+</p>
 
-      <h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">In Dogs</h3>
-      <p>
-        Watch for hesitation before jumping (early arthritis), changes in bathroom habits (kidney or urinary issues), nighttime restlessness (cognitive dysfunction), and subtle withdrawal from social activity (pain). See our full breakdown in <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">7 Signs Your Dog Is Aging</a>.
-      </p>
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">In Dogs</h3>
+<p>
+Watch for hesitation before jumping (early arthritis), changes in bathroom habits (kidney or urinary issues), nighttime restlessness (cognitive dysfunction), and subtle withdrawal from social activity (pain). See our full breakdown in <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">7 Signs Your Dog Is Aging</a>.
+</p>
 
-      <h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">In Cats</h3>
-      <p>
-        Cats hide discomfort exceptionally well. Key signs include reduced jumping height (arthritis), decreased grooming especially on the back and hindquarters (pain or reduced flexibility), increased hiding behavior (nausea, pain, or anxiety), and weight loss (hyperthyroidism, CKD, or diabetes). See <a href="/en/blog/cat-aging-signs/" class="text-blue-600 underline">Signs Your Cat Is Aging</a> for detailed descriptions of each.
-      </p>
+<h3 class="text-xl font-bold text-slate-800 mt-6 mb-3">In Cats</h3>
+<p>
+Cats hide discomfort exceptionally well. Key signs include reduced jumping height (arthritis), decreased grooming especially on the back and hindquarters (pain or reduced flexibility), increased hiding behavior (nausea, pain, or anxiety), and weight loss (hyperthyroidism, CKD, or diabetes). See <a href="/en/blog/cat-aging-signs/" class="text-blue-600 underline">Signs Your Cat Is Aging</a> for detailed descriptions of each.
+</p>
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 5: The Most Common Senior Pet Conditions</h2>
-      <p>
-        The AVMA reports that pets over 7 experience a sharp increase in the following conditions:
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 5: The Most Common Senior Pet Conditions</h2>
+<p>
+The AVMA reports that pets over 7 experience a sharp increase in the following conditions:
+</p>
 
-      <div class="grid md:grid-cols-2 gap-4 my-6">
-        <div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
-          <h4 class="font-bold text-amber-900 mb-2">Common in Senior Dogs</h4>
-          <ul class="text-sm text-slate-700 space-y-1">
-            <li>Osteoarthritis (joint degeneration)</li>
-            <li>Hypothyroidism (low thyroid function)</li>
-            <li>Dental disease and tooth loss</li>
-            <li>Cognitive Dysfunction Syndrome</li>
-            <li>Heart disease and kidney disease</li>
-          </ul>
-        </div>
-        <div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
-          <h4 class="font-bold text-purple-900 mb-2">Common in Senior Cats</h4>
-          <ul class="text-sm text-slate-700 space-y-1">
-            <li>Chronic Kidney Disease (CKD)</li>
-            <li>Hyperthyroidism (overactive thyroid)</li>
-            <li>Hypertension (high blood pressure)</li>
-            <li>Feline Cognitive Dysfunction</li>
-            <li>Diabetes mellitus and dental disease</li>
-          </ul>
-        </div>
-      </div>
+<div class="grid md:grid-cols-2 gap-4 my-6">
+<div class="bg-amber-50 rounded-xl p-4 border border-amber-100">
+<h4 class="font-bold text-amber-900 mb-2">Common in Senior Dogs</h4>
+<ul class="text-sm text-slate-700 space-y-1">
+<li>Osteoarthritis (joint degeneration)</li>
+<li>Hypothyroidism (low thyroid function)</li>
+<li>Dental disease and tooth loss</li>
+<li>Cognitive Dysfunction Syndrome</li>
+<li>Heart disease and kidney disease</li>
+</ul>
+</div>
+<div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
+<h4 class="font-bold text-purple-900 mb-2">Common in Senior Cats</h4>
+<ul class="text-sm text-slate-700 space-y-1">
+<li>Chronic Kidney Disease (CKD)</li>
+<li>Hyperthyroidism (overactive thyroid)</li>
+<li>Hypertension (high blood pressure)</li>
+<li>Feline Cognitive Dysfunction</li>
+<li>Diabetes mellitus and dental disease</li>
+</ul>
+</div>
+</div>
 
-      <p>
-        Notice that dogs most commonly gain weight in old age (hypothyroidism slows metabolism), while cats most commonly lose weight (hyperthyroidism speeds it up). For a detailed comparison, see <a href="/en/blog/dog-vs-cat-aging/" class="text-blue-600 underline">Dog vs. Cat Aging: Full Comparison</a>.
-      </p>
+<p>
+Notice that dogs most commonly gain weight in old age (hypothyroidism slows metabolism), while cats most commonly lose weight (hyperthyroidism speeds it up). For a detailed comparison, see <a href="/en/blog/dog-vs-cat-aging/" class="text-blue-600 underline">Dog vs. Cat Aging: Full Comparison</a>.
+</p>
 
-      <AdSenseAd format="in-article" />
+<AdSenseAd format="in-article" />
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 6: Nutrition for Senior Pets</h2>
-      <p>
-        The single most impactful daily decision you make for a senior pet is what goes in their bowl. The goal is not simply less food — it is better food, calibrated to their changing physiology.
-      </p>
-      <p>
-        Contrary to popular belief, senior pets do not always need lower protein. Research from the University of Pennsylvania School of Veterinary Medicine shows that older pets need higher quality, more digestible protein to maintain muscle mass and prevent sarcopenia (age-related muscle loss). The exception is pets with advanced kidney disease, where phosphorus and protein must be carefully managed under veterinary supervision.
-      </p>
-      <p>
-        Key nutritional priorities for senior pets include Omega-3 fatty acids (EPA/DHA from fish oil) to reduce systemic inflammation and support brain and joint health, antioxidants (vitamins E and C) to combat oxidative stress, and joint supplements (glucosamine and chondroitin) for dogs with arthritis. Learn more in <a href="/en/blog/pet-nutrition-by-age/" class="text-blue-600 underline">Pet Nutrition by Life Stage</a>.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 6: Nutrition for Senior Pets</h2>
+<p>
+The single most impactful daily decision you make for a senior pet is what goes in their bowl. The goal is not simply less food — it is better food, calibrated to their changing physiology.
+</p>
+<p>
+Contrary to popular belief, senior pets do not always need lower protein. Research from the University of Pennsylvania School of Veterinary Medicine shows that older pets need higher quality, more digestible protein to maintain muscle mass and prevent sarcopenia (age-related muscle loss). The exception is pets with advanced kidney disease, where phosphorus and protein must be carefully managed under veterinary supervision.
+</p>
+<p>
+Key nutritional priorities for senior pets include Omega-3 fatty acids (EPA/DHA from fish oil) to reduce systemic inflammation and support brain and joint health, antioxidants (vitamins E and C) to combat oxidative stress, and joint supplements (glucosamine and chondroitin) for dogs with arthritis. Learn more in <a href="/en/blog/pet-nutrition-by-age/" class="text-blue-600 underline">Pet Nutrition by Life Stage</a>.
+</p>
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 7: The Senior Wellness Exam</h2>
-      <p>
-        A senior wellness exam is different from an annual vaccine visit. It should include a full physical exam (including lymph nodes, heart, lungs, and abdomen), a complete blood count and chemistry panel, urinalysis, blood pressure measurement, and ideally a conversation about behavioral changes you have observed at home.
-      </p>
-      <p>
-        The AVMA recommends senior wellness exams every six months for dogs and cats aged 7 and older — roughly equivalent to a human seeing their doctor every two to three years. Early detection of conditions like kidney disease, diabetes, and heart disease can add years of quality life. Schedule the exam even if your pet seems fine. Many of the conditions above are completely asymptomatic until quite advanced.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 7: The Senior Wellness Exam</h2>
+<p>
+A senior wellness exam is different from an annual vaccine visit. It should include a full physical exam (including lymph nodes, heart, lungs, and abdomen), a complete blood count and chemistry panel, urinalysis, blood pressure measurement, and ideally a conversation about behavioral changes you have observed at home.
+</p>
+<p>
+The AVMA recommends senior wellness exams every six months for dogs and cats aged 7 and older — roughly equivalent to a human seeing their doctor every two to three years. Early detection of conditions like kidney disease, diabetes, and heart disease can add years of quality life. Schedule the exam even if your pet seems fine. Many of the conditions above are completely asymptomatic until quite advanced.
+</p>
 
-      <h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 8: Making Your Home Senior-Friendly</h2>
-      <p>
-        Environmental adjustments cost little but make a real difference. For arthritic pets, place non-slip rugs on tile or hardwood floors — this alone can transform mobility for a dog that has been slipping and refusing to walk on smooth surfaces. Add orthopedic foam beds in multiple rooms so your pet does not have to travel far to rest comfortably.
-      </p>
-      <p>
-        For dogs, install a ramp at the car and at the couch if your dog has always been allowed on furniture. For cats, add intermediate steps to high perches using shelves or boxes — many older cats stop using their favorite high spots not because they want to, but because they cannot jump without pain. Keeping night lights on in hallways helps pets with declining vision navigate safely after dark.
-      </p>
-      <p>
-        More detailed guidance on senior-specific adjustments is in our <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">Senior Dog Care Guide</a> and <a href="/en/blog/senior-cat-care/" class="text-blue-600 underline">Senior Cat Care Guide</a>.
-      </p>
+<h2 class="text-2xl font-bold text-slate-900 mt-10 mb-4">Part 8: Making Your Home Senior-Friendly</h2>
+<p>
+Environmental adjustments cost little but make a real difference. For arthritic pets, place non-slip rugs on tile or hardwood floors — this alone can transform mobility for a dog that has been slipping and refusing to walk on smooth surfaces. Add orthopedic foam beds in multiple rooms so your pet does not have to travel far to rest comfortably.
+</p>
+<p>
+For dogs, install a ramp at the car and at the couch if your dog has always been allowed on furniture. For cats, add intermediate steps to high perches using shelves or boxes — many older cats stop using their favorite high spots not because they want to, but because they cannot jump without pain. Keeping night lights on in hallways helps pets with declining vision navigate safely after dark.
+</p>
+<p>
+More detailed guidance on senior-specific adjustments is in our <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">Senior Dog Care Guide</a> and <a href="/en/blog/senior-cat-care/" class="text-blue-600 underline">Senior Cat Care Guide</a>.
+</p>
 
-    </div>
+</div>
 
-    <div class="mt-16 p-10 bg-indigo-900 text-white rounded-3xl shadow-2xl">
-      <h3 class="text-2xl font-bold mb-4">Take the first step: know your pet's life stage</h3>
-      <p class="mb-8 opacity-90 leading-relaxed">
-        Run your pet's age through our calculators for a personalized life-stage summary and care recommendations from our veterinary reference database.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="/en/tools/dog-age-calculator/" class="bg-white text-indigo-900 px-8 py-3 rounded-xl font-bold hover:bg-slate-100 transition-all">Dog Age Calculator</a>
-        <a href="/en/tools/cat-age-calculator/" class="bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-400 transition-all border border-indigo-400">Cat Age Calculator</a>
-      </div>
-    </div>
+<div class="mt-16 p-10 bg-indigo-900 text-white rounded-3xl shadow-2xl">
+<h3 class="text-2xl font-bold mb-4">Take the first step: know your pet's life stage</h3>
+<p class="mb-8 opacity-90 leading-relaxed">
+Run your pet's age through our calculators for a personalized life-stage summary and care recommendations from our veterinary reference database.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="/en/tools/dog-age-calculator/" class="bg-white text-indigo-900 px-8 py-3 rounded-xl font-bold hover:bg-slate-100 transition-all">Dog Age Calculator</a>
+<a href="/en/tools/cat-age-calculator/" class="bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold hover:bg-indigo-400 transition-all border border-indigo-400">Cat Age Calculator</a>
+</div>
+</div>
 
-    <footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-400">
-      <p>References: AVMA Senior Pet Care Guidelines; Cell Systems (2019) DNA methylation-based aging study; University of Pennsylvania School of Veterinary Medicine Nutritional Guidelines.</p>
-      <p class="mt-2">Last updated: {publishDate}. Disclaimer: This content is for general informational purposes only and does not substitute for professional veterinary advice.</p>
-    </footer>
-  </article>
+<footer class="mt-16 pt-8 border-t border-slate-200 text-sm text-slate-400">
+<p>References: AVMA Senior Pet Care Guidelines; Cell Systems (2019) DNA methylation-based aging study; University of Pennsylvania School of Veterinary Medicine Nutritional Guidelines.</p>
+<p class="mt-2">Last updated: {publishDate}. Disclaimer: This content is for general informational purposes only and does not substitute for professional veterinary advice.</p>
+</footer>
+</article>
 
-  <script type="application/ld+json" is:inline>
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Complete Pet Aging Guide: Everything You Need to Know",
+  "author": { "@type": "Organization", "name": "Pet Aging Hub" },
+  "datePublished": "2026-05-10",
+  "image": "https://images.unsplash.com/photo-1581888227599-779811939961?w=1200&q=80"
+}
+</script>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "The Complete Pet Aging Guide: Everything You Need to Know",
-      "author": { "@type": "Organization", "name": "Pet Aging Hub" },
-      "datePublished": "2026-05-10",
-      "image": "https://images.unsplash.com/photo-1581888227599-779811939961?w=1200&q=80"
+      "@type": "Question",
+      "name": "How do I calculate my pet's age in human years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The '1 dog year = 7 human years' rule is not accurate. A more reliable formula based on DNA methylation research is: Human age ≈ 16 × ln(dog age) + 31. However, breed size matters significantly: a 10-year-old large dog is closer to 66 in human years, while a 10-year-old small dog is about 56. Use a size-based age chart or our Dog Age Calculator for a precise estimate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age is a dog or cat considered senior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For dogs, the senior threshold depends on size: small breeds (under 10 kg) become senior at 7-8 years, medium breeds at 7 years, and large breeds at 5-6 years. For cats, the senior stage begins at 11-14 years, with geriatric defined as 15+. These thresholds guide when to increase vet visit frequency and adjust nutrition."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common health conditions in senior dogs and cats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In senior dogs: osteoarthritis, hypothyroidism, dental disease, cognitive dysfunction syndrome, heart disease, and kidney disease. In senior cats: chronic kidney disease (CKD), hyperthyroidism, hypertension, feline cognitive dysfunction, and diabetes. Notably, dogs tend to gain weight in old age while cats tend to lose weight — both are warning signs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should senior pets visit the vet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The AVMA recommends wellness exams every six months for pets aged 7 and older. These should include a full physical exam, complete blood count and chemistry panel, urinalysis, and blood pressure measurement. Many serious conditions — including kidney disease, diabetes, and heart disease — are asymptomatic in early stages, making twice-yearly bloodwork critical for early detection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do senior pets need different food than adult pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Despite the common belief that seniors need less protein, research shows that older pets actually need higher-quality, more digestible protein to prevent muscle loss (sarcopenia). The exception is pets with advanced kidney disease, who require phosphorus and protein restriction under veterinary supervision. All senior pets benefit from Omega-3 fatty acids (fish oil) for joint and brain health, and antioxidants to combat oxidative stress."
+      }
     }
-  </script>
+  ]
+}
+</script>
 </BaseLayout>
