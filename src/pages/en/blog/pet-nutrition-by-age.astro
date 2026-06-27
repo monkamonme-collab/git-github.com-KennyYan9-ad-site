@@ -1,87 +1,143 @@
 ---
+---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
-    { label: 'Home', url: '/en/' },
-  { label: 'Blog', url: '/en/blog/' },
-  { label: 'Pet Nutrition by Age', url: '/en/blog/pet-nutrition-by-age/' }
+{ label: 'Blog', url: '/en/blog/' },
+{ label: 'Pet Nutrition by Age', url: '/en/blog/pet-nutrition-by-age/' }
 ];
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog/pet-nutrition-by-age' },
-  { lang: 'en', url: siteUrl + '/en/blog/pet-nutrition-by-age' },
-  { lang: 'x-default', url: siteUrl + '/blog/pet-nutrition-by-age' },
+{ lang: 'zh-TW', url: siteUrl + '/blog/pet-nutrition-by-age' },
+{ lang: 'en', url: siteUrl + '/en/blog/pet-nutrition-by-age' },
+{ lang: 'x-default', url: siteUrl + '/blog/pet-nutrition-by-age' },
 ];
 ---
-<BaseLayout title="Pet Nutrition by Age: Feeding Guides for Dogs and Cats - Pet Aging Hub"
-  description="Nutritional needs change dramatically from puppyhood through senior years. Complete feeding guide by life stage."
-  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-  <article class="max-w-3xl mx-auto py-10 px-4">
-    <header class="mb-8">
-      <span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Nutrition</span>
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Pet Nutrition by Life Stage</h1>
-      <p class="text-xl text-slate-600 leading-relaxed">The right diet for a 2-year-old dog is very different from the right diet for a 12-year-old dog. Here is what changes and why.</p>
-    </header>
-    <div class="space-y-10">
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-5">Dogs: Nutritional Needs by Stage</h2>
-        <div class="space-y-4">
-          <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
-            <h3 class="font-bold text-amber-800 mb-2">Puppy (0-1 year)</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">High protein (28-32%), high fat, calcium and phosphorus optimized for bone development. Large breed puppies need specially formulated food to prevent too-rapid growth. Feed 3-4 small meals per day.</p>
-          </div>
-          <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
-            <h3 class="font-bold text-amber-800 mb-2">Adult (1-7 years)</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Maintenance calories. Protein: 18-25%. Switch to twice-daily feeding to reduce bloat risk. Choose quality protein sources. Avoid excessive treats.</p>
-          </div>
-          <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
-            <h3 class="font-bold text-amber-800 mb-2">Senior (7+ years)</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Healthy senior dogs do NOT need lower protein. Higher quality protein maintains muscle mass. What often changes: slightly fewer calories, increased omega-3 fatty acids, potentially lower phosphorus if kidney disease is present. Always consult your vet before switching to a senior formula.</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-5">Cats: Nutritional Needs by Stage</h2>
-        <div class="space-y-4">
-          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
-            <h3 class="font-bold text-purple-800 mb-2">Kitten (0-1 year)</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">High protein (35%+), high fat, and DHA for brain development. Cats are obligate carnivores needing taurine and vitamin A from animal sources. Kittens need 2-3x the calories per kg of adults.</p>
-          </div>
-          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
-            <h3 class="font-bold text-purple-800 mb-2">Adult (1-10 years)</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Wet food provides important hydration. Cats have low thirst drive and tend to be chronically slightly dehydrated on dry-only diets — which matters for long-term kidney health. Feed measured portions twice daily.</p>
-          </div>
-          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
-            <h3 class="font-bold text-purple-800 mb-2">Senior (10+ years)</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">High-quality, highly digestible protein is critical — senior cats absorb protein less efficiently. Wet food becomes even more important. Phosphorus restriction required if CKD is present (vet guidance needed).</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Key Supplements for Senior Pets</h2>
-        <div class="overflow-x-auto">
-          <table class="w-full text-sm border-collapse">
-            <thead><tr class="bg-slate-100">
-              <th class="p-3 text-left">Supplement</th>
-              <th class="p-3 text-center">Dogs</th>
-              <th class="p-3 text-center">Cats</th>
-              <th class="p-3 text-left">Benefit</th>
-            </tr></thead>
-            <tbody>
-              <tr class="border-t"><td class="p-3">Omega-3 fish oil</td><td class="p-3 text-center text-green-600">Yes</td><td class="p-3 text-center text-green-600">Yes</td><td class="p-3 text-slate-600">Joints, coat, cognition, kidneys</td></tr>
-              <tr class="border-t bg-slate-50"><td class="p-3">Glucosamine</td><td class="p-3 text-center text-green-600">Yes</td><td class="p-3 text-center text-amber-600">Some</td><td class="p-3 text-slate-600">Joint cartilage support</td></tr>
-              <tr class="border-t"><td class="p-3">Probiotics</td><td class="p-3 text-center text-green-600">Yes</td><td class="p-3 text-center text-green-600">Yes</td><td class="p-3 text-slate-600">Digestion, immunity</td></tr>
-              <tr class="border-t bg-slate-50"><td class="p-3">B vitamins</td><td class="p-3 text-center text-amber-600">If deficient</td><td class="p-3 text-center text-green-600">CKD cats</td><td class="p-3 text-slate-600">Energy, nerve function</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-      <section class="bg-green-50 rounded-2xl p-5 border border-green-100">
-        <p class="text-slate-700 leading-relaxed font-medium">One rule that never changes: fresh water, always available. This is the single most important nutritional intervention for any pet at any age.</p>
-      </section>
-    </div>
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl text-sm">Complete Senior Care Guide</a>
-      <a href="/en/blog/pet-exercise-by-age/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Exercise by Age</a>
-    </div>
-  </article>
+<BaseLayout title="Pet Nutrition by Life Stage - Pet Aging Hub"
+description="What your dog or cat needs to eat changes dramatically from puppyhood to senior years. Here's a complete guide to pet nutrition by age."
+lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<article class="max-w-3xl mx-auto py-10 px-4">
+<header class="mb-8">
+<span class="inline-block bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Nutrition</span>
+<h1 class="text-4xl font-extrabold text-slate-900 mb-4">Pet Nutrition by Life Stage</h1>
+<p class="text-xl text-slate-600 leading-relaxed">The right diet at the right life stage can add years to your pet's life. Here's what changes and why.</p>
+</header>
+
+<section class="mb-10">
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Dogs</h2>
+<div class="space-y-4">
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Puppy (0–1 year)</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Puppies need 22–32% protein and higher fat (8–20%) to support rapid muscle and brain development. Large breeds need controlled calcium (0.7–1.2%) to prevent skeletal problems. Feed puppy-specific food 3–4 times daily.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Adult (1–7 years)</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Adult dogs need 18–25% protein, moderate fat (5–15%), and balanced fiber for digestive health. Twice-daily feeding works well. Focus on maintaining a healthy weight — over 50% of adult dogs are overweight.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Senior (7+ years)</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Senior dogs often need fewer calories (10–20% less) but higher-quality, easily digestible protein to maintain muscle mass. Reduced phosphorus supports kidney health. Omega-3 fatty acids help with joint inflammation.</p>
+</div>
+</div>
+</section>
+
+<section class="mb-10">
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Cats</h2>
+<div class="space-y-4">
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Kitten (0–1 year)</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Kittens are obligate carnivores with high protein needs (30–45%). They need taurine for heart and eye development, and DHA for brain development. Free-feeding kitten food supports their rapid growth phase.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Adult (1–10 years)</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Adult cats need 26–40% protein on a dry matter basis. Wet food increases water intake, which is critical for urinary tract health. Moderate fat with portion control prevents the obesity that plagues indoor cats.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="text-lg font-bold text-slate-900 mb-1">Senior (10+ years)</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Senior cats actually need more protein (not less) to prevent muscle wasting. Phosphorus restriction becomes important if kidney disease develops. Many senior cats do best on small, frequent meals of high-moisture food.</p>
+</div>
+</div>
+</section>
+
+<section class="mb-10">
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Supplements Worth Considering</h2>
+<div class="overflow-x-auto">
+<table class="w-full text-sm border-collapse">
+<thead>
+<tr class="bg-slate-100">
+<th class="text-left p-3 font-semibold">Supplement</th>
+<th class="text-left p-3 font-semibold">Best For</th>
+<th class="text-left p-3 font-semibold">Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-t border-slate-200">
+<td class="p-3">Omega-3 (fish oil)</td>
+<td class="p-3">Joint inflammation, coat health, cognition</td>
+<td class="p-3">Strong</td>
+</tr>
+<tr class="border-t border-slate-200">
+<td class="p-3">Glucosamine + Chondroitin</td>
+<td class="p-3">Arthritis, joint support</td>
+<td class="p-3">Moderate</td>
+</tr>
+<tr class="border-t border-slate-200">
+<td class="p-3">Probiotics</td>
+<td class="p-3">Digestive health, immune support</td>
+<td class="p-3">Moderate</td>
+</tr>
+<tr class="border-t border-slate-200">
+<td class="p-3">B Vitamins</td>
+<td class="p-3">Energy metabolism, nerve function in seniors</td>
+<td class="p-3">Moderate</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<div class="mt-6 flex flex-wrap gap-4">
+<a href="/en/tools/calorie-calculator/" class="px-5 py-3 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl text-sm">Calorie Calculator</a>
+<a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Pet Health Guide</a>
+</div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should I feed my senior dog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Senior dogs (7+ years) generally need fewer calories — about 10–20% less than adults — but higher-quality, easily digestible protein to maintain muscle mass. Look for formulas with reduced phosphorus to support kidney health and added omega-3 fatty acids for joint inflammation. Avoid generic 'senior' labels and check the actual nutrient profile."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do senior cats need more or less protein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Contrary to old advice, senior cats actually need more protein, not less. Older cats are less efficient at digesting and using protein, so they need higher amounts to prevent muscle wasting. Unless your vet has recommended protein restriction due to advanced kidney disease, keep protein levels high (30%+ dry matter) in senior cat food."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I switch my puppy to adult food?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Small breeds (under 20 lbs) can switch to adult food at 9–12 months. Medium breeds at 12 months. Large and giant breeds should stay on large-breed puppy food until 18–24 months because their bones take longer to fully develop. Switching too early can increase the risk of skeletal problems."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is wet food or dry food better for cats?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Wet food is generally preferable for cats because it dramatically increases water intake, which is critical for urinary tract and kidney health. Cats have a low thirst drive and don't compensate well by drinking more water when eating dry food. A combination of wet and dry is acceptable, but wet should make up the majority of the diet where possible."
+      }
+    }
+  ]
+})} />
+
 </BaseLayout>
