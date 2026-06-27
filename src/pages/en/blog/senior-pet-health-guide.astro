@@ -1,128 +1,176 @@
 ---
+---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 const breadcrumbs = [
-
-  { label: 'Blog', url: '/en/blog/' },
-  { label: 'Senior Pet Health Guide', url: '/en/blog/senior-pet-health-guide/' }
+{ label: 'Blog', url: '/en/blog/' },
+{ label: 'Senior Pet Health Guide', url: '/en/blog/senior-pet-health-guide/' }
 ];
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog/senior-pet-health-guide' },
-  { lang: 'en', url: siteUrl + '/en/blog/senior-pet-health-guide' },
-  { lang: 'x-default', url: siteUrl + '/blog/senior-pet-health-guide' },
+{ lang: 'zh-TW', url: siteUrl + '/blog/senior-pet-health-guide' },
+{ lang: 'en', url: siteUrl + '/en/blog/senior-pet-health-guide' },
+{ lang: 'x-default', url: siteUrl + '/blog/senior-pet-health-guide' },
 ];
 ---
 
 <BaseLayout
-  title="Complete Guide to Senior Pet Health - Pet Aging Hub"
-  description="A comprehensive guide to caring for senior dogs and cats."
-  lang="en"
-  breadcrumbs={breadcrumbs}
-  hrefLangAlternates={hrefLangAlternates}>
+title="Complete Guide to Senior Pet Health - Pet Aging Hub"
+description="A comprehensive guide to caring for senior dogs and cats."
+lang="en"
+breadcrumbs={breadcrumbs}
+hrefLangAlternates={hrefLangAlternates}>
 
-  <article class="max-w-3xl mx-auto py-10 px-4">
-    <header class="mb-10">
-      <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Featured Guide</span>
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Complete Guide to Senior Pet Health</h1>
-      <p class="text-xl text-slate-600 leading-relaxed">Everything you need to know about caring for aging dogs and cats.</p>
-    </header>
-    <div class="space-y-10">
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">When Does a Pet Become "Senior"?</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">Dogs are generally considered senior at 7 years, but giant breeds may be senior at 5-6, while small dogs may not hit their senior phase until 8-9. Cats are typically considered senior at 10-11 years, and geriatric at 15+.</p>
-        <div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
-          <p class="text-slate-700 text-sm">A 7-year-old Great Dane is more biologically aged than a 7-year-old Chihuahua. Always consider size and breed, not just calendar age.</p>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">The 5 Pillars of Senior Pet Care</h2>
-        <div class="space-y-6">
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">1. Preventive Veterinary Care</h3>
-            <p class="text-slate-700 leading-relaxed">Senior pets should see the vet at least twice a year. Key tests include: complete blood panel, urinalysis, blood pressure, dental exam, weight monitoring, and joint assessment.</p>
-          </div>
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">2. Age-Appropriate Nutrition</h3>
-            <p class="text-slate-700 leading-relaxed mb-3">Senior pets benefit from higher quality protein, joint-supporting supplements, and kidney-friendly formulas for cats over 12. Avoid generic "senior" foods that cut protein.</p>
-          </div>
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">3. Modified Exercise</h3>
-            <p class="text-slate-700 leading-relaxed">Low-impact exercise like gentle walks, swimming, and interactive play maintains muscle mass and joint mobility without pain.</p>
-          </div>
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">4. Home Environment Modifications</h3>
-            <ul class="list-disc pl-6 space-y-2 text-slate-700">
-              <li>Orthopedic or memory foam beds</li>
-              <li>Non-slip rugs on slippery floors</li>
-              <li>Ramps or steps to favorite spots</li>
-              <li>Low-entry litter boxes for cats</li>
-              <li>Raised food bowls for dogs with neck issues</li>
-            </ul>
-          </div>
-          <div class="bg-white rounded-2xl p-6 border border-slate-200">
-            <h3 class="text-xl font-bold text-slate-900 mb-3">5. Mental Stimulation</h3>
-            <p class="text-slate-700 leading-relaxed">Puzzle feeders, new scent experiences, gentle training, and consistent daily routines help slow cognitive decline.</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Warning Signs That Need Prompt Attention</h2>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-red-50 rounded-xl p-4 border border-red-100">
-            <h3 class="font-bold text-red-800 mb-2">Seek care soon</h3>
-            <ul class="text-sm text-slate-700 space-y-1">
-              <li>Significant weight loss or gain</li>
-              <li>Dramatic change in water intake</li>
-              <li>Loss of appetite over 2+ days</li>
-              <li>Persistent coughing or labored breathing</li>
-              <li>New lumps or rapidly growing masses</li>
-            </ul>
-          </div>
-          <div class="bg-yellow-50 rounded-xl p-4 border border-yellow-100">
-            <h3 class="font-bold text-amber-800 mb-2">Monitor closely</h3>
-            <ul class="text-sm text-slate-700 space-y-1">
-              <li>Gradual decrease in activity</li>
-              <li>Confusion or disorientation</li>
-              <li>Changes in sleep patterns</li>
-              <li>Bad breath or dental changes</li>
-              <li>Coat becoming dull or thin</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Common Senior Pet Conditions</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <h3 class="font-bold text-amber-800 mb-3">Dogs</h3>
-            <ul class="space-y-2 text-slate-700 text-sm">
-              <li><strong>Arthritis:</strong> Affects ~65% of dogs over 7.</li>
-              <li><strong>Dental disease:</strong> Over 80% by age 3.</li>
-              <li><strong>Cancer:</strong> Leading cause of death over 10.</li>
-              <li><strong>Cognitive dysfunction:</strong> House soiling, confusion, altered sleep.</li>
-            </ul>
-          </div>
-          <div>
-            <h3 class="font-bold text-purple-800 mb-3">Cats</h3>
-            <ul class="space-y-2 text-slate-700 text-sm">
-              <li><strong>Hyperthyroidism:</strong> ~10% of cats over 10.</li>
-              <li><strong>Chronic kidney disease:</strong> Extremely common in older cats.</li>
-              <li><strong>Arthritis:</strong> Often underdiagnosed; signs include reduced grooming.</li>
-              <li><strong>Dental disease:</strong> Oral pain causes sudden appetite loss.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Quality of Life: The Most Important Consideration</h2>
-        <p class="text-slate-700 leading-relaxed">As pets age, the goal shifts from longevity to quality of life. Work with your vet to balance managing chronic conditions with maintaining your pet's daily joy.</p>
-      </section>
-    </div>
-    <div class="mt-10 flex flex-wrap gap-4">
-      <a href="/en/tools/dog-age-calculator/" class="inline-flex items-center gap-2 px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl transition-colors text-sm">Dog Age Calculator</a>
-      <a href="/en/tools/symptom-checklist/" class="inline-flex items-center gap-2 px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl transition-colors text-sm">Symptom Checklist</a>
-      <a href="/en/blog/dog-vs-cat-aging/" class="inline-flex items-center gap-2 px-5 py-3 bg-blue-50 hover:bg-blue-100 text-blue-800 font-semibold rounded-xl transition-colors text-sm">Dog vs Cat Aging</a>
-    </div>
-  </article>
+<article class="max-w-3xl mx-auto py-10 px-4">
+<header class="mb-10">
+<span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Featured Guide</span>
+<h1 class="text-4xl font-extrabold text-slate-900 mb-4">Complete Guide to Senior Pet Health</h1>
+<p class="text-xl text-slate-600 leading-relaxed">Everything you need to know about caring for aging dogs and cats.</p>
+</header>
+<div class="space-y-10">
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">When Does a Pet Become "Senior"?</h2>
+<p class="text-slate-700 leading-relaxed mb-4">Dogs are generally considered senior at 7 years, but giant breeds may be senior at 5-6, while small dogs may not hit their senior phase until 8-9. Cats are typically considered senior at 10-11 years, and geriatric at 15+.</p>
+<div class="bg-blue-50 rounded-xl p-5 border border-blue-100">
+<p class="text-slate-700 text-sm">A 7-year-old Great Dane is more biologically aged than a 7-year-old Chihuahua. Always consider size and breed, not just calendar age.</p>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">The 5 Pillars of Senior Pet Care</h2>
+<div class="space-y-6">
+<div class="bg-white rounded-2xl p-6 border border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-3">1. Preventive Veterinary Care</h3>
+<p class="text-slate-700 leading-relaxed">Senior pets should see the vet at least twice a year. Key tests include: complete blood panel, urinalysis, blood pressure, dental exam, weight monitoring, and joint assessment.</p>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-3">2. Age-Appropriate Nutrition</h3>
+<p class="text-slate-700 leading-relaxed mb-3">Senior pets benefit from higher quality protein, joint-supporting supplements, and kidney-friendly formulas for cats over 12. Avoid generic "senior" foods that cut protein.</p>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-3">3. Modified Exercise</h3>
+<p class="text-slate-700 leading-relaxed">Low-impact exercise like gentle walks, swimming, and interactive play maintains muscle mass and joint mobility without pain.</p>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-3">4. Home Environment Modifications</h3>
+<ul class="list-disc pl-6 space-y-2 text-slate-700">
+<li>Orthopedic or memory foam beds</li>
+<li>Non-slip rugs on slippery floors</li>
+<li>Ramps or steps to favorite spots</li>
+<li>Low-entry litter boxes for cats</li>
+<li>Raised food bowls for dogs with neck issues</li>
+</ul>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200">
+<h3 class="text-xl font-bold text-slate-900 mb-3">5. Mental Stimulation</h3>
+<p class="text-slate-700 leading-relaxed">Puzzle feeders, new scent experiences, gentle training, and consistent daily routines help slow cognitive decline.</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Warning Signs That Need Prompt Attention</h2>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="bg-red-50 rounded-xl p-4 border border-red-100">
+<h3 class="font-bold text-red-800 mb-2">Seek care soon</h3>
+<ul class="text-sm text-slate-700 space-y-1">
+<li>Significant weight loss or gain</li>
+<li>Dramatic change in water intake</li>
+<li>Loss of appetite over 2+ days</li>
+<li>Persistent coughing or labored breathing</li>
+<li>New lumps or rapidly growing masses</li>
+</ul>
+</div>
+<div class="bg-yellow-50 rounded-xl p-4 border border-yellow-100">
+<h3 class="font-bold text-amber-800 mb-2">Monitor closely</h3>
+<ul class="text-sm text-slate-700 space-y-1">
+<li>Gradual decrease in activity</li>
+<li>Confusion or disorientation</li>
+<li>Changes in sleep patterns</li>
+<li>Bad breath or dental changes</li>
+<li>Coat becoming dull or thin</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Common Senior Pet Conditions</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div>
+<h3 class="font-bold text-amber-800 mb-3">Dogs</h3>
+<ul class="space-y-2 text-slate-700 text-sm">
+<li><strong>Arthritis:</strong> Affects ~65% of dogs over 7.</li>
+<li><strong>Dental disease:</strong> Over 80% by age 3.</li>
+<li><strong>Cancer:</strong> Leading cause of death over 10.</li>
+<li><strong>Cognitive dysfunction:</strong> House soiling, confusion, altered sleep.</li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-purple-800 mb-3">Cats</h3>
+<ul class="space-y-2 text-slate-700 text-sm">
+<li><strong>Hyperthyroidism:</strong> ~10% of cats over 10.</li>
+<li><strong>Chronic kidney disease:</strong> Extremely common in older cats.</li>
+<li><strong>Arthritis:</strong> Often underdiagnosed; signs include reduced grooming.</li>
+<li><strong>Dental disease:</strong> Oral pain causes sudden appetite loss.</li>
+</ul>
+</div>
+</div>
+</section>
+<section class="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Quality of Life: The Most Important Consideration</h2>
+<p class="text-slate-700 leading-relaxed">As pets age, the goal shifts from longevity to quality of life. Work with your vet to balance managing chronic conditions with maintaining your pet's daily joy.</p>
+</section>
+</div>
+<div class="mt-10 flex flex-wrap gap-4">
+<a href="/en/tools/dog-age-calculator/" class="inline-flex items-center gap-2 px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl transition-colors text-sm">Dog Age Calculator</a>
+<a href="/en/tools/symptom-checklist/" class="inline-flex items-center gap-2 px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl transition-colors text-sm">Symptom Checklist</a>
+<a href="/en/blog/dog-vs-cat-aging/" class="inline-flex items-center gap-2 px-5 py-3 bg-blue-50 hover:bg-blue-100 text-blue-800 font-semibold rounded-xl transition-colors text-sm">Dog vs Cat Aging</a>
+</div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "At what age is a dog considered senior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dogs are generally considered senior at 7 years old. However, giant breeds may reach senior status at 5-6 years, while small breeds may not be senior until 8-9 years. Always consider your dog's size and breed, not just their calendar age."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often should senior pets see the vet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Senior pets should visit the vet at least twice a year (every 6 months). Key tests include a complete blood panel, urinalysis, blood pressure, dental exam, weight monitoring, and joint assessment."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common health problems in senior dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common health problems in senior dogs include arthritis (affects ~65% of dogs over 7), dental disease (over 80% by age 3), cancer (leading cause of death over 10), and cognitive dysfunction syndrome."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What home changes help senior pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Helpful home modifications for senior pets include orthopedic or memory foam beds, non-slip rugs on slippery floors, ramps or steps to favorite spots, low-entry litter boxes for cats, and raised food bowls for dogs with neck issues."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What warning signs in a senior pet require urgent vet attention?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seek prompt veterinary care if your senior pet shows significant weight loss or gain, dramatic change in water intake, loss of appetite lasting 2+ days, persistent coughing or labored breathing, or new or rapidly growing lumps."
+      }
+    }
+  ]
+})} />
+
 </BaseLayout>
