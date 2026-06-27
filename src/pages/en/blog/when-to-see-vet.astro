@@ -1,87 +1,127 @@
 ---
+---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
-
-  { label: 'Blog', url: '/en/blog/' },
-  { label: 'When to See the Vet', url: '/en/blog/when-to-see-vet/' }
+{ label: 'Blog', url: '/en/blog/' },
+{ label: 'When to See the Vet', url: '/en/blog/when-to-see-vet/' }
 ];
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog/when-to-see-vet' },
-  { lang: 'en', url: siteUrl + '/en/blog/when-to-see-vet' },
-  { lang: 'x-default', url: siteUrl + '/blog/when-to-see-vet' },
+{ lang: 'zh-TW', url: siteUrl + '/blog/when-to-see-vet' },
+{ lang: 'en', url: siteUrl + '/en/blog/when-to-see-vet' },
+{ lang: 'x-default', url: siteUrl + '/blog/when-to-see-vet' },
 ];
 ---
 <BaseLayout title="When to Take Your Pet to the Vet: Urgent vs Routine - Pet Aging Hub"
-  description="A clear guide to deciding when your pet's symptoms need emergency care, a vet appointment soon, or just watchful waiting."
-  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-  <article class="max-w-3xl mx-auto py-10 px-4">
-    <header class="mb-8">
-      <span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Emergency Guide</span>
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">When Should You Take Your Pet to the Vet?</h1>
-      <p class="text-xl text-slate-600 leading-relaxed">Not every symptom is an emergency — but some are. This guide helps you decide between "go now," "call tomorrow," and "watch and wait."</p>
-    </header>
-    <div class="space-y-8">
-      <div class="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
-        <h2 class="text-2xl font-bold text-red-800 mb-4">Emergency: Go to the Vet NOW</h2>
-        <p class="text-slate-700 text-sm mb-4">These symptoms require immediate emergency care. Do not wait for morning. Call ahead so they can prepare.</p>
-        <div class="grid md:grid-cols-2 gap-3">
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>Difficulty breathing, gasping, blue gums</li>
-            <li>Collapse or inability to stand</li>
-            <li>Suspected poisoning or toxin ingestion</li>
-            <li>Seizures (first seizure or multiple in 24 hrs)</li>
-            <li>Distended, hard abdomen (dogs — possible bloat)</li>
-          </ul>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>Sudden paralysis or inability to use limbs</li>
-            <li>Profuse or uncontrolled bleeding</li>
-            <li>Urinary blockage (cats — straining with no output)</li>
-            <li>Severe trauma (hit by car, fall from height)</li>
-            <li>Sudden loss of vision</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-200">
-        <h2 class="text-2xl font-bold text-amber-800 mb-4">Urgent: Call Your Vet Today</h2>
-        <p class="text-slate-700 text-sm mb-4">These symptoms need attention within 24 hours. If you cannot reach your regular vet, consider an urgent-care clinic.</p>
-        <div class="grid md:grid-cols-2 gap-3">
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>Persistent vomiting or diarrhea (3+ episodes)</li>
-            <li>Complete loss of appetite for 24-48 hours</li>
-            <li>Limping that does not improve after rest</li>
-            <li>Eye cloudiness, discharge, or obvious pain</li>
-          </ul>
-          <ul class="space-y-2 text-sm text-slate-700">
-            <li>New lumps that appeared suddenly</li>
-            <li>Significant change in thirst or urination</li>
-            <li>Known wound that looks infected</li>
-            <li>Painful abdomen on palpation</li>
-          </ul>
-        </div>
-      </div>
-      <div class="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
-        <h2 class="text-2xl font-bold text-green-800 mb-4">Schedule Soon: Routine Appointment Within 1-2 Weeks</h2>
-        <ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-700">
-          <li>Gradual weight change</li>
-          <li>Coat changes (dullness, thinning, matting)</li>
-          <li>Intermittent mild limping</li>
-          <li>Slow-growing lumps (months, not days)</li>
-          <li>Bad breath or visible tartar</li>
-          <li>Reduced activity compared to baseline</li>
-          <li>Behavioral changes in older pet</li>
-          <li>Overdue for annual checkup or vaccines</li>
-        </ul>
-      </div>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">A Note on Senior Pets</h2>
-        <p class="text-slate-700 leading-relaxed mb-3">For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions can progress quickly, and what looks like "just slowing down" may be a treatable condition caught early enough to make a real difference.</p>
-        <p class="text-slate-700 leading-relaxed">When in doubt, call your vet and describe the symptoms. Most practices are happy to help you triage over the phone.</p>
-      </section>
-    </div>
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="/en/tools/symptom-checklist/" class="px-5 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl text-sm">Symptom Checklist Tool</a>
-      <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Pet Guide</a>
-    </div>
-  </article>
+description="A clear guide to deciding when your pet's symptoms need emergency care, a vet appointment soon, or just watchful waiting."
+lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<article class="max-w-3xl mx-auto py-10 px-4">
+<header class="mb-8">
+<span class="inline-block bg-red-100 text-red-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Emergency Guide</span>
+<h1 class="text-4xl font-extrabold text-slate-900 mb-4">When Should You Take Your Pet to the Vet?</h1>
+<p class="text-xl text-slate-600 leading-relaxed">Not every symptom is an emergency — but some are. This guide helps you decide between "go now," "call tomorrow," and "watch and wait."</p>
+</header>
+<div class="space-y-8">
+<div class="bg-red-50 rounded-2xl p-6 border-2 border-red-200">
+<h2 class="text-2xl font-bold text-red-800 mb-4">Emergency: Go to the Vet NOW</h2>
+<p class="text-slate-700 text-sm mb-4">These symptoms require immediate emergency care. Do not wait for morning. Call ahead so they can prepare.</p>
+<div class="grid md:grid-cols-2 gap-3">
+<ul class="space-y-2 text-sm text-slate-700">
+<li>Difficulty breathing, gasping, blue gums</li>
+<li>Collapse or inability to stand</li>
+<li>Suspected poisoning or toxin ingestion</li>
+<li>Seizures (first seizure or multiple in 24 hrs)</li>
+<li>Distended, hard abdomen (dogs — possible bloat)</li>
+</ul>
+<ul class="space-y-2 text-sm text-slate-700">
+<li>Sudden paralysis or inability to use limbs</li>
+<li>Profuse or uncontrolled bleeding</li>
+<li>Urinary blockage (cats — straining with no output)</li>
+<li>Severe trauma (hit by car, fall from height)</li>
+<li>Sudden loss of vision</li>
+</ul>
+</div>
+</div>
+<div class="bg-amber-50 rounded-2xl p-6 border-2 border-amber-200">
+<h2 class="text-2xl font-bold text-amber-800 mb-4">Urgent: Call Your Vet Today</h2>
+<p class="text-slate-700 text-sm mb-4">These symptoms need attention within 24 hours. If you cannot reach your regular vet, consider an urgent-care clinic.</p>
+<div class="grid md:grid-cols-2 gap-3">
+<ul class="space-y-2 text-sm text-slate-700">
+<li>Persistent vomiting or diarrhea (3+ episodes)</li>
+<li>Complete loss of appetite for 24-48 hours</li>
+<li>Limping that does not improve after rest</li>
+<li>Eye cloudiness, discharge, or obvious pain</li>
+</ul>
+<ul class="space-y-2 text-sm text-slate-700">
+<li>New lumps that appeared suddenly</li>
+<li>Significant change in thirst or urination</li>
+<li>Known wound that looks infected</li>
+<li>Painful abdomen on palpation</li>
+</ul>
+</div>
+</div>
+<div class="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
+<h2 class="text-2xl font-bold text-green-800 mb-4">Schedule Soon: Routine Appointment Within 1-2 Weeks</h2>
+<ul class="grid md:grid-cols-2 gap-2 text-sm text-slate-700">
+<li>Gradual weight change</li>
+<li>Coat changes (dullness, thinning, matting)</li>
+<li>Intermittent mild limping</li>
+<li>Slow-growing lumps (months, not days)</li>
+<li>Bad breath or visible tartar</li>
+<li>Reduced activity compared to baseline</li>
+<li>Behavioral changes in older pet</li>
+<li>Overdue for annual checkup or vaccines</li>
+</ul>
+</div>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">A Note on Senior Pets</h2>
+<p class="text-slate-700 leading-relaxed mb-3">For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions can progress quickly, and what looks like "just slowing down" may be a treatable condition caught early enough to make a real difference.</p>
+<p class="text-slate-700 leading-relaxed">When in doubt, call your vet and describe the symptoms. Most practices are happy to help you triage over the phone.</p>
+</section>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<a href="/en/tools/symptom-checklist/" class="px-5 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl text-sm">Symptom Checklist Tool</a>
+<a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Pet Guide</a>
+</div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What pet symptoms require emergency vet care?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take your pet to an emergency vet immediately for: difficulty breathing or blue gums, collapse, suspected poisoning, seizures, a distended hard abdomen (dogs — possible bloat), sudden paralysis, uncontrolled bleeding, urinary blockage in cats (straining with no urine output), severe trauma, or sudden vision loss. Do not wait for morning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should I call the vet urgently (within 24 hours)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Call your vet same-day for: persistent vomiting or diarrhea (3+ episodes), complete appetite loss for 24-48 hours, limping that doesn't improve with rest, eye cloudiness or discharge, a new lump that appeared suddenly, significant change in thirst or urination, an infected wound, or a painful abdomen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a urinary blockage in a cat an emergency?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — a urinary blockage in a cat is a life-threatening emergency. If your cat is straining in the litter box but producing little or no urine, go to an emergency vet immediately. Without treatment, a complete blockage can be fatal within 24-48 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "When should senior pets see the vet sooner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions progress quickly, and what appears to be 'just slowing down' may be a treatable condition. When in doubt, call your vet — most practices will help you triage symptoms over the phone."
+      }
+    }
+  ]
+})} />
+
 </BaseLayout>
