@@ -1,112 +1,161 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
-    { label: 'Home', url: '/en/' },
-  { label: 'Blog', url: '/en/blog/' },
-  { label: 'Pet Joint Health', url: '/en/blog/pet-joint-health/' }
+{ label: 'Home', url: '/en/' },
+{ label: 'Blog', url: '/en/blog/' },
+{ label: 'Pet Joint Health', url: '/en/blog/pet-joint-health/' }
 ];
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
-  { lang: 'zh-TW', url: siteUrl + '/blog/pet-joint-health' },
-  { lang: 'en', url: siteUrl + '/en/blog/pet-joint-health' },
-  { lang: 'x-default', url: siteUrl + '/blog/pet-joint-health' },
+{ lang: 'zh-TW', url: siteUrl + '/blog/pet-joint-health' },
+{ lang: 'en', url: siteUrl + '/en/blog/pet-joint-health' },
+{ lang: 'x-default', url: siteUrl + '/blog/pet-joint-health' },
 ];
----h
+---
 <BaseLayout title="Joint Health for Senior Pets: Signs, Causes, and Care - Pet Aging Hub"
-  description="Learn how to recognize joint problems in aging dogs and cats, and what you can do to keep them comfortable and mobile."
-  lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-  <article class="max-w-3xl mx-auto py-10 px-4">
-    <header class="mb-8">
-      <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Joint Health</span>
-      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Joint Health for Senior Pets</h1>
-      <p class="text-xl text-slate-600 leading-relaxed">Arthritis and joint disease affect the majority of older pets — but with the right care, you can keep them comfortable and moving well for years longer.</p>
-    </header>
-    <div class="space-y-8">
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">How Common Is Joint Disease in Pets?</h2>
-        <div class="grid md:grid-cols-2 gap-4 mb-4">
-          <div class="bg-amber-50 rounded-2xl p-5 border border-amber-200 text-center">
-            <div class="text-4xl font-extrabold text-amber-600 mb-1">~65%</div>
-            <div class="text-slate-700 text-sm font-medium">of dogs over age 7 have some degree of arthritis</div>
-          </div>
-          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-200 text-center">
-            <div class="text-4xl font-extrabold text-purple-600 mb-1">~90%</div>
-            <div class="text-slate-700 text-sm font-medium">of cats over age 12 show arthritic changes on X-ray</div>
-          </div>
-        </div>
-        <p class="text-slate-700 leading-relaxed">Despite how common it is, joint disease is frequently missed — especially in cats, who hide pain instinctively. Understanding the signs can help you catch it early.</p>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Signs of Joint Pain: Dogs vs Cats</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
-            <h3 class="font-bold text-amber-800 mb-3">Dogs</h3>
-            <ul class="space-y-2 text-sm text-slate-700">
-              <li>Limping or favoring a leg</li>
-              <li>Stiffness after rest, especially in the morning</li>
-              <li>Difficulty rising from lying down</li>
-              <li>Reluctance to climb stairs, jump into car</li>
-              <li>Slowing down on walks</li>
-              <li>Licking or chewing at a joint</li>
-              <li>Muscle loss over the hindquarters</li>
-            </ul>
-          </div>
-          <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
-            <h3 class="font-bold text-purple-800 mb-3">Cats</h3>
-            <ul class="space-y-2 text-sm text-slate-700">
-              <li>Jumping less often or to lower heights</li>
-              <li>Difficulty using a high-sided litter box</li>
-              <li>Reduced grooming (especially hindquarters)</li>
-              <li>Spending more time on the floor</li>
-              <li>Grumpiness or reacting to being touched</li>
-              <li>Changes in gait — stiffer, shorter steps</li>
-              <li>Less interest in play</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">What You Can Do at Home</h2>
-        <div class="space-y-4">
-          <div class="bg-white rounded-2xl p-5 border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Comfortable Resting Surfaces</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Orthopedic or memory foam beds reduce pressure on joints. Place beds on the floor or provide low ramps so pets do not need to jump. Consider heated beds for pets in cold climates — warmth eases joint stiffness.</p>
-          </div>
-          <div class="bg-white rounded-2xl p-5 border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Non-Slip Flooring</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Slippery floors are painful and discouraging for arthritic pets. Yoga mats, area rugs, or carpet runners in high-traffic areas make a significant difference — especially for dogs getting up and down.</p>
-          </div>
-          <div class="bg-white rounded-2xl p-5 border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Appropriate Exercise</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Regular, gentle movement maintains muscle mass and joint mobility. Short, frequent walks are better than occasional long ones. For cats, low-intensity interactive play using wand toys helps keep joints moving without overexertion.</p>
-          </div>
-          <div class="bg-white rounded-2xl p-5 border border-slate-200">
-            <h3 class="font-bold text-slate-900 mb-2">Weight Management</h3>
-            <p class="text-slate-700 text-sm leading-relaxed">Every extra pound adds stress to joints. Even modest weight loss (10–15% of body weight) can produce dramatic improvements in mobility and comfort. Consult your vet for a safe weight-loss plan if needed.</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <h2 class="text-2xl font-bold text-slate-900 mb-4">Veterinary Treatment Options</h2>
-        <p class="text-slate-700 leading-relaxed mb-4">A vet diagnosis is important — pain management options have expanded significantly in recent years:</p>
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="space-y-3 text-sm text-slate-700">
-            <div><strong>NSAIDs:</strong> Anti-inflammatory medications (carprofen, meloxicam) are effective and commonly prescribed. Require regular bloodwork to monitor kidney/liver health.</div>
-            <div><strong>Gabapentin:</strong> Addresses nerve-related pain. Often used alongside NSAIDs.</div>
-            <div><strong>Monoclonal antibodies (cats/dogs):</strong> Newer class of monthly injections targeting pain signaling. Very effective with minimal side effects.</div>
-          </div>
-          <div class="space-y-3 text-sm text-slate-700">
-            <div><strong>Joint supplements:</strong> Glucosamine and chondroitin have modest evidence for mild cases. Omega-3 fatty acids (fish oil) have better anti-inflammatory evidence.</div>
-            <div><strong>Physical therapy:</strong> Hydrotherapy (underwater treadmill) and massage can be highly effective for dogs.</div>
-            <div><strong>Acupuncture:</strong> Evidence-based option for pain management, available at many veterinary clinics.</div>
-          </div>
-        </div>
-      </section>
-    </div>
-    <div class="mt-8 flex flex-wrap gap-4">
-      <a href="/en/blog/when-to-see-vet/" class="px-5 py-3 bg-red-100 hover:bg-red-200 text-red-800 font-semibold rounded-xl text-sm">When to See the Vet</a>
-      <a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Dog Care Guide</a>
-      <a href="/en/blog/senior-cat-care/" class="px-5 py-3 bg-purple-100 hover:bg-purple-200 text-purple-800 font-semibold rounded-xl text-sm">Senior Cat Care Guide</a>
-    </div>
-  </article>
+description="Learn how to recognize joint problems in aging dogs and cats, and what you can do to keep them comfortable and mobile."
+lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
+<article class="max-w-3xl mx-auto py-10 px-4">
+<header class="mb-8">
+<span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Joint Health</span>
+<h1 class="text-4xl font-extrabold text-slate-900 mb-4">Joint Health for Senior Pets</h1>
+<p class="text-xl text-slate-600 leading-relaxed">Arthritis and joint disease affect the majority of older pets — but with the right care, you can keep them comfortable and moving well for years longer.</p>
+</header>
+<div class="space-y-8">
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">How Common Is Joint Disease in Pets?</h2>
+<div class="grid md:grid-cols-2 gap-4 mb-4">
+<div class="bg-amber-50 rounded-2xl p-5 border border-amber-200 text-center">
+<div class="text-4xl font-extrabold text-amber-600 mb-1">~65%</div>
+<div class="text-slate-700 text-sm font-medium">of dogs over age 7 have some degree of arthritis</div>
+</div>
+<div class="bg-purple-50 rounded-2xl p-5 border border-purple-200 text-center">
+<div class="text-4xl font-extrabold text-purple-600 mb-1">~90%</div>
+<div class="text-slate-700 text-sm font-medium">of cats over age 12 show arthritic changes on X-ray</div>
+</div>
+</div>
+<p class="text-slate-700 leading-relaxed">Despite how common it is, joint disease is frequently missed — especially in cats, who hide pain instinctively. Understanding the signs can help you catch it early.</p>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Signs of Joint Pain: Dogs vs Cats</h2>
+<div class="grid md:grid-cols-2 gap-6">
+<div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
+<h3 class="font-bold text-amber-800 mb-3">Dogs</h3>
+<ul class="space-y-2 text-sm text-slate-700">
+<li>Limping or favoring a leg</li>
+<li>Stiffness after rest, especially in the morning</li>
+<li>Difficulty rising from lying down</li>
+<li>Reluctance to climb stairs, jump into car</li>
+<li>Slowing down on walks</li>
+<li>Licking or chewing at a joint</li>
+<li>Muscle loss over the hindquarters</li>
+</ul>
+</div>
+<div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
+<h3 class="font-bold text-purple-800 mb-3">Cats</h3>
+<ul class="space-y-2 text-sm text-slate-700">
+<li>Jumping less often or to lower heights</li>
+<li>Difficulty using a high-sided litter box</li>
+<li>Reduced grooming (especially hindquarters)</li>
+<li>Spending more time on the floor</li>
+<li>Grumpiness or reacting to being touched</li>
+<li>Changes in gait — stiffer, shorter steps</li>
+<li>Less interest in play</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">What You Can Do at Home</h2>
+<div class="space-y-4">
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="font-bold text-slate-900 mb-2">Comfortable Resting Surfaces</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Orthopedic or memory foam beds reduce pressure on joints. Place beds on the floor or provide low ramps so pets do not need to jump. Consider heated beds for pets in cold climates — warmth eases joint stiffness.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="font-bold text-slate-900 mb-2">Non-Slip Flooring</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Slippery floors are painful and discouraging for arthritic pets. Yoga mats, area rugs, or carpet runners in high-traffic areas make a significant difference — especially for dogs getting up and down.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="font-bold text-slate-900 mb-2">Appropriate Exercise</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Regular, gentle movement maintains muscle mass and joint mobility. Short, frequent walks are better than occasional long ones. For cats, low-intensity interactive play using wand toys helps keep joints moving without overexertion.</p>
+</div>
+<div class="bg-white rounded-2xl p-5 border border-slate-200">
+<h3 class="font-bold text-slate-900 mb-2">Weight Management</h3>
+<p class="text-slate-700 text-sm leading-relaxed">Every extra pound adds stress to joints. Even modest weight loss (10–15% of body weight) can produce dramatic improvements in mobility and comfort. Consult your vet for a safe weight-loss plan if needed.</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-2xl font-bold text-slate-900 mb-4">Veterinary Treatment Options</h2>
+<p class="text-slate-700 leading-relaxed mb-4">A vet diagnosis is important — pain management options have expanded significantly in recent years:</p>
+<div class="grid md:grid-cols-2 gap-4">
+<div class="space-y-3 text-sm text-slate-700">
+<div><strong>NSAIDs:</strong> Anti-inflammatory medications (carprofen, meloxicam) are effective and commonly prescribed. Require regular bloodwork to monitor kidney/liver health.</div>
+<div><strong>Gabapentin:</strong> Addresses nerve-related pain. Often used alongside NSAIDs.</div>
+<div><strong>Monoclonal antibodies (cats/dogs):</strong> Newer class of monthly injections targeting pain signaling. Very effective with minimal side effects.</div>
+</div>
+<div class="space-y-3 text-sm text-slate-700">
+<div><strong>Joint supplements:</strong> Glucosamine and chondroitin have modest evidence for mild cases. Omega-3 fatty acids (fish oil) have better anti-inflammatory evidence.</div>
+<div><strong>Physical therapy:</strong> Hydrotherapy (underwater treadmill) and massage can be highly effective for dogs.</div>
+<div><strong>Acupuncture:</strong> Evidence-based option for pain management, available at many veterinary clinics.</div>
+</div>
+</div>
+</section>
+</div>
+<div class="mt-8 flex flex-wrap gap-4">
+<a href="/en/blog/when-to-see-vet/" class="px-5 py-3 bg-red-100 hover:bg-red-200 text-red-800 font-semibold rounded-xl text-sm">When to See the Vet</a>
+<a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Dog Care Guide</a>
+<a href="/en/blog/senior-cat-care/" class="px-5 py-3 bg-purple-100 hover:bg-purple-200 text-purple-800 font-semibold rounded-xl text-sm">Senior Cat Care Guide</a>
+</div>
+</article>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I know if my dog or cat has arthritis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Common signs in dogs include stiffness after rest (especially in the morning), hesitation before jumping, limping, and reduced enthusiasm for walks. Cats hide pain more effectively — watch for reduced jumping height, reluctance to use a litter box with high sides, less grooming of the hindquarters, and increased hiding. A vet diagnosis with X-rays is needed to confirm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What supplements help with joint health in senior pets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Omega-3 fatty acids (EPA and DHA from fish oil) have the strongest evidence for reducing joint inflammation in pets. Glucosamine and chondroitin sulfate have modest evidence for mild arthritis. Green-lipped mussel extract is another option with some supporting research. Always consult your vet before starting supplements, especially for pets already on medication."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is arthritis in cats as common as in dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes — studies show that approximately 90% of cats over age 12 have arthritic changes visible on X-ray. However, because cats are stoic about pain, arthritis is significantly underdiagnosed compared to dogs. Reduced jumping, changes in litter box use, and less grooming are key signs to watch for in older cats."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I give my dog human pain medication for joint pain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Human NSAIDs like ibuprofen and naproxen are toxic to dogs and can cause fatal gastrointestinal bleeding or kidney failure even in small doses. Acetaminophen (Tylenol) is toxic to both dogs and cats. Only use veterinary-prescribed pain medications. Safe options include carprofen, meloxicam, and gabapentin — all requiring a veterinary prescription."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What home changes help arthritic pets move more comfortably?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most impactful changes are: placing non-slip rugs on tile and hardwood floors (slippery surfaces are painful and scary), providing orthopedic foam beds on the floor level, installing ramps or steps at the car and on furniture, and raising food and water bowls slightly for dogs with neck arthritis. Maintaining a healthy weight is also critical — every extra pound significantly increases joint stress."
+      }
+    }
+  ]
+}
+</script>
 </BaseLayout>
