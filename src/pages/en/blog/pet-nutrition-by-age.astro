@@ -1,5 +1,4 @@
 ---
----
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
 { label: 'Blog', url: '/en/blog/' },
@@ -31,11 +30,11 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </div>
 <div class="bg-white rounded-2xl p-5 border border-slate-200">
 <h3 class="text-lg font-bold text-slate-900 mb-1">Adult (1–7 years)</h3>
-<p class="text-slate-700 text-sm leading-relaxed">Adult dogs need 18–25% protein, moderate fat (5–15%), and balanced fiber for digestive health. Twice-daily feeding works well. Focus on maintaining a healthy weight — over 50% of adult dogs are overweight.</p>
+<p class="text-slate-700 text-sm leading-relaxed">Adult dogs need 18–25% protein, moderate fat (5–15%), and balanced fiber for digestive health. Twice-daily feeding works well. Focus on maintaining a healthy weight — over 50% of adult dogs are overweight. Pairing good nutrition with appropriate <a href="/en/blog/pet-exercise-by-age/" class="text-blue-600 underline">exercise for your pet's age</a> is the most effective way to prevent weight gain.</p>
 </div>
 <div class="bg-white rounded-2xl p-5 border border-slate-200">
 <h3 class="text-lg font-bold text-slate-900 mb-1">Senior (7+ years)</h3>
-<p class="text-slate-700 text-sm leading-relaxed">Senior dogs often need fewer calories (10–20% less) but higher-quality, easily digestible protein to maintain muscle mass. Reduced phosphorus supports kidney health. Omega-3 fatty acids help with joint inflammation.</p>
+<p class="text-slate-700 text-sm leading-relaxed">Senior dogs often need fewer calories (10–20% less) but higher-quality, easily digestible protein to maintain muscle mass. Reduced phosphorus supports kidney health. Omega-3 fatty acids help with joint inflammation. Our <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">senior dog care guide</a> covers how to manage their full range of changing health needs.</p>
 </div>
 </div>
 </section>
@@ -53,7 +52,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </div>
 <div class="bg-white rounded-2xl p-5 border border-slate-200">
 <h3 class="text-lg font-bold text-slate-900 mb-1">Senior (10+ years)</h3>
-<p class="text-slate-700 text-sm leading-relaxed">Senior cats actually need more protein (not less) to prevent muscle wasting. Phosphorus restriction becomes important if kidney disease develops. Many senior cats do best on small, frequent meals of high-moisture food.</p>
+<p class="text-slate-700 text-sm leading-relaxed">Senior cats actually need more protein (not less) to prevent muscle wasting. Phosphorus restriction becomes important if kidney disease develops. Many senior cats do best on small, frequent meals of high-moisture food. Our <a href="/en/blog/senior-cat-care/" class="text-blue-600 underline">senior cat care guide</a> includes vet schedules and home adjustments alongside dietary advice.</p>
 </div>
 </div>
 </section>
@@ -102,42 +101,42 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </article>
 
 <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What should I feed my senior dog?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Senior dogs (7+ years) generally need fewer calories — about 10–20% less than adults — but higher-quality, easily digestible protein to maintain muscle mass. Look for formulas with reduced phosphorus to support kidney health and added omega-3 fatty acids for joint inflammation. Avoid generic 'senior' labels and check the actual nutrient profile."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do senior cats need more or less protein?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Contrary to old advice, senior cats actually need more protein, not less. Older cats are less efficient at digesting and using protein, so they need higher amounts to prevent muscle wasting. Unless your vet has recommended protein restriction due to advanced kidney disease, keep protein levels high (30%+ dry matter) in senior cat food."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I switch my puppy to adult food?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Small breeds (under 20 lbs) can switch to adult food at 9–12 months. Medium breeds at 12 months. Large and giant breeds should stay on large-breed puppy food until 18–24 months because their bones take longer to fully develop. Switching too early can increase the risk of skeletal problems."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is wet food or dry food better for cats?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Wet food is generally preferable for cats because it dramatically increases water intake, which is critical for urinary tract and kidney health. Cats have a low thirst drive and don't compensate well by drinking more water when eating dry food. A combination of wet and dry is acceptable, but wet should make up the majority of the diet where possible."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "What should I feed my senior dog?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Senior dogs (7+ years) generally need fewer calories — about 10–20% less than adults — but higher-quality, easily digestible protein to maintain muscle mass. Look for formulas with reduced phosphorus to support kidney health and added omega-3 fatty acids for joint inflammation. Avoid generic 'senior' labels and check the actual nutrient profile."
+}
+},
+{
+"@type": "Question",
+"name": "Do senior cats need more or less protein?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Contrary to old advice, senior cats actually need more protein, not less. Older cats are less efficient at digesting and using protein, so they need higher amounts to prevent muscle wasting. Unless your vet has recommended protein restriction due to advanced kidney disease, keep protein levels high (30%+ dry matter) in senior cat food."
+}
+},
+{
+"@type": "Question",
+"name": "When should I switch my puppy to adult food?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Small breeds (under 20 lbs) can switch to adult food at 9–12 months. Medium breeds at 12 months. Large and giant breeds should stay on large-breed puppy food until 18–24 months because their bones take longer to fully develop. Switching too early can increase the risk of skeletal problems."
+}
+},
+{
+"@type": "Question",
+"name": "Is wet food or dry food better for cats?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Wet food is generally preferable for cats because it dramatically increases water intake, which is critical for urinary tract and kidney health. Cats have a low thirst drive and don't compensate well by drinking more water when eating dry food. A combination of wet and dry is acceptable, but wet should make up the majority of the diet where possible."
+}
+}
+]
 })} />
 
 </BaseLayout>
