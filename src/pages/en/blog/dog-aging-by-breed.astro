@@ -1,5 +1,4 @@
 ---
----
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
 { label: 'Blog', url: '/en/blog/' },
@@ -49,7 +48,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </section>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Why Bigger Dogs Age Faster</h2>
-<p class="text-slate-700 leading-relaxed mb-4">Unlike most animals where larger species outlive smaller ones, dogs are an exception. Large dogs grow from puppy to adult size very rapidly, which accelerates cellular aging and increases cancer risk. IGF-1 (insulin-like growth factor), which drives growth, is also linked to faster aging and tumor development.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Unlike most animals where larger species outlive smaller ones, dogs are an exception. Large dogs grow from puppy to adult size very rapidly, which accelerates cellular aging and increases cancer risk. IGF-1 (insulin-like growth factor), which drives growth, is also linked to faster aging and tumor development. For a more nuanced understanding of where your dog stands biologically, our <a href="/en/blog/dog-human-years/" class="text-blue-600 underline">dog age in human years guide</a> explains how to convert your dog's age more accurately than the old 7x formula.</p>
 </section>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Breed Overview Table</h2>
@@ -76,12 +75,14 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </section>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">When to Start Senior Care</h2>
+<p class="text-slate-700 leading-relaxed mb-3">Once your dog reaches their senior threshold, a proper <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">senior dog care routine</a> — covering nutrition, exercise, and vet visits — becomes essential.</p>
 <ul class="space-y-2 text-slate-700 pl-4">
 <li><strong>Toy and Small (&lt;10 kg):</strong> Age 9-10</li>
 <li><strong>Medium (10-25 kg):</strong> Age 7-8</li>
 <li><strong>Large (25-45 kg):</strong> Age 7</li>
 <li><strong>Giant (&gt;45 kg):</strong> Age 5-6</li>
 </ul>
+<p class="text-slate-700 leading-relaxed mt-3">As dogs approach and pass these thresholds, watch closely for <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">the early signs of aging</a> so you can respond before problems escalate.</p>
 </section>
 <section class="bg-amber-50 rounded-2xl p-6 border border-amber-100">
 <h2 class="text-xl font-bold text-slate-900 mb-3">Mixed Breed Dogs</h2>
@@ -95,42 +96,42 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </article>
 
 <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Why do larger dogs have shorter lifespans?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Larger dogs grow very rapidly from puppy to adult size, which accelerates cellular aging and increases cancer risk. The hormone IGF-1 (insulin-like growth factor) that drives this rapid growth is also linked to faster aging and tumor development."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How long do Golden Retrievers live?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Golden Retrievers typically live 10-12 years and are considered senior at around 7 years old. They are a large breed, so they age faster than smaller dogs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "At what age is a Great Dane considered senior?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Great Danes are considered senior at just 5 years old due to their giant size. Their average lifespan is only 7-10 years, making them one of the shortest-lived dog breeds."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do mixed breed dogs live longer than purebreds?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Mixed breed dogs often benefit from hybrid vigor and may live longer than purebred counterparts. For aging purposes, use the size category that matches your dog's adult weight as a guide for when to start senior care."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "Why do larger dogs have shorter lifespans?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Larger dogs grow very rapidly from puppy to adult size, which accelerates cellular aging and increases cancer risk. The hormone IGF-1 (insulin-like growth factor) that drives this rapid growth is also linked to faster aging and tumor development."
+}
+},
+{
+"@type": "Question",
+"name": "How long do Golden Retrievers live?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Golden Retrievers typically live 10-12 years and are considered senior at around 7 years old. They are a large breed, so they age faster than smaller dogs."
+}
+},
+{
+"@type": "Question",
+"name": "At what age is a Great Dane considered senior?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Great Danes are considered senior at just 5 years old due to their giant size. Their average lifespan is only 7-10 years, making them one of the shortest-lived dog breeds."
+}
+},
+{
+"@type": "Question",
+"name": "Do mixed breed dogs live longer than purebreds?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Mixed breed dogs often benefit from hybrid vigor and may live longer than purebred counterparts. For aging purposes, use the size category that matches your dog's adult weight as a guide for when to start senior care."
+}
+}
+]
 })} />
 
 </BaseLayout>
