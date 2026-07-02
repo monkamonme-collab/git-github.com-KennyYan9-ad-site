@@ -1,5 +1,4 @@
 ---
----
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
 { label: 'Home', url: '/en/' },
@@ -39,13 +38,14 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 <li>Changed bathroom habits</li>
 </ul>
 </div>
+<p class="text-slate-700 text-sm leading-relaxed mt-4">Learning to recognize <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">the early signs of aging in your dog</a> helps you act before minor changes become serious conditions — and gives your vet more time to intervene effectively.</p>
 </section>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Veterinary Care for Senior Dogs</h2>
 <p class="text-slate-700 leading-relaxed mb-4">Increase vet visits to twice yearly once your dog reaches senior status. A comprehensive senior wellness exam should include:</p>
 <div class="space-y-3">
 <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
-<div><p class="font-semibold text-slate-900 text-sm">Complete Blood Count and Chemistry Panel</p><p class="text-slate-600 text-xs">Screens for organ function, anemia, infection, diabetes, and more.</p></div>
+<div><p class="font-semibold text-slate-900 text-sm">Complete Blood Count and Chemistry Panel</p><p class="text-slate-600 text-xs">Screens for organ function, anemia, infection, diabetes, and more. Results often guide dietary adjustments — our guide to <a href="/en/blog/pet-nutrition-by-age/" class="text-blue-600 underline">pet nutrition by life stage</a> explains how senior dogs' needs differ from adult dogs.</p></div>
 </div>
 <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
 <div><p class="font-semibold text-slate-900 text-sm">Urinalysis</p><p class="text-slate-600 text-xs">Kidney function indicator; detects early signs before bloodwork changes.</p></div>
@@ -54,7 +54,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 <div><p class="font-semibold text-slate-900 text-sm">Dental Examination</p><p class="text-slate-600 text-xs">Dental disease is painful and can affect heart health.</p></div>
 </div>
 <div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
-<div><p class="font-semibold text-slate-900 text-sm">Orthopedic Assessment</p><p class="text-slate-600 text-xs">Joint pain evaluation. May recommend X-rays for arthritis staging.</p></div>
+<div><p class="font-semibold text-slate-900 text-sm">Orthopedic Assessment</p><p class="text-slate-600 text-xs">Joint pain evaluation. May recommend X-rays for arthritis staging. If arthritis is confirmed, our <a href="/en/blog/pet-joint-health/" class="text-blue-600 underline">pet joint health guide</a> outlines treatment options and management strategies that can keep your dog moving comfortably.</p></div>
 </div>
 </div>
 </section>
@@ -88,42 +88,42 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </article>
 
 <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "When is a dog considered senior?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most dogs are considered senior at age 7, though large and giant breeds age faster and may be considered senior at 5-6. Signs of the senior transition include a gray muzzle, slower rising from lying down, less enthusiasm for long walks, weight changes, and increased sleeping."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should a senior dog see the vet?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Senior dogs should see the vet twice a year instead of once. A comprehensive senior wellness exam includes a complete blood count, chemistry panel, urinalysis, dental examination, and orthopedic assessment. Early detection of organ disease, arthritis, and diabetes makes a significant difference in outcomes."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What home changes help a senior dog?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Key home modifications for senior dogs include an orthopedic memory foam bed, ramps or steps to avoid jumping on/off furniture, non-slip rugs on hardwood floors, elevated food bowls for dogs with neck or back pain, and more frequent outdoor bathroom access to prevent accidents."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I support my senior dog's mental health?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Senior dogs benefit greatly from consistent daily routines (same walk, meal, and bedtime schedule), gentle physical contact, and appropriate mental enrichment like sniff walks and short training sessions. Avoid sudden environmental changes, which can cause anxiety in older dogs, especially those with cognitive decline."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "When is a dog considered senior?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Most dogs are considered senior at age 7, though large and giant breeds age faster and may be considered senior at 5-6. Signs of the senior transition include a gray muzzle, slower rising from lying down, less enthusiasm for long walks, weight changes, and increased sleeping."
+}
+},
+{
+"@type": "Question",
+"name": "How often should a senior dog see the vet?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Senior dogs should see the vet twice a year instead of once. A comprehensive senior wellness exam includes a complete blood count, chemistry panel, urinalysis, dental examination, and orthopedic assessment. Early detection of organ disease, arthritis, and diabetes makes a significant difference in outcomes."
+}
+},
+{
+"@type": "Question",
+"name": "What home changes help a senior dog?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Key home modifications for senior dogs include an orthopedic memory foam bed, ramps or steps to avoid jumping on/off furniture, non-slip rugs on hardwood floors, elevated food bowls for dogs with neck or back pain, and more frequent outdoor bathroom access to prevent accidents."
+}
+},
+{
+"@type": "Question",
+"name": "How do I support my senior dog's mental health?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Senior dogs benefit greatly from consistent daily routines (same walk, meal, and bedtime schedule), gentle physical contact, and appropriate mental enrichment like sniff walks and short training sessions. Avoid sudden environmental changes, which can cause anxiety in older dogs, especially those with cognitive decline."
+}
+}
+]
 })} />
 
 </BaseLayout>
