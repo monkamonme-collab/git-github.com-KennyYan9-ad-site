@@ -1,5 +1,4 @@
 ---
----
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
 { label: 'Blog', url: '/en/blog/' },
@@ -59,6 +58,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 <li>Painful abdomen on palpation</li>
 </ul>
 </div>
+<p class="text-slate-700 text-sm leading-relaxed mt-3">Persistent limping in older pets often signals joint issues — our <a href="/en/blog/pet-joint-health/" class="text-blue-600 underline">pet joint health guide</a> explains what's treatable and when it warrants urgent attention.</p>
 </div>
 <div class="bg-green-50 rounded-2xl p-6 border-2 border-green-200">
 <h2 class="text-2xl font-bold text-green-800 mb-4">Schedule Soon: Routine Appointment Within 1-2 Weeks</h2>
@@ -75,53 +75,57 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </div>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">A Note on Senior Pets</h2>
-<p class="text-slate-700 leading-relaxed mb-3">For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions can progress quickly, and what looks like "just slowing down" may be a treatable condition caught early enough to make a real difference.</p>
+<p class="text-slate-700 leading-relaxed mb-3">For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions can progress quickly, and what looks like "just slowing down" may be a treatable condition caught early enough to make a real difference. For detailed home monitoring guidance, see our <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">senior dog care guide</a> and our <a href="/en/blog/senior-cat-care/" class="text-blue-600 underline">senior cat care guide</a> for age-specific warning signs.</p>
 <p class="text-slate-700 leading-relaxed">When in doubt, call your vet and describe the symptoms. Most practices are happy to help you triage over the phone.</p>
 </section>
 </div>
-<div class="mt-8 flex flex-wrap gap-4">
+<div class="mt-8 bg-slate-50 rounded-2xl p-5 border border-slate-200 text-center">
+<p class="text-slate-700 text-sm mb-3">Use our symptom checklist to help communicate with your vet.</p>
+<a href="/en/tools/" class="inline-block px-6 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl text-sm">See All Tools →</a>
+</div>
+<div class="mt-4 flex flex-wrap gap-4">
 <a href="/en/tools/symptom-checklist/" class="px-5 py-3 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl text-sm">Symptom Checklist Tool</a>
 <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Pet Guide</a>
 </div>
 </article>
 
 <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What pet symptoms require emergency vet care?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Take your pet to an emergency vet immediately for: difficulty breathing or blue gums, collapse, suspected poisoning, seizures, a distended hard abdomen (dogs — possible bloat), sudden paralysis, uncontrolled bleeding, urinary blockage in cats (straining with no urine output), severe trauma, or sudden vision loss. Do not wait for morning."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I call the vet urgently (within 24 hours)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Call your vet same-day for: persistent vomiting or diarrhea (3+ episodes), complete appetite loss for 24-48 hours, limping that doesn't improve with rest, eye cloudiness or discharge, a new lump that appeared suddenly, significant change in thirst or urination, an infected wound, or a painful abdomen."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is a urinary blockage in a cat an emergency?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes — a urinary blockage in a cat is a life-threatening emergency. If your cat is straining in the litter box but producing little or no urine, go to an emergency vet immediately. Without treatment, a complete blockage can be fatal within 24-48 hours."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When should senior pets see the vet sooner?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions progress quickly, and what appears to be 'just slowing down' may be a treatable condition. When in doubt, call your vet — most practices will help you triage symptoms over the phone."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "What pet symptoms require emergency vet care?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Take your pet to an emergency vet immediately for: difficulty breathing or blue gums, collapse, suspected poisoning, seizures, a distended hard abdomen (dogs — possible bloat), sudden paralysis, uncontrolled bleeding, urinary blockage in cats (straining with no urine output), severe trauma, or sudden vision loss. Do not wait for morning."
+}
+},
+{
+"@type": "Question",
+"name": "When should I call the vet urgently (within 24 hours)?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Call your vet same-day for: persistent vomiting or diarrhea (3+ episodes), complete appetite loss for 24-48 hours, limping that doesn't improve with rest, eye cloudiness or discharge, a new lump that appeared suddenly, significant change in thirst or urination, an infected wound, or a painful abdomen."
+}
+},
+{
+"@type": "Question",
+"name": "Is a urinary blockage in a cat an emergency?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes — a urinary blockage in a cat is a life-threatening emergency. If your cat is straining in the litter box but producing little or no urine, go to an emergency vet immediately. Without treatment, a complete blockage can be fatal within 24-48 hours."
+}
+},
+{
+"@type": "Question",
+"name": "When should senior pets see the vet sooner?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "For pets over 10, err on the side of calling your vet sooner rather than later. Age-related conditions progress quickly, and what appears to be 'just slowing down' may be a treatable condition. When in doubt, call your vet — most practices will help you triage symptoms over the phone."
+}
+}
+]
 })} />
 
 </BaseLayout>

@@ -1,5 +1,4 @@
 ---
----
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
 { label: 'Blog', url: '/en/blog/' },
@@ -24,7 +23,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 <div class="space-y-10">
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Why Dental Health Affects Overall Health</h2>
-<p class="text-slate-700 leading-relaxed mb-4">Dental disease is not just bad breath. Periodontal bacteria can enter the bloodstream through inflamed gum tissue and travel to the heart, kidneys, and liver. Studies have linked severe dental disease in pets to increased risk of cardiac and kidney disease.</p>
+<p class="text-slate-700 leading-relaxed mb-4">Dental disease is not just bad breath. Periodontal bacteria can enter the bloodstream through inflamed gum tissue and travel to the heart, kidneys, and liver. Studies have linked severe dental disease in pets to increased risk of cardiac and kidney disease. Dental care is one of the most impactful additions you can make to any <a href="/en/blog/senior-dog-care/" class="text-blue-600 underline">senior dog care routine</a>.</p>
 <p class="text-slate-700 leading-relaxed">More immediately: dental pain is constant and invisible. Pets cannot tell you their mouth hurts. They often continue eating despite significant pain — which is why dental disease is so chronically undertreated.</p>
 </section>
 <section>
@@ -51,6 +50,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </ul>
 </div>
 </div>
+<p class="text-slate-700 text-sm leading-relaxed mt-3">Any of the behavioral signs above — especially sudden appetite loss or pawing at the face — warrants a prompt visit. Our guide on <a href="/en/blog/when-to-see-vet/" class="text-blue-600 underline">when to take your pet to the vet</a> can help you assess how urgently to act.</p>
 </section>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Stages of Dental Disease</h2>
@@ -77,53 +77,57 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Prevention: Building a Dental Routine</h2>
 <div class="bg-teal-50 rounded-2xl p-5 border border-teal-100">
 <p class="text-slate-700 text-sm mb-3 leading-relaxed">The gold standard is daily toothbrushing with a pet-safe enzymatic toothpaste. Even 2-3 times per week provides significant benefit. Use a finger brush or soft pet toothbrush — never human toothpaste (xylitol is toxic to dogs).</p>
-<p class="text-slate-700 text-sm leading-relaxed">If brushing is not possible, look for products with the VOHC (Veterinary Oral Health Council) seal — these have proven dental benefits. Professional cleaning under anesthesia is typically recommended every 1-3 years.</p>
+<p class="text-slate-700 text-sm leading-relaxed">If brushing is not possible, look for products with the VOHC (Veterinary Oral Health Council) seal — these have proven dental benefits. Professional cleaning under anesthesia is typically recommended every 1-3 years. For cats, dental care pairs closely with the broader <a href="/en/blog/senior-cat-care/" class="text-blue-600 underline">senior cat care protocol</a> your vet should be running at each biannual visit.</p>
 </div>
 </section>
 </div>
-<div class="mt-8 flex flex-wrap gap-4">
+<div class="mt-8 bg-slate-50 rounded-2xl p-5 border border-slate-200 text-center">
+<p class="text-slate-700 text-sm mb-3">Use our free tools to track your pet's age and health milestones.</p>
+<a href="/en/tools/" class="inline-block px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-xl text-sm">See All Tools →</a>
+</div>
+<div class="mt-4 flex flex-wrap gap-4">
 <a href="/en/blog/when-to-see-vet/" class="px-5 py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-xl text-sm">When to See the Vet</a>
 <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Pet Guide</a>
 </div>
 </article>
 
 <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How common is dental disease in pets?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Dental disease is extremely common. By age 3, over 80% of dogs and 70% of cats have some form of dental disease. It is the most frequently diagnosed health problem in pets and is severely undertreated because animals continue eating even in significant pain."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can pet dental disease affect other organs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Periodontal bacteria can enter the bloodstream through inflamed gum tissue and travel to the heart, kidneys, and liver. Studies have linked severe dental disease in pets to increased risk of cardiac and kidney disease. This is why dental health is considered a whole-body health issue."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I brush my dog's or cat's teeth?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Use a finger brush or soft pet toothbrush with a pet-safe enzymatic toothpaste. Never use human toothpaste — xylitol is toxic to dogs. Daily brushing is the gold standard, but even 2-3 times per week provides significant benefit. If your pet won't tolerate brushing, look for VOHC-approved dental products as alternatives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How often should pets have professional dental cleaning?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most pets benefit from professional dental cleaning under anesthesia every 1-3 years, depending on the individual. Small breeds and flat-faced breeds often need more frequent cleanings. Annual dental exams help your vet determine the right schedule for your pet."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "How common is dental disease in pets?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Dental disease is extremely common. By age 3, over 80% of dogs and 70% of cats have some form of dental disease. It is the most frequently diagnosed health problem in pets and is severely undertreated because animals continue eating even in significant pain."
+}
+},
+{
+"@type": "Question",
+"name": "Can pet dental disease affect other organs?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Yes. Periodontal bacteria can enter the bloodstream through inflamed gum tissue and travel to the heart, kidneys, and liver. Studies have linked severe dental disease in pets to increased risk of cardiac and kidney disease. This is why dental health is considered a whole-body health issue."
+}
+},
+{
+"@type": "Question",
+"name": "How do I brush my dog's or cat's teeth?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Use a finger brush or soft pet toothbrush with a pet-safe enzymatic toothpaste. Never use human toothpaste — xylitol is toxic to dogs. Daily brushing is the gold standard, but even 2-3 times per week provides significant benefit. If your pet won't tolerate brushing, look for VOHC-approved dental products as alternatives."
+}
+},
+{
+"@type": "Question",
+"name": "How often should pets have professional dental cleaning?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Most pets benefit from professional dental cleaning under anesthesia every 1-3 years, depending on the individual. Small breeds and flat-faced breeds often need more frequent cleanings. Annual dental exams help your vet determine the right schedule for your pet."
+}
+}
+]
 })} />
 
 </BaseLayout>
