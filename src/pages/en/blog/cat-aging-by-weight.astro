@@ -1,5 +1,4 @@
 ---
----
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 const breadcrumbs = [
 { label: 'Blog', url: '/en/blog/' },
@@ -61,6 +60,7 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </section>
 <section>
 <h2 class="text-2xl font-bold text-slate-900 mb-4">Weight Loss in Senior Cats: Never Ignore It</h2>
+<p class="text-slate-700 leading-relaxed mb-3">Unexplained weight loss is one of the most important <a href="/en/blog/cat-aging-signs/" class="text-blue-600 underline">signs your cat is aging</a> and needs medical attention. Common causes include:</p>
 <div class="space-y-3">
 <div class="bg-white rounded-xl p-4 border border-slate-200">
 <span class="font-semibold text-purple-700">Hyperthyroidism:</span>
@@ -74,11 +74,15 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 <span class="font-semibold text-purple-700">Diabetes:</span>
 <span class="text-slate-700 text-sm ml-2">Weight loss with increased thirst and urination.</span>
 </div>
+<div class="bg-white rounded-xl p-4 border border-slate-200">
+<span class="font-semibold text-purple-700">Dental Disease:</span>
+<span class="text-slate-700 text-sm ml-2">Oral pain often causes cats to eat less. Good <a href="/en/blog/pet-dental-health/" class="text-blue-600 underline">pet dental health</a> habits can prevent this common but overlooked cause of weight loss.</span>
+</div>
 </div>
 </section>
 <section class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
 <h2 class="text-xl font-bold text-slate-900 mb-3">Monitor at Home</h2>
-<p class="text-slate-700 leading-relaxed">Weigh your cat monthly. A consistent loss of more than 0.5 kg over 1-2 months warrants a vet visit. Also do a rib check: you should feel ribs easily without pressing hard, but not see them visibly.</p>
+<p class="text-slate-700 leading-relaxed">Weigh your cat monthly. A consistent loss of more than 0.5 kg over 1-2 months warrants a vet visit. Also do a rib check: you should feel ribs easily without pressing hard, but not see them visibly. For complete guidance on supporting your aging cat, our <a href="/en/blog/senior-cat-care/" class="text-blue-600 underline">senior cat care guide</a> covers nutrition, vet schedules, and home adjustments.</p>
 </section>
 </div>
 <div class="mt-8 flex flex-wrap gap-4">
@@ -88,42 +92,42 @@ lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
 </article>
 
 <script type="application/ld+json" set:html={JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is a healthy weight for a cat?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most domestic cats should weigh between 3.6-5 kg (8-11 lbs). Large breeds like Maine Coons can healthily reach 6-9 kg. Body condition score (BCS) on a 1-9 scale is more meaningful than weight alone — a score of 4-5 is ideal."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why is my senior cat losing weight?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Weight loss in a senior cat is almost always a medical issue. Common causes include hyperthyroidism (affects ~10% of cats over 10, causes weight loss despite good appetite), chronic kidney disease (very common over 12), and diabetes. See your vet if your cat loses more than 0.5 kg over 1-2 months."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How does obesity affect a cat's lifespan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Obesity (more than 20% over ideal weight) can shorten a cat's lifespan by 2-3 years. It significantly increases risks for type 2 diabetes, fatty liver disease, osteoarthritis, lower urinary tract disease, and respiratory problems."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "When should I be concerned about my cat's weight?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Weigh your cat monthly. Schedule a vet visit if they lose more than 0.5 kg over 1-2 months, or if you can visibly see their ribs. In senior cats (11+ years), any unexplained weight change — up or down — warrants a vet exam."
-      }
-    }
-  ]
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{
+"@type": "Question",
+"name": "What is a healthy weight for a cat?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Most domestic cats should weigh between 3.6-5 kg (8-11 lbs). Large breeds like Maine Coons can healthily reach 6-9 kg. Body condition score (BCS) on a 1-9 scale is more meaningful than weight alone — a score of 4-5 is ideal."
+}
+},
+{
+"@type": "Question",
+"name": "Why is my senior cat losing weight?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Weight loss in a senior cat is almost always a medical issue. Common causes include hyperthyroidism (affects ~10% of cats over 10, causes weight loss despite good appetite), chronic kidney disease (very common over 12), diabetes, and dental disease causing pain while eating. See your vet if your cat loses more than 0.5 kg over 1-2 months."
+}
+},
+{
+"@type": "Question",
+"name": "How does obesity affect a cat's lifespan?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Obesity (more than 20% over ideal weight) can shorten a cat's lifespan by 2-3 years. It significantly increases risks for type 2 diabetes, fatty liver disease, osteoarthritis, lower urinary tract disease, and respiratory problems."
+}
+},
+{
+"@type": "Question",
+"name": "When should I be concerned about my cat's weight?",
+"acceptedAnswer": {
+"@type": "Answer",
+"text": "Weigh your cat monthly. Schedule a vet visit if they lose more than 0.5 kg over 1-2 months, or if you can visibly see their ribs. In senior cats (11+ years), any unexplained weight change — up or down — warrants a vet exam."
+}
+}
+]
 })} />
 
 </BaseLayout>
