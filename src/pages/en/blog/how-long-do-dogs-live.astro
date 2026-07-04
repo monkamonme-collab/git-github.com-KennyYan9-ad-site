@@ -1,0 +1,421 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const breadcrumbs = [
+  { label: 'Home', url: '/en/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'How Long Do Dogs Live?', url: '/en/blog/how-long-do-dogs-live/' }
+];
+const siteUrl = "https://www.petaginghub.com";
+const hrefLangAlternates = [
+  { lang: 'en', url: siteUrl + '/en/blog/how-long-do-dogs-live' },
+  { lang: 'x-default', url: siteUrl + '/en/blog/how-long-do-dogs-live' },
+];
+---
+<BaseLayout
+  title="How Long Do Dogs Live? Average Lifespan by Breed, Size & More - Pet Aging Hub"
+  description="Average dog lifespan is 10–13 years, but breed size dramatically changes that number. Learn what determines how long dogs live and how to help your dog reach their longest, healthiest life."
+  lang="en"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}
+>
+<article class="max-w-3xl mx-auto py-10 px-4">
+  <header class="mb-8">
+    <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Dogs</span>
+    <h1 class="text-4xl font-extrabold text-slate-900 mb-4">How Long Do Dogs Live?</h1>
+    <p class="text-xl text-slate-600 leading-relaxed">
+      The average dog lives 10–13 years. But a Chihuahua and a Great Dane experience entirely
+      different timelines — one might reach 20, the other rarely makes 10. Here is what the
+      science says about canine longevity, and what you can actually do about it.
+    </p>
+  </header>
+
+  <div class="space-y-10">
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Average Dog Lifespan by Size</h2>
+      <p class="text-slate-700 leading-relaxed mb-5">
+        Size is the single most reliable predictor of how long a dog will live. Larger dogs age
+        faster at the cellular level — a phenomenon researchers now link to accelerated growth
+        rates and the metabolic costs of maintaining greater body mass. A 2019 study in Cell
+        Systems confirmed this using DNA methylation data: a 5-year-old large-breed dog has a
+        biological age closer to a 56-year-old human, while a 5-year-old small-breed dog is
+        biologically more like a 40-year-old human.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Size Category</th>
+              <th class="px-4 py-3 text-left font-semibold">Weight Range</th>
+              <th class="px-4 py-3 text-left font-semibold">Average Lifespan</th>
+              <th class="px-4 py-3 text-left font-semibold">Senior Age</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Small", "Under 20 lbs (9 kg)", "12–16 years", "10–11 years"],
+              ["Medium", "20–50 lbs (9–23 kg)", "10–14 years", "8–9 years"],
+              ["Large", "50–90 lbs (23–41 kg)", "9–12 years", "7–8 years"],
+              ["Giant", "Over 90 lbs (41 kg)", "7–10 years", "5–6 years"],
+            ].map(([size, weight, life, senior], i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                <td class="px-4 py-3 border-b border-slate-200 font-bold text-slate-800">{size}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600">{weight}</td>
+                <td class="px-4 py-3 border-b border-slate-200 font-mono font-semibold text-amber-700">{life}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600">{senior}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+        <p class="font-semibold text-amber-800 mb-2">How old is your dog in human years?</p>
+        <p class="text-sm text-amber-700 leading-relaxed">
+          The old "7x rule" is not accurate. Dog age conversion depends on breed size and life
+          stage. Use our <a href="/en/tools/dog-age-calculator/" class="text-amber-600 underline font-medium">Dog Age Calculator</a>
+          for a precise, science-backed result tailored to your dog's size.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Dog Lifespan by Breed</h2>
+      <p class="text-slate-700 leading-relaxed mb-5">
+        Within size categories, individual breeds show meaningful variation in typical lifespan —
+        usually driven by breed-specific genetic conditions, the degree of inbreeding in their
+        history, and body conformation issues that affect organ function. Mixed-breed dogs tend to
+        outlive purebreds of equivalent size due to hybrid vigor — a broader gene pool that reduces
+        the expression of harmful recessive genes.
+      </p>
+
+      <div class="overflow-x-auto mb-5">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Breed</th>
+              <th class="px-4 py-3 text-left font-semibold">Size</th>
+              <th class="px-4 py-3 text-left font-semibold">Average Lifespan</th>
+              <th class="px-4 py-3 text-left font-semibold">Notable Health Concern</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Chihuahua", "Small", "14–18 years", "Dental disease, patellar luxation"],
+              ["Toy Poodle", "Small", "14–18 years", "Progressive retinal atrophy"],
+              ["Dachshund", "Small", "12–16 years", "IVDD (intervertebral disc disease)"],
+              ["Jack Russell Terrier", "Small", "13–16 years", "Lens luxation, deafness"],
+              ["Mixed Breed (small)", "Small", "14–18 years", "Generally fewer genetic issues"],
+              ["Beagle", "Medium", "12–15 years", "Epilepsy, hip dysplasia"],
+              ["Border Collie", "Medium", "12–15 years", "Collie Eye Anomaly, epilepsy"],
+              ["Cocker Spaniel", "Medium", "12–15 years", "Ear infections, hip dysplasia"],
+              ["Bulldog (English)", "Medium", "8–10 years", "Brachycephalic syndrome, hip dysplasia"],
+              ["Labrador Retriever", "Large", "10–12 years", "Hip/elbow dysplasia, obesity, cancer"],
+              ["Golden Retriever", "Large", "10–12 years", "Cancer (very high rate), hip dysplasia"],
+              ["German Shepherd", "Large", "9–13 years", "Hip dysplasia, degenerative myelopathy"],
+              ["Rottweiler", "Large", "9–10 years", "Osteosarcoma, hip dysplasia"],
+              ["Great Dane", "Giant", "7–10 years", "Bloat (GDV), dilated cardiomyopathy"],
+              ["Bernese Mountain Dog", "Giant", "7–9 years", "Cancer (very high rate), bloat"],
+              ["Irish Wolfhound", "Giant", "6–10 years", "Cardiomyopathy, osteosarcoma"],
+              ["Saint Bernard", "Giant", "8–10 years", "Hip dysplasia, bloat, heart disease"],
+              ["Siberian Husky", "Medium", "12–14 years", "Eye conditions (PHTVL/PHPV), hip dysplasia"],
+            ].map(([breed, size, life, health], i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                <td class="px-4 py-3 border-b border-slate-200 font-medium text-slate-800">{breed}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600 text-xs">{size}</td>
+                <td class="px-4 py-3 border-b border-slate-200 font-mono font-semibold text-amber-700">{life}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-500 text-xs">{health}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-slate-500 text-xs">IVDD = Intervertebral Disc Disease · GDV = Gastric Dilatation-Volvulus</p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">7 Factors That Determine How Long Your Dog Lives</h2>
+
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">1. Size and Breed</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            As covered above, size is the dominant factor in raw lifespan. But breed matters too —
+            Golden Retrievers have cancer rates around 60%, while Poodles of equivalent size have
+            significantly lower rates. Knowing your breed's specific vulnerabilities lets you
+            prioritize targeted screening. For detailed aging timelines by breed, see our
+            <a href="/en/blog/dog-aging-by-breed/" class="text-blue-600 underline">dog aging by breed guide</a>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">2. Spaying or Neutering</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Research from Banfield Pet Hospital analyzing over 2 million dogs found that neutered
+            males live 18% longer on average than intact males, and spayed females live 23% longer
+            than intact females. Spaying eliminates pyometra (a life-threatening uterine infection
+            affecting roughly 25% of intact females by age 10) and reduces mammary cancer risk
+            dramatically when done before the first or second heat cycle. Neutering eliminates
+            testicular cancer and reduces prostate disease.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">3. Weight and Body Condition</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            A landmark 14-year study by Purina found that Labrador Retrievers fed to maintain a
+            lean body condition lived a median of 1.8 years longer than their littermates fed to
+            maintain a heavier weight. Obesity accelerates joint degeneration, increases cancer
+            risk, worsens heart and respiratory disease, and causes insulin resistance. You should
+            be able to feel (not see) your dog's ribs easily with light finger pressure. If you
+            cannot, weight management is the single highest-return health investment you can make.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">4. Diet Quality</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Dogs fed high-quality diets with named meat as the primary protein source, minimal
+            fillers, and appropriate life-stage formulation consistently show better health
+            outcomes in long-term studies. Senior dogs in particular need higher-quality, more
+            digestible protein to prevent muscle loss (sarcopenia) — not the lower protein diets
+            once commonly recommended. For full nutritional guidance by life stage, see our
+            <a href="/en/blog/pet-nutrition-by-age/" class="text-blue-600 underline">pet nutrition by life stage guide</a>.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">5. Preventive Veterinary Care</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Annual wellness exams (and biannual from age 7) with bloodwork catch kidney disease,
+            diabetes, hypothyroidism, and heart disease before clinical symptoms appear — often
+            6–18 months earlier. Dental disease affects over 80% of dogs by age 3 and causes
+            systemic organ damage via oral bacteria entering the bloodstream. Annual professional
+            dental cleanings under anesthesia add years of quality life. Core vaccines prevent
+            potentially fatal diseases including parvovirus, distemper, and rabies.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">6. Exercise and Mental Stimulation</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Regular, age-appropriate exercise maintains a healthy weight, preserves muscle mass,
+            supports cardiovascular health, and reduces cognitive decline. The key word is
+            age-appropriate — a senior dog with arthritis needs shorter, more frequent walks on
+            soft surfaces, not forced hikes. Mental stimulation through training, scent work, and
+            puzzle feeders supports brain health and reduces anxiety-driven cortisol elevation,
+            which suppresses immune function over time.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl border border-slate-200 p-5">
+          <h3 class="font-bold text-slate-900 mb-2">7. Stress and Living Environment</h3>
+          <p class="text-slate-700 text-sm leading-relaxed">
+            Dogs living in stable, low-stress environments with consistent routines, secure
+            attachment to their owners, and adequate social interaction show better immune function
+            and lower rates of stress-related disease. Chronic stress elevates cortisol, which
+            suppresses immune responses and promotes systemic inflammation. Dogs with anxiety
+            disorders benefit significantly from behavioral intervention and, where appropriate,
+            veterinary anxiety management.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">Most Common Causes of Death in Dogs</h2>
+      <p class="text-slate-700 leading-relaxed mb-5">
+        Understanding what typically ends dogs' lives helps you focus preventive care where it
+        matters most for your breed and size.
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Cause</th>
+              <th class="px-4 py-3 text-left font-semibold">Most Common In</th>
+              <th class="px-4 py-3 text-left font-semibold">Early Warning Signs</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Cancer", "Large breeds, Golden Retrievers, Rottweilers", "Lumps, unexplained weight loss, lethargy, lameness"],
+              ["Heart Disease", "Cavalier King Charles Spaniels, Dobermans, large breeds", "Exercise intolerance, coughing, difficulty breathing"],
+              ["Kidney Disease (CKD)", "All breeds 7+", "Increased thirst/urination, weight loss, vomiting"],
+              ["Bloat (GDV)", "Giant and deep-chested breeds", "Distended abdomen, unproductive retching, restlessness"],
+              ["Liver Disease", "Bedlington Terriers, Dobermans (copper storage)", "Jaundice, vomiting, weight loss, behavioral changes"],
+              ["Diabetes", "Poodles, Samoyeds, middle-aged females", "Excessive thirst/urination, weight loss, cataracts"],
+              ["Neurological Disease", "German Shepherds, Boxers, Dalmatians", "Seizures, weakness, coordination loss"],
+            ].map(([cause, breeds, signs], i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                <td class="px-4 py-3 border-b border-slate-200 font-medium text-slate-800">{cause}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600 text-xs">{breeds}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-500 text-xs">{signs}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">When Is a Dog Considered Senior?</h2>
+      <p class="text-slate-700 leading-relaxed mb-4">
+        There is no single age — the senior threshold shifts significantly by size:
+      </p>
+      <div class="overflow-x-auto mb-5">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Dog Size</th>
+              <th class="px-4 py-3 text-left font-semibold">Senior Stage Begins</th>
+              <th class="px-4 py-3 text-left font-semibold">Geriatric Stage Begins</th>
+              <th class="px-4 py-3 text-left font-semibold">Vet Visit Frequency</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Small (under 20 lbs)", "10–11 years", "14+ years", "Every 6 months from age 10"],
+              ["Medium (20–50 lbs)", "8–9 years", "12+ years", "Every 6 months from age 8"],
+              ["Large (50–90 lbs)", "7–8 years", "11+ years", "Every 6 months from age 7"],
+              ["Giant (over 90 lbs)", "5–6 years", "9+ years", "Every 6 months from age 5"],
+            ].map(([size, senior, geriatric, freq], i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                <td class="px-4 py-3 border-b border-slate-200 font-medium text-slate-800">{size}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-amber-700 font-mono">{senior}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600">{geriatric}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600 text-xs">{freq}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-slate-700 text-sm leading-relaxed">
+        Learn to recognize <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">the 7 signs your dog is aging</a>
+        so you can adjust care before problems become serious.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">How to Help Your Dog Live Longer</h2>
+      <div class="bg-slate-50 rounded-2xl p-5 border border-slate-200">
+        <ul class="space-y-4 text-slate-700">
+          {[
+            ["Maintain a lean body weight", "Overweight dogs have shorter lifespans across every size category. Measure food portions. Adjust for activity level. Body condition score monthly."],
+            ["Spay or neuter at the appropriate time", "The evidence for lifespan extension is strong. Discuss optimal timing with your vet — for large breeds, some vets now recommend waiting until skeletal maturity."],
+            ["Schedule biannual wellness exams from middle age", "For giant breeds, this means from age 5. For large breeds, from age 7. Include bloodwork, urinalysis, blood pressure, and dental assessment each visit."],
+            ["Feed a high-quality, life-stage-appropriate diet", "Protein-first ingredients, minimal corn/wheat filler, and formulation matched to age and size. See our best senior dog food guide for specific recommendations."],
+            ["Maintain annual dental cleanings", "Dental disease is the most commonly under-treated condition in dogs. Infected gums allow bacteria to access the bloodstream, damaging kidneys, heart, and liver."],
+            ["Exercise daily at an appropriate intensity", "Prevents obesity, preserves muscle, and supports cardiovascular and cognitive health. Senior dogs need gentler, shorter sessions — not zero activity."],
+            ["Know your breed's specific health risks", "Breeds at high cancer risk benefit from annual exams including lymph node palpation. Deep-chested breeds benefit from preventive gastropexy surgery for bloat."],
+            ["Minimize chronic stress", "Stable routines, secure social bonds, and enrichment reduce cortisol-driven immune suppression. Dogs with anxiety should receive behavioral and/or veterinary support."],
+          ].map(([title, body]) => (
+            <li class="flex gap-3">
+              <span class="mt-1 flex-shrink-0 text-amber-500 font-bold">&#x2713;</span>
+              <span><strong class="text-slate-900">{title}:</strong> {body}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="text-2xl font-bold text-slate-900 mb-4">The Oldest Dogs Ever Recorded</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm border-collapse">
+          <thead>
+            <tr class="bg-slate-800 text-white">
+              <th class="px-4 py-3 text-left font-semibold">Dog</th>
+              <th class="px-4 py-3 text-left font-semibold">Age</th>
+              <th class="px-4 py-3 text-left font-semibold">Breed</th>
+              <th class="px-4 py-3 text-left font-semibold">Notable</th>
+            </tr>
+          </thead>
+          <tbody>
+            {[
+              ["Bobi", "31 years, 165 days", "Rafeiro do Alentejo", "Guinness World Record (suspended 2024 for review)"],
+              ["Bluey", "29 years, 5 months", "Australian Cattle Dog", "Previous record holder (1910–1939)"],
+              ["Butch", "27–28 years", "Beagle", "Virginia, USA"],
+              ["Taffy", "27 years, 211 days", "Welsh Collie", "UK record"],
+              ["Bramble", "25 years", "Border Collie", "UK; vegetarian diet"],
+            ].map(([name, age, breed, note], i) => (
+              <tr class={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
+                <td class="px-4 py-3 border-b border-slate-200 font-bold text-slate-900">{name}</td>
+                <td class="px-4 py-3 border-b border-slate-200 font-mono font-semibold text-amber-700">{age}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-600">{breed}</td>
+                <td class="px-4 py-3 border-b border-slate-200 text-slate-500 text-xs">{note}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="mt-10 flex flex-wrap gap-4">
+    <a href="/en/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">Dog Age Calculator</a>
+    <a href="/en/blog/dog-aging-signs/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Signs Your Dog Is Aging</a>
+    <a href="/en/blog/senior-dog-care/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Dog Care Guide</a>
+    <a href="/en/blog/senior-dog-care-checklist/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Senior Dog Care Checklist</a>
+  </div>
+</article>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the average lifespan of a dog?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The average dog lifespan is 10–13 years, but this varies significantly by size. Small dogs (under 20 lbs) typically live 12–16 years, medium dogs 10–14 years, large dogs 9–12 years, and giant breeds only 7–10 years. Individual variation depends on genetics, diet, veterinary care, and lifestyle factors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What dog breed lives the longest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Small breeds consistently live the longest. Chihuahuas and Toy Poodles commonly reach 14–18 years. Among medium breeds, the Border Collie and Beagle typically live 12–15 years. The longest-lived individual dogs on record include Bobi (a Portuguese Rafeiro do Alentejo), Bluey (an Australian Cattle Dog who lived 29 years), and various small-breed dogs reaching their late 20s."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do large dogs have shorter lifespans than small dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Larger dogs age faster at the cellular level. Research using DNA methylation markers shows that large breeds accumulate biological age faster than small breeds. The leading hypothesis is that the metabolic costs of rapid growth and maintaining a larger body mass accelerate cellular aging processes. A 5-year-old Great Dane is biologically much older than a 5-year-old Chihuahua."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the most important thing I can do to help my dog live longer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The single highest-impact action for most dogs is maintaining a lean body weight. A 14-year Purina lifespan study found lean-fed Labrador Retrievers lived a median of 1.8 years longer than their heavier littermates. Beyond weight: spay or neuter, schedule biannual vet visits with bloodwork from middle age, maintain annual dental cleanings, and feed a high-quality diet matched to your dog's age and size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "At what age is a dog considered senior?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Senior age depends on size: small dogs (under 20 lbs) become senior at 10–11 years, medium dogs at 8–9 years, large dogs at 7–8 years, and giant breeds at just 5–6 years. These thresholds mark when biannual vet exams with comprehensive bloodwork become especially important for catching age-related conditions early."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common causes of death in dogs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most common causes of death in dogs are cancer (especially in large breeds like Golden Retrievers and Rottweilers), heart disease (especially in Cavalier King Charles Spaniels and Dobermans), kidney disease (common in dogs over 7), and bloat/GDV (in giant, deep-chested breeds). Cancer is responsible for approximately 50% of deaths in dogs over 10 years old."
+      }
+    }
+  ]
+})} />
+
+</BaseLayout>
