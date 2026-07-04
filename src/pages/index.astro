@@ -72,27 +72,37 @@ const tools = [
   }
 ];
 
+const heroImage = 'https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=900&h=450&fit=crop&fm=webp';
 const siteUrl = "https://www.petaginghub.com";
 const hrefLangAlternates = [
   { lang: 'zh-TW', url: siteUrl + '/' },
   { lang: 'en', url: siteUrl + '/en/' },
-{ lang: 'x-default', url: siteUrl + '/' },
+  { lang: 'x-default', url: siteUrl + '/' },
 ];
 ---
 
 <BaseLayout
   title="了解你的寵物：狗狗與貓咪年齡計算機與老年照護指南"
   description="簡單的工具與實用指南，幫助你了解狗狗和貓咪的老化過程、健康變化與老年照護需求。"
- lang="zh-TW" hrefLangAlternates={hrefLangAlternates}>
+  lang="zh-TW"
+  hrefLangAlternates={hrefLangAlternates}
+  preloadHref={heroImage}>
 
   {/* Hero 區塊 */}
   <div class="relative bg-slate-900 overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1400&h=700&fit=crop&fm=webp"
+        src={heroImage}
+        srcset="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=480&h=240&fit=crop&fm=webp 480w,
+                https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=900&h=450&fit=crop&fm=webp 900w,
+                https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&h=600&fit=crop&fm=webp 1200w"
+        sizes="100vw"
         alt="照護與陪伴老年毛孩"
         class="w-full h-full object-cover opacity-40"
+        width="900"
+        height="450"
         loading="eager"
+        fetchpriority="high"
       />
       <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/90 to-slate-900/60"></div>
     </div>
@@ -156,23 +166,23 @@ const hrefLangAlternates = [
     </section>
 
     <section class="mb-16">
-        <div class="flex items-center justify-between mb-8">
-          <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
-            <span class="text-2xl">🧮</span> 快速計算工具
-          </h2>
-          <a href="/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm">更多工具 →</a>
-        </div>
-        <div class="grid md:grid-cols-3 gap-6">
-          {tools.map((tool) => (
-            <a href={tool.href} class="group block">
-              <Card class="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300 text-center">
-                <div class="text-4xl mb-4">{tool.emoji}</div>
-                <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{tool.title}</h3>
-                <p class="text-sm text-slate-600">{tool.description}</p>
-              </Card>
-            </a>
-          ))}
-        </div>
+      <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold text-slate-900 flex items-center gap-3">
+          <span class="text-2xl">🧮</span> 快速計算工具
+        </h2>
+        <a href="/tools/" class="text-amber-600 hover:text-amber-700 font-medium text-sm">更多工具 →</a>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <a href={tool.href} class="group block">
+            <Card class="h-full hover:shadow-lg transition-all duration-300 hover:border-amber-300 text-center">
+              <div class="text-4xl mb-4">{tool.emoji}</div>
+              <h3 class="font-bold text-slate-900 mb-2 group-hover:text-amber-600 transition-colors">{tool.title}</h3>
+              <p class="text-sm text-slate-600">{tool.description}</p>
+            </Card>
+          </a>
+        ))}
+      </div>
     </section>
 
     <section>
