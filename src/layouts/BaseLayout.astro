@@ -41,13 +41,6 @@ const ogType = Astro.props.ogType ?? (isBlogPost ? 'article' : 'website');
     {preloadHref && (
       <link rel="preload" as="image" href={preloadHref} fetchpriority="high" />
     )}
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
-    <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-2TX7MK0D1Q');
-    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐾</text></svg>">
   </head>
   <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col">
@@ -77,6 +70,16 @@ const ogType = Astro.props.ogType ?? (isBlogPost ? 'article' : 'website');
             el.src = 'data:image/svg+xml,' + encodeURIComponent(s);
           }
         }, true);
+      });
+    </script>
+    <!-- Google Analytics: deferred to avoid TBT -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-2TX7MK0D1Q"></script>
+    <script is:inline>
+      window.addEventListener('load', function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2TX7MK0D1Q', { 'send_page_view': true });
       });
     </script>
   </body>
