@@ -2,8 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 
-const title = "狗狗年齡計算機 | AVMA 標準科算人類年齡";
-const description = "使用美國獸醫師協會 (AVMA) 標準公式，精準計算狗狗對應人類年齡。支援小型犬、中型犬、大型犬、巨型犬體型換算。";
+const title = "狗狗年齡計算機 | 依體型估算人類年齡";
+const description = "依狗狗年齡與體型提供人類年齡的教育性估算，並說明一般生命階段。";
 const canonicalPath = "/tools/dog-age-calculator";
 const canonicalURL = new URL(canonicalPath, "https://www.petaginghub.com/");
 
@@ -27,13 +27,13 @@ const lifeStages = [
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
     <div class="flex items-center gap-3 mb-4">
       <span class="text-4xl">🐶</span>
-      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA 標準</span>
+      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">教育性估算</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
       狗狗年齡計算機
     </h1>
     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-      想知道您的愛犬等於人類幾歲嗎？本工具採用美國獸醫師協會 (AVMA) 認可的科學公式，根據狗狗體型與年齡，精準換算對應的人類生命階段。
+      想知道您的愛犬等於人類幾歲嗎？本工具依狗狗體型與年齡提供人類年齡與生命階段的教育性估算；每隻狗狗的老化情況可能不同。
     </p>
   </header>
 
@@ -382,7 +382,8 @@ const lifeStages = [
       else if (size === 'large') increment = 6;
       else if (size === 'giant') increment = 7;
 
-      const humanAge = 24 + (age - 2) * increment;
+      const baseAtTwo = size === 'giant' ? 22 : 24;
+      const humanAge = baseAtTwo + (age - 2) * increment;
 
       let stage = 'adult';
       let stageText = '成年期';
