@@ -2,8 +2,8 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import Breadcrumb from '../../../components/Breadcrumb.astro';
 
-const title = "Dog Age Calculator | AVMA Standard | Accurate Human Age Conversion";
-const description = "Convert your dog's age to human years using the AVMA evidence-based formula. Understand your dog's life stage — puppy, adult, senior — for better veterinary care and nutrition planning.";
+const title = "Dog Age Calculator | Estimate Your Dog’s Human-Equivalent Age";
+const description = "Estimate your dog’s human-equivalent age using a transparent, size-aware educational model.";
 const canonicalPath = "/en/tools/dog-age-calculator";
 const siteUrl = "https://www.petaginghub.com";
 
@@ -32,11 +32,11 @@ const lifeStages = [
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-8">
     <div class="flex items-center gap-3 mb-4">
       <span class="text-4xl">🐶</span>
-      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">AVMA Standard</span>
+      <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">Educational estimate</span>
     </div>
     <h1 class="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Dog Age Calculator</h1>
     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-      Based on the <strong>American Veterinary Medical Association (AVMA)</strong> evidence-based formula, this tool converts your dog's age into human-equivalent years and identifies their life stage.
+      Use this size-aware educational model to estimate your dog’s human-equivalent age and explore a general life-stage reference. Individual dogs age differently.
     </p>
   </header>
 
@@ -46,6 +46,12 @@ const lifeStages = [
         <div class="mb-6">
           <label class="block text-sm font-semibold text-slate-700 mb-2">Dog's Age (years)</label>
           <input type="number" id="dogAge" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-center text-lg" value="3" min="0" max="30" />
+        </div>
+        <div class="mb-6">
+          <label class="block text-sm font-semibold text-slate-700 mb-2">Adult size</label>
+          <select id="dogSize" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition text-center">
+            <option value="small">Small (under 10 kg / 22 lb)</option><option value="medium">Medium (10–25 kg / 22–55 lb)</option><option value="large">Large (25–40 kg / 55–88 lb)</option><option value="giant">Giant (over 40 kg / 88 lb)</option>
+          </select>
         </div>
         <div class="bg-gradient-to-b from-blue-50 to-slate-50 rounded-xl p-6 mb-4">
           <p class="text-sm text-slate-500 mb-2">Equivalent human age</p>
@@ -68,8 +74,8 @@ const lifeStages = [
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
       </div>
       <div>
-        <p class="text-sm font-semibold text-slate-800">Based on AVMA Canine Life Stage Guidelines</p>
-        <p class="text-sm text-slate-500 mt-0.5">The American Veterinary Medical Association defines standardized life stage thresholds to guide preventive care, nutrition, and veterinary screening schedules.</p>
+        <p class="text-sm font-semibold text-slate-800">A size-aware educational model</p>
+        <p class="text-sm text-slate-500 mt-0.5">Veterinary life-stage guidance informs this page. The conversion is Pet Aging Hub’s simplified estimate, not an official AVMA formula or a clinical assessment.</p>
       </div>
     </div>
   </section>
@@ -83,9 +89,10 @@ const lifeStages = [
     <h2 class="text-2xl font-bold text-slate-900 mb-4">Conversion Formula</h2>
     <div class="bg-white border border-slate-200 rounded-xl p-6 space-y-4">
       <div class="bg-slate-50 rounded-lg p-4 font-mono text-sm text-slate-600">
-        <p>Age 1 yr → 15 human yrs | Age 2 yrs → 24 human yrs | Each additional yr → +4 human yrs</p>
-      </div>hh
-      <p class="text-xs text-slate-500">Source: AVMA. <em>Canine Life Stage Guidelines</em>. JAVMA, 2019; 255(1): 1-16.</p>
+        <p>Small: year 1 = 15; year 2 = 24; then +4/year</p><p>Medium: year 1 = 15; year 2 = 24; then +5/year</p><p>Large: year 1 = 15; year 2 = 24; then +6/year</p><p>Giant: year 1 = 12; year 2 = 22; then +7/year</p>
+      </div>
+      <p class="text-slate-600">Breed, genetics, health, weight, and lifestyle can change how an individual dog ages. See our <a href="/en/blog/dog-aging-by-breed/" class="text-blue-600 underline">dog aging by breed and size guide</a> for context.</p>
+      <p class="text-xs text-slate-500">Methodology note: veterinary life-stage guidance is used as context; Pet Aging Hub defines the conversion model above. It is not an official AVMA conversion formula.</p>
     </div>
   </section>
 
@@ -135,7 +142,7 @@ const lifeStages = [
 
   <section class="max-w-4xl mx-auto px-6 mb-12">
     <div class="border-t border-slate-200 pt-8">
-      <p class="text-xs text-slate-500 leading-relaxed"><strong>Disclaimer:</strong> This calculator is based on AVMA guidelines for general educational purposes only. It does not constitute veterinary advice. Always consult a licensed veterinarian for health decisions specific to your dog.</p>
+      <p class="text-xs text-slate-500 leading-relaxed"><strong>Disclaimer:</strong> This calculator provides a general educational estimate, not veterinary advice, diagnosis, or treatment. Your dog’s breed, health, body condition, and lifestyle can affect aging.</p>
     </div>
   </section>
 
@@ -144,30 +151,22 @@ const lifeStages = [
     <a href="/en/tools/" class="text-blue-600 hover:text-blue-700 font-medium">All Tools →</a>
   </nav>
 
-  <script type="application/ld+json" is:inline set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"Dog Age Calculator","description":"Convert dog years to human years using the AVMA evidence-based formula.","url":siteUrl + canonicalPath,"applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}})} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({"@context":"https://schema.org","@type":"WebApplication","name":"Dog Age Calculator","description":"Estimate a dog’s human-equivalent age with a transparent, size-aware educational model.","url":siteUrl + canonicalPath,"applicationCategory":"UtilitiesApplication","operatingSystem":"All","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}})} />
 
   <script>
     const ageInput = document.getElementById('dogAge') as HTMLInputElement;
-    const resultDisplay = document.getElementById('result');
-    const lifeStageText = document.getElementById('lifeStageText');
-    const progressFill = document.getElementById('progressFill');
-    const getStage = (age: number): { text: string; progress: number } => {
-      if (age <= 0) return { text: 'Newborn', progress: 5 };
-      if (age === 1) return { text: 'Young Adult', progress: 10 };
-      if (age === 2) return { text: 'Full Maturity', progress: 15 };
-      if (age < 7) return { text: 'Adult', progress: 20 + (age - 2) * 6 };
-      if (age < 11) return { text: 'Senior', progress: 50 + (age - 7) * 10 };
-      return { text: 'Super Senior', progress: Math.min(90 + (age - 11) * 3, 100) };
-    };
+    const sizeInput = document.getElementById('dogSize') as HTMLSelectElement;
+    const resultDisplay = document.getElementById('result'); const lifeStageText = document.getElementById('lifeStageText'); const progressFill = document.getElementById('progressFill');
     const update = () => {
       const age = parseInt(ageInput.value) || 0;
-      const humanAge = age <= 0 ? 0 : age === 1 ? 15 : age === 2 ? 24 : 24 + (age - 2) * 4;
-      const { text, progress } = getStage(age);
-      if (resultDisplay) resultDisplay.textContent = `${humanAge} yrs`;
-      if (lifeStageText) lifeStageText.textContent = `Currently: ${text}`;
-      if (progressFill) progressFill.style.width = `${progress}%`;
+      const model = {small:[15,24,4],medium:[15,24,5],large:[15,24,6],giant:[12,22,7]}[sizeInput.value] ?? [15,24,4];
+      const humanAge = age <= 0 ? 0 : age === 1 ? model[0] : age === 2 ? model[1] : model[1] + (age - 2) * model[2];
+      const seniorAt = sizeInput.value === 'giant' ? 5 : sizeInput.value === 'large' ? 7 : sizeInput.value === 'medium' ? 8 : 9;
+      const stage = age >= seniorAt + 3 ? 'Geriatric' : age >= seniorAt ? 'Senior' : age <= 1 ? 'Puppy / adolescent' : 'Adult';
+      if (resultDisplay) resultDisplay.textContent = humanAge + ' yrs';
+      if (lifeStageText) lifeStageText.textContent = 'Estimated stage: ' + stage;
+      if (progressFill) progressFill.style.width = Math.min(100, Math.max(5, age * 8)) + '%';
     };
-    ageInput.addEventListener('input', update);
-    update();
+    ageInput.addEventListener('input', update); sizeInput.addEventListener('change', update); update();
   </script>
 </BaseLayout>
