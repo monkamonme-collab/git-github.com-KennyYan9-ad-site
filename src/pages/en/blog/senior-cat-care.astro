@@ -1,130 +1,124 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+
 const breadcrumbs = [
-{ label: 'Home', url: '/en/' },
-{ label: 'Blog', url: '/en/blog/' },
-{ label: 'Senior Cat Care', url: '/en/blog/senior-cat-care/' }
+  { label: 'Home', url: '/en/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Senior Cat Care', url: '/en/blog/senior-cat-care/' }
 ];
-const siteUrl = "https://www.petaginghub.com";
+
+const siteUrl = 'https://www.petaginghub.com';
 const hrefLangAlternates = [
-{ lang: 'zh-TW', url: siteUrl + '/blog/senior-cat-care' },
-{ lang: 'en', url: siteUrl + '/en/blog/senior-cat-care' },
-{ lang: 'x-default', url: siteUrl + '/blog/senior-cat-care' },
+  { lang: 'zh-TW', url: siteUrl + '/blog/senior-cat-care' },
+  { lang: 'en', url: siteUrl + '/en/blog/senior-cat-care' },
+  { lang: 'x-default', url: siteUrl + '/blog/senior-cat-care' },
 ];
 ---
-<BaseLayout title="Senior Cat Care: Complete Guide for Cats 10+ - Pet Aging Hub"
-description="How to care for an aging cat: veterinary checkups, home environment, nutrition, pain management, and quality of life."
-lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-<article class="max-w-3xl mx-auto py-10 px-4">
-<header class="mb-8">
-<span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Cats</span>
-<h1 class="text-4xl font-extrabold text-slate-900 mb-4">Senior Cat Care: A Complete Guide</h1>
-<p class="text-xl text-slate-600 leading-relaxed">Cats are remarkable at masking illness. Caring well for a senior cat means learning to recognize <a href="/en/blog/cat-aging-signs/" class="text-blue-600 underline">the signs your cat is aging</a> before they become serious problems.</p>
-</header>
-<div class="space-y-10">
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">The Senior Cat Threshold</h2>
-<p class="text-slate-700 leading-relaxed mb-4">Cats are generally considered "senior" from age 11-14 and "geriatric" from 15+. However, the biological shift begins around age 7 — by then, most cats show measurable changes in kidney function, weight maintenance, and activity. Many vets recommend transitioning to senior-care protocols around age 7-10.</p>
-<div class="bg-purple-50 rounded-xl p-4 border border-purple-100">
-<p class="text-sm text-slate-700">Many cats aged 15-20 can maintain excellent quality of life with proper care. Old age is not the end of a good life.</p>
-</div>
-</section>
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">Biannual Veterinary Checkups</h2>
-<p class="text-slate-700 leading-relaxed mb-4">From age 10 onward, twice-yearly vet visits are the standard of care. A senior cat checkup should include:</p>
-<div class="grid md:grid-cols-2 gap-3">
-<ul class="space-y-2 text-slate-700 text-sm">
-<li>Blood pressure measurement</li>
-<li>Full bloodwork: CBC, chemistry, T4 (thyroid)</li>
-<li>Urinalysis (kidney health)</li>
-<li>Weight and body condition score</li>
-</ul>
-<ul class="space-y-2 text-slate-700 text-sm">
-<li>Dental and oral examination</li>
-<li>Eye and vision assessment</li>
-<li>Mobility and pain assessment</li>
-<li>Cognitive function screening</li>
-</ul>
-</div>
-<p class="text-slate-700 text-sm leading-relaxed mt-3">Dental disease is one of the most overlooked conditions in senior cats — see our <a href="/en/blog/pet-dental-health/" class="text-blue-600 underline">pet dental health guide</a> for what to watch for at home between vet visits.</p>
-</section>
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">The 3 Most Important Senior Cat Diseases</h2>
-<div class="space-y-4">
-<div class="bg-white rounded-2xl p-5 border border-red-200">
-<h3 class="font-bold text-red-800 mb-2">1. Chronic Kidney Disease (CKD)</h3>
-<p class="text-slate-700 text-sm leading-relaxed">Affects over 50% of cats over 15. Early signs: increased thirst and urination, weight loss, decreased appetite. Early detection through bloodwork and urinalysis can extend life significantly. Dietary adjustments are key — our <a href="/en/blog/pet-nutrition-by-age/" class="text-blue-600 underline">pet nutrition by life stage guide</a> explains what senior cats with CKD should eat.</p>
-</div>
-<div class="bg-white rounded-2xl p-5 border border-orange-200">
-<h3 class="font-bold text-orange-800 mb-2">2. Hyperthyroidism</h3>
-<p class="text-slate-700 text-sm leading-relaxed">Affects ~10% of cats over 10. Signs: weight loss despite good appetite, hyperactivity, vomiting. Highly treatable with medication, radioactive iodine, or surgery.</p>
-</div>
-<div class="bg-white rounded-2xl p-5 border border-purple-200">
-<h3 class="font-bold text-purple-800 mb-2">3. Hypertension</h3>
-<p class="text-slate-700 text-sm leading-relaxed">Often secondary to CKD or hyperthyroidism. Can cause sudden blindness or neurological symptoms. Blood pressure should be checked at every visit for cats over 10.</p>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">Creating a Senior-Friendly Home</h2>
-<div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
-<ul class="space-y-3 text-slate-700 text-sm">
-<li><strong>Warm sleeping spots:</strong> Heated beds or self-warming blankets for cats who have lost muscle padding.</li>
-<li><strong>Ramps and steps:</strong> To favorite perches and furniture. Critical if arthritis is present.</li>
-<li><strong>Low-entry litter box:</strong> Cut-out entrance or open tray is easier with stiff joints.</li>
-<li><strong>Multiple water sources:</strong> Cat fountains encourage hydration — crucial for kidney health.</li>
-<li><strong>Warmth:</strong> Senior cats lose body heat more easily. Keep sleeping areas warm.</li>
-</ul>
-</div>
-</section>
-</div>
-<div class="mt-8 bg-purple-50 rounded-2xl p-5 border border-purple-100 text-center">
-<p class="text-slate-700 text-sm mb-3">Not sure how old your cat really is? Convert her age to human years.</p>
-<a href="/en/tools/cat-age-calculator/" class="inline-block px-6 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-xl text-sm">Try our Cat Age Calculator →</a>
-</div>
-<div class="mt-4 flex flex-wrap gap-4">
-<a href="/en/tools/cat-age-calculator/" class="px-5 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-xl text-sm">Cat Age Calculator</a>
-<a href="/en/blog/cat-aging-signs/" class="px-5 py-3 bg-purple-100 hover:bg-purple-200 text-purple-800 font-semibold rounded-xl text-sm">Signs of Aging</a>
-</div>
-</article>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-"@context": "https://schema.org",
-"@type": "FAQPage",
-"mainEntity": [
-{
-"@type": "Question",
-"name": "At what age is a cat considered senior?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Cats are generally considered senior from age 11-14 and geriatric from age 15+. However, biological aging begins around age 7, when most cats show measurable changes in kidney function and activity levels. Many vets recommend transitioning to senior-care protocols between ages 7-10."
-}
-},
-{
-"@type": "Question",
-"name": "What are the most common diseases in senior cats?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "The three most important diseases in senior cats are: (1) Chronic Kidney Disease (CKD) — affects over 50% of cats over 15, with signs of increased thirst and weight loss; (2) Hyperthyroidism — affects about 10% of cats over 10, causing weight loss despite good appetite; (3) Hypertension — often secondary to CKD or hyperthyroidism, and can cause sudden blindness."
-}
-},
-{
-"@type": "Question",
-"name": "How often should a senior cat see the vet?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "From age 10 onward, twice-yearly vet visits are the standard of care for cats. Each visit should include blood pressure measurement, full bloodwork (CBC, chemistry, T4 thyroid panel), urinalysis, weight assessment, dental exam, and mobility and cognitive function screening."
-}
-},
-{
-"@type": "Question",
-"name": "How do I make my home better for a senior cat?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Key home modifications for senior cats include: heated or self-warming beds, ramps and steps to reach favorite perches, a low-entry litter box with a cut-out entrance, multiple water sources or a cat fountain to encourage hydration for kidney health, and warm sleeping areas since older cats lose body heat more easily."
-}
-}
-]
-})} />
+<BaseLayout
+  title="Senior Cat Care: Life Stage, Comfort, and Vet Questions"
+  description="A practical, educational guide to senior cat care: life-stage context, changes to discuss with a veterinarian, home comfort, and daily routines."
+  lang="en"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}
+>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Cats</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Senior Cat Care: A Complete Guide</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">Older cats can remain curious, social, and comfortable for many years. The most useful approach is to notice changes early and discuss your individual cat’s needs with a veterinarian.</p>
+    </header>
 
+    <img
+      src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=1200&h=675&fit=crop&fm=webp"
+      alt="A calm cat resting indoors"
+      class="w-full aspect-video object-cover rounded-2xl mb-10"
+      loading="eager"
+    />
+
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">When Is a Cat Considered Senior?</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">Aging is individual, but veterinary life-stage guidance commonly describes cats over 10 years old as senior. Calendar age is only one piece of the picture: health history, weight, mobility, behavior, and home environment all matter too.</p>
+        <p class="text-slate-700 leading-relaxed">Our <a href="/en/tools/cat-age-calculator/" class="text-blue-600 underline">Cat Age Calculator</a> offers a general educational estimate of human-age equivalence. It cannot tell you whether a particular cat is healthy or diagnose a condition.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Changes Worth Discussing With a Veterinarian</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+            <li>Changes in appetite, body weight, thirst, or litter-box habits</li>
+            <li>Reduced jumping, stiffness, altered grooming, or changes in activity</li>
+            <li>New sleep, vocalization, or social behavior changes</li>
+          </ul>
+          <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+            <li>Changes in vision, hearing, or apparent orientation</li>
+            <li>Dental discomfort, persistent bad breath, or difficulty eating</li>
+            <li>Any sudden, severe, or concerning change from your cat’s usual behavior</li>
+          </ul>
+        </div>
+        <p class="text-slate-700 text-sm leading-relaxed mt-4">Cats can be subtle communicators. A short record of what has changed and when can make a veterinary visit more useful. See our <a href="/en/blog/cat-aging-signs/" class="text-blue-600 underline">signs of aging in cats guide</a> for more educational context.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Create a Senior-Friendly Home</h2>
+        <div class="bg-purple-50 rounded-2xl p-5 border border-purple-100">
+          <ul class="space-y-3 text-slate-700 text-sm">
+            <li><strong>Make essentials easy to reach:</strong> Keep water, food, litter boxes, and resting areas accessible without difficult jumps.</li>
+            <li><strong>Offer comfortable rest:</strong> Provide warm, quiet sleeping areas away from busy walkways.</li>
+            <li><strong>Consider low-entry options:</strong> A low-entry litter box or stable step can be helpful if movement becomes difficult.</li>
+            <li><strong>Keep the environment predictable:</strong> Gentle routines and gradual changes can be easier for many older cats.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Questions for a Senior-Cat Wellness Visit</h2>
+        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+          <li>What life stage do you consider my cat to be in?</li>
+          <li>How often should my individual cat have wellness visits?</li>
+          <li>Which changes in mobility, grooming, eating, thirst, or litter-box habits should prompt a call?</li>
+          <li>Are there home, nutrition, or routine changes that suit my cat’s specific needs?</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="/en/tools/cat-age-calculator/" class="px-5 py-3 bg-purple-500 hover:bg-purple-600 text-white font-semibold rounded-xl text-sm">Cat Age Calculator</a>
+      <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-purple-100 hover:bg-purple-200 text-purple-800 font-semibold rounded-xl text-sm">Senior Pet Health Guide</a>
+    </div>
+
+    <p class="mt-10 text-xs text-slate-500 leading-relaxed"><strong>Educational note:</strong> This page provides general information only. It does not diagnose illness or replace an examination or advice from a veterinarian. Contact a veterinary professional promptly for sudden, severe, or concerning changes.</p>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When is a cat considered senior?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Veterinary life-stage guidance commonly describes cats over 10 years old as senior, although individual health and needs vary."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changes should I discuss with my veterinarian as my cat ages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Discuss meaningful changes in appetite, weight, thirst, litter-box habits, movement, grooming, sleep, behavior, hearing, or vision. Sudden or severe changes warrant prompt professional advice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I make my home easier for an older cat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Helpful adjustments may include accessible food, water, litter boxes, and resting areas; warm quiet sleeping spots; and gradual, predictable routines."
+        }
+      }
+    ]
+  })} />
 </BaseLayout>
