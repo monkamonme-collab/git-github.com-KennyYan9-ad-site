@@ -1,129 +1,124 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+
 const breadcrumbs = [
-{ label: 'Home', url: '/en/' },
-{ label: 'Blog', url: '/en/blog/' },
-{ label: 'Senior Dog Care', url: '/en/blog/senior-dog-care/' }
+  { label: 'Home', url: '/en/' },
+  { label: 'Blog', url: '/en/blog/' },
+  { label: 'Senior Dog Care', url: '/en/blog/senior-dog-care/' }
 ];
-const siteUrl = "https://www.petaginghub.com";
+
+const siteUrl = 'https://www.petaginghub.com';
 const hrefLangAlternates = [
-{ lang: 'zh-TW', url: siteUrl + '/blog/senior-dog-care' },
-{ lang: 'en', url: siteUrl + '/en/blog/senior-dog-care' },
-{ lang: 'x-default', url: siteUrl + '/blog/senior-dog-care' },
+  { lang: 'zh-TW', url: siteUrl + '/blog/senior-dog-care' },
+  { lang: 'en', url: siteUrl + '/en/blog/senior-dog-care' },
+  { lang: 'x-default', url: siteUrl + '/blog/senior-dog-care' },
 ];
 ---
-<BaseLayout title="Senior Dog Care Guide - Pet Aging Hub"
-description="A complete guide to caring for your senior dog — veterinary care, home comfort, nutrition, exercise, and emotional wellbeing."
-lang="en" breadcrumbs={breadcrumbs} hrefLangAlternates={hrefLangAlternates}>
-<article class="max-w-3xl mx-auto py-10 px-4">
-<header class="mb-8">
-<span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Dogs</span>
-<h1 class="text-4xl font-extrabold text-slate-900 mb-4">Senior Dog Care: A Practical Guide</h1>
-<p class="text-xl text-slate-600 leading-relaxed">Your dog is slowing down — but their senior years can still be rich, comfortable, and full of joy with the right care adjustments.</p>
-</header>
-<div class="space-y-10">
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">Recognizing the Senior Transition</h2>
-<div class="grid md:grid-cols-2 gap-4">
-<ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
-<li>Gray muzzle and around the eyes</li>
-<li>Slower to rise from lying down</li>
-<li>Less enthusiasm for long walks</li>
-<li>More time sleeping</li>
-</ul>
-<ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
-<li>Cloudiness in the eyes (often benign)</li>
-<li>Weight changes (gain or loss)</li>
-<li>Hearing decline</li>
-<li>Changed bathroom habits</li>
-</ul>
-</div>
-<p class="text-slate-700 text-sm leading-relaxed mt-4">Learning to recognize <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">the early signs of aging in your dog</a> helps you act before minor changes become serious conditions — and gives your vet more time to intervene effectively.</p>
-</section>
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">Veterinary Care for Senior Dogs</h2>
-<p class="text-slate-700 leading-relaxed mb-4">Increase vet visits to twice yearly once your dog reaches senior status. A comprehensive senior wellness exam should include:</p>
-<div class="space-y-3">
-<div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
-<div><p class="font-semibold text-slate-900 text-sm">Complete Blood Count and Chemistry Panel</p><p class="text-slate-600 text-xs">Screens for organ function, anemia, infection, diabetes, and more. Results often guide dietary adjustments — our guide to <a href="/en/blog/pet-nutrition-by-age/" class="text-blue-600 underline">pet nutrition by life stage</a> explains how senior dogs' needs differ from adult dogs.</p></div>
-</div>
-<div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
-<div><p class="font-semibold text-slate-900 text-sm">Urinalysis</p><p class="text-slate-600 text-xs">Kidney function indicator; detects early signs before bloodwork changes.</p></div>
-</div>
-<div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
-<div><p class="font-semibold text-slate-900 text-sm">Dental Examination</p><p class="text-slate-600 text-xs">Dental disease is painful and can affect heart health.</p></div>
-</div>
-<div class="flex items-start gap-3 bg-white rounded-xl p-4 border border-slate-200">
-<div><p class="font-semibold text-slate-900 text-sm">Orthopedic Assessment</p><p class="text-slate-600 text-xs">Joint pain evaluation. May recommend X-rays for arthritis staging. If arthritis is confirmed, our <a href="/en/blog/pet-joint-health/" class="text-blue-600 underline">pet joint health guide</a> outlines treatment options and management strategies that can keep your dog moving comfortably.</p></div>
-</div>
-</div>
-</section>
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">Home Modifications</h2>
-<div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
-<ul class="space-y-3 text-slate-700 text-sm">
-<li><strong>Orthopedic bed:</strong> Memory foam reduces joint pressure. Place in warm, draft-free areas.</li>
-<li><strong>Ramps and steps:</strong> Protect joints by eliminating jumps on/off furniture and into cars.</li>
-<li><strong>Non-slip surfaces:</strong> Rugs on hardwood floors prevent slipping and injury.</li>
-<li><strong>Elevated food bowls:</strong> For large dogs with neck or back pain, reduces strain during eating.</li>
-<li><strong>More frequent bathroom access:</strong> Older dogs may need more outdoor trips to prevent accidents.</li>
-</ul>
-</div>
-</section>
-<section>
-<h2 class="text-2xl font-bold text-slate-900 mb-4">Emotional Wellbeing</h2>
-<p class="text-slate-700 leading-relaxed mb-3">Senior dogs still crave connection, routine, and mental engagement. Cognitive decline can cause anxiety, which is eased by:</p>
-<ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
-<li>Consistent daily routines (same walk, meal, bedtime schedule)</li>
-<li>Gentle physical contact and calm companionship</li>
-<li>Appropriate mental enrichment (sniff walks, gentle training)</li>
-<li>Avoiding sudden environmental changes</li>
-</ul>
-</section>
-</div>
-<div class="mt-8 flex flex-wrap gap-4">
-<a href="/en/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">Dog Age Calculator</a>
-<a href="/en/blog/pet-dental-health/" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold rounded-xl text-sm">Pet Dental Health</a>
-</div>
-</article>
 
-<script type="application/ld+json" set:html={JSON.stringify({
-"@context": "https://schema.org",
-"@type": "FAQPage",
-"mainEntity": [
-{
-"@type": "Question",
-"name": "When is a dog considered senior?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Most dogs are considered senior at age 7, though large and giant breeds age faster and may be considered senior at 5-6. Signs of the senior transition include a gray muzzle, slower rising from lying down, less enthusiasm for long walks, weight changes, and increased sleeping."
-}
-},
-{
-"@type": "Question",
-"name": "How often should a senior dog see the vet?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Senior dogs should see the vet twice a year instead of once. A comprehensive senior wellness exam includes a complete blood count, chemistry panel, urinalysis, dental examination, and orthopedic assessment. Early detection of organ disease, arthritis, and diabetes makes a significant difference in outcomes."
-}
-},
-{
-"@type": "Question",
-"name": "What home changes help a senior dog?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Key home modifications for senior dogs include an orthopedic memory foam bed, ramps or steps to avoid jumping on/off furniture, non-slip rugs on hardwood floors, elevated food bowls for dogs with neck or back pain, and more frequent outdoor bathroom access to prevent accidents."
-}
-},
-{
-"@type": "Question",
-"name": "How do I support my senior dog's mental health?",
-"acceptedAnswer": {
-"@type": "Answer",
-"text": "Senior dogs benefit greatly from consistent daily routines (same walk, meal, and bedtime schedule), gentle physical contact, and appropriate mental enrichment like sniff walks and short training sessions. Avoid sudden environmental changes, which can cause anxiety in older dogs, especially those with cognitive decline."
-}
-}
-]
-})} />
+<BaseLayout
+  title="Senior Dog Care: Life Stage, Comfort, and Vet Questions"
+  description="A practical, educational guide to senior dog care: life-stage context, changes to discuss with a veterinarian, home comfort, and gentle routines."
+  lang="en"
+  breadcrumbs={breadcrumbs}
+  hrefLangAlternates={hrefLangAlternates}
+>
+  <article class="max-w-3xl mx-auto py-10 px-4">
+    <header class="mb-8">
+      <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-4">Dogs</span>
+      <h1 class="text-4xl font-extrabold text-slate-900 mb-4">Senior Dog Care: A Practical Guide</h1>
+      <p class="text-xl text-slate-600 leading-relaxed">A dog’s senior years are individual. Size, breed, expected lifespan, health, and daily life all shape the care conversations that matter most.</p>
+    </header>
 
+    <img
+      src="https://images.unsplash.com/photo-1477884213360-7e9d7dcc1e48?w=1200&h=675&fit=crop&fm=webp"
+      alt="An older dog resting outdoors"
+      class="w-full aspect-video object-cover rounded-2xl mb-10"
+      loading="eager"
+    />
+
+    <div class="space-y-10">
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">When Is a Dog Considered Senior?</h2>
+        <p class="text-slate-700 leading-relaxed mb-4">There is no single age that makes every dog a senior. The American Animal Hospital Association describes the senior stage as the last part of a dog’s estimated lifespan, with timing shaped by breed and size. Use our <a href="/en/tools/dog-age-calculator/" class="text-blue-600 underline">Dog Age Calculator</a> as a size-aware educational reference—not as a diagnosis or a replacement for veterinary advice.</p>
+        <p class="text-slate-700 leading-relaxed">A dog who seems well can still benefit from a proactive conversation about life stage. For broader context, see our <a href="/en/blog/dog-aging-by-breed/" class="text-blue-600 underline">dog aging by breed and size guide</a>.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Changes Worth Discussing With a Veterinarian</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+            <li>Changes in activity, balance, or ease of getting up</li>
+            <li>Changes in appetite, weight, thirst, or bathroom habits</li>
+            <li>New sleep, hearing, vision, or behavior changes</li>
+          </ul>
+          <ul class="list-disc pl-6 space-y-2 text-slate-700 text-sm">
+            <li>Persistent coughing, discomfort, or reduced interest in usual activities</li>
+            <li>New lumps, skin changes, or dental discomfort</li>
+            <li>Any sudden or severe change from your dog’s normal behavior</li>
+          </ul>
+        </div>
+        <p class="text-slate-700 text-sm leading-relaxed mt-4">These observations are not a diagnosis. They can help you and your veterinary team decide what, if anything, needs closer assessment. Our <a href="/en/blog/dog-aging-signs/" class="text-blue-600 underline">signs of aging in dogs guide</a> offers additional educational context.</p>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Support Comfort at Home</h2>
+        <div class="bg-amber-50 rounded-2xl p-5 border border-amber-100">
+          <ul class="space-y-3 text-slate-700 text-sm">
+            <li><strong>Make movement easier:</strong> Add non-slip rugs, and consider steps or ramps for favorite resting places if your dog benefits from them.</li>
+            <li><strong>Protect rest:</strong> Offer a comfortable bed in a quiet, easy-to-reach location.</li>
+            <li><strong>Keep routines predictable:</strong> Gentle activity, familiar meals, and regular bathroom opportunities can support day-to-day comfort.</li>
+            <li><strong>Observe rather than assume:</strong> Track meaningful changes and share them with a veterinarian instead of attributing every change to age.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4">Questions for a Senior-Dog Wellness Visit</h2>
+        <ul class="list-disc pl-6 space-y-2 text-slate-700">
+          <li>What life stage do you consider my dog to be in?</li>
+          <li>Does my dog’s breed, size, or health history change the recommended preventive-care plan?</li>
+          <li>Which changes in mobility, appetite, behavior, or bathroom habits should prompt a call?</li>
+          <li>Are there practical home or activity adjustments that suit my individual dog?</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="/en/tools/dog-age-calculator/" class="px-5 py-3 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl text-sm">Dog Age Calculator</a>
+      <a href="/en/blog/senior-pet-health-guide/" class="px-5 py-3 bg-amber-100 hover:bg-amber-200 text-amber-800 font-semibold rounded-xl text-sm">Senior Pet Health Guide</a>
+    </div>
+
+    <p class="mt-10 text-xs text-slate-500 leading-relaxed"><strong>Educational note:</strong> This page provides general information only. It does not diagnose illness or replace an examination or advice from a veterinarian. Contact a veterinary professional promptly for sudden, severe, or concerning changes.</p>
+  </article>
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "When is a dog considered senior?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There is no single age for every dog. Senior life stage depends on factors such as breed, size, expected lifespan, health, and lifestyle."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What changes should I discuss with my veterinarian as my dog ages?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It can be useful to discuss changes in activity, mobility, appetite, weight, thirst, bathroom habits, sleep, behavior, hearing, or vision. Sudden or severe changes warrant prompt professional advice."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I support an older dog at home?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Helpful adjustments may include easy-to-reach resting areas, non-slip surfaces, predictable routines, and observing meaningful changes to share with a veterinarian."
+        }
+      }
+    ]
+  })} />
 </BaseLayout>
