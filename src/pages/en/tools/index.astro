@@ -3,7 +3,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import AdSenseAd from '../../../components/AdSenseAd.astro';
 
 const title = "Pet Age Calculators & Tools | Dog & Cat Human Age Conversion";
-const description = "Free pet age calculators based on AVMA and AAHA veterinary standards. Convert your dog or cat's age to human years and understand their life stage for better care.";
+const description = "Free dog and cat age calculators with transparent educational models to help you explore human-age equivalents and life-stage context.";
 const canonicalPath = "/en/tools";
 const siteUrl = "https://www.petaginghub.com";
 
@@ -21,18 +21,18 @@ const tools = [
   {
     href: '/en/tools/dog-age-calculator',
     emoji: '🐶',
-    badge: 'AVMA Standard',
+    badge: 'Size-aware estimate',
     title: 'Dog Age Calculator',
-    description: 'Convert your dog\'s age to human years using the AVMA evidence-based formula. Identify life stage — puppy, adult, senior, or geriatric — for tailored veterinary care.',
-    tags: ['Dogs', 'Life Stage', 'AVMA'],
+    description: 'Estimate your dog\'s age in human years with a transparent size-aware model, then explore a general life-stage reference.',
+    tags: ['Dogs', 'Life Stage', 'Size-aware'],
   },
   {
     href: '/en/tools/cat-age-calculator',
     emoji: '🐱',
-    badge: 'AAHA / AVMA Standard',
+    badge: 'Educational estimate',
     title: 'Cat Age Calculator',
-    description: 'Use the AAHA and AVMA jointly recognized formula to accurately calculate your cat\'s equivalent human age and understand their current life stage needs.',
-    tags: ['Cats', 'Life Stage', 'AAHA'],
+    description: 'Estimate your cat\'s age in human years and explore a general life-stage reference for educational context.',
+    tags: ['Cats', 'Life Stage', 'Educational'],
   },
 ];
 ---
@@ -45,7 +45,7 @@ const tools = [
       Pet Health Tools
     </h1>
     <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
-      Free calculators and reference tools built on veterinary standards from AVMA and AAHA — helping you understand your pet's life stage and care needs.
+      Free calculators and reference tools that help you explore your pet's life stage and care needs. They are educational estimates, not veterinary diagnoses or treatment plans.
     </p>
   </header>
 
@@ -83,10 +83,10 @@ const tools = [
     <h2 class="text-2xl font-bold text-slate-900 mb-4">About Our Tools</h2>
     <div class="prose prose-slate max-w-none space-y-4 text-slate-600">
       <p>
-        Every tool on this site is built on guidelines published by leading North American veterinary organizations — including the American Veterinary Medical Association (AVMA) and the American Animal Hospital Association (AAHA). These are the same standards used by licensed veterinarians to guide preventive care schedules, nutritional recommendations, and health screening priorities.
+        Our tools use transparent educational models and may reference veterinary life-stage guidance for context. They do not replace an examination, diagnosis, or individualized advice from a veterinarian.
       </p>
       <p>
-        Understanding your pet's life stage is the first step in providing the right care. A dog entering the senior stage (around age 7) has different health priorities than a young adult dog. A geriatric cat needs kidney-protective nutrition and more frequent check-ups. Our calculators help you connect your pet's calendar age to these meaningful life stages.
+        Understanding your pet's life stage is the first step in providing the right care. A pet's breed, size, health, body condition, and lifestyle all affect how it ages. Our calculators can help you connect calendar age with general life-stage context, while your veterinarian can advise on individual care needs.
       </p>
     </div>
   </section>
@@ -117,7 +117,7 @@ const tools = [
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Pet Health Tools",
-    "description": "Free pet age calculators based on AVMA and AAHA veterinary standards.",
+    "description": "Free dog and cat age calculators with transparent educational models.",
     "url": siteUrl + canonicalPath,
     "hasPart": [
       {
